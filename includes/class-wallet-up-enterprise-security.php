@@ -12,66 +12,42 @@
  * @since 2.3.0
  */
 
-// Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
 }
 
 class WalletUpEnterpriseSecurity {
-    /**
-     * Security options
-     * @var array
-     */
+    
     private static $options = [];
 
-    /**
-     * Current user exemption status
-     * @var bool
-     */
     private static $user_exempt = null;
 
-    /**
-     * Failed login tracking
-     * @var array
-     */
     private static $failed_attempts = [];
 
-    /**
-     * Cache for rate limiting to reduce database load
-     * @var array
-     */
     private static $rate_limit_cache = [];
 
-    /**
-     * Secure logging function with rate limiting
-     *
-     * @param string $message The message to log
-     * @param mixed $data Optional data to log (will be sanitized)
-     */
     private static function secure_log($message, $data = null) {
         if (!defined('WP_DEBUG') || !WP_DEBUG || !defined('WP_DEBUG_LOG') || !WP_DEBUG_LOG) {
             return;
         }
 
-        // Rate limit logging to prevent DoS
         static $log_count = [];
         static $last_reset = [];
         $ip = self::get_client_ip();
         $key = md5($ip . $message);
         $log_count[$key] = isset($log_count[$key]) ? $log_count[$key] + 1 : 1;
 
-        if ($log_count[$key] > 10) { // Max 10 logs per IP per minute
+        if ($log_count[$key] > 10) { 
             return;
         }
 
-        // Reset log count every minute
         if (!isset($last_reset[$key]) || (time() - $last_reset[$key]) > 60) {
             $log_count[$key] = 1;
             $last_reset[$key] = time();
         }
 
         if ($data !== null) {
-            // Sanitize and truncate data to prevent oversized logs
+            
             if (is_array($data) || is_object($data)) {
                 $safe_data = [];
                 foreach ((array)$data as $key => $value) {
@@ -92,13 +68,6 @@ class WalletUpEnterpriseSecurity {
         error_log('Wallet Up Security: ' . $message);
     }
 
-    /**
-     * Safely get and sanitize server variables
-     *
-     * @param string $key The $_SERVER key to retrieve
-     * @param string $default Default value if not set
-     * @return string Sanitized value
-     */
     private static function get_server_var($key, $default = '') {
         if (!isset($_SERVER[$key])) {
             return $default;
@@ -106,7 +75,6 @@ class WalletUpEnterpriseSecurity {
 
         $value = $_SERVER[$key];
 
-        // Sanitize based on the variable type
         switch ($key) {
             case 'REQUEST_URI':
             case 'HTTP_REFERER':
@@ -144,11 +112,8 @@ class WalletUpEnterpriseSecurity {
         }
     }
 
-    /**
-     * Initialize enterprise security features
-     */
     public static function init() {
-        // Default options
+        
         $default_options = [
             'force_login_enabled' => false,
             'hide_wp_login' => false,
@@ -161,7 +126,6 @@ class WalletUpEnterpriseSecurity {
             'two_factor_required' => false,
         ];
 
-        // Get and validate stored options
         $stored_options = get_option('wallet_up_security_options', $default_options);
         if (!is_array($stored_options)) {
             self::secure_log('Security options corrupted, using defaults');
@@ -171,7 +135,6 @@ class WalletUpEnterpriseSecurity {
 
         self::$options = wp_parse_args($stored_options, $default_options);
 
-        // Initialize security hooks
         self::init_hooks();
 
         if (!empty(self::$options['force_login_enabled'])) {
@@ -183,20 +146,15 @@ class WalletUpEnterpriseSecurity {
             self::init_login_protection();
         }
 
-        // Add rewrite rules for custom login
         add_action('init', [__CLASS__, 'add_login_rewrite_rules']);
         add_filter('query_vars', [__CLASS__, 'add_login_query_vars']);
         add_action('template_redirect', [__CLASS__, 'handle_custom_login_url'], 5);
 
-        // Initialize security headers
         if (self::$options['security_headers']) {
             self::init_security_headers();
         }
     }
 
-    /**
-     * Initialize security hooks
-     */
     private static function init_hooks() {
         add_action('login_init', [__CLASS__, 'initialize_login_variables'], 1);
         add_action('login_header', [__CLASS__, 'ensure_variables_initialized'], 1);
@@ -214,9 +172,6 @@ class WalletUpEnterpriseSecurity {
         add_action('admin_init', [__CLASS__, 'register_security_settings']);
     }
 
-    /**
-     * Initialize forced login system
-     */
     private static function init_forced_login() {
         if (self::has_login_conflicts()) {
             self::secure_log('Login conflicts detected, disabling forced login');
@@ -228,9 +183,6 @@ class WalletUpEnterpriseSecurity {
         add_action('admin_init', [__CLASS__, 'restrict_admin_access'], 10);
     }
 
-    /**
-     * Check for conflicts with other login systems
-     */
     private static function has_login_conflicts() {
         $conflicting_functions = [
             'require_login_for_all_pages',
@@ -259,24 +211,15 @@ class WalletUpEnterpriseSecurity {
         return false;
     }
 
-    /**
-     * Initialize wp-login.php protection
-     */
     private static function init_login_protection() {
         add_action('login_init', [__CLASS__, 'intercept_wp_login'], 10);
     }
 
-    /**
-     * Initialize security headers
-     */
     private static function init_security_headers() {
         add_action('send_headers', [__CLASS__, 'add_security_headers']);
         add_filter('wp_headers', [__CLASS__, 'modify_wp_headers']);
     }
 
-    /**
-     * Check authentication in output buffer
-     */
     public static function check_authentication_in_buffer($buffer) {
         if (is_user_logged_in()) {
             return $buffer;
@@ -301,9 +244,6 @@ class WalletUpEnterpriseSecurity {
         exit;
     }
 
-    /**
-     * Enforce authentication for all site access
-     */
     public static function enforce_authentication() {
         static $redirect_in_progress = false;
         if ($redirect_in_progress) {
@@ -324,9 +264,6 @@ class WalletUpEnterpriseSecurity {
         exit;
     }
 
-    /**
-     * Check if current request is login-related
-     */
     private static function is_login_request() {
         global $pagenow;
 
@@ -371,9 +308,6 @@ class WalletUpEnterpriseSecurity {
         return false;
     }
 
-    /**
-     * Check if current request is registration-related
-     */
     private static function is_registration_request() {
         global $pagenow;
 
@@ -388,9 +322,6 @@ class WalletUpEnterpriseSecurity {
         return false;
     }
 
-    /**
-     * Check if current request is password reset related
-     */
     private static function is_password_reset_request() {
         global $pagenow;
 
@@ -401,9 +332,6 @@ class WalletUpEnterpriseSecurity {
         return false;
     }
 
-    /**
-     * Check if current request is public REST API endpoint
-     */
     private static function is_public_rest_endpoint() {
         $request_uri = self::get_server_var('REQUEST_URI', '');
         $public_endpoints = [
@@ -420,9 +348,6 @@ class WalletUpEnterpriseSecurity {
         return false;
     }
 
-    /**
-     * Check if current endpoint should be publicly accessible
-     */
     private static function is_public_endpoint_allowed() {
         $allowed_endpoints = [
             'wp-cron.php',
@@ -433,9 +358,6 @@ class WalletUpEnterpriseSecurity {
         return in_array($current_endpoint, $allowed_endpoints);
     }
 
-    /**
-     * Get current URL for redirect purposes
-     */
     private static function get_current_url() {
         $https = self::get_server_var('HTTPS', '');
         $protocol = (!empty($https) && $https !== 'off') ? 'https://' : 'http://';
@@ -445,9 +367,6 @@ class WalletUpEnterpriseSecurity {
         return $protocol . $host . $uri;
     }
 
-    /**
-     * Get secure login URL
-     */
     private static function get_secure_login_url() {
         if (self::$options['hide_wp_login'] && !empty(self::$options['custom_login_slug'])) {
             return home_url('/?' . self::$options['custom_login_slug'] . '=1');
@@ -456,9 +375,6 @@ class WalletUpEnterpriseSecurity {
         return wp_login_url();
     }
 
-    /**
-     * Intercept wp-login.php requests
-     */
     public static function intercept_wp_login() {
         if (!self::$options['hide_wp_login']) {
             return;
@@ -491,26 +407,17 @@ class WalletUpEnterpriseSecurity {
         }
     }
 
-    /**
-     * Add custom login URL rewrite rules
-     */
     public static function add_login_rewrite_rules() {
         $login_slug = self::$options['custom_login_slug'];
-        // Simplified to a single specific rule to reduce regex overhead
+        
         add_rewrite_rule('^' . $login_slug . '/?$', 'index.php?' . $login_slug . '=1', 'top');
     }
 
-    /**
-     * Add login query vars
-     */
     public static function add_login_query_vars($vars) {
         $vars[] = self::$options['custom_login_slug'];
         return $vars;
     }
 
-    /**
-     * Handle custom login URL
-     */
     public static function handle_custom_login_url() {
         $custom_slug = self::$options['custom_login_slug'] ?? 'secure-login';
 
@@ -553,11 +460,8 @@ class WalletUpEnterpriseSecurity {
                 });
             }
 
-            // Initialize global variables that wp-login.php expects
-            // This fixes undefined variable warnings when WP_DEBUG is enabled
             global $user_login, $error, $interim_login, $redirect_to, $action, $rp_key, $rp_cookie;
-            
-            // Initialize variables if not already set
+
             if (!isset($user_login)) {
                 $user_login = '';
             }
@@ -586,9 +490,6 @@ class WalletUpEnterpriseSecurity {
         }
     }
 
-    /**
-     * Add security fields to login form
-     */
     public static function add_security_fields() {
         wp_nonce_field('wallet_up_login_customizer_security', 'wallet_up_security_nonce');
         echo '<input type="text" name="wallet_up_honeypot" style="display:none !important;" tabindex="-1" autocomplete="off">';
@@ -596,9 +497,6 @@ class WalletUpEnterpriseSecurity {
         echo '<input type="hidden" name="wallet_up_fingerprint" value="' . self::generate_client_fingerprint() . '">';
     }
 
-    /**
-     * Initialize login variables
-     */
     public static function initialize_login_variables() {
         global $user_login, $error, $errors, $interim_login, $action, $redirect_to, $requested_redirect_to;
 
@@ -623,17 +521,11 @@ class WalletUpEnterpriseSecurity {
         self::set_global_var('errors', $errors);
     }
 
-    /**
-     * Helper to set global variables safely
-     */
     private static function set_global_var($name, $value) {
         global ${$name};
         ${$name} = $value;
     }
 
-    /**
-     * Ensure variables are initialized
-     */
     public static function ensure_variables_initialized() {
         global $user_login, $error, $errors;
 
@@ -646,9 +538,6 @@ class WalletUpEnterpriseSecurity {
         $errors = $GLOBALS['errors'];
     }
 
-    /**
-     * Add security fields via head with nonce refresh
-     */
     public static function add_security_fields_to_head() {
         global $user_login, $error, $errors;
 
@@ -672,15 +561,11 @@ class WalletUpEnterpriseSecurity {
         <?php
     }
 
-    /**
-     * Validate login attempt
-     */
     public static function validate_login_attempt($user, $username, $password) {
         if (is_wp_error($user)) {
             return $user;
         }
 
-        // Truncate username to match WordPress's limit (60 characters)
         $username = substr(sanitize_user($username, true), 0, 60);
 
         $nonce_valid = false;
@@ -695,7 +580,7 @@ class WalletUpEnterpriseSecurity {
         }
 
         if (!$nonce_valid) {
-            // Skip logging for missing nonces to avoid false positives from caching
+            
             if (!empty($_POST['wallet_up_security_nonce'])) {
                 self::log_security_event('invalid_nonce', ['username' => $username]);
             }
@@ -735,11 +620,8 @@ class WalletUpEnterpriseSecurity {
         return $user;
     }
 
-    /**
-     * Handle failed login attempts
-     */
     public static function handle_failed_login($username) {
-        // Truncate username to match WordPress's limit (60 characters)
+        
         $username = substr(sanitize_user($username, true), 0, 60);
 
         $ip = self::get_client_ip();
@@ -770,9 +652,6 @@ class WalletUpEnterpriseSecurity {
         }
     }
 
-    /**
-     * Handle successful login
-     */
     public static function handle_successful_login($user_login, $user) {
         $ip = self::get_client_ip();
         $key = 'failed_login_' . md5($ip . $user_login);
@@ -784,15 +663,11 @@ class WalletUpEnterpriseSecurity {
             'user_id' => $user->ID,
         ]);
 
-        // Set session timeout via WordPress auth cookie
         add_filter('auth_cookie_expiration', function() {
             return self::$options['session_timeout'];
         });
     }
 
-    /**
-     * Track rate limit attempt with in-memory cache
-     */
     private static function track_rate_limit_attempt() {
         $ip = self::get_client_ip();
         $key = 'rate_limit_' . md5($ip);
@@ -809,7 +684,6 @@ class WalletUpEnterpriseSecurity {
         self::$rate_limit_cache[$key] = $recent_attempts;
         set_transient($key, $recent_attempts, 300);
 
-        // Global rate limit to prevent DoS
         static $global_attempts = [];
         static $global_last_reset = 0;
         $global_attempts[] = time();
@@ -817,7 +691,6 @@ class WalletUpEnterpriseSecurity {
             return ($timestamp > (time() - 300));
         });
 
-        // Reset global attempts every 5 minutes
         if (time() - $global_last_reset > 300) {
             $global_attempts = $recent_global_attempts;
             $global_last_reset = time();
@@ -825,14 +698,11 @@ class WalletUpEnterpriseSecurity {
             $global_attempts = $recent_global_attempts;
         }
 
-        if (count($global_attempts) > 500) { // Increased to 500 for larger sites
+        if (count($global_attempts) > 500) { 
             self::log_security_event('global_rate_limit_exceeded', ['ip' => $ip]);
         }
     }
 
-    /**
-     * Check if IP is rate limited
-     */
     private static function is_rate_limited() {
         $ip = self::get_client_ip();
         $key = 'rate_limit_' . md5($ip);
@@ -848,11 +718,8 @@ class WalletUpEnterpriseSecurity {
         return count($recent_attempts) >= 10;
     }
 
-    /**
-     * Check for brute force attempts
-     */
     private static function is_brute_force_attempt($username) {
-        // Truncate username to match WordPress's limit (60 characters)
+        
         $username = substr(sanitize_user($username, true), 0, 60);
 
         $ip = self::get_client_ip();
@@ -862,9 +729,6 @@ class WalletUpEnterpriseSecurity {
         return count($attempts) >= self::$options['max_login_attempts'];
     }
 
-    /**
-     * Add security headers with improved CSP
-     */
     public static function add_security_headers() {
         if (headers_sent()) {
             return;
@@ -880,23 +744,16 @@ class WalletUpEnterpriseSecurity {
             header('Strict-Transport-Security: max-age=31536000; includeSubDomains');
         }
 
-        // Improved CSP: Remove 'unsafe-inline' and 'unsafe-eval', use nonce
         $nonce = wp_create_nonce('csp_nonce');
         $csp = "default-src 'self'; script-src 'self' 'nonce-$nonce'; style-src 'self' 'nonce-$nonce'; img-src 'self' data: https:; font-src 'self' data:;";
         header('Content-Security-Policy: ' . $csp);
     }
 
-    /**
-     * Modify WordPress headers
-     */
     public static function modify_wp_headers($headers) {
         unset($headers['X-Pingback']);
         return $headers;
     }
 
-    /**
-     * Get client IP address
-     */
     private static function get_client_ip() {
         if (defined('WALLET_UP_TRUSTED_PROXY') && WALLET_UP_TRUSTED_PROXY === 'cloudflare') {
             $cf_ip = self::get_server_var('HTTP_CF_CONNECTING_IP', '');
@@ -909,9 +766,6 @@ class WalletUpEnterpriseSecurity {
         return self::get_server_var('REMOTE_ADDR', '127.0.0.1');
     }
 
-    /**
-     * Check if IP is from Cloudflare
-     */
     private static function is_cloudflare_ip($ip) {
         $cloudflare_ips = [
             '173.245.48.0/20',
@@ -940,9 +794,6 @@ class WalletUpEnterpriseSecurity {
         return false;
     }
 
-    /**
-     * Check if IP is in CIDR range
-     */
     private static function ip_in_range($ip, $range) {
         list($subnet, $bits) = explode('/', $range);
         if ($bits === null) {
@@ -955,9 +806,6 @@ class WalletUpEnterpriseSecurity {
         return ($ip_long & $mask) == $subnet_long;
     }
 
-    /**
-     * Generate client fingerprint
-     */
     private static function generate_client_fingerprint() {
         $data = [
             $_SERVER['HTTP_USER_AGENT'] ?? '',
@@ -969,28 +817,23 @@ class WalletUpEnterpriseSecurity {
         return hash('sha256', implode('|', $data));
     }
 
-    /**
-     * Log security events
-     */
     private static function log_security_event($event, $data = []) {
-        // Rate limit logging to prevent DoS
+        
         static $event_count = [];
         static $event_last_reset = [];
         $ip = self::get_client_ip();
         $key = md5($ip . $event);
         $event_count[$key] = isset($event_count[$key]) ? $event_count[$key] + 1 : 1;
 
-        if ($event_count[$key] > 10) { // Max 10 logs per event per IP per minute
+        if ($event_count[$key] > 10) { 
             return;
         }
 
-        // Reset event count every minute
         if (!isset($event_last_reset[$key]) || (time() - $event_last_reset[$key]) > 60) {
             $event_count[$key] = 1;
             $event_last_reset[$key] = time();
         }
 
-        // Truncate data fields to prevent oversized logs
         $safe_data = [];
         foreach ($data as $k => $v) {
             if (is_string($v) || is_numeric($v)) {
@@ -1017,16 +860,13 @@ class WalletUpEnterpriseSecurity {
             $logs = array_slice($logs, -1000);
         }
 
-        update_option('wallet_up_security_logs', $logs, false); // No autoload
+        update_option('wallet_up_security_logs', $logs, false); 
 
         if (defined('WP_DEBUG') && WP_DEBUG) {
             self::secure_log($event, $data);
         }
     }
 
-    /**
-     * Send security alerts
-     */
     private static function send_security_alert($subject, $data) {
         $admin_email = get_option('admin_email');
         $site_name = get_option('blogname');
@@ -1043,23 +883,14 @@ class WalletUpEnterpriseSecurity {
         wp_mail($admin_email, '[Wallet Up Security Alert] ' . $site_name, $message);
     }
 
-    /**
-     * Manage user sessions
-     */
     public static function manage_user_sessions() {
-        // Rely on WordPress auth cookies, no custom session management
+        
     }
 
-    /**
-     * Cleanup user session
-     */
     public static function cleanup_user_session() {
-        // Handled by WordPress auth cookies
+        
     }
 
-    /**
-     * Custom logout redirect
-     */
     public static function custom_logout_redirect($redirect_to, $requested_redirect_to, $user) {
         if (!empty(self::$options['hide_wp_login'])) {
             $custom_login_url = home_url('/?' . self::$options['custom_login_slug'] . '=1');
@@ -1082,9 +913,6 @@ class WalletUpEnterpriseSecurity {
         return $logout_redirect;
     }
 
-    /**
-     * Custom logout URL
-     */
     public static function custom_logout_url($logout_url, $redirect) {
         if (!empty(self::$options['hide_wp_login'])) {
             $custom_login_url = add_query_arg([
@@ -1120,9 +948,6 @@ class WalletUpEnterpriseSecurity {
         return $new_logout_url;
     }
 
-    /**
-     * Monitor security events
-     */
     public static function monitor_security_events() {
         $suspicious_patterns = [
             '/wp-config.php',
@@ -1147,9 +972,6 @@ class WalletUpEnterpriseSecurity {
         }
     }
 
-    /**
-     * Restrict REST API access
-     */
     public static function restrict_rest_api($result) {
         if (!is_user_logged_in()) {
             return new WP_Error('rest_not_logged_in', __('You must be logged in to access the REST API.', 'wallet-up-login-customizer'), ['status' => 401]);
@@ -1158,9 +980,6 @@ class WalletUpEnterpriseSecurity {
         return $result;
     }
 
-    /**
-     * Restrict admin access
-     */
     public static function restrict_admin_access() {
         if (!is_user_logged_in() && !wp_doing_ajax()) {
             wp_safe_redirect(self::get_secure_login_url());
@@ -1168,25 +987,16 @@ class WalletUpEnterpriseSecurity {
         }
     }
 
-    /**
-     * Add security menu
-     */
     public static function add_security_menu() {
-        // Integrated into main settings
+        
     }
 
-    /**
-     * Register security settings
-     */
     public static function register_security_settings() {
         register_setting('wallet_up_security_options', 'wallet_up_security_options', [
             'sanitize_callback' => [__CLASS__, 'sanitize_security_options'],
         ]);
     }
 
-    /**
-     * Sanitize security options
-     */
     public static function sanitize_security_options($options) {
         $clean_options = [];
 
@@ -1227,9 +1037,6 @@ class WalletUpEnterpriseSecurity {
         return $clean_options;
     }
 
-    /**
-     * Security settings page
-     */
     public static function security_settings_page() {
         $options = self::$options;
         ?>
@@ -1314,9 +1121,6 @@ class WalletUpEnterpriseSecurity {
         <?php
     }
 
-    /**
-     * Get security statistics
-     */
     public static function get_security_stats() {
         $logs = get_option('wallet_up_security_logs', []);
         $stats = [

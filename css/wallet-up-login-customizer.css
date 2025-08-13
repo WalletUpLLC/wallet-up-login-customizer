@@ -1,60 +1,38 @@
-/**
- * Wallet Up Premium Login CSS
- * A comprehensive and streamlined styling for the enhanced WordPress login page
- */
-
-/* === VARIABLES === */
 :root {
-	/* Brand Colors */
 	--wallet-up-primary: #674FBF;
 	--wallet-up-primary-dark: #5030A5;
 	--wallet-up-primary-light: #F5F5FF;
 	--wallet-up-primary-gradient: linear-gradient(135deg, #674FBF 0%, #7B68D4 100%);
 	--wallet-up-secondary: #10B981;
 	--wallet-up-accent: #7B68D4;
-	
-	/* UI Colors */
 	--wallet-up-success: #10B981;
 	--wallet-up-error: #EF4444;
 	--wallet-up-warning: #F59E0B;
 	--wallet-up-info: #3B82F6;
-	
-	/* Text Colors */
 	--wallet-up-text-dark: #1F2937;
 	--wallet-up-text-medium: #4B5563;
 	--wallet-up-text-light: #6B7280;
-	
-	/* UI Elements */
 	--wallet-up-border: #E5E7EB;
 	--wallet-up-border-light: #F3F4F6;
 	--wallet-up-bg-light: #F9FAFB;
 	--wallet-up-bg-lighter: #FCFCFF;
-	
-	/* Shadows */
 	--wallet-up-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
 	--wallet-up-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 	--wallet-up-shadow-md: 0 6px 16px rgba(0, 0, 0, 0.1);
 	--wallet-up-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
 	--wallet-up-shadow-primary: 0 8px 16px rgba(103, 79, 191, 0.2);
-	
-	/* Animations */
 	--wallet-up-transition-fast: 0.15s ease;
 	--wallet-up-transition: 0.25s ease;
 	--wallet-up-transition-slow: 0.4s ease;
-	
-	/* Layout */
 	--wallet-up-radius-sm: 6px;
 	--wallet-up-radius: 12px;
 	--wallet-up-radius-lg: 16px;
 	--wallet-up-spacing: 24px;
   }
-  
-  /* === GLOBAL STYLES === */
   html {
 	height: 100%;
 	font-size: 16px;
   }
-  
   body.login {
 	background: linear-gradient(135deg, #FCFCFF 0%, #F5F5FF 100%);
 	font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -70,8 +48,6 @@
 	position: relative;
 	animation: fadeIn 0.6s ease-in-out;
   }
-  
-  /* === INTERACTIVE BACKGROUND === */
   #wallet-up-interactive-bg {
 	position: fixed;
 	top: 0;
@@ -81,14 +57,12 @@
 	z-index: -2;
 	overflow: hidden;
   }
-  
   .animated-shape {
 	position: absolute;
 	border-radius: 50%;
 	opacity: 0.4;
 	filter: blur(60px);
   }
-  
   .shape-1 {
 	background: rgba(103, 79, 191, 0.3);
 	width: 500px;
@@ -97,7 +71,6 @@
 	left: -10%;
 	animation: floatAnimation 15s ease-in-out infinite alternate;
   }
-  
   .shape-2 {
 	background: rgba(123, 104, 212, 0.2);
 	width: 600px;
@@ -106,7 +79,6 @@
 	right: -10%;
 	animation: floatAnimation 20s ease-in-out infinite alternate-reverse;
   }
-  
   .shape-3 {
 	background: rgba(16, 185, 129, 0.15);
 	width: 300px;
@@ -115,7 +87,6 @@
 	left: 10%;
 	animation: floatAnimation 12s ease-in-out infinite alternate;
   }
-  
   @keyframes floatAnimation {
 	0% {
 	  transform: translate(0, 0) scale(1);
@@ -124,7 +95,6 @@
 	  transform: translate(40px, 40px) scale(1.05);
 	}
   }
-  
   #wallet-up-floating-shapes {
 	position: fixed;
 	top: 0;
@@ -135,7 +105,6 @@
 	overflow: hidden;
 	pointer-events: none;
   }
-  
   .floating-shape {
 	position: absolute;
 	width: 50px;
@@ -147,7 +116,6 @@
 	box-shadow: var(--wallet-up-shadow-sm);
 	animation: floatingShapes 20s linear infinite;
   }
-  
   .floating-shape:nth-child(1) {
 	top: 15%;
 	left: 10%;
@@ -157,7 +125,6 @@
 	animation-delay: 0s;
 	opacity: 0.7;
   }
-  
   .floating-shape:nth-child(2) {
 	top: 70%;
 	left: 15%;
@@ -167,7 +134,6 @@
 	animation-delay: 2s;
 	opacity: 0.5;
   }
-  
   .floating-shape:nth-child(3) {
 	top: 30%;
 	right: 10%;
@@ -177,7 +143,6 @@
 	animation-delay: 1s;
 	opacity: 0.6;
   }
-  
   .floating-shape:nth-child(4) {
 	top: 60%;
 	right: 15%;
@@ -187,7 +152,6 @@
 	animation-delay: 3s;
 	opacity: 0.8;
   }
-  
   .floating-shape:nth-child(5) {
 	top: 40%;
 	left: 50%;
@@ -197,7 +161,6 @@
 	animation-delay: 4s;
 	opacity: 0.4;
   }
-  
   @keyframes floatingShapes {
 	0% {
 	  transform: translateY(0) rotate(0deg);
@@ -209,8 +172,6 @@
 	  transform: translateY(0) rotate(360deg);
 	}
   }
-  
-  /* === LOGIN CONTAINER === */
   #login {
 	width: 420px;
 	max-width: 90%;
@@ -219,12 +180,9 @@
 	position: relative;
 	z-index: 1;
   }
-  
-  /* === LOGO & HEADER === */
   .login h1 {
 	display: none;
   }
-  
   .wallet-up-login-customizer-logo {
 	background-image: url('../img/walletup-icon.png');
 	background-repeat: no-repeat;
@@ -233,9 +191,6 @@
 	height: 50px;
 	margin-bottom: 30px;
   }
-  
-  
-  
   .login h1::after {
 	content: "Wallet Up";
 	display: block;
@@ -252,19 +207,15 @@
 	background-clip: text;
 	color: transparent;
   } 
-  
   .login h1 span, .login h1 div {
 	display: none;
   }
-  
   @keyframes fadeInUp {
 	to {
 	  opacity: 1;
 	  transform: translateY(0);
 	}
   }
-  
-  /* === FORM CONTAINER === */
   #loginform, 
   #lostpasswordform, 
   #registerform {
@@ -287,15 +238,12 @@
 	max-width: 100%;
 	box-sizing: border-box;
   }
-  
   @keyframes formAppear {
 	to {
 	  transform: translateY(0);
 	  opacity: 1;
 	}
   }
-  
-  /* Form title */
   .wallet-up-form-title {
 	margin: 0 0 25px;
 	padding: 0;
@@ -305,7 +253,6 @@
 	text-align: center;
 	position: relative;
   }
-  
   .wallet-up-form-title::after {
 	content: "";
 	display: block;
@@ -315,8 +262,6 @@
 	margin: 12px auto 0;
 	border-radius: 10px;
   }
-  
-  /* === FORM CONTAINER === */
   #loginform, 
   #lostpasswordform, 
   #registerform {
@@ -339,18 +284,12 @@
 	max-width: 100%;
 	box-sizing: border-box;
   }
-  
   @keyframes formAppear {
 	to {
 	  transform: translateY(0);
 	  opacity: 1;
 	}
   }
-  
-  
-  
-  /* === FORM WRAPPERS === */
-  /* Common styles for field wrappers */
   .user-login-wrap,
   .user-pass-wrap {
 	position: relative;
@@ -358,9 +297,6 @@
 	box-sizing: border-box;
 	width: 100%;
   }
-  
-  /* === INPUT FIELDS === */
-  /* Base styles for form inputs */
   .login input[type=text],
   .login input[type=password] {
 	width: 100%;
@@ -381,8 +317,6 @@
 	position: relative;
 	z-index: 1;
   }
-  
-  /* Focus state for inputs */
   .login input[type=text]:focus,
   .login input[type=password]:focus {
 	border-color: #674FBF;
@@ -390,31 +324,6 @@
 	outline: none;
 	background-color: white;
   }
-  
-  /* Form labels */
-  /* .login label {
-	color: var(--wallet-up-text-medium);
-	font-size: 14px;
-	font-weight: 500;
-	margin-bottom: 8px;
-	display: block;
-  } */
-  
-  /* Username field styling */
-  /* .user-login-wrap {
-	position: relative;
-	margin-bottom: 16px;
-  } */
-  
-  /* Password field styling */
-  /* .user-pass-wrap {
-	position: relative;
-	margin-bottom: 16px;
-  }
-  
-   */
-  /* === ICONS === */
-  /* Username icon */
   .user-login-wrap::before {
 	content: "";
 	position: absolute;
@@ -429,8 +338,6 @@
 	z-index: 2;
 	pointer-events: none;
   }
-  
-  /* Password icon */
   .user-pass-wrap::before {
 	content: "";
 	position: absolute;
@@ -445,8 +352,6 @@
 	z-index: 2;
 	pointer-events: none;
   }
-  /* === ANIMATED LABELS === */
-  /* General styling for animated labels (primarily for username) */
   .wallet-up-animated-label {
 	position: absolute;
 	left: 44px;
@@ -457,10 +362,9 @@
 	pointer-events: none;
 	transition: all 0.15s ease;
 	z-index: 2;
-	background: #F9FAFB; /* Match input background */
+	background: #F9FAFB; 
 	padding: 0 4px;
   }
-  
   .user-login-wrap.is-focused .wallet-up-animated-label,
   .user-login-wrap.has-value .wallet-up-animated-label {
 	top: 8px;
@@ -468,8 +372,6 @@
 	color: #674FBF;
 	transform: translateY(0);
   }
-  
-  /* Specific styling for password field’s animated label */
   .user-pass-wrap .wallet-up-animated-label {
 	position: absolute;
 	left: 44px;
@@ -483,7 +385,6 @@
 	background: transparent;
 	padding: 0 4px;
   }
-  
   .user-pass-wrap.is-focused .wallet-up-animated-label,
   .user-pass-wrap.has-value .wallet-up-animated-label {
 	top: 26px !important;
@@ -491,14 +392,12 @@
 	color: #674FBF;
 	transform: translateY(0);
   }
-  
-  /* === INPUT FIELDS === */
   .login input[type=text],
   .login input[type=password] {
 	width: 100%;
 	box-sizing: border-box;
 	height: 68px;
-	padding: 20px 48px 20px 44px; /* Right padding for toggle in password field */
+	padding: 20px 48px 20px 44px; 
 	font-size: 15px;
 	border: 1px solid #E5E7EB;
 	border-radius: 12px;
@@ -513,7 +412,6 @@
 	position: relative;
 	z-index: 1;
   }
-  
   .login input[type=text]:focus,
   .login input[type=password]:focus {
 	border-color: #674FBF;
@@ -521,86 +419,63 @@
 	outline: none;
 	background-color: white;
   }
-  
   .has-animated-label input {
-	padding-top: 24px !important; /* Space for label */
+	padding-top: 24px !important; 
 	padding-bottom: 8px !important;
   }
-  
-  /* === RESPONSIVE STYLES === */
   @media screen and (max-width: 480px) {
 	#login {
 	  width: 100%;
 	  padding: 20px;
 	}
-	
 	#loginform,
 	#lostpasswordform,
 	#registerform {
 	  padding: 30px 20px;
 	}
-	
 	.login h1 a {
 	  height: 80px;
 	}
-	
 	.login h1::after {
 	  font-size: 22px;
 	}
-	
 	.footer-content {
 	  padding: 6px 15px;
 	}
-	
 	.wallet-up-animated-label {
 	  left: 40px;
 	  font-size: 14px;
 	}
-	
 	.login input[type=text],
 	.login input[type=password] {
 	  height: 56px;
 	  padding: 18px 44px 18px 40px;
 	}
-  
 	.has-animated-label input {
 	  padding-top: 22px !important;
 	  padding-bottom: 6px !important;
 	}
-  
 	.user-login-wrap::before,
 	.user-pass-wrap::before {
 	  left: 12px;
 	  width: 16px;
 	  height: 16px;
 	}
-  
 	.button.wp-hide-pw {
 	  right: 12px;
 	  width: 28px;
 	  height: 28px;
 	  min-width: 28px;
 	}
-  
 	.input-field-state {
 	  right: 12px;
 	  width: 18px;
 	  height: 18px;
 	}
-	
 	.user-pass-wrap .input-field-state {
 	  right: 42px;
 	}
   }
-  
-  /* Add padding to username and password fields for icons */
-  /* .user-login-wrap input#user_login,
-  .user-pass-wrap input#user_pass {
-	padding-left: 44px;
-  }
-   */
-  
-  /* === PASSWORD VISIBILITY TOGGLE === */
   .button.wp-hide-pw {
 	position: absolute;
 	top: 50%;
@@ -620,7 +495,6 @@
 	z-index: 3;
 	cursor: pointer;
   }
-  
   .button.wp-hide-pw:hover,
   .button.wp-hide-pw:focus {
 	background: transparent;
@@ -628,7 +502,6 @@
 	box-shadow: none;
 	color: var(--wallet-up-primary);
   }
-  
   .button.wp-hide-pw .dashicons {
 	width: 24px;
 	height: 24px;
@@ -637,8 +510,6 @@
 	align-items: center;
 	justify-content: center;
   }
-  
-  /* Ensure password field has proper z-index */
   .wp-pwd {
 	position: relative;
 	z-index: 1;
@@ -647,7 +518,6 @@
 	height: 100%;
 	width: 100%;
   }
-  /* === VALIDATION MESSAGES === */
   .wallet-up-input-message {
 	font-size: 12px;
 	margin: 6px 0 0 0;
@@ -659,47 +529,30 @@
 	overflow: hidden;
 	transition: opacity 0.3s ease, max-height 0.3s ease;
   }
-  
-  /* Visible message */
-  /* .user-login-wrap + .wallet-up-input-message,
-  .user-pass-wrap + .wallet-up-input-message {
-	opacity: 1;
-	max-height: 40px;
-  }
-   */
-  
   .wallet-up-input-message.error {
 	color: var(--wallet-up-error);
   }
-  
   .wallet-up-input-message.success {
 	color: var(--wallet-up-success);
   }
-  
   .wallet-up-input-message.info {
 	color: var(--wallet-up-info);
   }
-  
   .wallet-up-input-message svg {
 	margin-right: 6px;
 	flex-shrink: 0;
   }
-  
   @keyframes messageAppear {
 	to {
 	  max-height: 40px;
 	}
   }
-  
-  
-  /* === REMEMBER ME CHECKBOX === */
   .forgetmenot {
-	margin-bottom: 24px; /* Match input wrappers */
-	margin-left: 0; /* Align with input text */
+	margin-bottom: 24px; 
+	margin-left: 0; 
 	display: flex;
 	align-items: center;
   }
-  
   .forgetmenot label {
 	display: flex;
 	align-items: center;
@@ -709,25 +562,22 @@
 	cursor: pointer;
 	line-height: 1.5;
   }
-  
   .forgetmenot input[type="checkbox"] {
 	margin-right: 8px;
-	width: 18px; /* Consistent size */
+	width: 18px; 
 	height: 18px;
 	border: 2px solid var(--wallet-up-border);
 	border-radius: 4px;
-	background-color: #F9FAFB; /* Match input background */
-	appearance: none; /* Remove default browser styles */
+	background-color: #F9FAFB; 
+	appearance: none; 
 	cursor: pointer;
 	position: relative;
 	transition: border-color 0.15s ease, background-color 0.15s ease;
   }
-  
   .forgetmenot input[type="checkbox"]:checked {
 	background-color: var(--wallet-up-primary);
 	border-color: var(--wallet-up-primary);
   }
-  
   .forgetmenot input[type="checkbox"]:checked::after {
 	content: "✓";
 	position: absolute;
@@ -738,14 +588,10 @@
 	font-size: 12px;
 	font-weight: 600;
   }
-  
   .forgetmenot input[type="checkbox"]:focus {
 	outline: none;
 	box-shadow: 0 0 0 3px rgba(103, 79, 191, 0.25);
   }
-  
-  
-  /* === SUBMIT BUTTON === */
   #wp-submit,
   .login .button-primary,
   .wallet-up-login-customizer-button {
@@ -770,22 +616,19 @@
 	cursor: pointer;
 	animation: button-pulse 2s infinite;
   }
-  
   #wp-submit:disabled,
   .login .button-primary:disabled {
-	background: #D1D5DB; /* Gray for disabled */
+	background: #D1D5DB; 
 	box-shadow: none;
 	cursor: not-allowed;
-	color: #6B7280; /* Gray text */
-	animation: none; /* Remove pulse */
+	color: #6B7280; 
+	animation: none; 
   }
-  
   .login .button-primary.is-loading {
 	pointer-events: none;
 	position: relative;
 	color: transparent;
   }
-  
   .login .button-primary.is-loading::after {
 	content: "";
 	position: absolute;
@@ -798,14 +641,12 @@
 	border-radius: 50%;
 	animation: buttonLoader 0.8s linear infinite;
   }
-  
   .login .button-primary.is-success {
 	background: #10B981;
 	pointer-events: none;
 	position: relative;
 	color: transparent;
   }
-  
   .login .button-primary.is-success::after {
 	content: "✓";
 	position: absolute;
@@ -815,31 +656,26 @@
 	color: white;
 	font-size: 20px;
   }
-  
   #wp-submit:disabled.is-loading,
   .login .button-primary:disabled.is-loading {
-	background: #D1D5DB; /* Maintain gray during loading */
-	color: transparent; /* Keep spinner visible */
+	background: #D1D5DB; 
+	color: transparent; 
   }
-  
   #wp-submit:disabled.is-success,
   .login .button-primary:disabled.is-success {
-	background: #10B981; /* Restore success green */
-	color: transparent; /* Keep checkmark visible */
+	background: #10B981; 
+	color: transparent; 
   }
-  
   .login .button-primary:hover {
 	transform: translateY(-2px);
 	box-shadow: 
 	  0 8px 20px rgba(103, 79, 191, 0.3),
 	  0 2px 8px rgba(103, 79, 191, 0.2);
   }
-  
   .login .button-primary:active {
 	transform: translateY(0);
 	box-shadow: 0 4px 12px rgba(103, 79, 191, 0.2);
   }
-  
   @keyframes button-pulse {
 	0% {
 	  box-shadow: 0 0 15px rgba(103, 79, 191, 0.3);
@@ -851,14 +687,11 @@
 	  box-shadow: 0 0 15px rgba(103, 79, 191, 0.3);
 	}
   }
-  
-  /* Button loading state */
   .login .button-primary.is-loading {
 	pointer-events: none;
 	position: relative;
 	color: transparent;
   }
-  
   .login .button-primary.is-loading::after {
 	content: "";
 	position: absolute;
@@ -871,21 +704,17 @@
 	border-radius: 50%;
 	animation: buttonLoader 0.8s linear infinite;
   }
-  
   @keyframes buttonLoader {
 	to {
 	  transform: rotate(360deg);
 	}
   }
-  
-  /* Button success state */
   .login .button-primary.is-success {
 	background: #10B981;
 	pointer-events: none;
 	position: relative;
 	color: transparent;
   }
-  
   .login .button-primary.is-success::after {
 	content: "✓";
 	position: absolute;
@@ -895,8 +724,6 @@
 	color: white;
 	font-size: 20px;
   }
-  
-  /* === ALERTS & MESSAGES === */
   #login_error, 
   .message, 
   .success,
@@ -915,39 +742,33 @@
 	position: relative;
 	overflow: hidden;
   }
-  
   .wallet-up-alert.error,
   #login_error {
 	background-color: rgba(254, 242, 242, 0.8);
 	border: 1px solid rgba(239, 68, 68, 0.2);
 	color: #991B1B;
   }
-  
   .wallet-up-alert.success,
   .message.updated {
 	background-color: rgba(236, 253, 245, 0.8);
 	border: 1px solid rgba(16, 185, 129, 0.2);
 	color: #065F46;
   }
-  
   .wallet-up-alert.info,
   .message:not(.updated):not(.error) {
 	background-color: rgba(239, 246, 255, 0.8);
 	border: 1px solid rgba(59, 130, 246, 0.2);
 	color: #1E40AF;
   }
-  
   .wallet-up-alert.warning {
 	background-color: rgba(255, 251, 235, 0.8);
 	border: 1px solid rgba(245, 158, 11, 0.2);
 	color: #92400E;
   }
-  
   .wallet-up-alert-icon {
 	flex-shrink: 0;
 	margin-right: 12px;
   }
-  
   .wallet-up-alert-close {
 	position: absolute;
 	top: 12px;
@@ -959,11 +780,9 @@
 	color: var(--wallet-up-text-light);
 	transition: color var(--wallet-up-transition-fast);
   }
-  
   .wallet-up-alert-close:hover {
 	color: var(--wallet-up-text-dark);
   }
-  
   @keyframes alertAppear {
 	from {
 	  opacity: 0;
@@ -974,8 +793,6 @@
 	  transform: translateY(0);
 	}
   }
-  
-  /* === FOOTER LINKS === */
   .login #nav,
   .login #backtoblog {
 	margin: 24px 0 0;
@@ -983,7 +800,6 @@
 	text-align: center;
 	font-size: 14px;
   }
-  
   .login #nav a,
   .login #backtoblog a {
 	color: var(--wallet-up-text-medium);
@@ -998,7 +814,6 @@
 	border: 1px solid rgba(255, 255, 255, 0.8);
 	box-shadow: var(--wallet-up-shadow-sm);
   }
-  
   .login #nav a:hover,
   .login #backtoblog a:hover {
 	color: var(--wallet-up-primary);
@@ -1006,20 +821,17 @@
 	box-shadow: var(--wallet-up-shadow);
 	transform: translateY(-1px);
   }
-  
   .login #nav a:active,
   .login #backtoblog a:active {
 	transform: translateY(0);
   }
-  
   .login #backtoblog a svg {
 	vertical-align: middle;
-	margin-right: 6px; /* Slightly increased for balance */
+	margin-right: 6px; 
 	flex-shrink: 0;
   }
-  
   .login #backtoblog a {
-	display: inline-flex; /* Better alignment for icon and text */
+	display: inline-flex; 
 	align-items: center;
 	padding: 6px 12px;
 	color: var(--wallet-up-text-medium);
@@ -1032,25 +844,20 @@
 	border: 1px solid rgba(255, 255, 255, 0.8);
 	box-shadow: var(--wallet-up-shadow-sm);
   }
-  
   .login #backtoblog a:hover {
 	color: var(--wallet-up-primary);
 	background: rgba(255, 255, 255, 0.8);
 	box-shadow: var(--wallet-up-shadow);
 	transform: translateY(-1px);
   }
-  
   .login #backtoblog a:active {
 	transform: translateY(0);
   }
-  
-  /* === CUSTOM FOOTER === */
   #wallet-up-login-customizer-footer {
 	margin-top: 40px;
 	text-align: center;
 	padding: 20px;
   }
-  
   .footer-content {
 	display: inline-flex;
 	align-items: center;
@@ -1061,35 +868,28 @@
 	border-radius: 50px;
 	padding: 8px 20px;
   }
-  
   .footer-logo {
 	color: var(--wallet-up-primary);
 	margin-right: 12px;
   }
-  
   .footer-logo img {
 	display: block;
 	width: 18px;
 	height: 18px;
   }
-  
   .footer-text {
 	font-size: 12px;
 	color: var(--wallet-up-text-medium);
 	text-align: left;
   }
-  
   .footer-text p {
 	margin: 0;
 	line-height: 1.4;
   }
-  
   .footer-text .copyright {
 	font-size: 11px;
 	color: var(--wallet-up-text-light);
   }
-  
-  /* === ACTION SCREEN === */
   .wallet-up-action-screen {
 	position: fixed;
 	top: 0;
@@ -1106,12 +906,10 @@
 	visibility: hidden;
 	transition: opacity 0.3s ease, visibility 0.3s ease;
   }
-  
   .wallet-up-action-screen.active {
 	opacity: 1;
 	visibility: visible;
   }
-  
   .action-screen-content {
 	text-align: center;
 	max-width: 320px;
@@ -1125,34 +923,28 @@
 	position: relative;
 	z-index: 10000;
   }
-  
   .wallet-up-action-screen.active .action-screen-content {
 	transform: translateY(0);
 	opacity: 1;
   }
-  
   .action-screen-icon {
 	width: 80px;
 	height: 80px;
 	margin: 0 auto 20px;
 	position: relative;
   }
-  
   .action-screen-title {
 	font-size: 20px;
 	font-weight: 600;
 	color: var(--wallet-up-text-dark);
 	margin-bottom: 12px;
   }
-  
   .action-screen-message {
 	font-size: 15px;
 	color: var(--wallet-up-text-medium);
 	margin-bottom: 25px;
 	line-height: 1.5;
   }
-  
-  /* Loading Animation */
   .action-loading-spinner {
 	width: 60px;
 	height: 60px;
@@ -1162,14 +954,11 @@
 	border-radius: 50%;
 	animation: action-spinner 1s linear infinite;
   }
-  
   @keyframes action-spinner {
 	to {
 	  transform: rotate(360deg);
 	}
   }
-  
-  /* Progress Bar */
   .action-progress {
 	width: 100%;
 	height: 6px;
@@ -1178,7 +967,6 @@
 	overflow: hidden;
 	margin: 20px 0;
   }
-  
   .action-progress-bar {
 	height: 100%;
 	background: var(--wallet-up-primary-gradient);
@@ -1186,28 +974,22 @@
 	transition: width 0.4s ease;
 	border-radius: 10px;
   }
-  
-  /* Success State */
   .action-success-icon {
 	stroke-dasharray: 80;
 	stroke-dashoffset: 80;
 	animation: draw-check 0.8s ease forwards;
   }
-  
   @keyframes draw-check {
 	to {
 	  stroke-dashoffset: 0;
 	}
   }
-  
-  /* Error State */
   .action-error-icon {
 	width: 60px;
 	height: 60px;
 	margin: 0 auto;
 	position: relative;
   }
-  
   .action-error-icon::before,
   .action-error-icon::after {
 	content: '';
@@ -1219,17 +1001,14 @@
 	top: 15px;
 	left: 28px;
   }
-  
   .action-error-icon::before {
 	transform: rotate(45deg);
 	animation: draw-line 0.4s ease forwards;
   }
-  
   .action-error-icon::after {
 	transform: rotate(-45deg);
 	animation: draw-line 0.4s ease 0.2s forwards;
   }
-  
   @keyframes draw-line {
 	from {
 	  height: 0;
@@ -1240,8 +1019,6 @@
 	  top: 15px;
 	}
   }
-  
-  /* Action Button */
   .action-screen-button {
 	display: inline-block;
 	padding: 12px 24px;
@@ -1256,19 +1033,14 @@
 	transition: all var(--wallet-up-transition);
 	margin-top: 15px;
   }
-  
   .action-screen-button:hover {
 	transform: translateY(-2px);
 	box-shadow: 0 8px 20px rgba(103, 79, 191, 0.3);
   }
-  
   .action-screen-button:active {
 	transform: translateY(0);
 	box-shadow: 0 4px 12px rgba(103, 79, 191, 0.2);
   }
-  
-  /* === ENHANCED FIELD VALIDATION === */
-  /* Input field state indicators */
   .input-field-state {
 	position: absolute;
 	top: 49%;
@@ -1283,7 +1055,6 @@
 	z-index: 3;
 	color: var(--wallet-up-text-light);
   }
-  
   .user-pass-wrap .input-field-state {
 	position: absolute;
 	top: 63% !important;
@@ -1298,42 +1069,23 @@
 	z-index: 3;
 	color: var(--wallet-up-text-light);
   }
-  
-  /* Special positioning for password field to account for show/hide button */
-  /* .user-pass-wrap .input-field-state {
-	right: 48px;
-  }
-   */
-  /* .input-field-state svg {
-	width: 16px;
-	height: 16px;
-  }
-   */
-  /* Only show success state when explicitly shown */
   .has-success .input-field-state.success {
 	display: flex;
 	color: var(--wallet-up-success);
   }
-  
-  /* Only show error state when explicitly shown */
   .has-error .input-field-state.error {
 	display: flex;
 	color: var(--wallet-up-error);
   }
-  
-  /* Only show loading state when explicitly shown */
   .is-validating .input-field-state.loading {
 	display: flex;
 	animation: rotate 1s linear infinite;
   }
-  
   @keyframes rotate {
 	to {
 	  transform: translateY(-50%) rotate(360deg);
 	}
   }
-  
-  /* Input field focus effect */
   .user-login-wrap::after,
   .user-pass-wrap::after {
 	content: "";
@@ -1346,18 +1098,12 @@
 	transition: width 0.3s ease, left 0.3s ease;
 	z-index: 5;
   }
-  
-  /* Focus indicators */
   .user-login-wrap.is-focused::after,
   .user-pass-wrap.is-focused::after {
 	width: 100%;
 	left: 0;
 	z-index: 5;
   }
-  
-  
-  
-  /* === ANIMATED LABELS === */
   .wallet-up-animated-label {
 	position: absolute;
 	left: 44px;
@@ -1371,8 +1117,6 @@
 	background: transparent;
 	padding: 0 4px;
   }
-  
-  /* Focused or filled label position */
   .user-login-wrap.is-focused .wallet-up-animated-label,
   .user-login-wrap.has-value .wallet-up-animated-label,
   .user-pass-wrap.is-focused .wallet-up-animated-label,
@@ -1382,40 +1126,14 @@
 	color: #674FBF;
 	transform: translateY(0);
   }
-  
   .has-animated-label input {
 	padding-top: 24px !important;
 	padding-bottom: 4px !important;
   }
-  
-  /* .login input[type=text],
-  .login input[type=password] {
-	width: 100%;
-	box-sizing: border-box;
-	height: 68px; 
-	padding: 20px 48px 20px 44px; 
-	font-size: 15px;
-	border: 1px solid #E5E7EB;
-	border-radius: 12px;
-	background-color: #F9FAFB;
-	color: #1F2937;
-	transition: 
-	  border-color 0.15s ease,
-	  box-shadow 0.15s ease,
-	  background-color 0.15s ease;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-	margin: 0;
-	position: relative;
-	z-index: 1;
-  } */
-  
   .has-animated-label input {
-	padding-top: 24px !important; /* Space for label */
+	padding-top: 24px !important; 
 	padding-bottom: 8px !important;
   }
-  
-  /* === ACCESSIBILITY IMPROVEMENTS === */
-  /* Focus states for better keyboard navigation */
   input:focus,
   button:focus,
   a:focus,
@@ -1423,8 +1141,6 @@
 	outline: none;
 	box-shadow: 0 0 0 3px rgba(103, 79, 191, 0.25);
   }
-  
-  /* Screen-reader text */
   .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -1437,8 +1153,6 @@
 	width: 1px;
 	word-wrap: normal;
   }
-  
-  /* === ERROR ANIMATION === */
   .login-error-feedback,
   .enhanced-error-feedback {
 	animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
@@ -1446,27 +1160,20 @@
 	backface-visibility: hidden;
 	perspective: 1000px;
   }
-  
   @keyframes shake {
 	10%, 90% {
 	  transform: translate3d(-1px, 0, 0);
 	}
-	
 	20%, 80% {
 	  transform: translate3d(2px, 0, 0);
 	}
-  
 	30%, 50%, 70% {
 	  transform: translate3d(-4px, 0, 0);
 	}
-  
 	40%, 60% {
 	  transform: translate3d(4px, 0, 0);
 	}
   }
-  
-  /* === ACCESSIBILITY IMPROVEMENTS === */
-  /* Focus states for better keyboard navigation */
   input:focus,
   button:focus,
   a:focus,
@@ -1474,8 +1181,6 @@
 	outline: none;
 	box-shadow: 0 0 0 3px rgba(103, 79, 191, 0.25);
   }
-  
-  /* Screen-reader text */
   .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -1488,102 +1193,76 @@
 	width: 1px;
 	word-wrap: normal;
   }
-  
-  /* === RESPONSIVE STYLES === */
   @media screen and (max-width: 480px) {
 	#login {
 	  width: 100%;
 	  padding: 20px;
 	}
-	
 	#loginform,
 	#lostpasswordform,
 	#registerform {
 	  padding: 30px 20px;
 	}
-	
 	.login h1 a {
 	  height: 80px;
 	}
-	
 	.login h1::after {
 	  font-size: 22px;
 	}
-	
 	.footer-content {
 	  padding: 6px 15px;
 	}
-	
 	.wallet-up-animated-label {
 	  font-size: 14px;
 	}
   }
-  
-  /* === RESPONSIVE STYLES === */
   @media screen and (max-width: 480px) {
 	#loginform,
 	#lostpasswordform,
 	#registerform {
 	  padding: 30px 20px;
 	}
-	
-	/* .user-login-wrap,
-	.user-pass-wrap {
-	  margin-bottom: 16px;
-	} */
-	
 	.login input[type=text],
 	.login input[type=password] {
 	  height: 44px;
 	  padding: 20px 14px 8px 40px;
 	}
-	
 	.wallet-up-animated-label {
 	  left: 40px;
 	  font-size: 14px;
 	}
-	
 	.user-login-wrap::before,
 	.user-pass-wrap::before {
 	  left: 12px;
 	  width: 16px;
 	  height: 16px;
 	}
-	
 	.input-field-state {
 	  right: 12px;
 	  width: 18px;
 	  height: 18px;
 	}
-	
-	/* .user-pass-wrap .input-field-state {
-	  right: 42px;
-	} */
   }
   @media screen and (max-width: 480px) {
 	.login input[type=text],
 	.login input[type=password] {
 	  height: 56px;
-	  padding: 18px 44px 18px 40px; /* Adjusted for toggle */
+	  padding: 18px 44px 18px 40px; 
 	}
-  
 	.has-animated-label input {
 	  padding-top: 22px !important;
 	  padding-bottom: 6px !important;
 	}
-  
 	.wallet-up-animated-label {
 	  left: 40px;
 	  font-size: 14px;
 	}
-  
 	.user-login-wrap::before,
 	.user-pass-wrap::before {
 	  left: 12px;
 	  width: 16px;
 	  height: 16px;
 	}
-  
 	.button.wp-hide-pw {
 	  right: 12px;
 	  width: 28px;

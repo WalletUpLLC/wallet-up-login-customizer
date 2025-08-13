@@ -9,27 +9,19 @@
  * @since 2.3.5
  */
 
-// Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
 }
 
 class WalletUpLoginLogo {
-    
-    /**
-     * Logo options
-     */
+
     private static $options = [];
-    
-    /**
-     * Initialize logo management
-     */
+
     public static function init() {
-        // Check the main settings first for custom logo
+        
         $main_settings = get_option('wallet_up_login_customizer_settings', []);
         $custom_logo_url = isset($main_settings['custom_logo']) ? $main_settings['custom_logo'] : '';
-        
-        // Load options - use main settings custom_logo if available
+
         self::$options = get_option('wallet_up_logo_settings', [
             'enabled' => !empty($custom_logo_url),
             'logo_url' => $custom_logo_url,
@@ -40,32 +32,25 @@ class WalletUpLoginLogo {
             'link_url' => home_url(),
             'link_title' => get_bloginfo('name')
         ]);
-        
-        // If custom_logo is set in main settings, use it
+
         if (!empty($custom_logo_url)) {
             self::$options['logo_url'] = $custom_logo_url;
             self::$options['enabled'] = true;
         }
-        
-        // Add hooks
+
         add_action('login_enqueue_scripts', [__CLASS__, 'custom_login_logo']);
         add_filter('login_headerurl', [__CLASS__, 'login_logo_url']);
         add_filter('login_headertext', [__CLASS__, 'login_logo_title']);
-        // REMOVED: add_action('admin_menu', ...) to prevent duplicate menus
-        // Logo settings are now integrated in the main admin page's Appearance tab
+
     }
-    
-    /**
-     * Custom login logo CSS
-     */
+
     public static function custom_login_logo() {
         if (!self::$options['enabled']) {
             return;
         }
         
         $logo_url = self::$options['logo_url'];
-        
-        // Use site logo if no custom logo set
+
         if (empty($logo_url)) {
             $custom_logo_id = get_theme_mod('custom_logo');
             if ($custom_logo_id) {
@@ -75,24 +60,22 @@ class WalletUpLoginLogo {
                 }
             }
         }
-        
-        // Still no logo? Use default WordPress logo
+
         if (empty($logo_url)) {
             return;
         }
-        
-        // Calculate dimensions preserving aspect ratio
+
         $max_height = intval(self::$options['max_height']);
         $width = intval(self::$options['logo_width']);
         $height = intval(self::$options['logo_height']);
         
         if (self::$options['preserve_ratio'] && $height > $max_height) {
-            // Scale down proportionally
+            
             $ratio = $max_height / $height;
             $width = round($width * $ratio);
             $height = $max_height;
         } elseif ($height > $max_height) {
-            // Force max height
+            
             $height = $max_height;
         }
         
@@ -110,24 +93,15 @@ class WalletUpLoginLogo {
         </style>
         <?php
     }
-    
-    /**
-     * Change logo link URL
-     */
+
     public static function login_logo_url() {
         return esc_url(self::$options['link_url']);
     }
-    
-    /**
-     * Change logo link title
-     */
+
     public static function login_logo_title() {
         return esc_attr(self::$options['link_title']);
     }
-    
-    /**
-     * Add logo settings page to admin menu
-     */
+
     public static function add_logo_settings_page() {
         add_submenu_page(
             'wallet-up-login-customizer',
@@ -138,10 +112,7 @@ class WalletUpLoginLogo {
             [__CLASS__, 'render_logo_settings_page']
         );
     }
-    
-    /**
-     * Register logo settings
-     */
+
     public static function register_logo_settings() {
         register_setting('wallet_up_logo_settings', 'wallet_up_logo_settings', [
             'sanitize_callback' => [__CLASS__, 'sanitize_logo_settings']
@@ -153,8 +124,7 @@ class WalletUpLoginLogo {
             [__CLASS__, 'logo_section_callback'],
             'wallet_up_logo_settings'
         );
-        
-        // Enable/Disable
+
         add_settings_field(
             'enabled',
             __('Enable Custom Logo', 'wallet-up-login-customizer'),
@@ -162,8 +132,7 @@ class WalletUpLoginLogo {
             'wallet_up_logo_settings',
             'wallet_up_logo_main'
         );
-        
-        // Logo URL
+
         add_settings_field(
             'logo_url',
             __('Logo Image', 'wallet-up-login-customizer'),
@@ -171,8 +140,7 @@ class WalletUpLoginLogo {
             'wallet_up_logo_settings',
             'wallet_up_logo_main'
         );
-        
-        // Size settings
+
         add_settings_field(
             'size_settings',
             __('Logo Size', 'wallet-up-login-customizer'),
@@ -180,8 +148,7 @@ class WalletUpLoginLogo {
             'wallet_up_logo_settings',
             'wallet_up_logo_main'
         );
-        
-        // Link settings
+
         add_settings_field(
             'link_settings',
             __('Logo Link', 'wallet-up-login-customizer'),
@@ -190,16 +157,12 @@ class WalletUpLoginLogo {
             'wallet_up_logo_main'
         );
     }
-    
-    /**
-     * Render logo settings page
-     */
+
     public static function render_logo_settings_page() {
         if (!current_user_can('manage_options')) {
             return;
         }
-        
-        // Check if settings were saved
+
         if (isset($_GET['settings-updated'])) {
             add_settings_error(
                 'wallet_up_logo_messages',
@@ -238,17 +201,11 @@ class WalletUpLoginLogo {
         </div>
         <?php
     }
-    
-    /**
-     * Section callback
-     */
+
     public static function logo_section_callback() {
         echo '<p>' . esc_html__('Configure the logo that appears on the WordPress login page. The logo will be automatically sized to fit within 50px height while preserving aspect ratio.', 'wallet-up-login-customizer') . '</p>';
     }
-    
-    /**
-     * Render enabled field
-     */
+
     public static function render_enabled_field() {
         $enabled = isset(self::$options['enabled']) ? self::$options['enabled'] : true;
         ?>
@@ -258,10 +215,7 @@ class WalletUpLoginLogo {
         </label>
         <?php
     }
-    
-    /**
-     * Render logo URL field with media uploader
-     */
+
     public static function render_logo_url_field() {
         $logo_url = isset(self::$options['logo_url']) ? self::$options['logo_url'] : '';
         ?>
@@ -297,10 +251,7 @@ class WalletUpLoginLogo {
         </script>
         <?php
     }
-    
-    /**
-     * Render size fields
-     */
+
     public static function render_size_fields() {
         $max_height = isset(self::$options['max_height']) ? self::$options['max_height'] : 50;
         $preserve_ratio = isset(self::$options['preserve_ratio']) ? self::$options['preserve_ratio'] : true;
@@ -319,10 +270,7 @@ class WalletUpLoginLogo {
         </label>
         <?php
     }
-    
-    /**
-     * Render link fields
-     */
+
     public static function render_link_fields() {
         $link_url = isset(self::$options['link_url']) ? self::$options['link_url'] : home_url();
         $link_title = isset(self::$options['link_title']) ? self::$options['link_title'] : get_bloginfo('name');
@@ -343,10 +291,7 @@ class WalletUpLoginLogo {
         </p>
         <?php
     }
-    
-    /**
-     * Sanitize logo settings
-     */
+
     public static function sanitize_logo_settings($input) {
         $sanitized = [];
         
@@ -356,8 +301,7 @@ class WalletUpLoginLogo {
         $sanitized['preserve_ratio'] = !empty($input['preserve_ratio']);
         $sanitized['link_url'] = esc_url_raw($input['link_url'] ?? home_url());
         $sanitized['link_title'] = sanitize_text_field($input['link_title'] ?? get_bloginfo('name'));
-        
-        // Get image dimensions if URL provided
+
         if (!empty($sanitized['logo_url'])) {
             $attachment_id = attachment_url_to_postid($sanitized['logo_url']);
             if ($attachment_id) {
@@ -368,8 +312,7 @@ class WalletUpLoginLogo {
                 }
             }
         }
-        
-        // Ensure max height is within reasonable bounds
+
         if ($sanitized['max_height'] < 20) {
             $sanitized['max_height'] = 20;
         } elseif ($sanitized['max_height'] > 100) {
@@ -378,22 +321,17 @@ class WalletUpLoginLogo {
         
         return $sanitized;
     }
-    
-    /**
-     * Show admin notice for logo setup
-     */
+
     public static function logo_setup_notice() {
         if (!current_user_can('manage_options')) {
             return;
         }
-        
-        // Only show on dashboard and our plugin pages
+
         $screen = get_current_screen();
         if (!in_array($screen->id, ['dashboard', 'toplevel_page_wallet-up-login-customizer', 'wallet-up-login_page_wallet-up-logo'])) {
             return;
         }
-        
-        // Check if logo is configured
+
         $options = get_option('wallet_up_logo_settings', []);
         if (empty($options['logo_url'])) {
             ?>
@@ -401,7 +339,7 @@ class WalletUpLoginLogo {
                 <p>
                     <?php 
                     printf(
-                        /* translators: %s: Logo settings page URL */
+                        
                         esc_html__('Wallet Up Login: No custom logo configured. %s to add your brand logo to the login page.', 'wallet-up-login-customizer'),
                         '<a href="' . esc_url(admin_url('admin.php?page=wallet-up-logo')) . '">' . esc_html__('Configure logo', 'wallet-up-login-customizer') . '</a>'
                     );
@@ -413,5 +351,4 @@ class WalletUpLoginLogo {
     }
 }
 
-// Initialize logo management
 add_action('init', ['WalletUpLoginLogo', 'init']);

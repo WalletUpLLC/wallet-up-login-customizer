@@ -8,18 +8,14 @@
  * @since 2.3.2
  */
 
-// Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
 }
 
 class WalletUpSafeActivation {
-    
-    /**
-     * Plugin activation hook
-     */
+
     public static function activate() {
-        // Create completely safe default settings
+        
         $safe_defaults = [
             'force_login_enabled' => false,
             'hide_wp_login' => false,
@@ -32,45 +28,33 @@ class WalletUpSafeActivation {
             'exempt_roles' => ['administrator'],
             'activation_wizard_completed' => false
         ];
-        
-        // Only set if options don't exist
+
         if (false === get_option('wallet_up_security_options')) {
             update_option('wallet_up_security_options', $safe_defaults);
         }
-        
-        // Set activation flag for first-time setup
+
         set_transient('wallet_up_show_setup_wizard', true, 300);
-        
-        // Create emergency recovery page
+
         self::create_emergency_recovery_page();
-        
-        // Log safe activation
+
         error_log('Wallet Up: Plugin activated safely with all security features disabled');
     }
-    
-    /**
-     * Plugin deactivation hook
-     */
+
     public static function deactivate() {
-        // Clear all transients
+        
         global $wpdb;
         $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name LIKE '_transient_wallet_up%'");
-        
-        // Remove emergency recovery page
+
         $recovery_page = get_page_by_path('wallet-up-emergency-recovery');
         if ($recovery_page) {
             wp_delete_post($recovery_page->ID, true);
         }
-        
-        // Log deactivation
+
         error_log('Wallet Up: Plugin deactivated safely');
     }
-    
-    /**
-     * Create emergency recovery page
-     */
+
     private static function create_emergency_recovery_page() {
-        // Check if page already exists
+        
         $existing_page = get_page_by_path('wallet-up-emergency-recovery');
         if ($existing_page) {
             return;
@@ -124,21 +108,16 @@ class WalletUpSafeActivation {
             'ping_status' => 'closed'
         ]);
     }
-    
-    /**
-     * Show setup wizard on first activation
-     */
+
     public static function show_setup_wizard() {
         if (!get_transient('wallet_up_show_setup_wizard')) {
             return;
         }
-        
-        // Only show to admins
+
         if (!current_user_can('manage_options')) {
             return;
         }
-        
-        // Clear the transient
+
         delete_transient('wallet_up_show_setup_wizard');
         
         ?>
@@ -167,10 +146,7 @@ class WalletUpSafeActivation {
         </script>
         <?php
     }
-    
-    /**
-     * Add safety warnings to security settings page
-     */
+
     public static function add_safety_warnings() {
         $screen = get_current_screen();
         if (!$screen || $screen->id !== 'settings_page_wallet-up-security') {
@@ -194,10 +170,7 @@ class WalletUpSafeActivation {
         </div>
         <?php
     }
-    
-    /**
-     * Add emergency information to plugin row
-     */
+
     public static function add_plugin_row_meta($links, $file) {
         if (plugin_basename(WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_FILE) === $file) {
             $emergency_link = sprintf(
@@ -208,17 +181,11 @@ class WalletUpSafeActivation {
         }
         return $links;
     }
-    
-    /**
-     * Check for emergency disable flag
-     */
+
     public static function is_emergency_disabled() {
         return defined('WALLET_UP_EMERGENCY_DISABLE') && WALLET_UP_EMERGENCY_DISABLE;
     }
-    
-    /**
-     * Show emergency disabled notice
-     */
+
     public static function show_emergency_disabled_notice() {
         if (!self::is_emergency_disabled()) {
             return;
@@ -232,21 +199,15 @@ class WalletUpSafeActivation {
         </div>
         <?php
     }
-    
-    /**
-     * Initialize safe activation system
-     */
+
     public static function init() {
-        // Show setup wizard
+        
         add_action('admin_notices', [__CLASS__, 'show_setup_wizard']);
-        
-        // Add safety warnings
+
         add_action('admin_notices', [__CLASS__, 'add_safety_warnings']);
-        
-        // Show emergency disabled notice
+
         add_action('admin_notices', [__CLASS__, 'show_emergency_disabled_notice']);
-        
-        // Add emergency link to plugin page
+
         add_filter('plugin_row_meta', [__CLASS__, 'add_plugin_row_meta'], 10, 2);
     }
 }

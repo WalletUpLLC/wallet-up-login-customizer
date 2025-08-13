@@ -8,28 +8,19 @@
  * @since 2.3.1
  */
 
-// Prevent direct access
 if (!defined('ABSPATH')) {
     exit;
 }
 
 class WalletUpConflictDetector {
-    
-    /**
-     * Safely get and sanitize server variables
-     * 
-     * @param string $key The $_SERVER key to retrieve
-     * @param string $default Default value if not set
-     * @return string Sanitized value
-     */
+
     private static function get_server_var($key, $default = '') {
         if (!isset($_SERVER[$key])) {
             return $default;
         }
         
         $value = $_SERVER[$key];
-        
-        // Validate IP addresses
+
         if (in_array($key, ['REMOTE_ADDR', 'HTTP_CF_CONNECTING_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_REAL_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED'])) {
             if (filter_var($value, FILTER_VALIDATE_IP)) {
                 return $value;
@@ -39,60 +30,44 @@ class WalletUpConflictDetector {
         
         return sanitize_text_field($value);
     }
-    
-    /**
-     * Initialize conflict detection
-     */
+
     public static function init() {
-        // Check for conflicts on admin pages
+        
         add_action('admin_init', [__CLASS__, 'check_conflicts']);
-        
-        // Add admin notices for conflicts
+
         add_action('admin_notices', [__CLASS__, 'display_conflict_notices']);
-        
-        // AJAX handler for conflict resolution
+
         add_action('wp_ajax_wallet_up_resolve_conflict', [__CLASS__, 'resolve_conflict']);
     }
-    
-    /**
-     * Check for all types of conflicts
-     */
+
     public static function check_conflicts() {
         $conflicts = [];
-        
-        // Check theme conflicts
+
         $theme_conflicts = self::check_theme_conflicts();
         if (!empty($theme_conflicts)) {
             $conflicts['theme'] = $theme_conflicts;
         }
-        
-        // Check plugin conflicts
+
         $plugin_conflicts = self::check_plugin_conflicts();
         if (!empty($plugin_conflicts)) {
             $conflicts['plugins'] = $plugin_conflicts;
         }
-        
-        // Check settings conflicts
+
         $settings_conflicts = self::check_settings_conflicts();
         if (!empty($settings_conflicts)) {
             $conflicts['settings'] = $settings_conflicts;
         }
-        
-        // Store conflicts for display
+
         if (!empty($conflicts)) {
-            set_transient('wallet_up_conflicts', $conflicts, 300); // 5 minutes
+            set_transient('wallet_up_conflicts', $conflicts, 300); 
         } else {
             delete_transient('wallet_up_conflicts');
         }
     }
-    
-    /**
-     * Check for theme-based conflicts
-     */
+
     private static function check_theme_conflicts() {
         $conflicts = [];
-        
-        // Check functions.php for conflicting functions
+
         $conflicting_functions = [
             'require_login_for_all_pages',
             'force_login_redirect',
@@ -112,8 +87,7 @@ class WalletUpConflictDetector {
                 ];
             }
         }
-        
-        // Check for hooks that might conflict
+
         $conflicting_hooks = [
             'template_redirect' => 'force_login',
             'init' => 'login_required',
@@ -142,14 +116,10 @@ class WalletUpConflictDetector {
         
         return $conflicts;
     }
-    
-    /**
-     * Check for plugin conflicts
-     */
+
     private static function check_plugin_conflicts() {
         $conflicts = [];
-        
-        // Known conflicting plugins
+
         $conflicting_plugins = [
             'force-login/force-login.php' => [
                 'name' => 'Force Login',
@@ -192,16 +162,12 @@ class WalletUpConflictDetector {
         
         return $conflicts;
     }
-    
-    /**
-     * Check for settings conflicts
-     */
+
     private static function check_settings_conflicts() {
         $conflicts = [];
         
         $security_options = get_option('wallet_up_security_options', []);
-        
-        // Check if hiding wp-login without custom slug
+
         if (!empty($security_options['hide_wp_login']) && 
             empty($security_options['custom_login_slug'])) {
             $conflicts[] = [
@@ -212,16 +178,10 @@ class WalletUpConflictDetector {
                 'fix' => 'set_custom_slug'
             ];
         }
-        
-        // REMOVED: IP whitelist warning - not needed for everyday users
-        // Force login works intelligently without IP restrictions
-        
+
         return $conflicts;
     }
-    
-    /**
-     * Display conflict notices in admin
-     */
+
     public static function display_conflict_notices() {
         $conflicts = get_transient('wallet_up_conflicts');
         
@@ -307,10 +267,7 @@ class WalletUpConflictDetector {
             }
         }
     }
-    
-    /**
-     * Get notice class based on severity
-     */
+
     private static function get_notice_class($severity) {
         switch ($severity) {
             case 'critical':
@@ -325,12 +282,9 @@ class WalletUpConflictDetector {
                 return 'warning';
         }
     }
-    
-    /**
-     * AJAX handler for conflict resolution
-     */
+
     public static function resolve_conflict() {
-        // Verify nonce and permissions
+        
         if (!wp_verify_nonce($_POST['nonce'] ?? '', 'wallet_up_fix_conflict') || 
             !current_user_can('manage_options')) {
             wp_send_json_error(['message' => __('Security check failed', 'wallet-up-login-customizer')]);
@@ -343,7 +297,7 @@ class WalletUpConflictDetector {
                 case 'set_custom_slug':
                     $options = get_option('wallet_up_security_options', []);
                     $options['custom_login_slug'] = 'secure-login-' . wp_generate_password(6, false);
-                    $options['hide_wp_login'] = false; // Disable until slug is tested
+                    $options['hide_wp_login'] = false; 
                     update_option('wallet_up_security_options', $options);
                     
                     wp_send_json_success([
@@ -372,10 +326,7 @@ class WalletUpConflictDetector {
             wp_send_json_error(['message' => $e->getMessage()]);
         }
     }
-    
-    /**
-     * Get client IP address
-     */
+
     private static function get_client_ip() {
         $ip_headers = [
             'HTTP_CF_CONNECTING_IP',
@@ -401,10 +352,7 @@ class WalletUpConflictDetector {
         
         return self::get_server_var('REMOTE_ADDR', '127.0.0.1');
     }
-    
-    /**
-     * Get conflict summary for settings page
-     */
+
     public static function get_conflict_summary() {
         $conflicts = get_transient('wallet_up_conflicts');
         

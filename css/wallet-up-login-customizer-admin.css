@@ -1,13 +1,4 @@
-/**
- * Wallet Up Login Admin CSS
- * Styles for the admin settings page
- * Version: 2.3.5
- * Features: Responsive, Dark Theme Support, Modern Enterprise UI
- */
-
-/* CSS Variables for theming */
 :root {
-    /* Light theme colors */
     --wup-bg-primary: #fff;
     --wup-bg-secondary: #f9fafb;
     --wup-bg-tertiary: #f3f4f6;
@@ -28,8 +19,6 @@
     --wup-radius: 12px;
     --wup-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* Dark theme support */
 @media (prefers-color-scheme: dark) {
     :root {
         --wup-bg-primary: #1f2937;
@@ -45,8 +34,6 @@
         --wup-shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.35);
     }
 }
-
-/* Main container layout */
 .wallet-up-admin-container {
     display: flex;
     gap: 20px;
@@ -54,22 +41,17 @@
     color: var(--wup-text-primary);
     transition: var(--wup-transition);
 	padding: 20px 20px 20px 0;
-    /* Remove min-height that was hiding footer */
     position: relative;
     z-index: 1;
-    margin-bottom: 50px; /* Add margin to ensure footer has space */
+    margin-bottom: 50px; 
 }
-
 .wallet-up-admin-content {
     flex: 2;
 }
-
 .wallet-up-admin-sidebar {
     flex: 1;
     max-width: 300px;
 }
-
-/* Main cards styling */
 .wallet-up-admin-box {
     background: var(--wup-bg-primary);
     border: 1px solid var(--wup-border);
@@ -82,13 +64,11 @@
     transition: var(--wup-transition);
     backdrop-filter: blur(10px);
 }
-
 .wallet-up-admin-box:hover {
     box-shadow: var(--wup-shadow-md);
     transform: translateY(-2px);
     border-color: var(--wup-border-hover);
 }
-
 .wallet-up-admin-box.has-brand-bar::before {
     content: '';
     position: absolute;
@@ -99,7 +79,6 @@
     background: linear-gradient(135deg, var(--wup-brand) 0%, var(--wup-brand-light) 100%);
     box-shadow: 0 2px 8px rgba(103, 79, 191, 0.15);
 }
-
 .wallet-up-admin-box h3 {
     margin-top: 0;
     border-bottom: 1px solid var(--wup-border);
@@ -109,14 +88,11 @@
     color: var(--wup-text-primary);
     letter-spacing: -0.025em;
 }
-
 .wallet-up-admin-box p {
     margin-top: 0;
     color: var(--wup-text-secondary);
     line-height: 1.6;
 }
-
-/* Main form styling */
 #wallet-up-settings-form {
     background: var(--wup-bg-primary);
     border-radius: var(--wup-radius);
@@ -126,29 +102,24 @@
     transition: var(--wup-transition);
     border: 1px solid var(--wup-border);
 }
-
 .settings-panels {
     padding: 20px;
     position: relative;
-    overflow: hidden; /* Prevent content spillover */
+    overflow: hidden; 
 }
-
 .settings-panel {
-    display: none !important; /* Force hide by default */
+    display: none !important; 
     position: relative;
     z-index: 1;
     width: 100%;
     box-sizing: border-box;
-    clear: both; /* Clear any floats */
-    overflow: hidden; /* Contain panel content */
+    clear: both; 
+    overflow: hidden; 
 }
-
 .settings-panel.active {
-    display: block !important; /* Force display with !important */
+    display: block !important; 
     animation: fadeIn 0.3s ease;
 }
-
-/* Navigation tabs */
 .wallet-up-tab-nav {
     display: flex;
     background: var(--wup-bg-secondary);
@@ -158,7 +129,6 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
-
 .settings-tab {
     display: block;
     padding: 16px 20px;
@@ -174,46 +144,38 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-focus-ring-color: transparent;
 }
-
 .settings-tab:hover {
     color: var(--wup-text-primary);
     background: var(--wup-bg-tertiary);
 }
-
 .settings-tab.active {
     color: var(--wup-brand);
     border-bottom-color: var(--wup-brand);
     background: var(--wup-bg-primary);
     font-weight: 600;
 }
-
 .settings-tab .dashicons {
     margin-right: 8px;
     font-size: 16px;
     line-height: 20px;
 }
-
-/* Form fields styling */
 .form-table {
     width: 100%;
-    table-layout: fixed; /* Prevent table overflow */
+    table-layout: fixed; 
     box-sizing: border-box;
 }
-
 .form-table th {
     padding: 20px 10px 20px 0;
     width: 200px;
     vertical-align: top;
-    word-wrap: break-word; /* Prevent long text overflow */
+    word-wrap: break-word; 
 }
-
 .form-table td {
     padding: 20px 10px;
     vertical-align: top;
-    word-wrap: break-word; /* Prevent long text overflow */
-    overflow: hidden; /* Contain cell content */
+    word-wrap: break-word; 
+    overflow: hidden; 
 }
-
 .form-table .description {
     color: #6B7280;
     font-size: 13px;
@@ -221,18 +183,14 @@
     margin-bottom: 0;
     font-style: normal;
 }
-
-/* Color picker enhancements */
 .wp-picker-container {
     display: inline-block;
 }
-
 .color-preview-container {
     display: flex;
     gap: 15px;
     margin-top: 15px;
 }
-
 .color-preview {
     width: 80px;
     height: 60px;
@@ -241,7 +199,6 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     position: relative;
 }
-
 .color-preview::after {
     content: attr(data-label);
     position: absolute;
@@ -255,7 +212,6 @@
     font-size: 12px;
     color: #6B7280;
 }
-
 .button-preview {
     margin-top: 35px;
     padding: 12px 24px;
@@ -269,15 +225,12 @@
     display: inline-block;
     text-shadow: none;
 }
-
-/* Color scheme presets */
 .color-scheme-presets {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 15px;
 }
-
 .color-preset {
     width: 36px;
     height: 36px;
@@ -288,41 +241,31 @@
     border: 2px solid transparent;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-
 .color-preset:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .color-preset[data-preset="purple"] {
     background: linear-gradient(135deg, #674FBF 0%, #7B68D4 100%);
 }
-
 .color-preset[data-preset="blue"] {
     background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
 }
-
 .color-preset[data-preset="green"] {
     background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
 }
-
 .color-preset[data-preset="red"] {
     background: linear-gradient(135deg, #EF4444 0%, #F87171 100%);
 }
-
 .color-preset[data-preset="orange"] {
     background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
 }
-
 .color-preset[data-preset="dark"] {
     background: linear-gradient(135deg, #1F2937 0%, #4B5563 100%);
 }
-
-/* Loading message fields */
 #loading-messages-container {
     margin-bottom: 15px;
 }
-
 .loading-message {
     background: #F9FAFB;
     border: 1px solid #E5E7EB;
@@ -334,16 +277,13 @@
     align-items: center;
     transition: all 0.3s ease;
 }
-
 .loading-message:hover {
     border-color: #D1D5DB;
     background: #F3F4F6;
 }
-
 .loading-message input[type="text"] {
     flex: 1;
 }
-
 .remove-loading-message {
     margin-left: 10px;
     color: #EF4444;
@@ -353,13 +293,10 @@
     opacity: 0.7;
     transition: opacity 0.2s ease;
 }
-
 .remove-loading-message:hover {
     opacity: 1;
     color: #DC2626;
 }
-
-/* Preview button */
 .preview-button {
     display: inline-flex;
     align-items: center;
@@ -372,7 +309,6 @@
     font-weight: 500;
     transition: all 0.2s ease;
 }
-
 .preview-button:hover {
     background: var(--wup-bg-tertiary);
     border-color: var(--wup-border-hover);
@@ -380,13 +316,10 @@
     transform: translateY(-2px);
     box-shadow: var(--wup-shadow-md);
 }
-
 .preview-icon {
     margin-left: 8px;
     transition: transform 0.2s ease;
 }
-
-/* Import/Export UI */
 .settings-actions {
     margin-top: 30px;
     padding-top: 20px;
@@ -395,46 +328,37 @@
     flex-wrap: wrap;
     gap: 10px;
 }
-
 .settings-actions .button {
     display: inline-flex;
     align-items: center;
     padding-left: 12px;
     padding-right: 12px;
 }
-
 .settings-actions .button .dashicons {
     margin-right: 5px;
     font-size: 16px;
     line-height: 26px;
 }
-
 .settings-actions .button-primary {
     background: #674FBF;
     border-color: #5030A5;
 }
-
 .settings-actions .button-primary:hover, 
 .settings-actions .button-primary:focus {
     background: #5030A5;
     border-color: #402675;
 }
-
 #import-file {
     display: none;
 }
-
 .button-reset {
     color: #EF4444;
     border-color: #EF4444;
 }
-
 .button-reset:hover {
     color: #DC2626;
     border-color: #DC2626;
 }
-
-/* Notification system */
 .wallet-up-notification {
     position: fixed;
     top: 50px;
@@ -448,46 +372,36 @@
     font-weight: 500;
     border-left: 3px solid #3B82F6;
 }
-
 .wallet-up-notification.success {
     border-left-color: #10B981;
 }
-
 .wallet-up-notification.error {
     border-left-color: #EF4444;
 }
-
-/* Responsive Design */
 @media screen and (max-width: 1200px) {
     .wallet-up-admin-container {
         gap: 15px;
     }
-    
     .wallet-up-admin-sidebar {
         max-width: 280px;
     }
 }
-
 @media screen and (max-width: 992px) {
     .wallet-up-admin-container {
         flex-direction: column;
     }
-    
     .wallet-up-admin-sidebar {
         max-width: 100%;
         order: 2;
     }
-    
     .wallet-up-admin-content {
         order: 1;
     }
-    
     .form-table th {
         width: 150px;
         padding: 15px 10px 15px 0;
     }
 }
-
 @media screen and (max-width: 768px) {
     .wallet-up-tab-nav {
         flex-wrap: nowrap;
@@ -495,17 +409,14 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
     }
-    
     .settings-tab {
         flex: 0 0 auto;
         padding: 12px 16px;
         font-size: 14px;
     }
-    
     .settings-tab .dashicons {
         display: none;
     }
-    
     .form-table, 
     .form-table tbody, 
     .form-table tr,
@@ -514,77 +425,60 @@
         display: block;
         width: 100%;
     }
-    
     .form-table th {
         padding: 15px 0 5px 0;
         font-weight: 600;
     }
-    
     .form-table td {
         padding: 5px 0 20px 0;
     }
-    
     .wallet-up-admin-box {
         padding: 16px;
         border-radius: 8px;
     }
-    
     .color-preview-container {
         flex-wrap: wrap;
     }
-    
     .loading-message {
         flex-direction: column;
         align-items: stretch;
     }
-    
     .loading-message input[type="text"] {
         margin-bottom: 10px;
     }
-    
     .remove-loading-message {
         align-self: flex-end;
     }
 }
-
 @media screen and (max-width: 480px) {
     .wallet-up-admin-container {
         margin-top: 10px;
     }
-    
     .wallet-up-admin-box h3 {
         font-size: 14px;
     }
-    
     .settings-panel h2 {
         font-size: 18px;
     }
-    
     .button-preview {
         width: 100%;
         text-align: center;
     }
-    
     .preview-button {
         width: 100%;
         justify-content: center;
     }
-    
     .settings-actions {
         flex-direction: column;
         align-items: stretch;
     }
-    
     .settings-actions button,
     .settings-actions .button {
         width: 100%;
         margin: 5px 0 !important;
     }
 }
-
-/* Dark Theme Enhancements */
 @media (prefers-color-scheme: dark) {
-    /* Form inputs dark theme */
     input[type="text"],
     input[type="url"],
     input[type="number"],
@@ -594,7 +488,6 @@
         color: var(--wup-text-primary);
         border-color: var(--wup-border);
     }
-    
     input[type="text"]:focus,
     input[type="url"]:focus,
     input[type="number"]:focus,
@@ -604,73 +497,56 @@
         border-color: var(--wup-brand);
         box-shadow: 0 0 0 3px rgba(103, 79, 191, 0.1);
     }
-    
-    /* WordPress default button overrides for dark theme */
     .button,
     .button-secondary {
         background: var(--wup-bg-tertiary);
         border-color: var(--wup-border);
         color: var(--wup-text-primary);
     }
-    
     .button:hover,
     .button-secondary:hover {
         background: var(--wup-bg-secondary);
         border-color: var(--wup-border-hover);
         color: var(--wup-text-primary);
     }
-    
     .button-primary {
         background: var(--wup-brand);
         border-color: var(--wup-brand-dark);
         color: #ffffff;
     }
-    
     .button-primary:hover {
         background: var(--wup-brand-dark);
         border-color: var(--wup-brand-dark);
     }
-    
-    /* Code blocks dark theme */
     code {
         background: var(--wup-bg-tertiary);
         color: var(--wup-brand-light);
         padding: 2px 6px;
         border-radius: 4px;
     }
-    
-    /* Notification dark theme */
     .wallet-up-notification {
         background: var(--wup-bg-primary);
         color: var(--wup-text-primary);
         border: 1px solid var(--wup-border);
     }
 }
-
-/* Smooth transitions for theme switching */
 * {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-
-/* Accessibility improvements */
 .settings-tab:focus {
     outline: none !important;
     box-shadow: inset 0 -3px 0 var(--wup-brand);
 }
-
 .settings-tab:focus-visible {
     outline: none !important;
     box-shadow: inset 0 -3px 0 var(--wup-brand), 0 0 0 2px rgba(103, 79, 191, 0.15);
 }
-
 .button:focus,
 button:focus,
 a:focus {
     outline: 2px solid var(--wup-brand);
     outline-offset: 2px;
 }
-
-/* High contrast mode support */
 @media (prefers-contrast: high) {
     :root {
         --wup-shadow-sm: 0 0 0 1px var(--wup-border);
@@ -678,32 +554,23 @@ a:focus {
         --wup-shadow-lg: 0 0 0 3px var(--wup-border);
     }
 }
-
-/* Print styles */
 @media print {
     .wallet-up-admin-sidebar,
     .settings-actions,
     .preview-button {
         display: none;
     }
-    
     .wallet-up-admin-container {
         display: block;
     }
-    
     .settings-panel {
         display: block !important;
         page-break-inside: avoid;
     }
 }
-
 .wallet-up-notification.warning {
     border-left-color: #F59E0B;
 }
-
-/* Enhanced Form Elements - Clean Soft Enterprise UI */
-
-/* Text Inputs & Textareas */
 input[type="text"],
 input[type="url"],
 input[type="email"],
@@ -730,8 +597,6 @@ select {
     -moz-appearance: none;
     appearance: none;
 }
-
-/* Focus States */
 input[type="text"]:focus,
 input[type="url"]:focus,
 input[type="email"]:focus,
@@ -749,8 +614,6 @@ select:focus {
                 0 1px 2px rgba(0, 0, 0, 0.02);
     transform: translateY(-1px);
 }
-
-/* Hover States */
 input[type="text"]:hover:not(:focus),
 input[type="url"]:hover:not(:focus),
 input[type="email"]:hover:not(:focus),
@@ -765,16 +628,12 @@ select:hover:not(:focus) {
     border-color: var(--wup-border-hover);
     background: var(--wup-bg-secondary);
 }
-
-/* Placeholder Styling */
 input::placeholder,
 textarea::placeholder {
     color: var(--wup-text-tertiary);
     opacity: 0.7;
     font-weight: 400;
 }
-
-/* Select Dropdown Enhancement */
 select {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
     background-repeat: no-repeat !important;
@@ -784,14 +643,11 @@ select {
     cursor: pointer !important;
     min-height: 44px !important;
 }
-
-/* Custom Dropdown Wrapper */
 .select-wrapper {
     position: relative;
     display: inline-block;
     width: 100%;
 }
-
 .select-wrapper::after {
     content: '';
     position: absolute;
@@ -806,12 +662,9 @@ select {
     border-top: 6px solid var(--wup-text-tertiary);
     transition: all 0.2s;
 }
-
 .select-wrapper:hover::after {
     border-top-color: var(--wup-brand);
 }
-
-/* Dropdown Options Styling (for custom dropdowns) */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -830,44 +683,35 @@ select {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
 }
-
 .dropdown-menu.active {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
 }
-
 .dropdown-item {
     padding: 12px 16px;
     cursor: pointer;
     transition: all 0.2s;
     border-bottom: 1px solid var(--wup-border);
 }
-
 .dropdown-item:last-child {
     border-bottom: none;
 }
-
 .dropdown-item:hover {
     background: var(--wup-bg-secondary);
     color: var(--wup-brand);
     padding-left: 20px;
 }
-
 .dropdown-item.selected {
     background: var(--wup-bg-tertiary);
     color: var(--wup-brand);
     font-weight: 600;
 }
-
-/* Textarea Specific */
 textarea {
     min-height: 120px;
     resize: vertical;
     line-height: 1.6;
 }
-
-/* Modern Checkbox & Radio Styling */
 input[type="checkbox"],
 input[type="radio"] {
     -webkit-appearance: none;
@@ -885,18 +729,14 @@ input[type="radio"] {
     flex-shrink: 0;
     vertical-align: middle;
 }
-
 input[type="radio"] {
     border-radius: 50%;
 }
-
-/* Checkbox Checked State */
 input[type="checkbox"]:checked {
     background: linear-gradient(135deg, var(--wup-brand) 0%, var(--wup-brand-light) 100%);
     border-color: var(--wup-brand);
     animation: checkboxPop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
 input[type="checkbox"]:checked::after {
     content: '';
     position: absolute;
@@ -908,14 +748,11 @@ input[type="checkbox"]:checked::after {
     border-width: 0 2px 2px 0;
     transform: translate(-50%, -60%) rotate(45deg);
 }
-
-/* Radio Checked State */
 input[type="radio"]:checked {
     background: var(--wup-bg-primary);
     border-color: var(--wup-brand);
     border-width: 2px;
 }
-
 input[type="radio"]:checked::after {
     content: '';
     position: absolute;
@@ -928,23 +765,17 @@ input[type="radio"]:checked::after {
     transform: translate(-50%, -50%);
     animation: radioPop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
-/* Checkbox & Radio Hover */
 input[type="checkbox"]:hover:not(:checked),
 input[type="radio"]:hover:not(:checked) {
     border-color: var(--wup-brand);
     background: var(--wup-bg-secondary);
     transform: scale(1.05);
 }
-
-/* Checkbox & Radio Focus */
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
     outline: none;
     box-shadow: 0 0 0 4px rgba(103, 79, 191, 0.12);
 }
-
-/* Enhanced Button Styles - Override WordPress Defaults */
 .wrap .button,
 .wrap .button-secondary,
 .wrap button,
@@ -976,8 +807,6 @@ input[type="reset"] {
     -moz-appearance: none !important;
     appearance: none !important;
 }
-
-/* Primary Button - Soft Gradient */
 .wrap .button-primary,
 .button-primary,
 button.button-primary,
@@ -990,7 +819,6 @@ input[type="submit"].button-primary {
     font-weight: 600 !important;
     letter-spacing: 0.025em !important;
 }
-
 .wrap .button-primary:hover,
 .button-primary:hover,
 button.button-primary:hover,
@@ -1001,7 +829,6 @@ input[type="submit"].button-primary:hover {
                 0 3px 6px rgba(103, 79, 191, 0.2) !important;
     color: white !important;
 }
-
 .wrap .button-primary:active,
 .button-primary:active,
 button.button-primary:active,
@@ -1015,8 +842,6 @@ button.button-primary:focus {
     color: white !important;
     outline: none !important;
 }
-
-/* Secondary Button - Soft Border */
 .wrap .button-secondary,
 .button-secondary,
 button.button-secondary {
@@ -1025,7 +850,6 @@ button.button-secondary {
     border: 2px solid var(--wup-border) !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
 }
-
 .button-secondary:hover,
 button.button-secondary:hover {
     background: var(--wup-bg-secondary);
@@ -1034,8 +858,6 @@ button.button-secondary:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
-
-/* Default Button - Clean Style */
 .wrap .button:not(.button-primary):not(.button-secondary),
 .button:not(.button-primary):not(.button-secondary),
 button:not(.button-primary):not(.button-secondary),
@@ -1048,7 +870,6 @@ input[type="reset"] {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06) !important;
     font-weight: 500 !important;
 }
-
 .wrap .button:not(.button-primary):not(.button-secondary):hover,
 .button:not(.button-primary):not(.button-secondary):hover,
 button:not(.button-primary):not(.button-secondary):hover,
@@ -1061,8 +882,6 @@ input[type="reset"]:hover {
     border-color: var(--wup-border-hover) !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08) !important;
 }
-
-/* Danger Button */
 .button-danger,
 .button.delete,
 button.delete {
@@ -1071,7 +890,6 @@ button.delete {
     border: none;
     box-shadow: 0 4px 14px rgba(239, 68, 68, 0.25);
 }
-
 .button-danger:hover,
 .button.delete:hover,
 button.delete:hover {
@@ -1079,22 +897,17 @@ button.delete:hover {
     transform: translateY(-2px);
     box-shadow: 0 7px 20px rgba(239, 68, 68, 0.35);
 }
-
-/* Success Button */
 .button-success {
     background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
     color: white;
     border: none;
     box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
 }
-
 .button-success:hover {
     background: linear-gradient(135deg, #059669 0%, #10b981 100%);
     transform: translateY(-2px);
     box-shadow: 0 7px 20px rgba(16, 185, 129, 0.35);
 }
-
-/* Button Loading State */
 .button.loading::before {
     content: '';
     position: absolute;
@@ -1106,8 +919,6 @@ button.delete:hover {
     border-top-color: currentColor;
     animation: button-spin 0.6s linear infinite;
 }
-
-/* Toggle Switch Style */
 .toggle-switch {
     position: relative;
     display: inline-block;
@@ -1115,13 +926,11 @@ button.delete:hover {
     height: 24px;
     margin-right: 10px;
 }
-
 .toggle-switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
-
 .toggle-switch .slider {
     position: absolute;
     cursor: pointer;
@@ -1134,7 +943,6 @@ button.delete:hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 24px;
 }
-
 .toggle-switch .slider:before {
     position: absolute;
     content: "";
@@ -1147,17 +955,13 @@ button.delete:hover {
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
-
 .toggle-switch input:checked + .slider {
     background: linear-gradient(135deg, var(--wup-brand) 0%, var(--wup-brand-light) 100%);
     border-color: var(--wup-brand);
 }
-
 .toggle-switch input:checked + .slider:before {
     transform: translateX(22px);
 }
-
-/* Range Slider */
 input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
@@ -1167,7 +971,6 @@ input[type="range"] {
     outline: none;
     transition: all 0.2s;
 }
-
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -1179,12 +982,10 @@ input[type="range"]::-webkit-slider-thumb {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 8px rgba(103, 79, 191, 0.3);
 }
-
 input[type="range"]::-webkit-slider-thumb:hover {
     transform: scale(1.2);
     box-shadow: 0 4px 12px rgba(103, 79, 191, 0.4);
 }
-
 input[type="range"]::-moz-range-thumb {
     width: 20px;
     height: 20px;
@@ -1194,8 +995,6 @@ input[type="range"]::-moz-range-thumb {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 8px rgba(103, 79, 191, 0.3);
 }
-
-/* File Upload Enhancement */
 input[type="file"] {
     padding: 8px;
     border: 2px dashed var(--wup-border);
@@ -1204,13 +1003,10 @@ input[type="file"] {
     cursor: pointer;
     transition: all 0.2s;
 }
-
 input[type="file"]:hover {
     border-color: var(--wup-brand);
     background: var(--wup-bg-tertiary);
 }
-
-/* Form Labels Enhancement */
 label {
     display: inline-block;
     margin-bottom: 6px;
@@ -1219,15 +1015,11 @@ label {
     font-size: 14px;
     letter-spacing: -0.01em;
 }
-
-/* Required Field Indicator */
 label.required::after {
     content: ' *';
     color: var(--wup-danger);
     font-weight: 600;
 }
-
-/* Field Helper Text */
 .field-helper {
     display: block;
     margin-top: 6px;
@@ -1235,28 +1027,21 @@ label.required::after {
     color: var(--wup-text-tertiary);
     line-height: 1.4;
 }
-
-/* Field Group Styling */
 .field-group {
     margin-bottom: 24px;
     position: relative;
 }
-
 .field-group.inline {
     display: flex;
     align-items: center;
     gap: 12px;
 }
-
-/* Input with Icon */
 .input-with-icon {
     position: relative;
 }
-
 .input-with-icon input {
     padding-left: 44px;
 }
-
 .input-with-icon .input-icon {
     position: absolute;
     left: 14px;
@@ -1266,12 +1051,9 @@ label.required::after {
     pointer-events: none;
     transition: all 0.2s;
 }
-
 .input-with-icon input:focus ~ .input-icon {
     color: var(--wup-brand);
 }
-
-/* WordPress Admin Specific Button Fixes */
 #wpbody-content .button,
 #wpbody-content .button-secondary,
 #wpbody-content .button-primary,
@@ -1283,8 +1065,6 @@ label.required::after {
     height: auto !important;
     min-height: 40px !important;
 }
-
-/* Fix WordPress Save/Update buttons */
 #submit,
 #publish,
 .submit input[type="submit"],
@@ -1296,7 +1076,6 @@ p.submit input[type="submit"] {
     font-weight: 600 !important;
     box-shadow: 0 4px 14px rgba(103, 79, 191, 0.25) !important;
 }
-
 #submit:hover,
 #publish:hover,
 .submit input[type="submit"]:hover,
@@ -1305,8 +1084,6 @@ p.submit input[type="submit"]:hover {
     transform: translateY(-2px) !important;
     box-shadow: 0 7px 20px rgba(103, 79, 191, 0.35) !important;
 }
-
-/* Fix button icons alignment - Perfect centering */
 .button .dashicons,
 button .dashicons {
     width: 16px !important;
@@ -1320,8 +1097,6 @@ button .dashicons {
     position: relative !important;
     top: -1px !important;
 }
-
-/* Disabled button states */
 .button:disabled,
 .button-primary:disabled,
 .button-secondary:disabled,
@@ -1331,15 +1106,12 @@ input[type="submit"]:disabled {
     cursor: not-allowed !important;
     transform: none !important;
 }
-
 .button:disabled:hover,
 .button-primary:disabled:hover,
 .button-secondary:disabled:hover {
     transform: none !important;
     box-shadow: none !important;
 }
-
-/* Processing button state with animation */
 .button.processing,
 .button-primary.processing,
 button.processing,
@@ -1349,8 +1121,6 @@ input[type="submit"].processing {
     position: relative !important;
     animation: pulse 1.5s infinite !important;
 }
-
-/* Pulse animation for processing buttons */
 @keyframes pulse {
     0% {
         box-shadow: 0 4px 14px rgba(103, 79, 191, 0.25);
@@ -1362,8 +1132,6 @@ input[type="submit"].processing {
         box-shadow: 0 4px 14px rgba(103, 79, 191, 0.25);
     }
 }
-
-/* WordPress spinner adjustments for our buttons */
 .button .spinner,
 button .spinner,
 input[type="submit"] .spinner {
@@ -1372,27 +1140,19 @@ input[type="submit"] .spinner {
     display: inline-block !important;
     vertical-align: middle !important;
 }
-
-/* Ensure spinner is visible */
 .spinner.is-active {
     visibility: visible !important;
 }
-
-/* Small buttons */
 .button-small,
 .button.small {
     padding: 8px 16px !important;
     font-size: 13px !important;
 }
-
-/* Large buttons */
 .button-large,
 .button.large {
     padding: 16px 32px !important;
     font-size: 16px !important;
 }
-
-/* Link style buttons */
 .button-link {
     background: transparent !important;
     border: none !important;
@@ -1401,13 +1161,10 @@ input[type="submit"] .spinner {
     text-decoration: underline !important;
     padding: 0 !important;
 }
-
 .button-link:hover {
     color: var(--wup-brand-dark) !important;
     transform: none !important;
 }
-
-/* Clean Modern Notices */
 .notice,
 .notice-success,
 .notice-error,
@@ -1427,32 +1184,25 @@ div.error,
     border-left: 4px solid transparent !important;
     animation: slideInNotice 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
-
-/* Notice Types with Solid Colors */
 .notice-success,
 div.updated {
     border-left-color: var(--wup-success) !important;
     background: #f0fdf4 !important;
 }
-
 .notice-error,
 div.error {
     border-left-color: var(--wup-danger) !important;
     background: #fef2f2 !important;
 }
-
 .notice-warning,
 .update-nag {
     border-left-color: var(--wup-warning) !important;
     background: #fffbeb !important;
 }
-
 .notice-info {
     border-left-color: #3B82F6 !important;
     background: #eff6ff !important;
 }
-
-/* Notice Text Styling */
 .notice p,
 .notice-success p,
 .notice-error p,
@@ -1463,13 +1213,10 @@ div.error {
     font-size: 14px !important;
     line-height: 1.6 !important;
 }
-
 .notice p strong {
     font-weight: 600 !important;
     color: var(--wup-text-primary) !important;
 }
-
-/* Clean Dismiss Button */
 .notice-dismiss,
 .notice .notice-dismiss {
     position: absolute !important;
@@ -1491,7 +1238,6 @@ div.error {
     cursor: pointer !important;
     opacity: 0.6 !important;
 }
-
 .notice-dismiss:before,
 .notice .notice-dismiss:before {
     content: "×" !important;
@@ -1505,7 +1251,6 @@ div.error {
     margin: 0 !important;
     padding: 0 !important;
 }
-
 .notice-dismiss:hover,
 .notice .notice-dismiss:hover {
     background: var(--wup-bg-secondary) !important;
@@ -1513,18 +1258,13 @@ div.error {
     opacity: 1 !important;
     transform: translateY(-50%) scale(1.1) !important;
 }
-
 .notice-dismiss:active,
 .notice .notice-dismiss:active {
     transform: translateY(-50%) scale(0.95) !important;
 }
-
-/* Modern Close Button Alternative Style */
 .notice.is-dismissible {
     padding-right: 60px !important;
 }
-
-/* Custom Notice Close Button (if using custom implementation) */
 .notice .close-button,
 .wallet-up-notification .close-button {
     position: absolute !important;
@@ -1542,13 +1282,11 @@ div.error {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
     padding: 0 !important;
 }
-
 .notice .close-button:hover,
 .wallet-up-notification .close-button:hover {
     background: var(--wup-bg-tertiary) !important;
     transform: rotate(90deg) !important;
 }
-
 .notice .close-button::before,
 .notice .close-button::after {
     content: '' !important;
@@ -1558,16 +1296,12 @@ div.error {
     background: var(--wup-text-secondary) !important;
     border-radius: 1px !important;
 }
-
 .notice .close-button::before {
     transform: rotate(45deg) !important;
 }
-
 .notice .close-button::after {
     transform: rotate(-45deg) !important;
 }
-
-/* Notice Icons (if present) */
 .notice-success::before,
 .notice-error::before,
 .notice-warning::before,
@@ -1583,15 +1317,12 @@ div.error {
     background-repeat: no-repeat !important;
     background-position: center !important;
 }
-
 .notice-success.with-icon p,
 .notice-error.with-icon p,
 .notice-warning.with-icon p,
 .notice-info.with-icon p {
     padding-left: 32px !important;
 }
-
-/* Enhanced Notification System (custom notifications) */
 .wallet-up-notification {
     position: fixed !important;
     top: 50px !important;
@@ -1611,23 +1342,18 @@ div.error {
     border: 1px solid var(--wup-border) !important;
     border-left-width: 4px !important;
 }
-
 .wallet-up-notification.success {
     border-left-color: var(--wup-success) !important;
     background: #f0fdf4 !important;
 }
-
 .wallet-up-notification.error {
     border-left-color: var(--wup-danger) !important;
     background: #fef2f2 !important;
 }
-
 .wallet-up-notification.warning {
     border-left-color: var(--wup-warning) !important;
     background: #fffbeb !important;
 }
-
-/* Auto-dismiss notice specific styling - Higher specificity to override general notice styles */
 .notice.wallet-up-auto-dismiss-notice,
 .notice-success.wallet-up-auto-dismiss-notice {
     position: relative !important;
@@ -1635,7 +1361,6 @@ div.error {
     margin: 0 20px 20px 0px !important;
     padding: 16px 20px !important;
 }
-
 .wallet-up-auto-dismiss-notice::after {
     content: '' !important;
     position: absolute !important;
@@ -1645,8 +1370,6 @@ div.error {
     background: var(--wup-brand) !important;
     animation: dismissProgress 3s linear forwards !important;
 }
-
-/* Notice Animations */
 @keyframes slideInNotice {
     from {
         opacity: 0;
@@ -1657,7 +1380,6 @@ div.error {
         transform: translateY(0);
     }
 }
-
 @keyframes slideInFromRight {
     from {
         opacity: 0;
@@ -1668,7 +1390,6 @@ div.error {
         transform: translateX(0);
     }
 }
-
 @keyframes dismissProgress {
     from {
         width: 100%;
@@ -1677,16 +1398,12 @@ div.error {
         width: 0;
     }
 }
-
-/* Enhanced option descriptions styling */
 .form-table .description {
     margin-top: 8px;
     color: var(--wup-text-secondary);
     font-size: 13px;
     line-height: 1.6;
 }
-
-/* Enhanced styled notes for important options */
 .form-table .description[style*="color: #0073aa"],
 .form-table .description[style*="color: #d63638"],
 .form-table .description[style*="color: #059669"],
@@ -1703,46 +1420,35 @@ div.error {
     overflow: hidden !important;
     border-left: 4px solid !important;
 }
-
-/* Info note (blue) */
 .form-table .description[style*="color: #0073aa"] {
     background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
     border-left-color: #3b82f6 !important;
     color: #1e40af !important;
 }
-
 .form-table .description[style*="color: #0073aa"]:hover {
     box-shadow: 0 2px 6px rgba(59, 130, 246, 0.15) !important;
     transform: translateX(2px);
 }
-
-/* Warning note (red/orange) */
 .form-table .description[style*="color: #d63638"],
 .description[style*="color: #d63638"] {
     background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
     border-left-color: #f59e0b !important;
     color: #92400e !important;
 }
-
 .form-table .description[style*="color: #d63638"]:hover,
 .description[style*="color: #d63638"]:hover {
     box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15) !important;
     transform: translateX(2px);
 }
-
-/* Success note (green) */
 .form-table .description[style*="color: #059669"] {
     background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
     border-left-color: #10b981 !important;
     color: #065f46 !important;
 }
-
 .form-table .description[style*="color: #059669"]:hover {
     box-shadow: 0 2px 6px rgba(16, 185, 129, 0.15) !important;
     transform: translateX(2px);
 }
-
-/* Add subtle gradient overlay for depth */
 .form-table .description[style*="color: #0073aa"]::before,
 .form-table .description[style*="color: #d63638"]::before,
 .form-table .description[style*="color: #059669"]::before,
@@ -1755,21 +1461,16 @@ div.error {
     height: 100%;
     opacity: 0.5;
 }
-
 .form-table .description[style*="color: #0073aa"]::before {
     background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%);
 }
-
 .form-table .description[style*="color: #d63638"]::before,
 .description[style*="color: #d63638"]::before {
     background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
 }
-
 .form-table .description[style*="color: #059669"]::before {
     background: linear-gradient(180deg, #34d399 0%, #10b981 100%);
 }
-
-/* Dark Theme Support for Notices */
 @media (prefers-color-scheme: dark) {
     .notice,
     .notice-success,
@@ -1780,55 +1481,43 @@ div.error {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 
                     0 4px 16px rgba(0, 0, 0, 0.3) !important;
     }
-    
     .notice-success {
         background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.1) 100%) !important;
     }
-    
     .notice-error {
         background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(248, 113, 113, 0.1) 100%) !important;
     }
-    
     .notice-warning {
         background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 191, 36, 0.1) 100%) !important;
     }
-    
     .notice-info {
         background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(96, 165, 250, 0.1) 100%) !important;
     }
 }
-
-/* Responsive Notice Adjustments */
 @media screen and (max-width: 768px) {
     .wallet-up-notification {
         right: 10px !important;
         left: 10px !important;
         max-width: calc(100% - 20px) !important;
     }
-    
     .notice {
         margin: 10px 0 !important;
         border-radius: 8px !important;
     }
 }
-
-/* Animations */
 @keyframes checkboxPop {
     0% { transform: scale(1); }
     40% { transform: scale(1.3); }
     100% { transform: scale(1); }
 }
-
 @keyframes radioPop {
     0% { transform: translate(-50%, -50%) scale(0); }
     50% { transform: translate(-50%, -50%) scale(1.2); }
     100% { transform: translate(-50%, -50%) scale(1); }
 }
-
 @keyframes button-spin {
     to { transform: rotate(360deg); }
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1839,76 +1528,61 @@ div.error {
         transform: translateY(0);
     }
 }
-
-/* Responsive styles */
 @media screen and (max-width: 782px) {
     .wallet-up-admin-container {
         flex-direction: column;
     }
-    
     .wallet-up-admin-sidebar {
         max-width: 100%;
     }
-    
     .settings-tab {
         padding: 12px 15px;
         font-size: 14px;
     }
-    
     .form-table th {
         padding-bottom: 10px;
         width: 100%;
         display: block;
     }
-    
     .form-table td {
         padding-top: 0;
         padding-bottom: 20px;
         display: block;
     }
-    
     .color-scheme-presets {
         gap: 8px;
     }
-    
     .color-preset {
         width: 30px;
         height: 30px;
     }
 }
-
-/* Dashboard widgets */
 .wallet-up-dashboard-widget {
     margin-bottom: 20px;
 }
-
 .wallet-up-widget-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
-
 .wallet-up-widget-title {
     font-size: 14px;
     font-weight: 600;
     color: #1F2937;
     margin: 0;
 }
-
 .wallet-up-widget-stat {
     font-size: 28px;
     font-weight: 700;
     color: #1F2937;
     margin: 10px 0;
 }
-
 .wallet-up-widget-description {
     color: #6B7280;
     font-size: 13px;
     margin: 0;
 }
-
 .wallet-up-widget-badge {
     display: inline-block;
     padding: 4px 8px;
@@ -1916,30 +1590,24 @@ div.error {
     font-size: 12px;
     font-weight: 500;
 }
-
 .wallet-up-widget-badge.success {
     background: rgba(16, 185, 129, 0.1);
     color: #065F46;
 }
-
 .wallet-up-widget-badge.warning {
     background: rgba(245, 158, 11, 0.1);
     color: #92400E;
 }
-
 .wallet-up-widget-badge.error {
     background: rgba(239, 68, 68, 0.1);
     color: #991B1B;
 }
-
-/* Tooltips */
 .wallet-up-tooltip {
     position: relative;
     display: inline-block;
     cursor: help;
     margin-left: 5px;
 }
-
 .wallet-up-tooltip-icon {
     display: inline-flex;
     align-items: center;
@@ -1952,68 +1620,42 @@ div.error {
     font-size: 11px;
     font-weight: bold;
 }
-
 #tiptip_holder {
     max-width: 300px;
 }
-
 #tiptip_content {
     font-size: 12px;
     line-height: 1.6;
     padding: 10px 12px;
 }
-
-/**
- * Dashboard Replacement Menu Styling
- * Clean, professional implementation
- */
-
-/* Ensure proper menu highlighting for Wallet Up dashboard */
 body.toplevel_page_wallet-up #adminmenu li.menu-top.menu-icon-dashboard.current {
     background: #7200fC !important;
 }
-
 body.toplevel_page_wallet-up #adminmenu li.menu-top.menu-icon-dashboard.current > a {
     color: #fff;
 }
-
-/* Clean page title styling */
 body.toplevel_page_wallet-up h1.wp-heading-inline {
     font-weight: 600;
     color: inherit;
 }
-
 body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     content: "\f240";
     font-family: dashicons;
     margin-right: 8px;
     vertical-align: bottom;
 }
-
-/**
- * TAB CONTAINMENT IMPROVEMENTS
- * Ensure complete isolation between tabs
- */
-
-/* Strict tab container */
 #wallet-up-settings-form {
     position: relative;
     overflow: hidden;
-    contain: layout style paint; /* CSS containment for better isolation */
+    contain: layout style paint; 
 }
-
-/* Absolute tab panel isolation */
 .settings-panel {
-    isolation: isolate; /* Create new stacking context */
-    min-height: 400px; /* Minimum height to prevent layout shifts */
+    isolation: isolate; 
+    min-height: 400px; 
 }
-
-/* Hide file input for import */
 #import-file {
     display: none;
 }
-
-/* Prevent form elements from overflowing */
 .settings-panel input,
 .settings-panel textarea,
 .settings-panel select {
@@ -2026,8 +1668,6 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     background: var(--wup-bg-primary);
     transition: var(--wup-transition);
 }
-
-/* Match focus states */
 .settings-panel input:focus,
 .settings-panel textarea:focus,
 .settings-panel select:focus {
@@ -2038,23 +1678,17 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     transform: translateY(-1px);
     outline: none;
 }
-
-/* Match hover states */
 .settings-panel input:hover:not(:focus),
 .settings-panel textarea:hover:not(:focus),
 .settings-panel select:hover:not(:focus) {
     border-color: var(--wup-border-hover);
     background: var(--wup-bg-secondary);
 }
-
-/* Contain floating elements */
 .settings-panel::after {
     content: "";
     display: table;
     clear: both;
 }
-
-/* Prevent media queries and responsive elements from affecting other tabs */
 .settings-panel .form-table,
 .settings-panel .wallet-up-admin-box {
     width: 100%;
@@ -2062,34 +1696,22 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     box-sizing: border-box;
     contain: layout;
 }
-
-/* Ensure color picker popups don't bleed */
 .settings-panel .wp-picker-container {
     position: relative;
     z-index: 1000;
 }
-
-/* Specific containment for each tab type */
 .settings-panel[data-panel-index="0"] {
-    /* General tab containment */
     min-height: 500px;
 }
-
 .settings-panel[data-panel-index="1"] {
-    /* Colors tab containment */
     min-height: 600px;
 }
-
 .settings-panel[data-panel-index="2"] {
-    /* Messages tab containment */
     min-height: 400px;
 }
-
 .settings-panel[data-panel-index="3"] {
-    /* Advanced tab containment */
-    min-height: 800px; /* Largest tab needs more space */
+    min-height: 800px; 
 }
-/* Prettified Required Files & Paths Section */
 .wallet-up-files-info {
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     border: 1px solid #e2e8f0;
@@ -2099,12 +1721,10 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .wallet-up-files-info:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 16px rgba(0, 0, 0, 0.06);
     transform: translateY(-1px);
 }
-
 .wallet-up-files-header {
     display: flex;
     align-items: center;
@@ -2113,12 +1733,10 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     padding-bottom: 12px;
     border-bottom: 2px solid #e2e8f0;
 }
-
 .wallet-up-files-icon {
     color: var(--wup-brand);
     flex-shrink: 0;
 }
-
 .wallet-up-files-title {
     font-weight: 600;
     font-size: 15px;
@@ -2127,14 +1745,12 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     white-space: nowrap;
     flex: 1 1 auto;
 }
-
 .wallet-up-files-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 16px;
 }
-
 .wallet-up-file-item {
     display: flex;
     align-items: center;
@@ -2147,7 +1763,6 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     position: relative;
     overflow: hidden;
 }
-
 .wallet-up-file-item::before {
     content: '';
     position: absolute;
@@ -2159,23 +1774,19 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     transform: scaleY(0);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .wallet-up-file-item:hover {
     background: linear-gradient(90deg, rgba(103, 79, 191, 0.03) 0%, transparent 100%);
     border-color: var(--wup-brand-light);
     transform: translateX(4px);
 }
-
 .wallet-up-file-item:hover::before {
     transform: scaleY(1);
 }
-
 .wallet-up-file-path {
     flex: 1 1 50%;
     min-width: 0;
     overflow: hidden;
 }
-
 .wallet-up-file-path code {
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
     color: #334155;
@@ -2191,13 +1802,11 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     text-overflow: ellipsis;
     max-width: 100%;
 }
-
 .wallet-up-file-item:hover .wallet-up-file-path code {
     background: linear-gradient(135deg, var(--wup-brand) 0%, var(--wup-brand-light) 100%);
     color: white;
     border-color: transparent;
 }
-
 .wallet-up-file-desc {
     color: #64748b;
     font-size: 13px;
@@ -2210,11 +1819,9 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     overflow-wrap: break-word;
     hyphens: auto;
 }
-
 .wallet-up-file-item:hover .wallet-up-file-desc {
     color: #475569;
 }
-
 .wallet-up-files-note {
     display: flex;
     align-items: center;
@@ -2224,86 +1831,68 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     border-radius: 8px;
     border: 1px solid rgba(103, 79, 191, 0.15);
 }
-
 .wallet-up-files-note svg {
     color: var(--wup-brand);
     flex-shrink: 0;
 }
-
 .wallet-up-files-note em {
     color: #475569;
     font-size: 13px;
     font-style: normal;
     letter-spacing: -0.01em;
 }
-
-/* Responsive adjustments for files section */
 @media screen and (max-width: 782px) {
     .wallet-up-file-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
     }
-    
     .wallet-up-file-path {
         min-width: auto;
         width: 100%;
         max-width: 100%;
     }
-    
     .wallet-up-file-path code {
         word-break: break-all;
         display: block;
     }
-    
     .wallet-up-file-desc {
         text-align: left;
         width: 100%;
         min-width: auto;
     }
 }
-
-/* Dark theme support for files section */
 @media (prefers-color-scheme: dark) {
     .wallet-up-files-info {
         background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
         border-color: #334155;
     }
-    
     .wallet-up-files-header {
         border-bottom-color: #334155;
     }
-    
     .wallet-up-file-item {
         background: #0f172a;
         border-color: #334155;
     }
-    
     .wallet-up-file-item:hover {
         background: linear-gradient(90deg, rgba(103, 79, 191, 0.1) 0%, transparent 100%);
     }
-    
     .wallet-up-file-path code {
         background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
         color: #cbd5e1;
         border-color: #475569;
     }
-    
     .wallet-up-file-desc {
         color: #94a3b8;
     }
-    
     .wallet-up-files-note {
         background: linear-gradient(135deg, rgba(103, 79, 191, 0.15) 0%, rgba(123, 104, 212, 0.1) 100%);
         border-color: rgba(103, 79, 191, 0.3);
     }
-    
     .wallet-up-files-note em {
         color: #94a3b8;
     }
 }
-
-/* Additional fixes for perfect centering */
 .button,
 button[type="submit"],
 button[type="button"],
@@ -2313,8 +1902,6 @@ input[type="submit"] {
     justify-content: center !important;
     gap: 6px;
 }
-
-/* Ensure checkboxes are perfectly square and centered */
 input[type="checkbox"] {
     width: 20px !important;
     height: 20px !important;
@@ -2324,8 +1911,6 @@ input[type="checkbox"] {
     align-items: center;
     justify-content: center;
 }
-
-/* Remove all focus outlines from tabs */
 .settings-tabs a:focus,
 .settings-tabs .settings-tab:focus,
 .settings-tabs .settings-tab:active,
@@ -2333,8 +1918,6 @@ input[type="checkbox"] {
     outline: none !important;
     box-shadow: none !important;
 }
-
-/* Only show subtle indication for keyboard navigation */
 .settings-tab:focus-visible::after {
     content: '';
     position: absolute;
@@ -2346,12 +1929,9 @@ input[type="checkbox"] {
     opacity: 0.5;
     border-radius: 2px;
 }
-
-/* File path hover tooltip for full path */
 .wallet-up-file-path {
     position: relative;
 }
-
 .wallet-up-file-path code:hover::after {
     content: attr(title);
     position: absolute;
@@ -2368,8 +1948,6 @@ input[type="checkbox"] {
     margin-bottom: 4px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-
-/* Premium Header Wrapper */
 .wallet-up-premium-header-wrapper {
     margin: 0 20px 0 0px;
     padding: 30px 40px;
@@ -2379,17 +1957,12 @@ input[type="checkbox"] {
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(103, 79, 191, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-
-/* Premium Title Styling */
 .wallet-up-premium-header {
     margin: 0;
     padding: 0;
     position: relative;
     z-index: 1;
 }
-
-/* Removed .wrap styles that were causing footer positioning issues */
-
 .wallet-up-premium-header::before {
     content: '';
     position: absolute;
@@ -2401,7 +1974,6 @@ input[type="checkbox"] {
     background-size: cover;
     opacity: 0.1;
 }
-
 .wallet-up-premium-header::after {
     content: '';
     position: absolute;
@@ -2412,7 +1984,6 @@ input[type="checkbox"] {
     background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
     border-radius: 50%;
 }
-
 .wallet-up-premium-title {
     margin: 0 !important;
     padding: 0 !important;
@@ -2428,41 +1999,34 @@ input[type="checkbox"] {
     gap: 12px;
     flex-wrap: wrap;
 }
-
 .wallet-up-title-icon {
     color: rgba(255, 255, 255, 0.9);
     animation: twinkle 3s ease-in-out infinite;
 }
-
 @keyframes twinkle {
     0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
     50% { transform: scale(1.1) rotate(5deg); opacity: 1; }
 }
-
 .wallet-up-header-sparkle {
     position: absolute;
     color: rgba(255, 255, 255, 0.3);
     animation: float 6s ease-in-out infinite;
 }
-
 .wallet-up-sparkle-1 {
     top: 20px;
     right: 100px;
     animation-delay: 0s;
 }
-
 .wallet-up-sparkle-2 {
     bottom: 20px;
     left: 80px;
     animation-delay: 3s;
 }
-
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
     33% { transform: translateY(-10px) rotate(10deg); }
     66% { transform: translateY(5px) rotate(-5deg); }
 }
-
 .wallet-up-header-badge {
     position: absolute;
     top: 0px;
@@ -2480,7 +2044,6 @@ input[type="checkbox"] {
     justify-content: center;
     gap: 5px;
 }
-
 .wallet-up-lock-icon {
     color: currentColor;
     opacity: 0.9;
@@ -2489,12 +2052,10 @@ input[type="checkbox"] {
     vertical-align: middle;
     margin-top: -1px;
 }
-
 .wallet-up-header-badge:hover .wallet-up-lock-icon {
     opacity: 1;
     transform: scale(1.1);
 }
-
 .wallet-up-title-main {
     font-weight: 700 !important;
     font-size: 28px !important;
@@ -2503,7 +2064,6 @@ input[type="checkbox"] {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-
 .wallet-up-title-by {
     font-weight: 300 !important;
     font-size: 20px !important;
@@ -2512,60 +2072,47 @@ input[type="checkbox"] {
     color: rgba(255, 255, 255, 0.85) !important;
     margin-left: 4px;
 }
-
-/* Responsive adjustments */
 @media screen and (max-width: 782px) {
     .wallet-up-premium-header-wrapper {
         margin: 0 0 15px 0;
         padding: 0;
     }
-    
     .wallet-up-premium-header {
         margin: 0;
         padding: 20px;
         border-radius: 8px;
     }
-    
     .wallet-up-premium-title {
         font-size: 20px !important;
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
     }
-    
     .wallet-up-title-main {
         font-size: 20px !important;
     }
-    
     .wallet-up-title-by {
         font-size: 16px !important;
     }
-    
     .wallet-up-title-icon {
         width: 24px !important;
         height: 24px !important;
     }
-    
     .wallet-up-header-badge {
         top: 10px;
         right: 10px;
         font-size: 10px;
         padding: 3px 8px;
     }
-    
     .wallet-up-header-sparkle {
         display: none;
     }
 }
-
-/* Dark mode support */
 @media (prefers-color-scheme: dark) {
     .wallet-up-premium-header-wrapper {
         background: linear-gradient(135deg, #4a3a8c 0%, #6b5aad 50%, #8070c8 100%);
     }
 }
-
-/* Force WordPress footer to stay at bottom on Wallet Up settings page */
 .toplevel_page_wallet-up-login #wpfooter {
     position: relative !important;
     clear: both !important;
