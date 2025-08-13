@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="70px" viewBox="0 0 200 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="walletUpGradient">
+            <stop stop-color="#674FBF" offset="0%"></stop>
+            <stop stop-color="#7B68D4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <!-- Icon -->
+            <g transform="translate(10, 15)" fill="url(#walletUpGradient)">
+                <path d="M5,8 L5,5 C5,3.8954305 5.8954305,3 7,3 L17,3 C18.1045695,3 19,3.8954305 19,5 L19,8" stroke="url(#walletUpGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M19,16 L19,19 C19,20.1045695 18.1045695,21 17,21 L7,21 C5.8954305,21 5,20.1045695 5,19 L5,16" stroke="url(#walletUpGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+                <line x1="12" y1="3" x2="12" y2="21" stroke="url(#walletUpGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></line>
+            </g>
+            
+            <!-- Text -->
+            <g transform="translate(40, 30)" fill="#674FBF">
+                <text font-family="Arial, sans-serif" font-size="20" font-weight="600">
+                    Wallet Up
+                </text>
+                <text font-family="Arial, sans-serif" font-size="12" font-weight="400" y="20">
+                    Advanced URL &amp; QR Tools
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

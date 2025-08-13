@@ -1,0 +1,1474 @@
+# Spanish translation for Wallet Up Login Customizer
+# Complete translation file with ALL strings
+msgid ""
+msgstr ""
+"Project-Id-Version: Wallet Up Login Customizer 2.3.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wallet-up-login-"
+"customizer\n"
+"POT-Creation-Date: 2025-08-13T02:07:19+00:00\n"
+"PO-Revision-Date: 2025-01-09 00:00:00+00:00\n"
+"Last-Translator: Wallet Up Team\n"
+"Language-Team: Spanish\n"
+"Language: es_PE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Plugin Name of the plugin
+#: wallet-up-login-customizer.php
+#, fuzzy
+msgid "Wallet Up Premium Login Customizer"
+msgstr "Wallet Up Login Customizer:"
+
+#. Description of the plugin
+#: wallet-up-login-customizer.php
+msgid ""
+"Creates a beautiful interactive login experience for Wallet Up and Wordpress "
+"users"
+msgstr ""
+"Crea una hermosa experiencia de inicio de sesión interactiva para usuarios "
+"de Wallet Up y WordPress."
+
+#. Author of the plugin
+#: wallet-up-login-customizer.php
+#: includes/class-wallet-up-hard-redirect.php:363
+#: includes/class-wallet-up-hard-redirect.php:365
+#: includes/class-wallet-up-hard-redirect.php:382
+#: includes/class-wallet-up-hard-redirect.php:383
+#: wallet-up-login-customizer.php:436
+msgid "Wallet Up"
+msgstr "Wallet Up"
+
+#. Author URI of the plugin
+#: wallet-up-login-customizer.php
+msgid "https://walletup.app"
+msgstr ""
+
+#: assets/class-wallet-up-login-customizer.php:247
+#: assets/class-wallet-up-login-customizer.php:287
+#: assets/class-wallet-up-login-customizer.php:1052
+#: includes/class-wallet-up-login-customizer.php:247
+#: includes/class-wallet-up-login-customizer.php:287
+#: includes/class-wallet-up-login-customizer.php:1050
+#: wallet-up-login-customizer.php:684 wallet-up-login-customizer.php:1584
+#: wallet-up-login-customizer.php:1764 wallet-up-login-customizer.php:2350
+msgid "Verifying your credentials..."
+msgstr "Verificando sus credenciales..."
+
+#: assets/class-wallet-up-login-customizer.php:249
+#: assets/class-wallet-up-login-customizer.php:288
+#: includes/class-wallet-up-login-customizer.php:249
+#: includes/class-wallet-up-login-customizer.php:288
+#: wallet-up-login-customizer.php:685 wallet-up-login-customizer.php:1585
+#: wallet-up-login-customizer.php:2352
+msgid "Preparing your dashboard..."
+msgstr "Preparando su panel..."
+
+#: assets/class-wallet-up-login-customizer.php:251
+#: assets/class-wallet-up-login-customizer.php:289
+#: includes/class-wallet-up-login-customizer.php:251
+#: includes/class-wallet-up-login-customizer.php:289
+#: wallet-up-login-customizer.php:686 wallet-up-login-customizer.php:1586
+#: wallet-up-login-customizer.php:2354
+msgid "Almost there..."
+msgstr "Casi listo..."
+
+#: assets/class-wallet-up-login-customizer.php:290
+#: includes/class-wallet-up-login-customizer.php:290
+msgid "Login failed. Please check your credentials and try again."
+msgstr ""
+"Inicio de sesión fallido. Por favor verifique sus credenciales e inténtelo "
+"de nuevo."
+
+#: assets/class-wallet-up-login-customizer.php:291
+#: includes/class-wallet-up-login-customizer.php:291
+msgid "You have been logged out."
+msgstr "Ha cerrado sesión."
+
+#: assets/class-wallet-up-login-customizer.php:292
+#: includes/class-wallet-up-login-customizer.php:292
+msgid "Your password has been reset successfully."
+msgstr "Su contraseña ha sido restablecida exitosamente."
+
+#: assets/class-wallet-up-login-customizer.php:293
+#: assets/class-wallet-up-login-customizer.php:1019
+#: includes/class-wallet-up-login-customizer.php:293
+#: includes/class-wallet-up-login-customizer.php:1017
+msgid "Welcome back! Please sign in to continue."
+msgstr "¡Bienvenido! Por favor inicie sesión para continuar."
+
+#: assets/class-wallet-up-login-customizer.php:294
+#: includes/class-wallet-up-login-customizer.php:294
+#: wallet-up-login-customizer.php:694
+msgid "Are you sure you want to reset all settings to default values?"
+msgstr ""
+"¿Está seguro de que desea restablecer todos los ajustes a los valores "
+"predeterminados?"
+
+#: assets/class-wallet-up-login-customizer.php:295
+#: includes/class-wallet-up-login-customizer.php:295
+msgid "Processing..."
+msgstr "Procesando..."
+
+#: assets/class-wallet-up-login-customizer.php:296
+#: includes/class-wallet-up-login-customizer.php:296
+msgid "Loading..."
+msgstr "Cargando..."
+
+#: assets/class-wallet-up-login-customizer.php:297
+#: assets/class-wallet-up-login-customizer.php:661
+#: includes/class-wallet-up-login-customizer.php:297
+#: includes/class-wallet-up-login-customizer.php:659
+#: wallet-up-login-customizer.php:2320
+msgid "Sign In Securely"
+msgstr "Iniciar sesión de forma segura"
+
+#: assets/class-wallet-up-login-customizer.php:298
+#: assets/class-wallet-up-login-customizer.php:1051
+#: includes/class-wallet-up-login-customizer.php:298
+#: includes/class-wallet-up-login-customizer.php:1049
+msgid "Signing In"
+msgstr "Iniciando sesión"
+
+#: assets/class-wallet-up-login-customizer.php:299
+#: includes/class-wallet-up-login-customizer.php:299
+msgid "Continue to Dashboard"
+msgstr "Continuar al panel"
+
+#: assets/class-wallet-up-login-customizer.php:300
+#: includes/class-wallet-up-login-customizer.php:300
+msgid "Try Again"
+msgstr "Intentar de nuevo"
+
+#: assets/class-wallet-up-login-customizer.php:301
+#: includes/class-wallet-up-login-customizer.php:301
+msgid "Consider using a stronger password"
+msgstr "Considere usar una contraseña más segura"
+
+#: assets/class-wallet-up-login-customizer.php:303
+#: includes/class-wallet-up-login-customizer.php:302
+#, fuzzy
+msgid "Welcome to the Next 'Up"
+msgstr "Welcome to Wallet Up"
+
+#: assets/class-wallet-up-login-customizer.php:304
+#: includes/class-wallet-up-login-customizer.php:303
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: assets/class-wallet-up-login-customizer.php:305
+#: includes/class-wallet-up-login-customizer.php:304
+msgid "Password"
+msgstr "Contraseña"
+
+#: assets/class-wallet-up-login-customizer.php:306
+#: includes/class-wallet-up-login-customizer.php:305
+msgid "Show password"
+msgstr "Mostrar contraseña"
+
+#: assets/class-wallet-up-login-customizer.php:307
+#: includes/class-wallet-up-login-customizer.php:306
+msgid "Hide password"
+msgstr "Ocultar contraseña"
+
+#: assets/class-wallet-up-login-customizer.php:308
+#: includes/class-wallet-up-login-customizer.php:307
+msgid "Invalid username or password. Please try again."
+msgstr ""
+"Nombre de usuario o contraseña inválidos. Por favor inténtelo de nuevo."
+
+#: assets/class-wallet-up-login-customizer.php:309
+#: includes/class-wallet-up-login-customizer.php:308
+msgid "Server error. Please try again later."
+msgstr "Error del servidor. Por favor inténtelo más tarde."
+
+#: assets/class-wallet-up-login-customizer.php:310
+#: assets/class-wallet-up-login-customizer.php:928
+#: includes/class-wallet-up-login-customizer.php:309
+#: includes/class-wallet-up-login-customizer.php:926
+msgid "Username is required"
+msgstr "El nombre de usuario es requerido"
+
+#: assets/class-wallet-up-login-customizer.php:311
+#: includes/class-wallet-up-login-customizer.php:310
+msgid "Password is required"
+msgstr "La contraseña es requerida"
+
+#: assets/class-wallet-up-login-customizer.php:312
+#: includes/class-wallet-up-login-customizer.php:311
+msgid "Username must be at least 3 characters"
+msgstr "El nombre de usuario debe tener al menos 3 caracteres"
+
+#: assets/class-wallet-up-login-customizer.php:313
+#: includes/class-wallet-up-login-customizer.php:312
+msgid "Please correct the errors before signing in."
+msgstr "Por favor corrija los errores antes de iniciar sesión."
+
+#: assets/class-wallet-up-login-customizer.php:314
+#: includes/class-wallet-up-login-customizer.php:313
+msgid "Welcome back! You have successfully signed in."
+msgstr "¡Bienvenido! Ha iniciado sesión exitosamente."
+
+#: assets/class-wallet-up-login-customizer.php:315
+#: includes/class-wallet-up-login-customizer.php:314
+msgid "Success!"
+msgstr "¡Éxito!"
+
+#: assets/class-wallet-up-login-customizer.php:316
+#: includes/class-wallet-up-login-customizer.php:315
+msgid "Oops!"
+msgstr "¡Ups!"
+
+#: assets/class-wallet-up-login-customizer.php:318
+#: includes/class-wallet-up-login-customizer.php:317
+#: wallet-up-login-customizer.php:687
+msgid "Color scheme applied!"
+msgstr "¡Esquema de color aplicado!"
+
+#: assets/class-wallet-up-login-customizer.php:319
+#: includes/class-wallet-up-login-customizer.php:318
+#: wallet-up-login-customizer.php:688
+msgid "Settings exported successfully!"
+msgstr "¡Configuración exportada exitosamente!"
+
+#: assets/class-wallet-up-login-customizer.php:320
+#: includes/class-wallet-up-login-customizer.php:319
+#: wallet-up-login-customizer.php:689
+msgid "Settings imported successfully"
+msgstr "Configuración importada exitosamente"
+
+#: assets/class-wallet-up-login-customizer.php:321
+#: includes/class-wallet-up-login-customizer.php:320
+#: wallet-up-login-customizer.php:690
+msgid "Settings reset to defaults!"
+msgstr "¡Configuración restablecida a valores predeterminados!"
+
+#: assets/class-wallet-up-login-customizer.php:322
+#: includes/class-wallet-up-login-customizer.php:321
+#: wallet-up-login-customizer.php:691
+msgid "Please select a valid JSON file"
+msgstr "Por favor seleccione un archivo JSON válido"
+
+#: assets/class-wallet-up-login-customizer.php:323
+#: includes/class-wallet-up-login-customizer.php:322
+#: wallet-up-login-customizer.php:692
+msgid "Error importing settings"
+msgstr "Error al importar configuración"
+
+#: assets/class-wallet-up-login-customizer.php:324
+#: includes/class-wallet-up-login-customizer.php:323
+#: wallet-up-login-customizer.php:693
+msgid "Error reading file"
+msgstr "Error al leer archivo"
+
+#: assets/class-wallet-up-login-customizer.php:325
+#: includes/class-wallet-up-login-customizer.php:324
+msgid "Error: Could not get image URL"
+msgstr "Error: No se pudo obtener la URL de la imagen"
+
+#: assets/class-wallet-up-login-customizer.php:326
+#: includes/class-wallet-up-login-customizer.php:325
+msgid "Error: Invalid image URL format"
+msgstr "Error: Formato de URL de imagen inválido"
+
+#: assets/class-wallet-up-login-customizer.php:328
+#: includes/class-wallet-up-login-customizer.php:326
+msgid "Reset Password"
+msgstr "Restablecer contraseña"
+
+#: assets/class-wallet-up-login-customizer.php:329
+#: includes/class-wallet-up-login-customizer.php:327
+msgid "Back to Login"
+msgstr "Volver al inicio de sesión"
+
+#: assets/class-wallet-up-login-customizer.php:330
+#: includes/class-wallet-up-login-customizer.php:328
+msgid "Forgot Password?"
+msgstr "¿Olvidó su contraseña?"
+
+#: assets/class-wallet-up-login-customizer.php:331
+#: includes/class-wallet-up-login-customizer.php:329
+msgid "Register New Account"
+msgstr "Registrar nueva cuenta"
+
+#: assets/class-wallet-up-login-customizer.php:332
+#: includes/class-wallet-up-login-customizer.php:330
+msgid "Back to %s"
+msgstr "Volver a %s"
+
+#: assets/class-wallet-up-login-customizer.php:333
+#: includes/class-wallet-up-login-customizer.php:331
+msgid "Welcome to"
+msgstr "Bienvenido a"
+
+#: assets/class-wallet-up-login-customizer.php:334
+#: includes/class-wallet-up-login-customizer.php:332
+#: wallet-up-login-customizer.php:2389
+msgid "Remember Me"
+msgstr "Recuérdame"
+
+#: assets/class-wallet-up-login-customizer.php:597
+#: includes/class-wallet-up-login-customizer.php:595
+msgid "Wallet Up - Advanced URL & QR Tools"
+msgstr "Wallet Up - Herramientas avanzadas de URL y QR"
+
+#: assets/class-wallet-up-login-customizer.php:636
+#: includes/class-wallet-up-login-customizer.php:634
+msgid "Wallet Up — Advanced URL & QR Tools"
+msgstr "Wallet Up — Advanced URL & QR Tools"
+
+#: assets/class-wallet-up-login-customizer.php:637
+#: includes/class-wallet-up-login-customizer.php:635
+msgid "All Rights Reserved"
+msgstr "Todos los derechos reservados"
+
+#: assets/class-wallet-up-login-customizer.php:720
+#: includes/class-wallet-up-login-customizer.php:718
+msgid "Username and password are required"
+msgstr "Nombre de usuario y contraseña son requeridos"
+
+#: assets/class-wallet-up-login-customizer.php:943
+#: includes/class-wallet-up-login-customizer.php:941
+msgid "Username exists"
+msgstr "El nombre de usuario existe"
+
+#: assets/class-wallet-up-login-customizer.php:949
+#: includes/class-wallet-up-login-customizer.php:947
+msgid "Username does not exist"
+msgstr "El nombre de usuario no existe"
+
+#: assets/class-wallet-up-login-customizer.php:990
+#: includes/class-wallet-up-login-customizer.php:988
+msgid ""
+"Oops! The password you entered is incorrect. Please try again or use the "
+"password reset link below."
+msgstr ""
+"¡Ups! La contraseña ingresada es incorrecta. Intente de nuevo o use el "
+"enlace de restablecimiento de contraseña."
+
+#: assets/class-wallet-up-login-customizer.php:992
+#: includes/class-wallet-up-login-customizer.php:990
+msgid ""
+"The username you entered doesn't appear to exist. Double-check it or create "
+"a new account."
+msgstr ""
+
+#: assets/class-wallet-up-login-customizer.php:994
+#: includes/class-wallet-up-login-customizer.php:992
+msgid "Please enter your password to log in."
+msgstr "Por favor ingrese su contraseña para iniciar sesión."
+
+#: assets/class-wallet-up-login-customizer.php:996
+#: includes/class-wallet-up-login-customizer.php:994
+msgid "Please enter your username to log in."
+msgstr "Por favor ingrese su nombre de usuario para iniciar sesión."
+
+#: assets/class-wallet-up-login-customizer.php:998
+#: includes/class-wallet-up-login-customizer.php:996
+msgid "This account has been suspended. Please contact support for assistance."
+msgstr ""
+"Esta cuenta ha sido suspendida. Por favor contacte a soporte para asistencia."
+
+#: assets/class-wallet-up-login-customizer.php:1013
+#: includes/class-wallet-up-login-customizer.php:1011
+msgid ""
+"✓ You have been successfully logged out. Please sign in again to continue."
+msgstr ""
+"✓ Ha cerrado sesión exitosamente. Por favor inicie sesión nuevamente para "
+"continuar."
+
+#: assets/class-wallet-up-login-customizer.php:1036
+#: includes/class-wallet-up-login-customizer.php:1034
+msgid "Please enter your username and password to access the dashboard."
+msgstr ""
+"Por favor ingrese su nombre de usuario y contraseña para acceder al panel."
+
+#: assets/class-wallet-up-login-customizer.php:1056
+#: includes/class-wallet-up-login-customizer.php:1054
+msgid "Continue"
+msgstr "Continuar"
+
+#: includes/class-wallet-up-admin-sync.php:345
+msgid ""
+"Wallet Up Login has been updated to version %s. Settings synchronization in "
+"progress..."
+msgstr ""
+"Wallet Up Login ha sido actualizado a la versión %s. Sincronización en "
+"progreso..."
+
+#: includes/class-wallet-up-admin-sync.php:411
+msgid "Security check failed."
+msgstr "Verificación de seguridad fallida."
+
+#: includes/class-wallet-up-admin-sync.php:416
+msgid "Insufficient permissions."
+msgstr "Permisos insuficientes."
+
+#: includes/class-wallet-up-admin-sync.php:443
+msgid "Synchronization completed successfully."
+msgstr "Sincronización completada exitosamente."
+
+#: includes/class-wallet-up-admin-sync.php:448
+msgid "Sync failed: %s"
+msgstr "Sincronización fallida: %s"
+
+#: includes/class-wallet-up-admin-sync.php:512
+msgid "%d pending"
+msgid_plural "%d pending"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wallet-up-admin-sync.php:517
+msgid "%d failed"
+msgid_plural "%d failed"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-wallet-up-conflict-detector.php:111
+msgid "Function %s conflicts with Wallet Up force login"
+msgstr ""
+"La función %s entra en conflicto con el inicio de sesión forzado de Wallet Up"
+
+#: includes/class-wallet-up-conflict-detector.php:135
+msgid "Hook %s on %s may conflict with Wallet Up"
+msgstr "El hook %s en %s puede entrar en conflicto con Wallet Up"
+
+#: includes/class-wallet-up-conflict-detector.php:211
+msgid "Hiding wp-login.php without a custom login slug will lock out all users"
+msgstr ""
+"Ocultar wp-login.php sin un slug personalizado bloqueará a todos los usuarios"
+
+#: includes/class-wallet-up-conflict-detector.php:242
+msgid "Wallet Up Conflict Detected"
+msgstr "Conflicto de Wallet Up detectado"
+
+#: includes/class-wallet-up-conflict-detector.php:253
+msgid "Auto-Fix This Issue"
+msgstr "Auto-corregir este problema"
+
+#: includes/class-wallet-up-conflict-detector.php:260
+#: includes/class-wallet-up-conflict-detector.php:265
+msgid "Manual Fix:"
+msgstr "Corrección manual:"
+
+#: includes/class-wallet-up-conflict-detector.php:261
+msgid "Remove the conflicting function from your theme's functions.php file."
+msgstr ""
+
+#: includes/class-wallet-up-conflict-detector.php:266
+msgid "Deactivate the %s plugin or disable its login features."
+msgstr ""
+"Desactive el plugin %s o deshabilite sus funciones de inicio de sesión."
+
+#: includes/class-wallet-up-conflict-detector.php:336
+msgid "Security check failed"
+msgstr "Verificación de seguridad fallida"
+
+#: includes/class-wallet-up-conflict-detector.php:350
+msgid ""
+"Custom login slug created. Please test it before enabling wp-login.php "
+"hiding."
+msgstr ""
+"Slug de inicio de sesión personalizado creado. Por favor pruébelo antes de "
+"ocultar wp-login.php."
+
+#: includes/class-wallet-up-conflict-detector.php:363
+msgid "Your IP (%s) added to whitelist."
+msgstr "Su IP (%s) agregada a la lista blanca."
+
+#: includes/class-wallet-up-conflict-detector.php:368
+msgid "Unknown fix type"
+msgstr "Tipo de corrección desconocido"
+
+#: includes/class-wallet-up-conflict-detector.php:414
+msgid "No conflicts detected"
+msgstr "No se detectaron conflictos"
+
+#: includes/class-wallet-up-conflict-detector.php:433
+#, fuzzy
+msgid "%d conflict detected"
+msgid_plural "%d conflicts detected"
+msgstr[0] "No se detectaron conflictos"
+msgstr[1] "No se detectaron conflictos"
+
+#: includes/class-wallet-up-enterprise-security.php:702
+msgid "Security validation failed. Please refresh the page and try again."
+msgstr ""
+"Validación de seguridad fallida. Por favor actualice la página e inténtelo "
+"de nuevo."
+
+#: includes/class-wallet-up-enterprise-security.php:716
+msgid "Automated login attempts are not allowed."
+msgstr "No se permiten intentos de inicio de sesión automatizados."
+
+#: includes/class-wallet-up-enterprise-security.php:728
+msgid "Too many login attempts. Please try again later."
+msgstr ""
+"Demasiados intentos de inicio de sesión. Por favor inténtelo más tarde."
+
+#: includes/class-wallet-up-enterprise-security.php:732
+msgid "Account temporarily locked due to multiple failed attempts."
+msgstr "Cuenta bloqueada temporalmente debido a múltiples intentos fallidos."
+
+#: includes/class-wallet-up-enterprise-security.php:1155
+msgid "You must be logged in to access the REST API."
+msgstr "Debe iniciar sesión para acceder a la API REST."
+
+#: includes/class-wallet-up-enterprise-security.php:1237
+msgid "Wallet Up Enterprise Security"
+msgstr "Seguridad empresarial de Wallet Up"
+
+#: includes/class-wallet-up-enterprise-security.php:1242
+#: wallet-up-login-customizer.php:2421
+msgid "Force Login"
+msgstr "Forzar inicio de sesión"
+
+#: includes/class-wallet-up-enterprise-security.php:1245
+msgid "Require authentication for all site access"
+msgstr "Requerir autenticación para todo acceso al sitio"
+
+#: includes/class-wallet-up-enterprise-security.php:1249
+#: wallet-up-login-customizer.php:2432
+msgid "Hide wp-login.php"
+msgstr "Ocultar wp-login.php"
+
+#: includes/class-wallet-up-enterprise-security.php:1252
+msgid "Hide and protect wp-login.php"
+msgstr "Ocultar y proteger wp-login.php"
+
+#: includes/class-wallet-up-enterprise-security.php:1256
+msgid "Custom Login Slug"
+msgstr "Slug de inicio de sesión personalizado"
+
+#: includes/class-wallet-up-enterprise-security.php:1259
+msgid "Custom URL slug for the login page"
+msgstr "Slug URL personalizado para la página de inicio de sesión"
+
+#: includes/class-wallet-up-enterprise-security.php:1263
+#: wallet-up-login-customizer.php:2459
+msgid "Max Login Attempts"
+msgstr "Máximo de intentos de inicio de sesión"
+
+#: includes/class-wallet-up-enterprise-security.php:1269
+msgid "Lockout Duration (seconds)"
+msgstr "Duración del bloqueo (segundos)"
+
+#: includes/class-wallet-up-enterprise-security.php:1275
+msgid "Session Timeout (seconds)"
+msgstr "Tiempo de espera de sesión (segundos)"
+
+#: includes/class-wallet-up-enterprise-security.php:1278
+msgid "Time before user sessions expire"
+msgstr "Tiempo antes de que expiren las sesiones de usuario"
+
+#: includes/class-wallet-up-enterprise-security.php:1282
+msgid "Security Headers"
+msgstr "Encabezados de seguridad"
+
+#: includes/class-wallet-up-enterprise-security.php:1285
+msgid "Enable security headers"
+msgstr "Habilitar encabezados de seguridad"
+
+#: includes/class-wallet-up-enterprise-security.php:1291
+msgid "Security Logs"
+msgstr "Registros de seguridad"
+
+#: includes/class-wallet-up-enterprise-security.php:1310
+msgid "No security events logged yet."
+msgstr "Aún no hay eventos de seguridad registrados."
+
+#: includes/class-wallet-up-hard-redirect.php:228
+msgid ""
+"Wallet Up dashboard replacement has been disabled because the Wallet Up page "
+"was not found. Please make sure the Wallet Up plugin is active."
+msgstr ""
+"El reemplazo del panel de Wallet Up ha sido deshabilitado porque no se "
+"encontró la página."
+
+#: includes/class-wallet-up-hard-redirect.php:444
+msgid "Dashboard"
+msgstr "Panel"
+
+#: includes/class-wallet-up-hard-redirect.php:460
+#: wallet-up-login-customizer.php:2642
+msgid "WordPress Dashboard"
+msgstr "Panel de WordPress"
+
+#: includes/class-wallet-up-hard-redirect.php:481
+#: includes/class-wallet-up-hard-redirect.php:553
+#: wallet-up-login-customizer.php:349 wallet-up-login-customizer.php:366
+msgid "Wallet Up Dashboard"
+msgstr "Panel de Wallet Up"
+
+#: includes/class-wallet-up-hard-redirect.php:492
+#: includes/class-wallet-up-hard-redirect.php:522
+#: wallet-up-force-redirect.php:442 wallet-up-force-redirect.php:460
+msgid "The WordPress dashboard has been replaced with the Wallet Up Dashboard."
+msgstr "El panel de WordPress ha sido reemplazado con el panel de Wallet Up."
+
+#: includes/class-wallet-up-hard-redirect.php:494
+#: includes/class-wallet-up-hard-redirect.php:524
+#: wallet-up-force-redirect.php:443 wallet-up-force-redirect.php:461
+msgid "Go to Wallet Up Dashboard"
+msgstr "Ir al panel de Wallet Up"
+
+#: includes/class-wallet-up-hard-redirect.php:521
+#: wallet-up-login-customizer.php:372
+msgid "Welcome to Wallet Up!"
+msgstr "Welcome to Wallet Up!"
+
+#: includes/class-wallet-up-login-logo.php:134
+#: includes/class-wallet-up-login-logo.php:135
+msgid "Logo Settings"
+msgstr "Configuración del logo"
+
+#: includes/class-wallet-up-login-logo.php:152
+msgid "Login Logo Configuration"
+msgstr "Configuración del logo de inicio de sesión"
+
+#: includes/class-wallet-up-login-logo.php:160
+msgid "Enable Custom Logo"
+msgstr "Habilitar logo personalizado"
+
+#: includes/class-wallet-up-login-logo.php:169
+msgid "Logo Image"
+msgstr "Imagen del logo"
+
+#: includes/class-wallet-up-login-logo.php:178
+msgid "Logo Size"
+msgstr "Tamaño del logo"
+
+#: includes/class-wallet-up-login-logo.php:187
+msgid "Logo Link"
+msgstr "Enlace del logo"
+
+#: includes/class-wallet-up-login-logo.php:207
+msgid "Logo settings saved successfully."
+msgstr "Configuración del logo guardada exitosamente."
+
+#: includes/class-wallet-up-login-logo.php:222
+msgid "Save Logo Settings"
+msgstr "Guardar configuración del logo"
+
+#: includes/class-wallet-up-login-logo.php:227
+msgid "Current Logo Preview"
+msgstr "Vista previa del logo actual"
+
+#: includes/class-wallet-up-login-logo.php:232
+msgid "Login Logo Preview"
+msgstr "Vista previa del logo de inicio de sesión"
+
+#: includes/class-wallet-up-login-logo.php:234
+msgid "No custom logo set. Using site logo or WordPress default."
+msgstr ""
+"No hay logo personalizado. Usando logo del sitio o predeterminado de "
+"WordPress."
+
+#: includes/class-wallet-up-login-logo.php:246
+msgid ""
+"Configure the logo that appears on the WordPress login page. The logo will "
+"be automatically sized to fit within 50px height while preserving aspect "
+"ratio."
+msgstr ""
+"Configure el logo que aparece en la página de inicio de sesión de WordPress. "
+"El logo se ajustará automáticamente a 50px de altura preservando la "
+"proporción."
+
+#: includes/class-wallet-up-login-logo.php:257
+msgid "Display custom logo on login page"
+msgstr "Mostrar logo personalizado en la página de inicio de sesión"
+
+#: includes/class-wallet-up-login-logo.php:271
+#: includes/class-wallet-up-login-logo.php:282
+msgid "Select Logo"
+msgstr "Seleccionar logo"
+
+#: includes/class-wallet-up-login-logo.php:274
+msgid "Upload or select a logo image. Recommended size: 200x50px or smaller."
+msgstr ""
+"Suba o seleccione una imagen de logo. Tamaño recomendado: 200x50px o menor."
+
+#: includes/class-wallet-up-login-logo.php:288
+msgid "Use as Logo"
+msgstr "Usar como logo"
+
+#: includes/class-wallet-up-login-logo.php:309
+msgid "Maximum Height:"
+msgstr "Altura máxima:"
+
+#: includes/class-wallet-up-login-logo.php:312
+msgid "default: 50px"
+msgstr "predeterminado: 50px"
+
+#: includes/class-wallet-up-login-logo.php:318
+msgid "Preserve aspect ratio when resizing"
+msgstr "Preservar proporción al cambiar tamaño"
+
+#: includes/class-wallet-up-login-logo.php:331
+msgid "Link URL:"
+msgstr "URL del enlace:"
+
+#: includes/class-wallet-up-login-logo.php:337
+msgid "Link Title:"
+msgstr "Título del enlace:"
+
+#: includes/class-wallet-up-login-logo.php:342
+msgid "Where the logo links to and the tooltip text when hovering."
+msgstr "Dónde enlaza el logo y el texto de información al pasar el cursor."
+
+#. translators: %s: Logo settings page URL
+#: includes/class-wallet-up-login-logo.php:405
+msgid ""
+"Wallet Up Login: No custom logo configured. %s to add your brand logo to the "
+"login page."
+msgstr ""
+"Wallet Up Login: No custom logo configured. %s to add your brand logo to the "
+"login page."
+
+#: includes/class-wallet-up-login-logo.php:406
+msgid "Configure logo"
+msgstr "Configurar logo"
+
+#: includes/class-wallet-up-security-sanitizer.php:81
+#: includes/class-wallet-up-security-sanitizer.php:127
+#: includes/class-wallet-up-security-sanitizer.php:390
+msgid "Invalid login credentials. Please try again."
+msgstr ""
+"Credenciales de inicio de sesión inválidas. Por favor inténtelo de nuevo."
+
+#: includes/class-wallet-up-security-sanitizer.php:353
+msgid "Security verification failed."
+msgstr "Verificación de seguridad fallida."
+
+#: includes/class-wallet-up-security-sanitizer.php:360
+msgid "Too many attempts. Please try again later."
+msgstr "Demasiados intentos. Por favor inténtelo más tarde."
+
+#: includes/class-wallet-up-security-sanitizer.php:367
+msgid "Invalid request."
+msgstr "Solicitud inválida."
+
+#: includes/class-wallet-up-security-sanitizer.php:377
+msgid "Please enter both username and password."
+msgstr "Por favor ingrese nombre de usuario y contraseña."
+
+#: includes/class-wallet-up-security-sanitizer.php:404
+msgid "Welcome back, %s!"
+msgstr "¡Bienvenido, %s!"
+
+#: wallet-up-force-redirect.php:441
+msgid "Welcome to Wallet Up Dashboard!"
+msgstr "¡Bienvenido al panel de Wallet Up!"
+
+#: wallet-up-force-redirect.php:493 wallet-up-login-customizer.php:1376
+#: wallet-up-login-customizer.php:2791 wallet-up-login-customizer.php:2806
+msgid "Wallet Up Login:"
+msgstr "Wallet Up Login:"
+
+#: wallet-up-force-redirect.php:493
+#, fuzzy
+msgid ""
+"The \"Land to Wallet Up\" option has been disabled because the Wallet Up "
+"admin page could not be found. Please make sure Wallet Up is installed and "
+"activated before enabling this feature."
+msgstr ""
+"El reemplazo del panel de Wallet Up ha sido deshabilitado porque no se "
+"encontró la página."
+
+#: wallet-up-login-customizer.php:215
+msgid ""
+"Wallet Up dashboard redirect has been disabled because the Wallet Up plugin "
+"is not active."
+msgstr ""
+"La redirección del panel de Wallet Up ha sido deshabilitada porque el plugin "
+"no está activo."
+
+#: wallet-up-login-customizer.php:373
+msgid ""
+"Your WordPress dashboard has been enhanced with Wallet Up. Click below to "
+"access your Wallet Up dashboard."
+msgstr ""
+"Your WordPress dashboard has been enhanced with Wallet Up. Click below to "
+"access your Wallet Up dashboard."
+
+#: wallet-up-login-customizer.php:376
+msgid "Open Wallet Up Dashboard"
+msgstr "Open Wallet Up Dashboard"
+
+#: wallet-up-login-customizer.php:386
+msgid "View Original WordPress Dashboard"
+msgstr "Ver panel original de WordPress"
+
+#: wallet-up-login-customizer.php:724
+msgid "Wallet Up Login Customizer:"
+msgstr "Wallet Up Login Customizer:"
+
+#: wallet-up-login-customizer.php:725
+msgid ""
+"Dashboard redirect is enabled but Wallet Up plugin is not active. Please "
+"install Wallet Up or disable the redirect feature."
+msgstr ""
+"Dashboard redirect is enabled but Wallet Up plugin is not active. Please "
+"install Wallet Up or disable the redirect feature."
+
+#: wallet-up-login-customizer.php:800
+msgid "Welcome to Wallet Up"
+msgstr "Welcome to Wallet Up"
+
+#: wallet-up-login-customizer.php:1290
+msgid "Settings"
+msgstr "Configuración"
+
+#: wallet-up-login-customizer.php:1300
+msgid "Wallet Up Network Settings"
+msgstr "Configuración de red de Wallet Up"
+
+#: wallet-up-login-customizer.php:1301 wallet-up-login-customizer.php:1315
+#: wallet-up-login-customizer.php:1316
+msgid "Wallet Up Login"
+msgstr "Inicio de sesión de Wallet Up"
+
+#: wallet-up-login-customizer.php:1338
+msgid "Settings successfully saved!"
+msgstr "¡Configuración guardada exitosamente!"
+
+#: wallet-up-login-customizer.php:1377
+msgid "The following template files were automatically updated from assets:"
+msgstr ""
+"Los siguientes archivos de plantilla se actualizaron automáticamente desde "
+"assets:"
+
+#: wallet-up-login-customizer.php:1389
+msgid "Login Page Settings"
+msgstr "Configuración de la página de inicio de sesión"
+
+#: wallet-up-login-customizer.php:1397
+msgid "Enable AJAX Login"
+msgstr "Habilitar inicio de sesión AJAX"
+
+#: wallet-up-login-customizer.php:1403
+msgid "Enable AJAX login functionality for a smoother experience"
+msgstr "Habilitar inicio de sesión AJAX para una experiencia más fluida"
+
+#: wallet-up-login-customizer.php:1409 wallet-up-login-customizer.php:2235
+msgid "Custom Logo URL"
+msgstr "URL del logo personalizado"
+
+#: wallet-up-login-customizer.php:1415
+msgid "Enter a URL to use a custom logo (leave empty for default)"
+msgstr ""
+"Ingrese una URL para usar un logo personalizado (deje vacío para "
+"predeterminado)"
+
+#: wallet-up-login-customizer.php:1421 wallet-up-login-customizer.php:1857
+#: wallet-up-login-customizer.php:2273
+msgid "Primary Color"
+msgstr "Color primario"
+
+#: wallet-up-login-customizer.php:1427
+msgid "Select the primary color for the login page"
+msgstr "Seleccione el color primario para la página de inicio de sesión"
+
+#: wallet-up-login-customizer.php:1433
+msgid "Gradient Start Color"
+msgstr "Color inicial del degradado"
+
+#: wallet-up-login-customizer.php:1439
+msgid "Start color for gradient effects"
+msgstr "Color inicial para efectos degradados"
+
+#: wallet-up-login-customizer.php:1445
+msgid "Gradient End Color"
+msgstr "Color final del degradado"
+
+#: wallet-up-login-customizer.php:1451
+msgid "End color for gradient effects"
+msgstr "Color final para efectos degradados"
+
+#: wallet-up-login-customizer.php:1457
+msgid "Enable Sound Effects"
+msgstr "Habilitar efectos de sonido"
+
+#: wallet-up-login-customizer.php:1463
+msgid "Enable subtle audio feedback on login success/failure"
+msgstr ""
+"Habilitar retroalimentación de audio sutil en éxito/fallo de inicio de sesión"
+
+#: wallet-up-login-customizer.php:1469 wallet-up-login-customizer.php:2334
+msgid "Loading Messages"
+msgstr "Mensajes de carga"
+
+#: wallet-up-login-customizer.php:1475
+msgid "Customize messages displayed during login"
+msgstr "Personalizar mensajes mostrados durante el inicio de sesión"
+
+#: wallet-up-login-customizer.php:1481
+msgid "Redirect Delay (ms)"
+msgstr "Retraso de redirección (ms)"
+
+#: wallet-up-login-customizer.php:1487
+msgid "Delay before redirecting after successful login (in milliseconds)"
+msgstr ""
+"Retraso antes de redirigir después del inicio de sesión exitoso (en "
+"milisegundos)"
+
+#: wallet-up-login-customizer.php:1496 wallet-up-login-customizer.php:2165
+msgid "Role-Based Redirects"
+msgstr "Redirecciones basadas en roles"
+
+#: wallet-up-login-customizer.php:1502
+msgid "Enable intelligent role-based redirects after login"
+msgstr ""
+"Habilitar redirecciones inteligentes basadas en roles después del inicio de "
+"sesión"
+
+#: wallet-up-login-customizer.php:1508 wallet-up-login-customizer.php:2212
+msgid "Land to Wallet Up"
+msgstr "Aterrizar en Wallet Up"
+
+#: wallet-up-login-customizer.php:1514
+msgid "Redirect users to the Wallet Up admin page after login"
+msgstr "Redirect users to the Wallet Up admin page after login"
+
+#: wallet-up-login-customizer.php:1520 wallet-up-login-customizer.php:2181
+msgid "Force Dashboard Replacement"
+msgstr "Forzar reemplazo del panel"
+
+#: wallet-up-login-customizer.php:1526
+msgid "Replace WordPress dashboard with Wallet Up admin page for all users"
+msgstr "Replace WordPress dashboard with Wallet Up admin page for all users"
+
+#: wallet-up-login-customizer.php:1532
+msgid "Exempt Administrators"
+msgstr "Eximir administradores"
+
+#: wallet-up-login-customizer.php:1538
+msgid "Allow administrators to access the original WordPress dashboard"
+msgstr "Permitir a los administradores acceder al panel original de WordPress"
+
+#: wallet-up-login-customizer.php:1658
+msgid "Customize the Wallet Up login experience with these settings."
+msgstr "Customize the Wallet Up login experience with these settings."
+
+#: wallet-up-login-customizer.php:1687
+msgid ""
+"Wallet Up Pro plugin is not active. Please install and activate it to "
+"redirect users to Wallet Up after login."
+msgstr ""
+"Wallet Up Pro plugin is not active. Please install and activate it to "
+"redirect users to Wallet Up after login."
+
+#: wallet-up-login-customizer.php:1688
+msgid ""
+"Wallet Up Pro plugin is not active. Please install and activate it to "
+"replace the WordPress dashboard."
+msgstr ""
+"Wallet Up Pro plugin is not active. Please install and activate it to "
+"replace the WordPress dashboard."
+
+#: wallet-up-login-customizer.php:1779 wallet-up-login-customizer.php:2366
+msgid "Add Message"
+msgstr "Agregar mensaje"
+
+#: wallet-up-login-customizer.php:1829
+msgid "Wallet Up Login Network Settings"
+msgstr "Configuración de red de Wallet Up Login"
+
+#: wallet-up-login-customizer.php:1836
+msgid "Force on All Sites"
+msgstr "Forzar en todos los sitios"
+
+#: wallet-up-login-customizer.php:1839
+msgid "Force Wallet Up Login customization on all network sites."
+msgstr ""
+"Forzar personalización de Wallet Up Login en todos los sitios de la red."
+
+#: wallet-up-login-customizer.php:1843
+msgid "Allow Site Override"
+msgstr "Permitir anulación de sitio"
+
+#: wallet-up-login-customizer.php:1846
+msgid "Allow individual sites to override network settings."
+msgstr "Permitir que sitios individuales anulen la configuración de red."
+
+#: wallet-up-login-customizer.php:1850
+msgid "Network Logo URL"
+msgstr "URL del logo de red"
+
+#: wallet-up-login-customizer.php:1853
+msgid "Logo URL to use across all network sites."
+msgstr "URL del logo para usar en todos los sitios de la red."
+
+#: wallet-up-login-customizer.php:1864
+msgid "Save Network Settings"
+msgstr "Guardar configuración de red"
+
+#: wallet-up-login-customizer.php:1869
+msgid "Import/Export Network Settings"
+msgstr "Importar/Exportar configuración de red"
+
+#: wallet-up-login-customizer.php:1872 wallet-up-login-customizer.php:1877
+msgid "Export Network Settings"
+msgstr "Exportar configuración de red"
+
+#: wallet-up-login-customizer.php:1873
+msgid "Export all network-wide settings for backup or migration."
+msgstr "Exportar toda la configuración de red para respaldo o migración."
+
+#: wallet-up-login-customizer.php:1880 wallet-up-login-customizer.php:1886
+msgid "Import Network Settings"
+msgstr "Importar configuración de red"
+
+#: wallet-up-login-customizer.php:1881
+msgid "Import network settings from a backup file."
+msgstr "Importar configuración de red desde un archivo de respaldo."
+
+#: wallet-up-login-customizer.php:1908
+msgid "Network settings saved successfully."
+msgstr "Configuración de red guardada exitosamente."
+
+#: wallet-up-login-customizer.php:1970
+msgid "Please select a valid file to import."
+msgstr "Por favor seleccione un archivo válido para importar."
+
+#: wallet-up-login-customizer.php:1978
+msgid "Invalid JSON file."
+msgstr "Archivo JSON inválido."
+
+#: wallet-up-login-customizer.php:1984
+msgid "This is not a valid network settings export file."
+msgstr "Este no es un archivo de exportación de configuración de red válido."
+
+#: wallet-up-login-customizer.php:2018
+msgid "Network settings imported successfully."
+msgstr "Configuración de red importada exitosamente."
+
+#: wallet-up-login-customizer.php:2035
+msgid "Enhanced login files have been installed successfully!"
+msgstr ""
+"¡Los archivos de inicio de sesión mejorados se han instalado exitosamente!"
+
+#: wallet-up-login-customizer.php:2037
+msgid "Failed to install enhanced login files. Please check file permissions."
+msgstr ""
+"Error al instalar archivos de inicio de sesión mejorados. Verifique los "
+"permisos de archivo."
+
+#: wallet-up-login-customizer.php:2076
+msgid "Premium Login Customizer"
+msgstr "Personalizador de Inicio de Sesión Premium"
+
+#: wallet-up-login-customizer.php:2077
+msgid "by Wallet Up"
+msgstr "por Wallet Up"
+
+#: wallet-up-login-customizer.php:2095
+msgid "General"
+msgstr "Generales"
+
+#: wallet-up-login-customizer.php:2099
+msgid "Appearance"
+msgstr "Apariencia"
+
+#: wallet-up-login-customizer.php:2103
+msgid "Messages"
+msgstr "Mensajes"
+
+#: wallet-up-login-customizer.php:2107
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: wallet-up-login-customizer.php:2117
+msgid "General Settings"
+msgstr "Configuración general"
+
+#: wallet-up-login-customizer.php:2118
+msgid "Configure basic login functionality and behavior."
+msgstr ""
+"Configure la funcionalidad y el comportamiento básico del inicio de sesión."
+
+#: wallet-up-login-customizer.php:2123
+msgid "AJAX Login"
+msgstr "Inicio de sesión AJAX"
+
+#: wallet-up-login-customizer.php:2131
+msgid "Enable AJAX login functionality"
+msgstr "Habilitar funcionalidad de inicio de sesión AJAX"
+
+#: wallet-up-login-customizer.php:2132
+msgid ""
+"Provides a smoother login experience with visual feedback and no page reload."
+msgstr ""
+"Proporciona una experiencia de inicio de sesión más fluida con "
+"retroalimentación visual sin recargar la página."
+
+#: wallet-up-login-customizer.php:2138
+msgid "Sound Effects"
+msgstr "Efectos de sonido"
+
+#: wallet-up-login-customizer.php:2145
+msgid "Enable subtle audio feedback"
+msgstr "Habilitar retroalimentación de audio sutil"
+
+#: wallet-up-login-customizer.php:2146
+msgid "Play subtle sounds on login success/failure for better feedback."
+msgstr ""
+"Reproducir sonidos sutiles en éxito/fallo de inicio de sesión para mejor "
+"retroalimentación."
+
+#: wallet-up-login-customizer.php:2152
+msgid "Redirect Delay"
+msgstr "Retraso de redirección"
+
+#: wallet-up-login-customizer.php:2159
+msgid ""
+"Delay in milliseconds before redirecting after successful login (0-5000)."
+msgstr ""
+"Retraso en milisegundos antes de redirigir después del inicio de sesión "
+"exitoso (0-5000)."
+
+#: wallet-up-login-customizer.php:2172
+msgid "Enable intelligent redirects"
+msgstr "Habilitar redirecciones inteligentes"
+
+#: wallet-up-login-customizer.php:2173
+msgid ""
+"Direct users to relevant areas based on their role (admins to dashboard, "
+"etc)."
+msgstr ""
+"Dirigir usuarios a áreas relevantes según su rol (administradores al panel, "
+"etc)."
+
+#: wallet-up-login-customizer.php:2188
+msgid "Replace WordPress dashboard"
+msgstr "Reemplazar panel de WordPress"
+
+#: wallet-up-login-customizer.php:2189
+msgid ""
+"When enabled, the WordPress dashboard will be completely replaced with the "
+"Wallet Up page. This affects all users."
+msgstr ""
+"When enabled, the WordPress dashboard will be completely replaced with the "
+"Wallet Up page. This affects all users."
+
+#: wallet-up-login-customizer.php:2190
+msgid "💡 This works independently - no need to enable \"Land to Wallet Up\"."
+msgstr ""
+"💡 Esto funciona de forma independiente - no necesita habilitar \"Aterrizar "
+"en Wallet Up\"."
+
+#: wallet-up-login-customizer.php:2196
+msgid "Exempt Administrator Roles"
+msgstr "Eximir roles de administrador"
+
+#: wallet-up-login-customizer.php:2203
+msgid "Allow administrators to access default dashboard"
+msgstr "Permitir a los administradores acceder al panel predeterminado"
+
+#: wallet-up-login-customizer.php:2204
+msgid ""
+"When enabled, administrators can still access the default WordPress "
+"dashboard."
+msgstr ""
+"Cuando está habilitado, los administradores aún pueden acceder al panel "
+"predeterminado de WordPress."
+
+#: wallet-up-login-customizer.php:2205
+msgid ""
+"✅ Recommended: Keeps admin access for troubleshooting and configuration."
+msgstr ""
+"✅ Recomendado: Mantiene acceso de administrador para solución de problemas y "
+"configuración."
+
+#: wallet-up-login-customizer.php:2219
+msgid "Redirect to Wallet Up admin page"
+msgstr "Redirect to Wallet Up admin page"
+
+#: wallet-up-login-customizer.php:2220
+msgid ""
+"After login, redirect users directly to the Wallet Up admin page (admin.php?"
+"page=wallet-up)."
+msgstr ""
+"Después del inicio de sesión, redirigir a los usuarios directamente a la "
+"página de administración de Wallet Up."
+
+#: wallet-up-login-customizer.php:2221
+msgid ""
+"⚠️ This is a LOGIN redirect only. For dashboard replacement, use \"Force "
+"Dashboard Replacement\"."
+msgstr ""
+"⚠️ Esta es solo una redirección de INICIO DE SESIÓN. Para reemplazar el "
+"panel, use \"Forzar reemplazo del panel\"."
+
+#: wallet-up-login-customizer.php:2229
+msgid "Appearance Settings"
+msgstr "Configuración de apariencia"
+
+#: wallet-up-login-customizer.php:2230
+msgid "Customize the look and feel of your login page."
+msgstr "Personalice la apariencia de su página de inicio de sesión."
+
+#: wallet-up-login-customizer.php:2243
+msgid "Select Image"
+msgstr "Seleccionar imagen"
+
+#: wallet-up-login-customizer.php:2244
+msgid ""
+"Enter a URL to use a custom logo. Leave empty to use the default Wallet Up "
+"icon."
+msgstr ""
+"Ingrese una URL para usar un logo personalizado. Deje vacío para usar el "
+"ícono predeterminado de Wallet Up."
+
+#: wallet-up-login-customizer.php:2256
+msgid "Color Scheme"
+msgstr "Esquema de color"
+
+#: wallet-up-login-customizer.php:2267
+msgid "Select a preset color scheme or customize colors below."
+msgstr ""
+"Seleccione un esquema de color predefinido o personalice los colores abajo."
+
+#: wallet-up-login-customizer.php:2280
+msgid "The main color used throughout the login page."
+msgstr "El color principal usado en toda la página de inicio de sesión."
+
+#: wallet-up-login-customizer.php:2286
+msgid "Gradient Start"
+msgstr "Inicio del degradado"
+
+#: wallet-up-login-customizer.php:2293
+msgid "Start color for gradient effects."
+msgstr "Color inicial para efectos degradados."
+
+#: wallet-up-login-customizer.php:2299
+msgid "Gradient End"
+msgstr "Fin del degradado"
+
+#: wallet-up-login-customizer.php:2306
+msgid "End color for gradient effects."
+msgstr "Color final para efectos degradados."
+
+#: wallet-up-login-customizer.php:2312
+msgid "Color Preview"
+msgstr "Vista previa del color"
+
+#: wallet-up-login-customizer.php:2316
+msgid "Primary"
+msgstr "Primario"
+
+#: wallet-up-login-customizer.php:2317
+msgid "Gradient"
+msgstr "Degradado"
+
+#: wallet-up-login-customizer.php:2328
+msgid "Messages Settings"
+msgstr "Configuración de mensajes"
+
+#: wallet-up-login-customizer.php:2329
+msgid "Customize the messages displayed during login."
+msgstr "Personalice los mensajes mostrados durante el inicio de sesión."
+
+#: wallet-up-login-customizer.php:2375
+msgid ""
+"Messages displayed during login. One will be randomly selected each time."
+msgstr ""
+"Mensajes mostrados durante el inicio de sesión. Uno será seleccionado "
+"aleatoriamente cada vez."
+
+#: wallet-up-login-customizer.php:2383
+msgid "Advanced Settings"
+msgstr "Configuración avanzada"
+
+#: wallet-up-login-customizer.php:2384
+msgid "Configure advanced options for the login experience."
+msgstr "Configure opciones avanzadas para la experiencia de inicio de sesión."
+
+#: wallet-up-login-customizer.php:2396
+msgid "Show remember me checkbox"
+msgstr "Mostrar casilla de recuérdame"
+
+#: wallet-up-login-customizer.php:2397
+msgid "Display the \"Remember Me\" option on the login form."
+msgstr "Mostrar la opción \"Recuérdame\" en el formulario de inicio de sesión."
+
+#: wallet-up-login-customizer.php:2414
+msgid "🛡️ Enterprise Security"
+msgstr "🛡️ Seguridad empresarial"
+
+#: wallet-up-login-customizer.php:2415
+msgid "Advanced security features for protecting your login system."
+msgstr ""
+"Funciones de seguridad avanzadas para proteger su sistema de inicio de "
+"sesión."
+
+#: wallet-up-login-customizer.php:2425
+msgid "Require users to login before accessing the website"
+msgstr "Requerir que los usuarios inicien sesión antes de acceder al sitio web"
+
+#: wallet-up-login-customizer.php:2426
+msgid ""
+"Visitors must authenticate before viewing any content. Registration and "
+"password reset still work normally."
+msgstr ""
+"Los visitantes deben autenticarse antes de ver cualquier contenido. El "
+"registro y restablecimiento de contraseña funcionan normalmente."
+
+#: wallet-up-login-customizer.php:2436
+msgid "Hide the default WordPress login page"
+msgstr "Ocultar la página de inicio de sesión predeterminada de WordPress"
+
+#: wallet-up-login-customizer.php:2437
+msgid ""
+"Direct access to wp-login.php will be redirected to your custom login URL."
+msgstr ""
+"El acceso directo a wp-login.php será redirigido a su URL de inicio de "
+"sesión personalizada."
+
+#: wallet-up-login-customizer.php:2443
+msgid "Custom Login URL"
+msgstr "URL de inicio de sesión personalizada"
+
+#: wallet-up-login-customizer.php:2450
+msgid "Your custom login URL:"
+msgstr "Su URL de inicio de sesión personalizada:"
+
+#: wallet-up-login-customizer.php:2463
+msgid "Maximum failed login attempts before temporary lockout."
+msgstr ""
+"Máximo de intentos de inicio de sesión fallidos antes del bloqueo temporal."
+
+#: wallet-up-login-customizer.php:2469
+msgid "Lockout Duration"
+msgstr "Duración del bloqueo"
+
+#: wallet-up-login-customizer.php:2473 wallet-up-login-customizer.php:2474
+#: wallet-up-login-customizer.php:2475
+msgid "minutes"
+msgstr "minutos"
+
+#: wallet-up-login-customizer.php:2476
+msgid "hour"
+msgstr "hora"
+
+#: wallet-up-login-customizer.php:2478
+msgid "How long to lock out users after too many failed attempts."
+msgstr ""
+"Cuánto tiempo bloquear usuarios después de demasiados intentos fallidos."
+
+#: wallet-up-login-customizer.php:2486
+msgid "Export Settings"
+msgstr "Exportar configuración"
+
+#: wallet-up-login-customizer.php:2491
+msgid "Import Settings"
+msgstr "Importar configuración"
+
+#: wallet-up-login-customizer.php:2497
+msgid "Reset to Defaults"
+msgstr "Restablecer a predeterminados"
+
+#: wallet-up-login-customizer.php:2502
+msgid "Save Settings"
+msgstr "Guardar configuración"
+
+#: wallet-up-login-customizer.php:2510
+msgid "Preview Login Page"
+msgstr "Vista previa de la página de inicio de sesión"
+
+#: wallet-up-login-customizer.php:2511
+msgid "See how your login page looks with current settings."
+msgstr ""
+"Vea cómo se ve su página de inicio de sesión con la configuración actual."
+
+#: wallet-up-login-customizer.php:2513
+msgid "Open Preview"
+msgstr "Abrir vista previa"
+
+#: wallet-up-login-customizer.php:2519 wallet-up-login-customizer.php:2561
+msgid "Reinstall Files"
+msgstr "Reinstalar archivos"
+
+#: wallet-up-login-customizer.php:2520
+msgid ""
+"If you need to reset the customizations, you can reinstall the enhanced "
+"login files."
+msgstr ""
+"Si necesita restablecer las personalizaciones, puede reinstalar los archivos "
+"de inicio de sesión mejorados."
+
+#: wallet-up-login-customizer.php:2527
+msgid "Required Files & Paths:"
+msgstr "Archivos y rutas requeridos:"
+
+#: wallet-up-login-customizer.php:2555
+msgid "Source files are in /assets/ directory"
+msgstr "Los archivos fuente están en el directorio /assets/"
+
+#: wallet-up-login-customizer.php:2562
+msgid ""
+"⚠️ This will overwrite existing customizations. Use only if files are missing "
+"or corrupted."
+msgstr "⚠️ Esto sobrescribirá las personalizaciones existentes. Úselo solo si faltan archivos o están dañados."
+"⚠️ Esto sobrescribirá las personalizaciones existentes. Use solo si faltan "
+"archivos o están corruptos."
+
+#: wallet-up-login-customizer.php:2567
+msgid "About"
+msgstr "Acerca de"
+
+#: wallet-up-login-customizer.php:2568
+msgid ""
+"Creates a beautiful interactive login experience for Wallet Up and WordPress "
+"users."
+msgstr ""
+"Crea una hermosa experiencia de inicio de sesión interactiva para usuarios "
+"de Wallet Up y WordPress."
+
+#: wallet-up-login-customizer.php:2569
+msgid "Version"
+msgstr "Versión"
+
+#: wallet-up-login-customizer.php:2793
+msgid "Translation for %1$s is not available. Using %2$s instead."
+msgstr ""
+
+#: wallet-up-login-customizer.php:2808
+msgid "Translation for %s is not available."
+msgstr ""
+
+#: wallet-up-login-customizer.php:2813
+msgid "Available languages:"
+msgstr ""
+
+#~ msgid "Settings registered successfully."
+#~ msgstr "Configuración registrada exitosamente."
+
+#~ msgid "Wallet Up Login Settings"
+#~ msgstr "Configuración de Wallet Up Login"
+
+#~ msgid ""
+#~ "Wallet Up Premium Login Experience enhances your WordPress login page "
+#~ "with a beautiful, interactive design."
+#~ msgstr ""
+#~ "Wallet Up Premium Login Experience enhances your WordPress login page "
+#~ "with a beautiful, interactive design."
+
+#~ msgid ""
+#~ "Wallet Up Premium Login Customizer enhances your WordPress login page "
+#~ "with a beautiful, interactive design."
+#~ msgstr ""
+#~ "Wallet Up Premium Login Customizer mejora su página de inicio de sesión "
+#~ "de WordPress con un diseño hermoso e interactivo."
+msgid "Login page styles"
+msgstr "Estilos de la página de inicio de sesión"
+msgid "Admin interface styles"
+msgstr "Estilos de la interfaz de administración"
+msgid "Login page functionality"
+msgstr "Funcionalidad de la página de inicio de sesión"
+msgid "Admin interface scripts"
+msgstr "Scripts de la interfaz de administración"
+msgid "Core functionality"
+msgstr "Funcionalidad principal"
+

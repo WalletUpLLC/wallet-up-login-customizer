@@ -1,0 +1,883 @@
+# Translation file for Wallet Up Login Customizer
+# Copyright (C) 2025 Wallet Up
+# This file is distributed under the same license as the Wallet Up Login Customizer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wallet Up Login Customizer 2.3.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wallet-up-login-customizer\n"
+"POT-Creation-Date: 2025-08-13T02:07:19+00:00\n"
+"PO-Revision-Date: 2025-01-09 00:00:00+00:00\n"
+"Last-Translator: Wallet Up Team\n"
+"Language-Team: Korean\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Wallet Up Translation Tool 1.0\n"
+
+msgid "AJAX Login"
+msgstr "AJAX 로그인"
+
+msgid "About"
+msgstr "정보"
+
+msgid "Account temporarily locked due to multiple failed attempts."
+msgstr "여러 번의 실패로 인해 계정이 일시적으로 잠겼습니다."
+
+msgid "Add Message"
+msgstr "메시지 추가"
+
+msgid "Advanced"
+msgstr "고급"
+
+msgid "Advanced Settings"
+msgstr "고급 설정"
+
+msgid "Advanced security features for protecting your login system."
+msgstr "로그인 시스템을 보호하기 위한 고급 보안 기능."
+
+msgid "After login, redirect users directly to the Wallet Up admin page (admin.php?page=wallet-up)."
+msgstr "로그인 후 사용자를 Wallet Up 관리 페이지로 직접 리디렉션합니다."
+
+msgid "All Rights Reserved"
+msgstr "모든 권리 보유"
+
+msgid "Allow Site Override"
+msgstr "사이트 재정의 허용"
+
+msgid "Allow administrators to access default dashboard"
+msgstr "관리자가 기본 대시보드에 액세스할 수 있도록 허용"
+
+msgid "Allow administrators to access the original WordPress dashboard"
+msgstr "관리자가 원래 WordPress 대시보드에 액세스할 수 있도록 허용"
+
+msgid "Allow individual sites to override network settings."
+msgstr "개별 사이트가 네트워크 설정을 재정의할 수 있도록 허용합니다."
+
+msgid "Almost there..."
+msgstr "거의 다 됐습니다..."
+
+msgid "Appearance"
+msgstr "모양"
+
+msgid "Appearance Settings"
+msgstr "모양 설정"
+
+msgid "Are you sure you want to reset all settings to default values?"
+msgstr "모든 설정을 기본값으로 재설정하시겠습니까?"
+
+msgid "Auto-Fix This Issue"
+msgstr "이 문제 자동 수정"
+
+msgid "Automated login attempts are not allowed."
+msgstr "자동 로그인 시도는 허용되지 않습니다."
+
+msgid "Back to %s"
+msgstr "%s로 돌아가기"
+
+msgid "Back to Login"
+msgstr "로그인으로 돌아가기"
+
+msgid "Color Preview"
+msgstr "색상 미리보기"
+
+msgid "Color Scheme"
+msgstr "색상 구성표"
+
+msgid "Color scheme applied!"
+msgstr "색상 구성표가 적용되었습니다!"
+
+msgid "Configure advanced options for the login experience."
+msgstr "로그인 경험을 위한 고급 옵션을 구성합니다."
+
+msgid "Configure basic login functionality and behavior."
+msgstr "기본 로그인 기능 및 동작을 구성합니다."
+
+msgid "Configure logo"
+msgstr "로고 구성"
+
+msgid "Configure the logo that appears on the WordPress login page. The logo will be automatically sized to fit within 50px height while preserving aspect ratio."
+msgstr "WordPress 로그인 페이지에 표시되는 로고를 구성합니다. 로고는 종횡비를 유지하면서 50px 높이에 맞게 자동으로 크기가 조정됩니다."
+
+msgid "Consider using a stronger password"
+msgstr "더 강력한 비밀번호 사용을 고려하세요"
+
+msgid "Continue"
+msgstr "계속"
+
+msgid "Continue to Dashboard"
+msgstr "대시보드로 계속"
+
+msgid "Creates a beautiful interactive login experience for Wallet Up and WordPress users."
+msgstr "Wallet Up 및 WordPress 사용자를 위한 아름다운 대화형 로그인 환경을 만듭니다."
+
+msgid "Creates a beautiful interactive login experience for Wallet Up and Wordpress users"
+msgstr "Wallet Up 및 WordPress 사용자를 위한 아름다운 대화형 로그인 환경을 만듭니다"
+
+msgid "Current Logo Preview"
+msgstr "현재 로고 미리보기"
+
+msgid "Custom Login Slug"
+msgstr "사용자 정의 로그인 슬러그"
+
+msgid "Custom URL slug for the login page"
+msgstr "로그인 페이지용 사용자 정의 URL 슬러그"
+
+msgid "Custom login slug created. Please test it before enabling wp-login.php hiding."
+msgstr "사용자 정의 로그인 슬러그가 생성되었습니다. wp-login.php 숨기기를 활성화하기 전에 테스트하세요."
+
+msgid "Customize messages displayed during login"
+msgstr "로그인 중 표시되는 메시지 사용자 정의"
+
+msgid "Customize the Wallet Up login experience with these settings."
+msgstr "이러한 설정으로 Wallet Up 로그인 경험을 사용자 정의합니다."
+
+msgid "Customize the look and feel of your login page."
+msgstr "로그인 페이지의 모양과 느낌을 사용자 정의합니다."
+
+msgid "Customize the messages displayed during login."
+msgstr "로그인 중 표시되는 메시지를 사용자 정의합니다."
+
+msgid "Dashboard"
+msgstr "대시보드"
+
+msgid "Dashboard redirect is enabled but Wallet Up plugin is not active. Please install Wallet Up or disable the redirect feature."
+msgstr "대시보드 리디렉션이 활성화되어 있지만 Wallet Up 플러그인이 활성화되어 있지 않습니다. Wallet Up을 설치하거나 리디렉션 기능을 비활성화하세요."
+
+msgid "Deactivate the %s plugin or disable its login features."
+msgstr "%s 플러그인을 비활성화하거나 로그인 기능을 비활성화하세요."
+
+msgid "Delay before redirecting after successful login (in milliseconds)"
+msgstr "성공적인 로그인 후 리디렉션 전 지연 (밀리초)"
+
+msgid "Delay in milliseconds before redirecting after successful login (0-5000)."
+msgstr "성공적인 로그인 후 리디렉션 전 밀리초 단위 지연 (0-5000)."
+
+msgid "Direct access to wp-login.php will be redirected to your custom login URL."
+msgstr "wp-login.php에 대한 직접 액세스는 사용자 정의 로그인 URL로 리디렉션됩니다."
+
+msgid "Direct users to relevant areas based on their role (admins to dashboard, etc)."
+msgstr "역할에 따라 사용자를 관련 영역으로 안내합니다 (관리자는 대시보드로 등)."
+
+msgid "Display custom logo on login page"
+msgstr "로그인 페이지에 사용자 정의 로고 표시"
+
+msgid "Display the \"Remember Me\" option on the login form."
+msgstr "로그인 양식에 \"기억하기\" 옵션을 표시합니다."
+
+msgid "Enable AJAX Login"
+msgstr "AJAX 로그인 활성화"
+
+msgid "Enable AJAX login functionality"
+msgstr "AJAX 로그인 기능 활성화"
+
+msgid "Enable AJAX login functionality for a smoother experience"
+msgstr "더 원활한 경험을 위해 AJAX 로그인 기능 활성화"
+
+msgid "Enable Custom Logo"
+msgstr "사용자 정의 로고 활성화"
+
+msgid "Enable Sound Effects"
+msgstr "음향 효과 활성화"
+
+msgid "Enable intelligent redirects"
+msgstr "지능형 리디렉션 활성화"
+
+msgid "Enable intelligent role-based redirects after login"
+msgstr "로그인 후 지능형 역할 기반 리디렉션 활성화"
+
+msgid "Enable security headers"
+msgstr "보안 헤더 활성화"
+
+msgid "Enable subtle audio feedback"
+msgstr "미묘한 오디오 피드백 활성화"
+
+msgid "Enable subtle audio feedback on login success/failure"
+msgstr "로그인 성공/실패 시 미묘한 오디오 피드백 활성화"
+
+msgid "End color for gradient effects"
+msgstr "그라데이션 효과의 끝 색상"
+
+msgid "End color for gradient effects."
+msgstr "그라데이션 효과의 끝 색상."
+
+msgid "Enhanced login files have been installed successfully!"
+msgstr "향상된 로그인 파일이 성공적으로 설치되었습니다!"
+
+msgid "Enter a URL to use a custom logo (leave empty for default)"
+msgstr "사용자 정의 로고를 사용하려면 URL을 입력하세요 (기본값은 비워두세요)"
+
+msgid "Enter a URL to use a custom logo. Leave empty to use the default Wallet Up icon."
+msgstr "사용자 정의 로고를 사용하려면 URL을 입력하세요. 기본 Wallet Up 아이콘을 사용하려면 비워두세요."
+
+msgid "Error importing settings"
+msgstr "설정 가져오기 오류"
+
+msgid "Error reading file"
+msgstr "파일 읽기 오류"
+
+msgid "Error: Could not get image URL"
+msgstr "오류: 이미지 URL을 가져올 수 없습니다"
+
+msgid "Error: Invalid image URL format"
+msgstr "오류: 잘못된 이미지 URL 형식"
+
+msgid "Exempt Administrator Roles"
+msgstr "관리자 역할 제외"
+
+msgid "Exempt Administrators"
+msgstr "관리자 제외"
+
+msgid "Export Network Settings"
+msgstr "네트워크 설정 내보내기"
+
+msgid "Export Settings"
+msgstr "설정 내보내기"
+
+msgid "Export all network-wide settings for backup or migration."
+msgstr "백업 또는 마이그레이션을 위해 모든 네트워크 전체 설정을 내보냅니다."
+
+msgid "Failed to install enhanced login files. Please check file permissions."
+msgstr "향상된 로그인 파일 설치에 실패했습니다. 파일 권한을 확인하세요."
+
+msgid "Force Dashboard Replacement"
+msgstr "대시보드 강제 교체"
+
+msgid "Force Login"
+msgstr "강제 로그인"
+
+msgid "Force Wallet Up Login customization on all network sites."
+msgstr "모든 네트워크 사이트에서 Wallet Up 로그인 사용자 정의를 강제합니다."
+
+msgid "Force on All Sites"
+msgstr "모든 사이트에 강제 적용"
+
+msgid "Forgot Password?"
+msgstr "비밀번호를 잊으셨나요?"
+
+msgid "Function %s conflicts with Wallet Up force login"
+msgstr "함수 %s가 Wallet Up 강제 로그인과 충돌합니다"
+
+msgid "General"
+msgstr "일반"
+
+msgid "General Settings"
+msgstr "일반 설정"
+
+msgid "Go to Wallet Up Dashboard"
+msgstr "Wallet Up 대시보드로 이동"
+
+msgid "Gradient"
+msgstr "그라데이션"
+
+msgid "Gradient End"
+msgstr "그라데이션 끝"
+
+msgid "Gradient End Color"
+msgstr "그라데이션 끝 색상"
+
+msgid "Gradient Start"
+msgstr "그라데이션 시작"
+
+msgid "Gradient Start Color"
+msgstr "그라데이션 시작 색상"
+
+msgid "Hide and protect wp-login.php"
+msgstr "wp-login.php 숨기기 및 보호"
+
+msgid "Hide password"
+msgstr "비밀번호 숨기기"
+
+msgid "Hide the default WordPress login page"
+msgstr "기본 WordPress 로그인 페이지 숨기기"
+
+msgid "Hide wp-login.php"
+msgstr "wp-login.php 숨기기"
+
+msgid "Hiding wp-login.php without a custom login slug will lock out all users"
+msgstr "사용자 정의 로그인 슬러그 없이 wp-login.php를 숨기면 모든 사용자가 잠깁니다"
+
+msgid "Hook %s on %s may conflict with Wallet Up"
+msgstr "%s의 훅 %s가 Wallet Up과 충돌할 수 있습니다"
+
+msgid "How long to lock out users after too many failed attempts."
+msgstr "너무 많은 실패 시도 후 사용자를 잠그는 시간."
+
+msgid "If you need to reset the customizations, you can reinstall the enhanced login files."
+msgstr "사용자 정의를 재설정해야 하는 경우 향상된 로그인 파일을 다시 설치할 수 있습니다."
+
+msgid "Import Network Settings"
+msgstr "네트워크 설정 가져오기"
+
+msgid "Import Settings"
+msgstr "설정 가져오기"
+
+msgid "Import network settings from a backup file."
+msgstr "백업 파일에서 네트워크 설정을 가져옵니다."
+
+msgid "Import/Export Network Settings"
+msgstr "네트워크 설정 가져오기/내보내기"
+
+msgid "Insufficient permissions."
+msgstr "권한이 부족합니다."
+
+msgid "Invalid JSON file."
+msgstr "잘못된 JSON 파일입니다."
+
+msgid "Invalid login credentials. Please try again."
+msgstr "잘못된 로그인 자격 증명입니다. 다시 시도하세요."
+
+msgid "Invalid request."
+msgstr "잘못된 요청입니다."
+
+msgid "Invalid username or password. Please try again."
+msgstr "잘못된 사용자 이름 또는 비밀번호입니다. 다시 시도하세요."
+
+msgid "Land to Wallet Up"
+msgstr "Wallet Up에 착륙"
+
+msgid "Link Title:"
+msgstr "링크 제목:"
+
+msgid "Link URL:"
+msgstr "링크 URL:"
+
+msgid "Loading Messages"
+msgstr "메시지 로드 중"
+
+msgid "Loading..."
+msgstr "로드 중..."
+
+msgid "Lockout Duration"
+msgstr "잠금 기간"
+
+msgid "Lockout Duration (seconds)"
+msgstr "잠금 기간 (초)"
+
+msgid "Login Logo Configuration"
+msgstr "로그인 로고 구성"
+
+msgid "Login Logo Preview"
+msgstr "로그인 로고 미리보기"
+
+msgid "Login Page Settings"
+msgstr "로그인 페이지 설정"
+
+msgid "Login failed. Please check your credentials and try again."
+msgstr "로그인에 실패했습니다. 자격 증명을 확인하고 다시 시도하세요."
+
+msgid "Logo Image"
+msgstr "로고 이미지"
+
+msgid "Logo Link"
+msgstr "로고 링크"
+
+msgid "Logo Settings"
+msgstr "로고 설정"
+
+msgid "Logo Size"
+msgstr "로고 크기"
+
+msgid "Logo URL to use across all network sites."
+msgstr "모든 네트워크 사이트에서 사용할 로고 URL."
+
+msgid "Logo settings saved successfully."
+msgstr "로고 설정이 성공적으로 저장되었습니다."
+
+msgid "Manual Fix:"
+msgstr "수동 수정:"
+
+msgid "Max Login Attempts"
+msgstr "최대 로그인 시도 횟수"
+
+msgid "Maximum Height:"
+msgstr "최대 높이:"
+
+msgid "Messages"
+msgstr "메시지"
+
+msgid "Messages Settings"
+msgstr "메시지 설정"
+
+msgid "Messages displayed during login. One will be randomly selected each time."
+msgstr "로그인 중 표시되는 메시지. 매번 무작위로 하나가 선택됩니다."
+
+msgid "Network Logo URL"
+msgstr "네트워크 로고 URL"
+
+msgid "Network settings imported successfully."
+msgstr "네트워크 설정을 성공적으로 가져왔습니다."
+
+msgid "Network settings saved successfully."
+msgstr "네트워크 설정이 성공적으로 저장되었습니다."
+
+msgid "No conflicts detected"
+msgstr "충돌이 감지되지 않았습니다"
+
+msgid "No custom logo set. Using site logo or WordPress default."
+msgstr "사용자 정의 로고가 설정되지 않았습니다. 사이트 로고 또는 WordPress 기본값을 사용합니다."
+
+msgid "No security events logged yet."
+msgstr "아직 기록된 보안 이벤트가 없습니다."
+
+msgid "Oops!"
+msgstr "이런!"
+
+msgid "Oops! The password you entered is incorrect. Please try again or use the password reset link below."
+msgstr "이런! 입력한 비밀번호가 올바르지 않습니다. 다시 시도하거나 아래 비밀번호 재설정 링크를 사용하세요."
+
+msgid "Open Preview"
+msgstr "미리보기 열기"
+
+msgid "Open Wallet Up Dashboard"
+msgstr "Wallet Up 대시보드 열기"
+
+msgid "Password"
+msgstr "비밀번호"
+
+msgid "Password is required"
+msgstr "비밀번호가 필요합니다"
+
+msgid "Play subtle sounds on login success/failure for better feedback."
+msgstr "더 나은 피드백을 위해 로그인 성공/실패 시 미묘한 소리를 재생합니다."
+
+msgid "Please correct the errors before signing in."
+msgstr "로그인하기 전에 오류를 수정하세요."
+
+msgid "Please enter both username and password."
+msgstr "사용자 이름과 비밀번호를 모두 입력하세요."
+
+msgid "Please enter your password to log in."
+msgstr "로그인하려면 비밀번호를 입력하세요."
+
+msgid "Please enter your username and password to access the dashboard."
+msgstr "대시보드에 액세스하려면 사용자 이름과 비밀번호를 입력하세요."
+
+msgid "Please enter your username to log in."
+msgstr "로그인하려면 사용자 이름을 입력하세요."
+
+msgid "Please select a valid JSON file"
+msgstr "유효한 JSON 파일을 선택하세요"
+
+msgid "Please select a valid file to import."
+msgstr "가져올 유효한 파일을 선택하세요."
+
+msgid "Premium Login Customizer"
+msgstr "프리미엄 로그인 사용자 정의"
+
+msgid "Preparing your dashboard..."
+msgstr "대시보드를 준비하는 중..."
+
+msgid "Preserve aspect ratio when resizing"
+msgstr "크기 조정 시 종횡비 유지"
+
+msgid "Preview Login Page"
+msgstr "로그인 페이지 미리보기"
+
+msgid "Primary"
+msgstr "기본"
+
+msgid "Primary Color"
+msgstr "기본 색상"
+
+msgid "Processing..."
+msgstr "처리 중..."
+
+msgid "Provides a smoother login experience with visual feedback and no page reload."
+msgstr "시각적 피드백과 페이지 새로고침 없이 더 원활한 로그인 경험을 제공합니다."
+
+msgid "Redirect Delay"
+msgstr "리디렉션 지연"
+
+msgid "Redirect Delay (ms)"
+msgstr "리디렉션 지연 (ms)"
+
+msgid "Redirect to Wallet Up admin page"
+msgstr "Wallet Up 관리 페이지로 리디렉션"
+
+msgid "Redirect users to the Wallet Up admin page after login"
+msgstr "로그인 후 사용자를 Wallet Up 관리 페이지로 리디렉션"
+
+msgid "Register New Account"
+msgstr "새 계정 등록"
+
+msgid "Reinstall Files"
+msgstr "파일 재설치"
+
+msgid "Remember Me"
+msgstr "기억하기"
+
+msgid "Remove the conflicting function from your theme's functions.php file."
+msgstr "테마의 functions.php 파일에서 충돌하는 함수를 제거하세요."
+
+msgid "Replace WordPress dashboard"
+msgstr "WordPress 대시보드 교체"
+
+msgid "Replace WordPress dashboard with Wallet Up admin page for all users"
+msgstr "모든 사용자의 WordPress 대시보드를 Wallet Up 관리 페이지로 교체"
+
+msgid "Require authentication for all site access"
+msgstr "모든 사이트 액세스에 인증 필요"
+
+msgid "Require users to login before accessing the website"
+msgstr "웹사이트에 액세스하기 전에 사용자가 로그인하도록 요구"
+
+msgid "Required Files & Paths:"
+msgstr "필수 파일 및 경로:"
+
+msgid "Reset Password"
+msgstr "비밀번호 재설정"
+
+msgid "Reset to Defaults"
+msgstr "기본값으로 재설정"
+
+msgid "Role-Based Redirects"
+msgstr "역할 기반 리디렉션"
+
+msgid "Save Logo Settings"
+msgstr "로고 설정 저장"
+
+msgid "Save Network Settings"
+msgstr "네트워크 설정 저장"
+
+msgid "Save Settings"
+msgstr "설정 저장"
+
+msgid "Security Headers"
+msgstr "보안 헤더"
+
+msgid "Security Logs"
+msgstr "보안 로그"
+
+msgid "Security check failed"
+msgstr "보안 확인 실패"
+
+msgid "Security check failed."
+msgstr "보안 확인이 실패했습니다."
+
+msgid "Security validation failed. Please refresh the page and try again."
+msgstr "보안 유효성 검사가 실패했습니다. 페이지를 새로고침하고 다시 시도하세요."
+
+msgid "Security verification failed."
+msgstr "보안 확인이 실패했습니다."
+
+msgid "See how your login page looks with current settings."
+msgstr "현재 설정으로 로그인 페이지가 어떻게 보이는지 확인하세요."
+
+msgid "Select Image"
+msgstr "이미지 선택"
+
+msgid "Select Logo"
+msgstr "로고 선택"
+
+msgid "Select a preset color scheme or customize colors below."
+msgstr "사전 설정된 색상 구성표를 선택하거나 아래에서 색상을 사용자 정의하세요."
+
+msgid "Select the primary color for the login page"
+msgstr "로그인 페이지의 기본 색상 선택"
+
+msgid "Server error. Please try again later."
+msgstr "서버 오류. 나중에 다시 시도하세요."
+
+msgid "Session Timeout (seconds)"
+msgstr "세션 시간 초과 (초)"
+
+msgid "Settings"
+msgstr "설정"
+
+msgid "Settings exported successfully!"
+msgstr "설정을 성공적으로 내보냈습니다!"
+
+msgid "Settings imported successfully"
+msgstr "설정을 성공적으로 가져왔습니다"
+
+msgid "Settings reset to defaults!"
+msgstr "설정이 기본값으로 재설정되었습니다!"
+
+msgid "Settings successfully saved!"
+msgstr "설정이 성공적으로 저장되었습니다!"
+
+msgid "Show password"
+msgstr "비밀번호 표시"
+
+msgid "Show remember me checkbox"
+msgstr "기억하기 체크박스 표시"
+
+msgid "Sign In Securely"
+msgstr "안전하게 로그인"
+
+msgid "Signing In"
+msgstr "로그인 중"
+
+msgid "Sound Effects"
+msgstr "음향 효과"
+
+msgid "Source files are in /assets/ directory"
+msgstr "소스 파일은 /assets/ 디렉토리에 있습니다"
+
+msgid "Start color for gradient effects"
+msgstr "그라데이션 효과의 시작 색상"
+
+msgid "Start color for gradient effects."
+msgstr "그라데이션 효과의 시작 색상."
+
+msgid "Success!"
+msgstr "성공!"
+
+msgid "Sync failed: %s"
+msgstr "동기화 실패: %s"
+
+msgid "Synchronization completed successfully."
+msgstr "동기화가 성공적으로 완료되었습니다."
+
+msgid "The \"Land to Wallet Up\" option has been disabled because the Wallet Up admin page could not be found. Please make sure Wallet Up is installed and activated before enabling this feature."
+msgstr "Wallet Up 관리 페이지를 찾을 수 없어 \"Wallet Up에 착륙\" 옵션이 비활성화되었습니다. 이 기능을 활성화하기 전에 Wallet Up이 설치되고 활성화되었는지 확인하세요."
+
+msgid "The WordPress dashboard has been replaced with the Wallet Up Dashboard."
+msgstr "WordPress 대시보드가 Wallet Up 대시보드로 교체되었습니다."
+
+msgid "The following template files were automatically updated from assets:"
+msgstr "다음 템플릿 파일이 자산에서 자동으로 업데이트되었습니다:"
+
+msgid "The main color used throughout the login page."
+msgstr "로그인 페이지 전체에서 사용되는 기본 색상."
+
+msgid "This account has been suspended. Please contact support for assistance."
+msgstr "이 계정은 정지되었습니다. 도움이 필요하면 지원팀에 문의하세요."
+
+msgid "This is not a valid network settings export file."
+msgstr "유효한 네트워크 설정 내보내기 파일이 아닙니다."
+
+msgid "Time before user sessions expire"
+msgstr "사용자 세션이 만료되기 전 시간"
+
+msgid "Too many attempts. Please try again later."
+msgstr "시도가 너무 많습니다. 나중에 다시 시도하세요."
+
+msgid "Too many login attempts. Please try again later."
+msgstr "로그인 시도가 너무 많습니다. 나중에 다시 시도하세요."
+
+msgid "Try Again"
+msgstr "다시 시도"
+
+msgid "Unknown fix type"
+msgstr "알 수 없는 수정 유형"
+
+msgid "Upload or select a logo image. Recommended size: 200x50px or smaller."
+msgstr "로고 이미지를 업로드하거나 선택하세요. 권장 크기: 200x50px 이하."
+
+msgid "Use as Logo"
+msgstr "로고로 사용"
+
+msgid "Username"
+msgstr "사용자 이름"
+
+msgid "Username and password are required"
+msgstr "사용자 이름과 비밀번호가 필요합니다"
+
+msgid "Username does not exist"
+msgstr "사용자 이름이 존재하지 않습니다"
+
+msgid "Username exists"
+msgstr "사용자 이름이 존재합니다"
+
+msgid "Username is required"
+msgstr "사용자 이름이 필요합니다"
+
+msgid "Username must be at least 3 characters"
+msgstr "사용자 이름은 최소 3자 이상이어야 합니다"
+
+msgid "Verifying your credentials..."
+msgstr "자격 증명을 확인하는 중..."
+
+msgid "View Original WordPress Dashboard"
+msgstr "원래 WordPress 대시보드 보기"
+
+msgid "Visitors must authenticate before viewing any content. Registration and password reset still work normally."
+msgstr "방문자는 콘텐츠를 보기 전에 인증해야 합니다. 등록 및 비밀번호 재설정은 정상적으로 작동합니다."
+
+msgid "Wallet Up"
+msgstr "Wallet Up"
+
+msgid "Wallet Up - Advanced URL & QR Tools"
+msgstr "Wallet Up - 고급 URL 및 QR 도구"
+
+msgid "Wallet Up Conflict Detected"
+msgstr "Wallet Up 충돌 감지됨"
+
+msgid "Wallet Up Dashboard"
+msgstr "Wallet Up 대시보드"
+
+msgid "Wallet Up Enterprise Security"
+msgstr "Wallet Up 엔터프라이즈 보안"
+
+msgid "Wallet Up Login"
+msgstr "Wallet Up 로그인"
+
+msgid "Wallet Up Login Customizer:"
+msgstr "Wallet Up 로그인 사용자 정의:"
+
+msgid "Wallet Up Login Network Settings"
+msgstr "Wallet Up 로그인 네트워크 설정"
+
+msgid "Wallet Up Login has been updated to version %s. Settings synchronization in progress..."
+msgstr "Wallet Up 로그인이 버전 %s로 업데이트되었습니다. 설정 동기화가 진행 중입니다..."
+
+msgid "Wallet Up Login:"
+msgstr "Wallet Up 로그인:"
+
+msgid "Wallet Up Login: No custom logo configured. %s to add your brand logo to the login page."
+msgstr "Wallet Up 로그인: 사용자 정의 로고가 구성되지 않았습니다. %s로 로그인 페이지에 브랜드 로고를 추가하세요."
+
+msgid "Wallet Up Network Settings"
+msgstr "Wallet Up 네트워크 설정"
+
+msgid "Wallet Up Pro plugin is not active. Please install and activate it to redirect users to Wallet Up after login."
+msgstr "Wallet Up Pro 플러그인이 활성화되지 않았습니다. 로그인 후 사용자를 Wallet Up으로 리디렉션하려면 설치하고 활성화하세요."
+
+msgid "Wallet Up Pro plugin is not active. Please install and activate it to replace the WordPress dashboard."
+msgstr "Wallet Up Pro 플러그인이 활성화되지 않았습니다. WordPress 대시보드를 교체하려면 설치하고 활성화하세요."
+
+msgid "Wallet Up dashboard redirect has been disabled because the Wallet Up plugin is not active."
+msgstr "Wallet Up 플러그인이 활성화되지 않아 Wallet Up 대시보드 리디렉션이 비활성화되었습니다."
+
+msgid "Wallet Up dashboard replacement has been disabled because the Wallet Up page was not found. Please make sure the Wallet Up plugin is active."
+msgstr "Wallet Up 페이지를 찾을 수 없어 Wallet Up 대시보드 교체가 비활성화되었습니다. Wallet Up 플러그인이 활성화되었는지 확인하세요."
+
+msgid "Wallet Up — Advanced URL & QR Tools"
+msgstr "Wallet Up — 고급 URL 및 QR 도구"
+
+msgid "Welcome back! Please sign in to continue."
+msgstr "다시 오신 것을 환영합니다! 계속하려면 로그인하세요."
+
+msgid "Welcome back! You have successfully signed in."
+msgstr "다시 오신 것을 환영합니다! 성공적으로 로그인했습니다."
+
+msgid "Welcome back, %s!"
+msgstr "다시 오신 것을 환영합니다, %s!"
+
+msgid "Welcome to"
+msgstr "환영합니다"
+
+msgid "Welcome to Wallet Up"
+msgstr "Wallet Up에 오신 것을 환영합니다"
+
+msgid "Welcome to Wallet Up Dashboard!"
+msgstr "Wallet Up 대시보드에 오신 것을 환영합니다!"
+
+msgid "Welcome to Wallet Up!"
+msgstr "Wallet Up에 오신 것을 환영합니다!"
+
+msgid "Welcome to the Next 'Up"
+msgstr "다음 단계에 오신 것을 환영합니다"
+
+msgid "When enabled, administrators can still access the default WordPress dashboard."
+msgstr "활성화되면 관리자는 여전히 기본 WordPress 대시보드에 액세스할 수 있습니다."
+
+msgid "When enabled, the WordPress dashboard will be completely replaced with the Wallet Up page. This affects all users."
+msgstr "활성화되면 WordPress 대시보드가 Wallet Up 페이지로 완전히 교체됩니다. 이는 모든 사용자에게 영향을 미칩니다."
+
+msgid "Where the logo links to and the tooltip text when hovering."
+msgstr "로고가 링크되는 위치와 호버 시 툴팁 텍스트."
+
+msgid "WordPress Dashboard"
+msgstr "WordPress 대시보드"
+
+msgid "You have been logged out."
+msgstr "로그아웃되었습니다."
+
+msgid "You must be logged in to access the REST API."
+msgstr "REST API에 액세스하려면 로그인해야 합니다."
+
+msgid "Your IP (%s) added to whitelist."
+msgstr "귀하의 IP(%s)가 화이트리스트에 추가되었습니다."
+
+msgid "Your WordPress dashboard has been enhanced with Wallet Up. Click below to access your Wallet Up dashboard."
+msgstr "WordPress 대시보드가 Wallet Up으로 향상되었습니다. 아래를 클릭하여 Wallet Up 대시보드에 액세스하세요."
+
+msgid "Your custom login URL:"
+msgstr "사용자 정의 로그인 URL:"
+
+msgid "Your password has been reset successfully."
+msgstr "비밀번호가 성공적으로 재설정되었습니다."
+
+msgid "by Wallet Up"
+msgstr "Wallet Up 제공"
+
+msgid "default: 50px"
+msgstr "기본값: 50px"
+
+msgid "hour"
+msgstr "시간"
+
+msgid "minutes"
+msgstr "분"
+
+msgid "⚠️ This is a LOGIN redirect only. For dashboard replacement, use \"Force Dashboard Replacement\"."
+msgstr "⚠️ 이것은 로그인 리디렉션만 해당됩니다. 대시보드 교체에는 \"대시보드 강제 교체\"를 사용하세요."
+
+msgid "💡 This works independently - no need to enable \"Land to Wallet Up\"."
+msgstr "💡 이것은 독립적으로 작동합니다 - \"Wallet Up에 착륙\"을 활성화할 필요가 없습니다."
+
+msgid "Available languages:"
+msgstr "사용 가능한 언어:"
+
+msgid "Custom Login URL"
+msgstr "사용자 정의 로그인 URL"
+
+msgid "Custom Logo URL"
+msgstr "사용자 정의 로고 URL"
+
+msgid "%d conflict detected"
+msgstr "%d개의 충돌 감지됨"
+
+msgid "%d failed"
+msgstr "%d 실패"
+
+msgid "%d pending"
+msgstr "%d 대기 중"
+
+msgid "🛡️ Enterprise Security"
+msgstr "🛡️ 엔터프라이즈 보안"
+
+msgid "https://walletup.app"
+msgstr "https://walletup.app"
+
+msgid "Maximum failed login attempts before temporary lockout."
+msgstr "임시 잠금 전 최대 실패한 로그인 시도 횟수."
+
+msgid "✅ Recommended: Keeps admin access for troubleshooting and configuration."
+msgstr "✅ 권장: 문제 해결 및 구성을 위해 관리자 액세스를 유지합니다."
+
+msgid "The username you entered doesn't appear to exist. Double-check it or create a new account."
+msgstr "입력한 사용자 이름이 존재하지 않는 것 같습니다. 다시 확인하거나 새 계정을 만드세요."
+
+msgid "⚠️ This will overwrite existing customizations. Use only if files are missing or corrupted."
+msgstr "⚠️ 기존 사용자 지정을 덮어씁니다. 파일이 누락되거나 손상된 경우에만 사용하세요."
+
+msgid "Translation for %1$s is not available. Using %2$s instead."
+msgstr "%1$s에 대한 번역을 사용할 수 없습니다. 대신 %2$s를 사용합니다."
+
+msgid "Translation for %s is not available."
+msgstr "%s에 대한 번역을 사용할 수 없습니다."
+
+msgid "Version"
+msgstr "버전"
+
+msgid "Wallet Up Premium Login Customizer"
+msgstr "Wallet Up 프리미엄 로그인 커스터마이저"
+
+msgid "✓ You have been successfully logged out. Please sign in again to continue."
+msgstr "✓ 성공적으로 로그아웃되었습니다. 계속하려면 다시 로그인하세요."
+msgid "Login page styles"
+msgstr "로그인 페이지 스타일"
+msgid "Admin interface styles"
+msgstr "관리 인터페이스 스타일"
+msgid "Login page functionality"
+msgstr "로그인 페이지 기능"
+msgid "Admin interface scripts"
+msgstr "관리 인터페이스 스크립트"
+msgid "Core functionality"
+msgstr "핵심 기능"
+

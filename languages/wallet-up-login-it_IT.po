@@ -1,0 +1,883 @@
+# Translation file for Wallet Up Login Customizer
+# Copyright (C) 2025 Wallet Up
+# This file is distributed under the same license as the Wallet Up Login Customizer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wallet Up Login Customizer 2.3.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wallet-up-login-customizer\n"
+"POT-Creation-Date: 2025-08-13T02:07:19+00:00\n"
+"PO-Revision-Date: 2025-01-09 00:00:00+00:00\n"
+"Last-Translator: Wallet Up Team\n"
+"Language-Team: Italian\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Wallet Up Translation Tool 1.0\n"
+
+msgid "AJAX Login"
+msgstr "Login AJAX"
+
+msgid "About"
+msgstr "Informazioni"
+
+msgid "Account temporarily locked due to multiple failed attempts."
+msgstr "Account temporaneamente bloccato a causa di molteplici tentativi falliti."
+
+msgid "Add Message"
+msgstr "Aggiungi messaggio"
+
+msgid "Advanced"
+msgstr "Avanzate"
+
+msgid "Advanced Settings"
+msgstr "Impostazioni avanzate"
+
+msgid "Advanced security features for protecting your login system."
+msgstr "Funzionalità di sicurezza avanzate per proteggere il tuo sistema di accesso."
+
+msgid "After login, redirect users directly to the Wallet Up admin page (admin.php?page=wallet-up)."
+msgstr "Dopo il login, reindirizza gli utenti direttamente alla pagina di amministrazione di Wallet Up."
+
+msgid "All Rights Reserved"
+msgstr "Tutti i diritti riservati"
+
+msgid "Allow Site Override"
+msgstr "Consenti override del sito"
+
+msgid "Allow administrators to access default dashboard"
+msgstr "Consenti agli amministratori di accedere al dashboard predefinito"
+
+msgid "Allow administrators to access the original WordPress dashboard"
+msgstr "Consenti agli amministratori di accedere al dashboard WordPress originale"
+
+msgid "Allow individual sites to override network settings."
+msgstr "Consenti ai singoli siti di sovrascrivere le impostazioni di rete."
+
+msgid "Almost there..."
+msgstr "Ci siamo quasi..."
+
+msgid "Appearance"
+msgstr "Aspetto"
+
+msgid "Appearance Settings"
+msgstr "Impostazioni aspetto"
+
+msgid "Are you sure you want to reset all settings to default values?"
+msgstr "Sei sicuro di voler ripristinare tutte le impostazioni ai valori predefiniti?"
+
+msgid "Auto-Fix This Issue"
+msgstr "Risolvi automaticamente questo problema"
+
+msgid "Automated login attempts are not allowed."
+msgstr "I tentativi di accesso automatizzati non sono consentiti."
+
+msgid "Back to %s"
+msgstr "Torna a %s"
+
+msgid "Back to Login"
+msgstr "Torna al login"
+
+msgid "Color Preview"
+msgstr "Anteprima colore"
+
+msgid "Color Scheme"
+msgstr "Schema colori"
+
+msgid "Color scheme applied!"
+msgstr "Schema colori applicato!"
+
+msgid "Configure advanced options for the login experience."
+msgstr "Configura opzioni avanzate per l'esperienza di accesso."
+
+msgid "Configure basic login functionality and behavior."
+msgstr "Configura funzionalità e comportamento di base del login."
+
+msgid "Configure logo"
+msgstr "Configura logo"
+
+msgid "Configure the logo that appears on the WordPress login page. The logo will be automatically sized to fit within 50px height while preserving aspect ratio."
+msgstr "Configura il logo che appare sulla pagina di login di WordPress. Il logo verrà ridimensionato automaticamente per adattarsi all'altezza di 50px mantenendo le proporzioni."
+
+msgid "Consider using a stronger password"
+msgstr "Considera l'utilizzo di una password più forte"
+
+msgid "Continue"
+msgstr "Continua"
+
+msgid "Continue to Dashboard"
+msgstr "Continua al dashboard"
+
+msgid "Creates a beautiful interactive login experience for Wallet Up and WordPress users."
+msgstr "Crea una bella esperienza di login interattiva per gli utenti di Wallet Up e WordPress."
+
+msgid "Creates a beautiful interactive login experience for Wallet Up and Wordpress users"
+msgstr "Crea una bella esperienza di login interattiva per gli utenti di Wallet Up e WordPress"
+
+msgid "Current Logo Preview"
+msgstr "Anteprima logo attuale"
+
+msgid "Custom Login Slug"
+msgstr "Slug login personalizzato"
+
+msgid "Custom URL slug for the login page"
+msgstr "Slug URL personalizzato per la pagina di login"
+
+msgid "Custom login slug created. Please test it before enabling wp-login.php hiding."
+msgstr "Slug di login personalizzato creato. Testalo prima di abilitare il nascondimento di wp-login.php."
+
+msgid "Customize messages displayed during login"
+msgstr "Personalizza i messaggi visualizzati durante il login"
+
+msgid "Customize the Wallet Up login experience with these settings."
+msgstr "Personalizza l'esperienza di login di Wallet Up con queste impostazioni."
+
+msgid "Customize the look and feel of your login page."
+msgstr "Personalizza l'aspetto della tua pagina di login."
+
+msgid "Customize the messages displayed during login."
+msgstr "Personalizza i messaggi visualizzati durante il login."
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Dashboard redirect is enabled but Wallet Up plugin is not active. Please install Wallet Up or disable the redirect feature."
+msgstr "Il reindirizzamento del dashboard è abilitato ma il plugin Wallet Up non è attivo. Installa Wallet Up o disabilita la funzione di reindirizzamento."
+
+msgid "Deactivate the %s plugin or disable its login features."
+msgstr "Disattiva il plugin %s o disabilita le sue funzionalità di login."
+
+msgid "Delay before redirecting after successful login (in milliseconds)"
+msgstr "Ritardo prima del reindirizzamento dopo il login riuscito (in millisecondi)"
+
+msgid "Delay in milliseconds before redirecting after successful login (0-5000)."
+msgstr "Ritardo in millisecondi prima del reindirizzamento dopo il login riuscito (0-5000)."
+
+msgid "Direct access to wp-login.php will be redirected to your custom login URL."
+msgstr "L'accesso diretto a wp-login.php verrà reindirizzato al tuo URL di login personalizzato."
+
+msgid "Direct users to relevant areas based on their role (admins to dashboard, etc)."
+msgstr "Indirizza gli utenti alle aree pertinenti in base al loro ruolo (amministratori al dashboard, ecc)."
+
+msgid "Display custom logo on login page"
+msgstr "Mostra logo personalizzato sulla pagina di login"
+
+msgid "Display the \"Remember Me\" option on the login form."
+msgstr "Mostra l'opzione \"Ricordami\" nel modulo di login."
+
+msgid "Enable AJAX Login"
+msgstr "Abilita login AJAX"
+
+msgid "Enable AJAX login functionality"
+msgstr "Abilita funzionalità di login AJAX"
+
+msgid "Enable AJAX login functionality for a smoother experience"
+msgstr "Abilita la funzionalità di login AJAX per un'esperienza più fluida"
+
+msgid "Enable Custom Logo"
+msgstr "Abilita logo personalizzato"
+
+msgid "Enable Sound Effects"
+msgstr "Abilita effetti sonori"
+
+msgid "Enable intelligent redirects"
+msgstr "Abilita reindirizzamenti intelligenti"
+
+msgid "Enable intelligent role-based redirects after login"
+msgstr "Abilita reindirizzamenti intelligenti basati sul ruolo dopo il login"
+
+msgid "Enable security headers"
+msgstr "Abilita intestazioni di sicurezza"
+
+msgid "Enable subtle audio feedback"
+msgstr "Abilita feedback audio discreto"
+
+msgid "Enable subtle audio feedback on login success/failure"
+msgstr "Abilita feedback audio discreto su successo/fallimento del login"
+
+msgid "End color for gradient effects"
+msgstr "Colore finale per effetti gradiente"
+
+msgid "End color for gradient effects."
+msgstr "Colore finale per effetti gradiente."
+
+msgid "Enhanced login files have been installed successfully!"
+msgstr "I file di login avanzati sono stati installati con successo!"
+
+msgid "Enter a URL to use a custom logo (leave empty for default)"
+msgstr "Inserisci un URL per usare un logo personalizzato (lascia vuoto per il predefinito)"
+
+msgid "Enter a URL to use a custom logo. Leave empty to use the default Wallet Up icon."
+msgstr "Inserisci un URL per usare un logo personalizzato. Lascia vuoto per usare l'icona Wallet Up predefinita."
+
+msgid "Error importing settings"
+msgstr "Errore nell'importazione delle impostazioni"
+
+msgid "Error reading file"
+msgstr "Errore nella lettura del file"
+
+msgid "Error: Could not get image URL"
+msgstr "Errore: Impossibile ottenere l'URL dell'immagine"
+
+msgid "Error: Invalid image URL format"
+msgstr "Errore: Formato URL immagine non valido"
+
+msgid "Exempt Administrator Roles"
+msgstr "Esenta ruoli amministratore"
+
+msgid "Exempt Administrators"
+msgstr "Esenta amministratori"
+
+msgid "Export Network Settings"
+msgstr "Esporta impostazioni di rete"
+
+msgid "Export Settings"
+msgstr "Esporta impostazioni"
+
+msgid "Export all network-wide settings for backup or migration."
+msgstr "Esporta tutte le impostazioni di rete per backup o migrazione."
+
+msgid "Failed to install enhanced login files. Please check file permissions."
+msgstr "Installazione dei file di login avanzati fallita. Controlla i permessi dei file."
+
+msgid "Force Dashboard Replacement"
+msgstr "Forza sostituzione dashboard"
+
+msgid "Force Login"
+msgstr "Forza login"
+
+msgid "Force Wallet Up Login customization on all network sites."
+msgstr "Forza la personalizzazione del login Wallet Up su tutti i siti della rete."
+
+msgid "Force on All Sites"
+msgstr "Forza su tutti i siti"
+
+msgid "Forgot Password?"
+msgstr "Password dimenticata?"
+
+msgid "Function %s conflicts with Wallet Up force login"
+msgstr "La funzione %s è in conflitto con il login forzato di Wallet Up"
+
+msgid "General"
+msgstr "Generale"
+
+msgid "General Settings"
+msgstr "Impostazioni generali"
+
+msgid "Go to Wallet Up Dashboard"
+msgstr "Vai al dashboard Wallet Up"
+
+msgid "Gradient"
+msgstr "Gradiente"
+
+msgid "Gradient End"
+msgstr "Fine gradiente"
+
+msgid "Gradient End Color"
+msgstr "Colore fine gradiente"
+
+msgid "Gradient Start"
+msgstr "Inizio gradiente"
+
+msgid "Gradient Start Color"
+msgstr "Colore inizio gradiente"
+
+msgid "Hide and protect wp-login.php"
+msgstr "Nascondi e proteggi wp-login.php"
+
+msgid "Hide password"
+msgstr "Nascondi password"
+
+msgid "Hide the default WordPress login page"
+msgstr "Nascondi la pagina di login WordPress predefinita"
+
+msgid "Hide wp-login.php"
+msgstr "Nascondi wp-login.php"
+
+msgid "Hiding wp-login.php without a custom login slug will lock out all users"
+msgstr "Nascondere wp-login.php senza uno slug di login personalizzato bloccherà tutti gli utenti"
+
+msgid "Hook %s on %s may conflict with Wallet Up"
+msgstr "L'hook %s su %s potrebbe essere in conflitto con Wallet Up"
+
+msgid "How long to lock out users after too many failed attempts."
+msgstr "Quanto tempo bloccare gli utenti dopo troppi tentativi falliti."
+
+msgid "If you need to reset the customizations, you can reinstall the enhanced login files."
+msgstr "Se devi ripristinare le personalizzazioni, puoi reinstallare i file di login avanzati."
+
+msgid "Import Network Settings"
+msgstr "Importa impostazioni di rete"
+
+msgid "Import Settings"
+msgstr "Importa impostazioni"
+
+msgid "Import network settings from a backup file."
+msgstr "Importa impostazioni di rete da un file di backup."
+
+msgid "Import/Export Network Settings"
+msgstr "Importa/Esporta impostazioni di rete"
+
+msgid "Insufficient permissions."
+msgstr "Permessi insufficienti."
+
+msgid "Invalid JSON file."
+msgstr "File JSON non valido."
+
+msgid "Invalid login credentials. Please try again."
+msgstr "Credenziali di accesso non valide. Riprova."
+
+msgid "Invalid request."
+msgstr "Richiesta non valida."
+
+msgid "Invalid username or password. Please try again."
+msgstr "Nome utente o password non validi. Riprova."
+
+msgid "Land to Wallet Up"
+msgstr "Atterra su Wallet Up"
+
+msgid "Link Title:"
+msgstr "Titolo link:"
+
+msgid "Link URL:"
+msgstr "URL link:"
+
+msgid "Loading Messages"
+msgstr "Caricamento messaggi"
+
+msgid "Loading..."
+msgstr "Caricamento..."
+
+msgid "Lockout Duration"
+msgstr "Durata blocco"
+
+msgid "Lockout Duration (seconds)"
+msgstr "Durata blocco (secondi)"
+
+msgid "Login Logo Configuration"
+msgstr "Configurazione logo login"
+
+msgid "Login Logo Preview"
+msgstr "Anteprima logo login"
+
+msgid "Login Page Settings"
+msgstr "Impostazioni pagina di login"
+
+msgid "Login failed. Please check your credentials and try again."
+msgstr "Login fallito. Controlla le tue credenziali e riprova."
+
+msgid "Logo Image"
+msgstr "Immagine logo"
+
+msgid "Logo Link"
+msgstr "Link logo"
+
+msgid "Logo Settings"
+msgstr "Impostazioni logo"
+
+msgid "Logo Size"
+msgstr "Dimensione logo"
+
+msgid "Logo URL to use across all network sites."
+msgstr "URL del logo da usare su tutti i siti della rete."
+
+msgid "Logo settings saved successfully."
+msgstr "Impostazioni logo salvate con successo."
+
+msgid "Manual Fix:"
+msgstr "Correzione manuale:"
+
+msgid "Max Login Attempts"
+msgstr "Tentativi di login massimi"
+
+msgid "Maximum Height:"
+msgstr "Altezza massima:"
+
+msgid "Messages"
+msgstr "Messaggi"
+
+msgid "Messages Settings"
+msgstr "Impostazioni messaggi"
+
+msgid "Messages displayed during login. One will be randomly selected each time."
+msgstr "Messaggi visualizzati durante il login. Uno verrà selezionato casualmente ogni volta."
+
+msgid "Network Logo URL"
+msgstr "URL logo di rete"
+
+msgid "Network settings imported successfully."
+msgstr "Impostazioni di rete importate con successo."
+
+msgid "Network settings saved successfully."
+msgstr "Impostazioni di rete salvate con successo."
+
+msgid "No conflicts detected"
+msgstr "Nessun conflitto rilevato"
+
+msgid "No custom logo set. Using site logo or WordPress default."
+msgstr "Nessun logo personalizzato impostato. Utilizzo del logo del sito o predefinito di WordPress."
+
+msgid "No security events logged yet."
+msgstr "Nessun evento di sicurezza registrato ancora."
+
+msgid "Oops!"
+msgstr "Ops!"
+
+msgid "Oops! The password you entered is incorrect. Please try again or use the password reset link below."
+msgstr "Ops! La password inserita non è corretta. Riprova o usa il link di reset password qui sotto."
+
+msgid "Open Preview"
+msgstr "Apri anteprima"
+
+msgid "Open Wallet Up Dashboard"
+msgstr "Apri dashboard Wallet Up"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Password is required"
+msgstr "La password è richiesta"
+
+msgid "Play subtle sounds on login success/failure for better feedback."
+msgstr "Riproduci suoni discreti su successo/fallimento del login per un feedback migliore."
+
+msgid "Please correct the errors before signing in."
+msgstr "Correggi gli errori prima di accedere."
+
+msgid "Please enter both username and password."
+msgstr "Inserisci sia nome utente che password."
+
+msgid "Please enter your password to log in."
+msgstr "Inserisci la tua password per accedere."
+
+msgid "Please enter your username and password to access the dashboard."
+msgstr "Inserisci nome utente e password per accedere al dashboard."
+
+msgid "Please enter your username to log in."
+msgstr "Inserisci il tuo nome utente per accedere."
+
+msgid "Please select a valid JSON file"
+msgstr "Seleziona un file JSON valido"
+
+msgid "Please select a valid file to import."
+msgstr "Seleziona un file valido da importare."
+
+msgid "Premium Login Customizer"
+msgstr "Personalizzatore login premium"
+
+msgid "Preparing your dashboard..."
+msgstr "Preparazione del dashboard..."
+
+msgid "Preserve aspect ratio when resizing"
+msgstr "Mantieni le proporzioni durante il ridimensionamento"
+
+msgid "Preview Login Page"
+msgstr "Anteprima pagina di login"
+
+msgid "Primary"
+msgstr "Primario"
+
+msgid "Primary Color"
+msgstr "Colore primario"
+
+msgid "Processing..."
+msgstr "Elaborazione..."
+
+msgid "Provides a smoother login experience with visual feedback and no page reload."
+msgstr "Fornisce un'esperienza di login più fluida con feedback visivo e senza ricaricamento della pagina."
+
+msgid "Redirect Delay"
+msgstr "Ritardo reindirizzamento"
+
+msgid "Redirect Delay (ms)"
+msgstr "Ritardo reindirizzamento (ms)"
+
+msgid "Redirect to Wallet Up admin page"
+msgstr "Reindirizza alla pagina admin Wallet Up"
+
+msgid "Redirect users to the Wallet Up admin page after login"
+msgstr "Reindirizza gli utenti alla pagina admin Wallet Up dopo il login"
+
+msgid "Register New Account"
+msgstr "Registra nuovo account"
+
+msgid "Reinstall Files"
+msgstr "Reinstalla file"
+
+msgid "Remember Me"
+msgstr "Ricordami"
+
+msgid "Remove the conflicting function from your theme's functions.php file."
+msgstr "Rimuovi la funzione in conflitto dal file functions.php del tuo tema."
+
+msgid "Replace WordPress dashboard"
+msgstr "Sostituisci dashboard WordPress"
+
+msgid "Replace WordPress dashboard with Wallet Up admin page for all users"
+msgstr "Sostituisci il dashboard WordPress con la pagina admin Wallet Up per tutti gli utenti"
+
+msgid "Require authentication for all site access"
+msgstr "Richiedi autenticazione per tutti gli accessi al sito"
+
+msgid "Require users to login before accessing the website"
+msgstr "Richiedi agli utenti di accedere prima di accedere al sito web"
+
+msgid "Required Files & Paths:"
+msgstr "File e percorsi richiesti:"
+
+msgid "Reset Password"
+msgstr "Reimposta password"
+
+msgid "Reset to Defaults"
+msgstr "Ripristina predefiniti"
+
+msgid "Role-Based Redirects"
+msgstr "Reindirizzamenti basati sul ruolo"
+
+msgid "Save Logo Settings"
+msgstr "Salva impostazioni logo"
+
+msgid "Save Network Settings"
+msgstr "Salva impostazioni di rete"
+
+msgid "Save Settings"
+msgstr "Salva impostazioni"
+
+msgid "Security Headers"
+msgstr "Intestazioni di sicurezza"
+
+msgid "Security Logs"
+msgstr "Log di sicurezza"
+
+msgid "Security check failed"
+msgstr "Controllo di sicurezza fallito"
+
+msgid "Security check failed."
+msgstr "Controllo di sicurezza fallito."
+
+msgid "Security validation failed. Please refresh the page and try again."
+msgstr "Validazione di sicurezza fallita. Aggiorna la pagina e riprova."
+
+msgid "Security verification failed."
+msgstr "Verifica di sicurezza fallita."
+
+msgid "See how your login page looks with current settings."
+msgstr "Vedi come appare la tua pagina di login con le impostazioni attuali."
+
+msgid "Select Image"
+msgstr "Seleziona immagine"
+
+msgid "Select Logo"
+msgstr "Seleziona logo"
+
+msgid "Select a preset color scheme or customize colors below."
+msgstr "Seleziona uno schema colori predefinito o personalizza i colori qui sotto."
+
+msgid "Select the primary color for the login page"
+msgstr "Seleziona il colore primario per la pagina di login"
+
+msgid "Server error. Please try again later."
+msgstr "Errore del server. Riprova più tardi."
+
+msgid "Session Timeout (seconds)"
+msgstr "Timeout sessione (secondi)"
+
+msgid "Settings"
+msgstr "Impostazioni"
+
+msgid "Settings exported successfully!"
+msgstr "Impostazioni esportate con successo!"
+
+msgid "Settings imported successfully"
+msgstr "Impostazioni importate con successo"
+
+msgid "Settings reset to defaults!"
+msgstr "Impostazioni ripristinate ai valori predefiniti!"
+
+msgid "Settings successfully saved!"
+msgstr "Impostazioni salvate con successo!"
+
+msgid "Show password"
+msgstr "Mostra password"
+
+msgid "Show remember me checkbox"
+msgstr "Mostra checkbox ricordami"
+
+msgid "Sign In Securely"
+msgstr "Accedi in sicurezza"
+
+msgid "Signing In"
+msgstr "Accesso in corso"
+
+msgid "Sound Effects"
+msgstr "Effetti sonori"
+
+msgid "Source files are in /assets/ directory"
+msgstr "I file sorgente sono nella directory /assets/"
+
+msgid "Start color for gradient effects"
+msgstr "Colore iniziale per effetti gradiente"
+
+msgid "Start color for gradient effects."
+msgstr "Colore iniziale per effetti gradiente."
+
+msgid "Success!"
+msgstr "Successo!"
+
+msgid "Sync failed: %s"
+msgstr "Sincronizzazione fallita: %s"
+
+msgid "Synchronization completed successfully."
+msgstr "Sincronizzazione completata con successo."
+
+msgid "The \"Land to Wallet Up\" option has been disabled because the Wallet Up admin page could not be found. Please make sure Wallet Up is installed and activated before enabling this feature."
+msgstr "L'opzione \"Atterra su Wallet Up\" è stata disabilitata perché la pagina admin Wallet Up non è stata trovata. Assicurati che Wallet Up sia installato e attivato prima di abilitare questa funzione."
+
+msgid "The WordPress dashboard has been replaced with the Wallet Up Dashboard."
+msgstr "Il dashboard WordPress è stato sostituito con il Dashboard Wallet Up."
+
+msgid "The following template files were automatically updated from assets:"
+msgstr "I seguenti file template sono stati aggiornati automaticamente dagli asset:"
+
+msgid "The main color used throughout the login page."
+msgstr "Il colore principale usato in tutta la pagina di login."
+
+msgid "This account has been suspended. Please contact support for assistance."
+msgstr "Questo account è stato sospeso. Contatta il supporto per assistenza."
+
+msgid "This is not a valid network settings export file."
+msgstr "Questo non è un file di esportazione delle impostazioni di rete valido."
+
+msgid "Time before user sessions expire"
+msgstr "Tempo prima della scadenza delle sessioni utente"
+
+msgid "Too many attempts. Please try again later."
+msgstr "Troppi tentativi. Riprova più tardi."
+
+msgid "Too many login attempts. Please try again later."
+msgstr "Troppi tentativi di login. Riprova più tardi."
+
+msgid "Try Again"
+msgstr "Riprova"
+
+msgid "Unknown fix type"
+msgstr "Tipo di correzione sconosciuto"
+
+msgid "Upload or select a logo image. Recommended size: 200x50px or smaller."
+msgstr "Carica o seleziona un'immagine logo. Dimensione consigliata: 200x50px o inferiore."
+
+msgid "Use as Logo"
+msgstr "Usa come logo"
+
+msgid "Username"
+msgstr "Nome utente"
+
+msgid "Username and password are required"
+msgstr "Nome utente e password sono richiesti"
+
+msgid "Username does not exist"
+msgstr "Il nome utente non esiste"
+
+msgid "Username exists"
+msgstr "Il nome utente esiste"
+
+msgid "Username is required"
+msgstr "Il nome utente è richiesto"
+
+msgid "Username must be at least 3 characters"
+msgstr "Il nome utente deve essere di almeno 3 caratteri"
+
+msgid "Verifying your credentials..."
+msgstr "Verifica delle credenziali..."
+
+msgid "View Original WordPress Dashboard"
+msgstr "Visualizza dashboard WordPress originale"
+
+msgid "Visitors must authenticate before viewing any content. Registration and password reset still work normally."
+msgstr "I visitatori devono autenticarsi prima di visualizzare qualsiasi contenuto. Registrazione e reset password funzionano normalmente."
+
+msgid "Wallet Up"
+msgstr "Wallet Up"
+
+msgid "Wallet Up - Advanced URL & QR Tools"
+msgstr "Wallet Up - Strumenti URL e QR avanzati"
+
+msgid "Wallet Up Conflict Detected"
+msgstr "Rilevato conflitto Wallet Up"
+
+msgid "Wallet Up Dashboard"
+msgstr "Dashboard Wallet Up"
+
+msgid "Wallet Up Enterprise Security"
+msgstr "Sicurezza aziendale Wallet Up"
+
+msgid "Wallet Up Login"
+msgstr "Login Wallet Up"
+
+msgid "Wallet Up Login Customizer:"
+msgstr "Personalizzatore login Wallet Up:"
+
+msgid "Wallet Up Login Network Settings"
+msgstr "Impostazioni di rete login Wallet Up"
+
+msgid "Wallet Up Login has been updated to version %s. Settings synchronization in progress..."
+msgstr "Wallet Up Login è stato aggiornato alla versione %s. Sincronizzazione impostazioni in corso..."
+
+msgid "Wallet Up Login:"
+msgstr "Login Wallet Up:"
+
+msgid "Wallet Up Login: No custom logo configured. %s to add your brand logo to the login page."
+msgstr "Login Wallet Up: Nessun logo personalizzato configurato. %s per aggiungere il logo del tuo brand alla pagina di login."
+
+msgid "Wallet Up Network Settings"
+msgstr "Impostazioni di rete Wallet Up"
+
+msgid "Wallet Up Pro plugin is not active. Please install and activate it to redirect users to Wallet Up after login."
+msgstr "Il plugin Wallet Up Pro non è attivo. Installalo e attivalo per reindirizzare gli utenti a Wallet Up dopo il login."
+
+msgid "Wallet Up Pro plugin is not active. Please install and activate it to replace the WordPress dashboard."
+msgstr "Il plugin Wallet Up Pro non è attivo. Installalo e attivalo per sostituire il dashboard WordPress."
+
+msgid "Wallet Up dashboard redirect has been disabled because the Wallet Up plugin is not active."
+msgstr "Il reindirizzamento del dashboard Wallet Up è stato disabilitato perché il plugin Wallet Up non è attivo."
+
+msgid "Wallet Up dashboard replacement has been disabled because the Wallet Up page was not found. Please make sure the Wallet Up plugin is active."
+msgstr "La sostituzione del dashboard Wallet Up è stata disabilitata perché la pagina Wallet Up non è stata trovata. Assicurati che il plugin Wallet Up sia attivo."
+
+msgid "Wallet Up — Advanced URL & QR Tools"
+msgstr "Wallet Up — Strumenti URL e QR avanzati"
+
+msgid "Welcome back! Please sign in to continue."
+msgstr "Bentornato! Accedi per continuare."
+
+msgid "Welcome back! You have successfully signed in."
+msgstr "Bentornato! Hai effettuato l'accesso con successo."
+
+msgid "Welcome back, %s!"
+msgstr "Bentornato, %s!"
+
+msgid "Welcome to"
+msgstr "Benvenuto a"
+
+msgid "Welcome to Wallet Up"
+msgstr "Benvenuto in Wallet Up"
+
+msgid "Welcome to Wallet Up Dashboard!"
+msgstr "Benvenuto nel Dashboard Wallet Up!"
+
+msgid "Welcome to Wallet Up!"
+msgstr "Benvenuto in Wallet Up!"
+
+msgid "Welcome to the Next 'Up"
+msgstr "Benvenuto al prossimo livello"
+
+msgid "When enabled, administrators can still access the default WordPress dashboard."
+msgstr "Quando abilitato, gli amministratori possono ancora accedere al dashboard WordPress predefinito."
+
+msgid "When enabled, the WordPress dashboard will be completely replaced with the Wallet Up page. This affects all users."
+msgstr "Quando abilitato, il dashboard WordPress sarà completamente sostituito con la pagina Wallet Up. Questo influisce su tutti gli utenti."
+
+msgid "Where the logo links to and the tooltip text when hovering."
+msgstr "Dove il logo collega e il testo del tooltip al passaggio del mouse."
+
+msgid "WordPress Dashboard"
+msgstr "Dashboard WordPress"
+
+msgid "You have been logged out."
+msgstr "Sei stato disconnesso."
+
+msgid "You must be logged in to access the REST API."
+msgstr "Devi essere loggato per accedere alla REST API."
+
+msgid "Your IP (%s) added to whitelist."
+msgstr "Il tuo IP (%s) è stato aggiunto alla whitelist."
+
+msgid "Your WordPress dashboard has been enhanced with Wallet Up. Click below to access your Wallet Up dashboard."
+msgstr "Il tuo dashboard WordPress è stato migliorato con Wallet Up. Clicca sotto per accedere al tuo dashboard Wallet Up."
+
+msgid "Your custom login URL:"
+msgstr "Il tuo URL di login personalizzato:"
+
+msgid "Your password has been reset successfully."
+msgstr "La tua password è stata reimpostata con successo."
+
+msgid "by Wallet Up"
+msgstr "di Wallet Up"
+
+msgid "default: 50px"
+msgstr "predefinito: 50px"
+
+msgid "hour"
+msgstr "ora"
+
+msgid "minutes"
+msgstr "minuti"
+
+msgid "⚠️ This is a LOGIN redirect only. For dashboard replacement, use \"Force Dashboard Replacement\"."
+msgstr "⚠️ Questo è solo un reindirizzamento LOGIN. Per la sostituzione del dashboard, usa \"Forza sostituzione dashboard\"."
+
+msgid "💡 This works independently - no need to enable \"Land to Wallet Up\"."
+msgstr "💡 Questo funziona indipendentemente - non c'è bisogno di abilitare \"Atterra su Wallet Up\"."
+
+msgid "Available languages:"
+msgstr "Lingue disponibili:"
+
+msgid "Custom Login URL"
+msgstr "URL di accesso personalizzato"
+
+msgid "Custom Logo URL"
+msgstr "URL logo personalizzato"
+
+msgid "%d conflict detected"
+msgstr "%d conflitto rilevato"
+
+msgid "%d failed"
+msgstr "%d fallito"
+
+msgid "%d pending"
+msgstr "%d in sospeso"
+
+msgid "🛡️ Enterprise Security"
+msgstr "🛡️ Sicurezza aziendale"
+
+msgid "https://walletup.app"
+msgstr "https://walletup.app"
+
+msgid "Maximum failed login attempts before temporary lockout."
+msgstr "Numero massimo di tentativi di accesso falliti prima del blocco temporaneo."
+
+msgid "✅ Recommended: Keeps admin access for troubleshooting and configuration."
+msgstr "✅ Consigliato: Mantiene l'accesso amministratore per risoluzione problemi e configurazione."
+
+msgid "The username you entered doesn't appear to exist. Double-check it or create a new account."
+msgstr "Il nome utente inserito non sembra esistere. Ricontrolla o crea un nuovo account."
+
+msgid "⚠️ This will overwrite existing customizations. Use only if files are missing or corrupted."
+msgstr "⚠️ Questo sovrascriverà le personalizzazioni esistenti. Usa solo se i file sono mancanti o corrotti."
+
+msgid "Translation for %1$s is not available. Using %2$s instead."
+msgstr "La traduzione per %1$s non è disponibile. Utilizzo %2$s invece."
+
+msgid "Translation for %s is not available."
+msgstr "La traduzione per %s non è disponibile."
+
+msgid "Version"
+msgstr "Versione"
+
+msgid "Wallet Up Premium Login Customizer"
+msgstr "Wallet Up Premium Login Customizer"
+
+msgid "✓ You have been successfully logged out. Please sign in again to continue."
+msgstr "✓ Sei stato disconnesso con successo. Accedi di nuovo per continuare."
+msgid "Login page styles"
+msgstr "Stili della pagina di accesso"
+msgid "Admin interface styles"
+msgstr "Stili dell'interfaccia di amministrazione"
+msgid "Login page functionality"
+msgstr "Funzionalità della pagina di accesso"
+msgid "Admin interface scripts"
+msgstr "Script dell'interfaccia di amministrazione"
+msgid "Core functionality"
+msgstr "Funzionalità principale"
+
