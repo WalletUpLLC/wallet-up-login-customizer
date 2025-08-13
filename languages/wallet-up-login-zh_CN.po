@@ -1,0 +1,883 @@
+# Translation file for Wallet Up Login Customizer
+# Copyright (C) 2025 Wallet Up
+# This file is distributed under the same license as the Wallet Up Login Customizer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wallet Up Login Customizer 2.3.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wallet-up-login-customizer\n"
+"POT-Creation-Date: 2025-08-13T02:07:19+00:00\n"
+"PO-Revision-Date: 2025-01-09 00:00:00+00:00\n"
+"Last-Translator: Wallet Up Team\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Wallet Up Translation Tool 1.0\n"
+
+msgid "AJAX Login"
+msgstr "AJAX 登录"
+
+msgid "About"
+msgstr "关于"
+
+msgid "Account temporarily locked due to multiple failed attempts."
+msgstr "由于多次失败尝试，账户暂时被锁定。"
+
+msgid "Add Message"
+msgstr "添加消息"
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid "Advanced Settings"
+msgstr "高级设置"
+
+msgid "Advanced security features for protecting your login system."
+msgstr "保护您的登录系统的高级安全功能。"
+
+msgid "After login, redirect users directly to the Wallet Up admin page (admin.php?page=wallet-up)."
+msgstr "登录后，直接将用户重定向到 Wallet Up 管理页面。"
+
+msgid "All Rights Reserved"
+msgstr "版权所有"
+
+msgid "Allow Site Override"
+msgstr "允许站点覆盖"
+
+msgid "Allow administrators to access default dashboard"
+msgstr "允许管理员访问默认仪表板"
+
+msgid "Allow administrators to access the original WordPress dashboard"
+msgstr "允许管理员访问原始 WordPress 仪表板"
+
+msgid "Allow individual sites to override network settings."
+msgstr "允许各个站点覆盖网络设置。"
+
+msgid "Almost there..."
+msgstr "就快完成了..."
+
+msgid "Appearance"
+msgstr "外观"
+
+msgid "Appearance Settings"
+msgstr "外观设置"
+
+msgid "Are you sure you want to reset all settings to default values?"
+msgstr "您确定要将所有设置重置为默认值吗？"
+
+msgid "Auto-Fix This Issue"
+msgstr "自动修复此问题"
+
+msgid "Automated login attempts are not allowed."
+msgstr "不允许自动登录尝试。"
+
+msgid "Back to %s"
+msgstr "返回 %s"
+
+msgid "Back to Login"
+msgstr "返回登录"
+
+msgid "Color Preview"
+msgstr "颜色预览"
+
+msgid "Color Scheme"
+msgstr "配色方案"
+
+msgid "Color scheme applied!"
+msgstr "配色方案已应用！"
+
+msgid "Configure advanced options for the login experience."
+msgstr "配置登录体验的高级选项。"
+
+msgid "Configure basic login functionality and behavior."
+msgstr "配置基本登录功能和行为。"
+
+msgid "Configure logo"
+msgstr "配置徽标"
+
+msgid "Configure the logo that appears on the WordPress login page. The logo will be automatically sized to fit within 50px height while preserving aspect ratio."
+msgstr "配置出现在 WordPress 登录页面上的徽标。徽标将自动调整大小以适应 50px 高度，同时保持纵横比。"
+
+msgid "Consider using a stronger password"
+msgstr "考虑使用更强的密码"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Continue to Dashboard"
+msgstr "继续到仪表板"
+
+msgid "Creates a beautiful interactive login experience for Wallet Up and WordPress users."
+msgstr "为 Wallet Up 和 WordPress 用户创建美观的交互式登录体验。"
+
+msgid "Creates a beautiful interactive login experience for Wallet Up and Wordpress users"
+msgstr "为 Wallet Up 和 WordPress 用户创建美观的交互式登录体验"
+
+msgid "Current Logo Preview"
+msgstr "当前徽标预览"
+
+msgid "Custom Login Slug"
+msgstr "自定义登录 URL"
+
+msgid "Custom URL slug for the login page"
+msgstr "登录页面的自定义 URL 路径"
+
+msgid "Custom login slug created. Please test it before enabling wp-login.php hiding."
+msgstr "自定义登录 URL 已创建。请在启用隐藏 wp-login.php 之前进行测试。"
+
+msgid "Customize messages displayed during login"
+msgstr "自定义登录期间显示的消息"
+
+msgid "Customize the Wallet Up login experience with these settings."
+msgstr "使用这些设置自定义 Wallet Up 登录体验。"
+
+msgid "Customize the look and feel of your login page."
+msgstr "自定义登录页面的外观和感觉。"
+
+msgid "Customize the messages displayed during login."
+msgstr "自定义登录期间显示的消息。"
+
+msgid "Dashboard"
+msgstr "仪表板"
+
+msgid "Dashboard redirect is enabled but Wallet Up plugin is not active. Please install Wallet Up or disable the redirect feature."
+msgstr "仪表板重定向已启用，但 Wallet Up 插件未激活。请安装 Wallet Up 或禁用重定向功能。"
+
+msgid "Deactivate the %s plugin or disable its login features."
+msgstr "停用 %s 插件或禁用其登录功能。"
+
+msgid "Delay before redirecting after successful login (in milliseconds)"
+msgstr "成功登录后重定向前的延迟（毫秒）"
+
+msgid "Delay in milliseconds before redirecting after successful login (0-5000)."
+msgstr "成功登录后重定向前的延迟，以毫秒为单位（0-5000）。"
+
+msgid "Direct access to wp-login.php will be redirected to your custom login URL."
+msgstr "直接访问 wp-login.php 将被重定向到您的自定义登录 URL。"
+
+msgid "Direct users to relevant areas based on their role (admins to dashboard, etc)."
+msgstr "根据用户角色将用户引导到相关区域（管理员到仪表板等）。"
+
+msgid "Display custom logo on login page"
+msgstr "在登录页面显示自定义徽标"
+
+msgid "Display the \"Remember Me\" option on the login form."
+msgstr "在登录表单上显示\"记住我\"选项。"
+
+msgid "Enable AJAX Login"
+msgstr "启用 AJAX 登录"
+
+msgid "Enable AJAX login functionality"
+msgstr "启用 AJAX 登录功能"
+
+msgid "Enable AJAX login functionality for a smoother experience"
+msgstr "启用 AJAX 登录功能以获得更流畅的体验"
+
+msgid "Enable Custom Logo"
+msgstr "启用自定义徽标"
+
+msgid "Enable Sound Effects"
+msgstr "启用音效"
+
+msgid "Enable intelligent redirects"
+msgstr "启用智能重定向"
+
+msgid "Enable intelligent role-based redirects after login"
+msgstr "登录后启用基于角色的智能重定向"
+
+msgid "Enable security headers"
+msgstr "启用安全标头"
+
+msgid "Enable subtle audio feedback"
+msgstr "启用细微的音频反馈"
+
+msgid "Enable subtle audio feedback on login success/failure"
+msgstr "在登录成功/失败时启用细微的音频反馈"
+
+msgid "End color for gradient effects"
+msgstr "渐变效果的结束颜色"
+
+msgid "End color for gradient effects."
+msgstr "渐变效果的结束颜色。"
+
+msgid "Enhanced login files have been installed successfully!"
+msgstr "增强登录文件已成功安装！"
+
+msgid "Enter a URL to use a custom logo (leave empty for default)"
+msgstr "输入 URL 以使用自定义徽标（留空使用默认值）"
+
+msgid "Enter a URL to use a custom logo. Leave empty to use the default Wallet Up icon."
+msgstr "输入 URL 以使用自定义徽标。留空以使用默认的 Wallet Up 图标。"
+
+msgid "Error importing settings"
+msgstr "导入设置时出错"
+
+msgid "Error reading file"
+msgstr "读取文件时出错"
+
+msgid "Error: Could not get image URL"
+msgstr "错误：无法获取图片 URL"
+
+msgid "Error: Invalid image URL format"
+msgstr "错误：无效的图片 URL 格式"
+
+msgid "Exempt Administrator Roles"
+msgstr "豁免管理员角色"
+
+msgid "Exempt Administrators"
+msgstr "豁免管理员"
+
+msgid "Export Network Settings"
+msgstr "导出网络设置"
+
+msgid "Export Settings"
+msgstr "导出设置"
+
+msgid "Export all network-wide settings for backup or migration."
+msgstr "导出所有网络范围的设置以进行备份或迁移。"
+
+msgid "Failed to install enhanced login files. Please check file permissions."
+msgstr "安装增强登录文件失败。请检查文件权限。"
+
+msgid "Force Dashboard Replacement"
+msgstr "强制仪表板替换"
+
+msgid "Force Login"
+msgstr "强制登录"
+
+msgid "Force Wallet Up Login customization on all network sites."
+msgstr "在所有网络站点上强制 Wallet Up 登录自定义。"
+
+msgid "Force on All Sites"
+msgstr "在所有站点上强制"
+
+msgid "Forgot Password?"
+msgstr "忘记密码？"
+
+msgid "Function %s conflicts with Wallet Up force login"
+msgstr "函数 %s 与 Wallet Up 强制登录冲突"
+
+msgid "General"
+msgstr "常规"
+
+msgid "General Settings"
+msgstr "常规设置"
+
+msgid "Go to Wallet Up Dashboard"
+msgstr "前往 Wallet Up 仪表板"
+
+msgid "Gradient"
+msgstr "渐变"
+
+msgid "Gradient End"
+msgstr "渐变结束"
+
+msgid "Gradient End Color"
+msgstr "渐变结束颜色"
+
+msgid "Gradient Start"
+msgstr "渐变开始"
+
+msgid "Gradient Start Color"
+msgstr "渐变开始颜色"
+
+msgid "Hide and protect wp-login.php"
+msgstr "隐藏并保护 wp-login.php"
+
+msgid "Hide password"
+msgstr "隐藏密码"
+
+msgid "Hide the default WordPress login page"
+msgstr "隐藏默认的 WordPress 登录页面"
+
+msgid "Hide wp-login.php"
+msgstr "隐藏 wp-login.php"
+
+msgid "Hiding wp-login.php without a custom login slug will lock out all users"
+msgstr "在没有自定义登录 URL 的情况下隐藏 wp-login.php 将锁定所有用户"
+
+msgid "Hook %s on %s may conflict with Wallet Up"
+msgstr "钩子 %s 在 %s 上可能与 Wallet Up 冲突"
+
+msgid "How long to lock out users after too many failed attempts."
+msgstr "在太多失败尝试后锁定用户多长时间。"
+
+msgid "If you need to reset the customizations, you can reinstall the enhanced login files."
+msgstr "如果您需要重置自定义设置，可以重新安装增强登录文件。"
+
+msgid "Import Network Settings"
+msgstr "导入网络设置"
+
+msgid "Import Settings"
+msgstr "导入设置"
+
+msgid "Import network settings from a backup file."
+msgstr "从备份文件导入网络设置。"
+
+msgid "Import/Export Network Settings"
+msgstr "导入/导出网络设置"
+
+msgid "Insufficient permissions."
+msgstr "权限不足。"
+
+msgid "Invalid JSON file."
+msgstr "无效的 JSON 文件。"
+
+msgid "Invalid login credentials. Please try again."
+msgstr "无效的登录凭据。请重试。"
+
+msgid "Invalid request."
+msgstr "无效的请求。"
+
+msgid "Invalid username or password. Please try again."
+msgstr "无效的用户名或密码。请重试。"
+
+msgid "Land to Wallet Up"
+msgstr "着陆到 Wallet Up"
+
+msgid "Link Title:"
+msgstr "链接标题："
+
+msgid "Link URL:"
+msgstr "链接 URL："
+
+msgid "Loading Messages"
+msgstr "加载消息"
+
+msgid "Loading..."
+msgstr "加载中..."
+
+msgid "Lockout Duration"
+msgstr "锁定持续时间"
+
+msgid "Lockout Duration (seconds)"
+msgstr "锁定持续时间（秒）"
+
+msgid "Login Logo Configuration"
+msgstr "登录徽标配置"
+
+msgid "Login Logo Preview"
+msgstr "登录徽标预览"
+
+msgid "Login Page Settings"
+msgstr "登录页面设置"
+
+msgid "Login failed. Please check your credentials and try again."
+msgstr "登录失败。请检查您的凭据并重试。"
+
+msgid "Logo Image"
+msgstr "徽标图片"
+
+msgid "Logo Link"
+msgstr "徽标链接"
+
+msgid "Logo Settings"
+msgstr "徽标设置"
+
+msgid "Logo Size"
+msgstr "徽标大小"
+
+msgid "Logo URL to use across all network sites."
+msgstr "在所有网络站点上使用的徽标 URL。"
+
+msgid "Logo settings saved successfully."
+msgstr "徽标设置已成功保存。"
+
+msgid "Manual Fix:"
+msgstr "手动修复："
+
+msgid "Max Login Attempts"
+msgstr "最大登录尝试次数"
+
+msgid "Maximum Height:"
+msgstr "最大高度："
+
+msgid "Messages"
+msgstr "消息"
+
+msgid "Messages Settings"
+msgstr "消息设置"
+
+msgid "Messages displayed during login. One will be randomly selected each time."
+msgstr "登录期间显示的消息。每次将随机选择一个。"
+
+msgid "Network Logo URL"
+msgstr "网络徽标 URL"
+
+msgid "Network settings imported successfully."
+msgstr "网络设置已成功导入。"
+
+msgid "Network settings saved successfully."
+msgstr "网络设置已成功保存。"
+
+msgid "No conflicts detected"
+msgstr "未检测到冲突"
+
+msgid "No custom logo set. Using site logo or WordPress default."
+msgstr "未设置自定义徽标。使用站点徽标或 WordPress 默认值。"
+
+msgid "No security events logged yet."
+msgstr "尚未记录任何安全事件。"
+
+msgid "Oops!"
+msgstr "哎呀！"
+
+msgid "Oops! The password you entered is incorrect. Please try again or use the password reset link below."
+msgstr "哎呀！您输入的密码不正确。请重试或使用下面的密码重置链接。"
+
+msgid "Open Preview"
+msgstr "打开预览"
+
+msgid "Open Wallet Up Dashboard"
+msgstr "打开 Wallet Up 仪表板"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Password is required"
+msgstr "密码是必需的"
+
+msgid "Play subtle sounds on login success/failure for better feedback."
+msgstr "在登录成功/失败时播放细微的声音以获得更好的反馈。"
+
+msgid "Please correct the errors before signing in."
+msgstr "请在登录前更正错误。"
+
+msgid "Please enter both username and password."
+msgstr "请输入用户名和密码。"
+
+msgid "Please enter your password to log in."
+msgstr "请输入您的密码以登录。"
+
+msgid "Please enter your username and password to access the dashboard."
+msgstr "请输入您的用户名和密码以访问仪表板。"
+
+msgid "Please enter your username to log in."
+msgstr "请输入您的用户名以登录。"
+
+msgid "Please select a valid JSON file"
+msgstr "请选择一个有效的 JSON 文件"
+
+msgid "Please select a valid file to import."
+msgstr "请选择一个有效的文件进行导入。"
+
+msgid "Premium Login Customizer"
+msgstr "高级登录定制器"
+
+msgid "Preparing your dashboard..."
+msgstr "正在准备您的仪表板..."
+
+msgid "Preserve aspect ratio when resizing"
+msgstr "调整大小时保持纵横比"
+
+msgid "Preview Login Page"
+msgstr "预览登录页面"
+
+msgid "Primary"
+msgstr "主要"
+
+msgid "Primary Color"
+msgstr "主色"
+
+msgid "Processing..."
+msgstr "处理中..."
+
+msgid "Provides a smoother login experience with visual feedback and no page reload."
+msgstr "提供更流畅的登录体验，带有视觉反馈且无需页面重新加载。"
+
+msgid "Redirect Delay"
+msgstr "重定向延迟"
+
+msgid "Redirect Delay (ms)"
+msgstr "重定向延迟（毫秒）"
+
+msgid "Redirect to Wallet Up admin page"
+msgstr "重定向到 Wallet Up 管理页面"
+
+msgid "Redirect users to the Wallet Up admin page after login"
+msgstr "登录后将用户重定向到 Wallet Up 管理页面"
+
+msgid "Register New Account"
+msgstr "注册新账户"
+
+msgid "Reinstall Files"
+msgstr "重新安装文件"
+
+msgid "Remember Me"
+msgstr "记住我"
+
+msgid "Remove the conflicting function from your theme's functions.php file."
+msgstr "从主题的 functions.php 文件中删除冲突的函数。"
+
+msgid "Replace WordPress dashboard"
+msgstr "替换 WordPress 仪表板"
+
+msgid "Replace WordPress dashboard with Wallet Up admin page for all users"
+msgstr "为所有用户用 Wallet Up 管理页面替换 WordPress 仪表板"
+
+msgid "Require authentication for all site access"
+msgstr "所有站点访问都需要身份验证"
+
+msgid "Require users to login before accessing the website"
+msgstr "要求用户在访问网站之前登录"
+
+msgid "Required Files & Paths:"
+msgstr "所需文件和路径："
+
+msgid "Reset Password"
+msgstr "重置密码"
+
+msgid "Reset to Defaults"
+msgstr "重置为默认值"
+
+msgid "Role-Based Redirects"
+msgstr "基于角色的重定向"
+
+msgid "Save Logo Settings"
+msgstr "保存徽标设置"
+
+msgid "Save Network Settings"
+msgstr "保存网络设置"
+
+msgid "Save Settings"
+msgstr "保存设置"
+
+msgid "Security Headers"
+msgstr "安全标头"
+
+msgid "Security Logs"
+msgstr "安全日志"
+
+msgid "Security check failed"
+msgstr "安全检查失败"
+
+msgid "Security check failed."
+msgstr "安全检查失败。"
+
+msgid "Security validation failed. Please refresh the page and try again."
+msgstr "安全验证失败。请刷新页面并重试。"
+
+msgid "Security verification failed."
+msgstr "安全验证失败。"
+
+msgid "See how your login page looks with current settings."
+msgstr "查看您的登录页面在当前设置下的外观。"
+
+msgid "Select Image"
+msgstr "选择图片"
+
+msgid "Select Logo"
+msgstr "选择徽标"
+
+msgid "Select a preset color scheme or customize colors below."
+msgstr "选择预设配色方案或在下面自定义颜色。"
+
+msgid "Select the primary color for the login page"
+msgstr "选择登录页面的主色"
+
+msgid "Server error. Please try again later."
+msgstr "服务器错误。请稍后重试。"
+
+msgid "Session Timeout (seconds)"
+msgstr "会话超时（秒）"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Settings exported successfully!"
+msgstr "设置已成功导出！"
+
+msgid "Settings imported successfully"
+msgstr "设置已成功导入"
+
+msgid "Settings reset to defaults!"
+msgstr "设置已重置为默认值！"
+
+msgid "Settings successfully saved!"
+msgstr "设置已成功保存！"
+
+msgid "Show password"
+msgstr "显示密码"
+
+msgid "Show remember me checkbox"
+msgstr "显示记住我复选框"
+
+msgid "Sign In Securely"
+msgstr "安全登录"
+
+msgid "Signing In"
+msgstr "正在登录"
+
+msgid "Sound Effects"
+msgstr "音效"
+
+msgid "Source files are in /assets/ directory"
+msgstr "源文件位于 /assets/ 目录中"
+
+msgid "Start color for gradient effects"
+msgstr "渐变效果的开始颜色"
+
+msgid "Start color for gradient effects."
+msgstr "渐变效果的开始颜色。"
+
+msgid "Success!"
+msgstr "成功！"
+
+msgid "Sync failed: %s"
+msgstr "同步失败：%s"
+
+msgid "Synchronization completed successfully."
+msgstr "同步成功完成。"
+
+msgid "The \"Land to Wallet Up\" option has been disabled because the Wallet Up admin page could not be found. Please make sure Wallet Up is installed and activated before enabling this feature."
+msgstr "\"着陆到 Wallet Up\"选项已被禁用，因为找不到 Wallet Up 管理页面。请确保在启用此功能之前已安装并激活 Wallet Up。"
+
+msgid "The WordPress dashboard has been replaced with the Wallet Up Dashboard."
+msgstr "WordPress 仪表板已被 Wallet Up 仪表板替换。"
+
+msgid "The following template files were automatically updated from assets:"
+msgstr "以下模板文件已从资源自动更新："
+
+msgid "The main color used throughout the login page."
+msgstr "整个登录页面使用的主色。"
+
+msgid "This account has been suspended. Please contact support for assistance."
+msgstr "此账户已被暂停。请联系支持以获得帮助。"
+
+msgid "This is not a valid network settings export file."
+msgstr "这不是有效的网络设置导出文件。"
+
+msgid "Time before user sessions expire"
+msgstr "用户会话过期前的时间"
+
+msgid "Too many attempts. Please try again later."
+msgstr "尝试次数过多。请稍后重试。"
+
+msgid "Too many login attempts. Please try again later."
+msgstr "登录尝试次数过多。请稍后重试。"
+
+msgid "Try Again"
+msgstr "重试"
+
+msgid "Unknown fix type"
+msgstr "未知的修复类型"
+
+msgid "Upload or select a logo image. Recommended size: 200x50px or smaller."
+msgstr "上传或选择徽标图片。建议大小：200x50px 或更小。"
+
+msgid "Use as Logo"
+msgstr "用作徽标"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Username and password are required"
+msgstr "用户名和密码是必需的"
+
+msgid "Username does not exist"
+msgstr "用户名不存在"
+
+msgid "Username exists"
+msgstr "用户名已存在"
+
+msgid "Username is required"
+msgstr "用户名是必需的"
+
+msgid "Username must be at least 3 characters"
+msgstr "用户名必须至少为 3 个字符"
+
+msgid "Verifying your credentials..."
+msgstr "正在验证您的凭据..."
+
+msgid "View Original WordPress Dashboard"
+msgstr "查看原始 WordPress 仪表板"
+
+msgid "Visitors must authenticate before viewing any content. Registration and password reset still work normally."
+msgstr "访客必须在查看任何内容之前进行身份验证。注册和密码重置仍正常工作。"
+
+msgid "Wallet Up"
+msgstr "Wallet Up"
+
+msgid "Wallet Up - Advanced URL & QR Tools"
+msgstr "Wallet Up - 高级 URL 和 QR 工具"
+
+msgid "Wallet Up Conflict Detected"
+msgstr "检测到 Wallet Up 冲突"
+
+msgid "Wallet Up Dashboard"
+msgstr "Wallet Up 仪表板"
+
+msgid "Wallet Up Enterprise Security"
+msgstr "Wallet Up 企业安全"
+
+msgid "Wallet Up Login"
+msgstr "Wallet Up 登录"
+
+msgid "Wallet Up Login Customizer:"
+msgstr "Wallet Up 登录定制器："
+
+msgid "Wallet Up Login Network Settings"
+msgstr "Wallet Up 登录网络设置"
+
+msgid "Wallet Up Login has been updated to version %s. Settings synchronization in progress..."
+msgstr "Wallet Up 登录已更新到版本 %s。设置同步正在进行中..."
+
+msgid "Wallet Up Login:"
+msgstr "Wallet Up 登录："
+
+msgid "Wallet Up Login: No custom logo configured. %s to add your brand logo to the login page."
+msgstr "Wallet Up 登录：未配置自定义徽标。%s 将您的品牌徽标添加到登录页面。"
+
+msgid "Wallet Up Network Settings"
+msgstr "Wallet Up 网络设置"
+
+msgid "Wallet Up Pro plugin is not active. Please install and activate it to redirect users to Wallet Up after login."
+msgstr "Wallet Up Pro 插件未激活。请安装并激活它以在登录后将用户重定向到 Wallet Up。"
+
+msgid "Wallet Up Pro plugin is not active. Please install and activate it to replace the WordPress dashboard."
+msgstr "Wallet Up Pro 插件未激活。请安装并激活它以替换 WordPress 仪表板。"
+
+msgid "Wallet Up dashboard redirect has been disabled because the Wallet Up plugin is not active."
+msgstr "Wallet Up 仪表板重定向已被禁用，因为 Wallet Up 插件未激活。"
+
+msgid "Wallet Up dashboard replacement has been disabled because the Wallet Up page was not found. Please make sure the Wallet Up plugin is active."
+msgstr "Wallet Up 仪表板替换已被禁用，因为找不到 Wallet Up 页面。请确保 Wallet Up 插件已激活。"
+
+msgid "Wallet Up — Advanced URL & QR Tools"
+msgstr "Wallet Up — 高级 URL 和 QR 工具"
+
+msgid "Welcome back! Please sign in to continue."
+msgstr "欢迎回来！请登录以继续。"
+
+msgid "Welcome back! You have successfully signed in."
+msgstr "欢迎回来！您已成功登录。"
+
+msgid "Welcome back, %s!"
+msgstr "欢迎回来，%s！"
+
+msgid "Welcome to"
+msgstr "欢迎来到"
+
+msgid "Welcome to Wallet Up"
+msgstr "欢迎来到 Wallet Up"
+
+msgid "Welcome to Wallet Up Dashboard!"
+msgstr "欢迎来到 Wallet Up 仪表板！"
+
+msgid "Welcome to Wallet Up!"
+msgstr "欢迎来到 Wallet Up！"
+
+msgid "Welcome to the Next 'Up"
+msgstr "欢迎来到下一个阶段"
+
+msgid "When enabled, administrators can still access the default WordPress dashboard."
+msgstr "启用后，管理员仍可访问默认的 WordPress 仪表板。"
+
+msgid "When enabled, the WordPress dashboard will be completely replaced with the Wallet Up page. This affects all users."
+msgstr "启用后，WordPress 仪表板将完全被 Wallet Up 页面替换。这会影响所有用户。"
+
+msgid "Where the logo links to and the tooltip text when hovering."
+msgstr "徽标链接到的位置以及悬停时的工具提示文本。"
+
+msgid "WordPress Dashboard"
+msgstr "WordPress 仪表板"
+
+msgid "You have been logged out."
+msgstr "您已退出登录。"
+
+msgid "You must be logged in to access the REST API."
+msgstr "您必须登录才能访问 REST API。"
+
+msgid "Your IP (%s) added to whitelist."
+msgstr "您的 IP（%s）已添加到白名单。"
+
+msgid "Your WordPress dashboard has been enhanced with Wallet Up. Click below to access your Wallet Up dashboard."
+msgstr "您的 WordPress 仪表板已通过 Wallet Up 增强。点击下方访问您的 Wallet Up 仪表板。"
+
+msgid "Your custom login URL:"
+msgstr "您的自定义登录 URL："
+
+msgid "Your password has been reset successfully."
+msgstr "您的密码已成功重置。"
+
+msgid "by Wallet Up"
+msgstr "由 Wallet Up 提供"
+
+msgid "default: 50px"
+msgstr "默认：50px"
+
+msgid "hour"
+msgstr "小时"
+
+msgid "minutes"
+msgstr "分钟"
+
+msgid "⚠️ This is a LOGIN redirect only. For dashboard replacement, use \"Force Dashboard Replacement\"."
+msgstr "⚠️ 这仅是登录重定向。要替换仪表板，请使用\"强制仪表板替换\"。"
+
+msgid "💡 This works independently - no need to enable \"Land to Wallet Up\"."
+msgstr "💡 这独立工作 - 无需启用\"着陆到 Wallet Up\"。"
+
+msgid "Available languages:"
+msgstr "可用语言："
+
+msgid "Custom Login URL"
+msgstr "自定义登录URL"
+
+msgid "Custom Logo URL"
+msgstr "自定义徽标URL"
+
+msgid "%d conflict detected"
+msgstr "检测到 %d 个冲突"
+
+msgid "%d failed"
+msgstr "%d 失败"
+
+msgid "%d pending"
+msgstr "%d 待处理"
+
+msgid "🛡️ Enterprise Security"
+msgstr "🛡️ 企业安全"
+
+msgid "https://walletup.app"
+msgstr "https://walletup.app"
+
+msgid "Maximum failed login attempts before temporary lockout."
+msgstr "临时锁定前的最大失败登录尝试次数。"
+
+msgid "✅ Recommended: Keeps admin access for troubleshooting and configuration."
+msgstr "✅ 推荐：保留管理员访问权限以进行故障排除和配置。"
+
+msgid "The username you entered doesn't appear to exist. Double-check it or create a new account."
+msgstr "您输入的用户名似乎不存在。请仔细检查或创建新账户。"
+
+msgid "⚠️ This will overwrite existing customizations. Use only if files are missing or corrupted."
+msgstr "⚠️ 这将覆盖现有的自定义设置。仅在文件丢失或损坏时使用。"
+
+msgid "Translation for %1$s is not available. Using %2$s instead."
+msgstr "%1$s 的翻译不可用。改用 %2$s。"
+
+msgid "Translation for %s is not available."
+msgstr "%s 的翻译不可用。"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "Wallet Up Premium Login Customizer"
+msgstr "Wallet Up 高级登录定制器"
+
+msgid "✓ You have been successfully logged out. Please sign in again to continue."
+msgstr "✓ 您已成功登出。请重新登录以继续。"
+msgid "Login page styles"
+msgstr "登录页面样式"
+msgid "Admin interface styles"
+msgstr "管理界面样式"
+msgid "Login page functionality"
+msgstr "登录页面功能"
+msgid "Admin interface scripts"
+msgstr "管理界面脚本"
+msgid "Core functionality"
+msgstr "核心功能"
+
