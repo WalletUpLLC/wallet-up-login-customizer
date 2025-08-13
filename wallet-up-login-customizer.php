@@ -1,11 +1,14 @@
 <?php
 /**
  * Plugin Name: Wallet Up Premium Login Customizer
- * Description: Creates a beautiful interactive login experience for Wallet Up and Wordpress users
+ * Description: Create a beautiful interactive login experience for Wallet Up and Wordpress users
  * Version: 2.3.5
  * Author: Wallet Up
  * Author URI: https://walletup.app
- * Text Domain: wallet-up-login
+ * Text Domain: wallet-up-login-customizer
+ * Domain Path: /languages
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
 
 // Prevent direct access
@@ -103,11 +106,11 @@ class WalletUpLogin {
      * Define plugin constants
      */
     private function define_constants() {
-        define('WALLET_UP_LOGIN_VERSION', self::VERSION);
-        define('WALLET_UP_LOGIN_PLUGIN_DIR', plugin_dir_path(__FILE__));
-        define('WALLET_UP_LOGIN_PLUGIN_URL', plugin_dir_url(__FILE__));
-        define('WALLET_UP_LOGIN_PLUGIN_FILE', __FILE__);
-        define('WALLET_UP_LOGIN_PLUGIN_BASENAME', plugin_basename(__FILE__));
+        define('WALLET_UP_LOGIN_CUSTOMIZER_VERSION', self::VERSION);
+        define('WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR', plugin_dir_path(__FILE__));
+        define('WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_URL', plugin_dir_url(__FILE__));
+        define('WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_FILE', __FILE__);
+        define('WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_BASENAME', plugin_basename(__FILE__));
     }
     
     /**
@@ -152,7 +155,7 @@ public function init() {
     $this->init_session_management();
     
     // Load text domain for translations
-    load_plugin_textdomain('wallet-up-login', false, dirname(plugin_basename(__FILE__)) . '/languages');
+    load_plugin_textdomain('wallet-up-login-customizer', false, dirname(plugin_basename(__FILE__)) . '/languages');
     
     // Include required files
     $this->includes();
@@ -203,16 +206,16 @@ public function init() {
             WalletUpHardRedirect::init();
         } else {
             // Disable redirect options if Wallet Up is not available
-            $options = get_option('wallet_up_login_options', []);
+            $options = get_option('wallet_up_login_customizer_options', []);
             if (!empty($options['redirect_to_wallet_up']) || !empty($options['force_dashboard_replacement'])) {
                 $options['redirect_to_wallet_up'] = false;
                 $options['force_dashboard_replacement'] = false;
-                update_option('wallet_up_login_options', $options);
+                update_option('wallet_up_login_customizer_options', $options);
                 
                 // Add admin notice
                 add_action('admin_notices', function() {
                     echo '<div class="notice notice-warning is-dismissible">';
-                    echo '<p>' . __('Wallet Up dashboard redirect has been disabled because the Wallet Up plugin is not active.', 'wallet-up-login') . '</p>';
+                    echo '<p>' . __('Wallet Up dashboard redirect has been disabled because the Wallet Up plugin is not active.', 'wallet-up-login-customizer') . '</p>';
                     echo '</div>';
                 });
             }
@@ -224,7 +227,7 @@ public function init() {
 
     
     // Setup dashboard replacement if Force Dashboard Replacement is enabled AND Wallet Up is available
-    $options = get_option('wallet_up_login_options');
+    $options = get_option('wallet_up_login_customizer_options');
     if (!empty($options['force_dashboard_replacement']) && $wallet_up_available) {
         $this->setup_dashboard_replacement();
     }
@@ -245,7 +248,7 @@ private function setup_dashboard_replacement() {
     }
     
     // Get options
-    $options = get_option('wallet_up_login_options', []);
+    $options = get_option('wallet_up_login_customizer_options', []);
     
     // IMPORTANT: Force Dashboard Replacement works INDEPENDENTLY
     // Only check for 'force_dashboard_replacement', NOT 'redirect_to_wallet_up'
@@ -313,9 +316,9 @@ public function secure_redirect_dashboard() {
         exit;
     } else {
         // Fallback: disable redirect and show notice
-        $options = get_option('wallet_up_login_options', []);
+        $options = get_option('wallet_up_login_customizer_options', []);
         $options['redirect_to_wallet_up'] = false;
-        update_option('wallet_up_login_options', $options);
+        update_option('wallet_up_login_customizer_options', $options);
         
         // Allow normal dashboard access
         return;
@@ -346,7 +349,7 @@ public function replace_dashboard_widgets() {
     // Add Wallet Up dashboard widget
     wp_add_dashboard_widget(
         'wallet_up_dashboard_widget',
-        __('Wallet Up Dashboard', 'wallet-up-login'),
+        __('Wallet Up Dashboard', 'wallet-up-login-customizer'),
         array($this, 'render_wallet_up_dashboard_widget')
     );
 }
@@ -356,24 +359,24 @@ public function replace_dashboard_widgets() {
  */
 public function render_wallet_up_dashboard_widget() {
     $wallet_up_url = admin_url('admin.php?page=wallet-up');
-    $options = get_option('wallet_up_login_options', []);
+    $options = get_option('wallet_up_login_customizer_options', []);
     $embed_mode = !empty($options['embed_wallet_up']) && !empty($options['force_dashboard_replacement']);
     
     echo '<div class="wallet-up-dashboard-replacement">';
     
     if ($embed_mode) {
         // Embed Wallet Up content in iframe (if enabled)
-        echo '<h3>' . esc_html__('Wallet Up Dashboard', 'wallet-up-login') . '</h3>';
+        echo '<h3>' . esc_html__('Wallet Up Dashboard', 'wallet-up-login-customizer') . '</h3>';
         echo '<div class="wallet-up-embed-container">';
         echo '<iframe src="' . esc_url($wallet_up_url) . '" width="100%" height="600" frameborder="0" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>';
         echo '</div>';
     } else {
         // Show link to Wallet Up (default behavior)
-        echo '<h3>' . esc_html__('Welcome to Wallet Up!', 'wallet-up-login') . '</h3>';
-        echo '<p>' . esc_html__('Your WordPress dashboard has been enhanced with Wallet Up. Click below to access your Wallet Up dashboard.', 'wallet-up-login') . '</p>';
+        echo '<h3>' . esc_html__('Welcome to Wallet Up!', 'wallet-up-login-customizer') . '</h3>';
+        echo '<p>' . esc_html__('Your WordPress dashboard has been enhanced with Wallet Up. Click below to access your Wallet Up dashboard.', 'wallet-up-login-customizer') . '</p>';
         echo '<p>';
         echo '<a href="' . esc_url($wallet_up_url) . '" class="button button-primary button-large">';
-        echo esc_html__('Open Wallet Up Dashboard', 'wallet-up-login');
+        echo esc_html__('Open Wallet Up Dashboard', 'wallet-up-login-customizer');
         echo '</a>';
         echo '</p>';
     }
@@ -383,7 +386,7 @@ public function render_wallet_up_dashboard_widget() {
         echo '<div class="wallet-up-admin-controls">';
         echo '<p>';
         echo '<a href="' . esc_url(add_query_arg('show_wp_dashboard', '1', admin_url())) . '" class="button">';
-        echo esc_html__('View Original WordPress Dashboard', 'wallet-up-login');
+        echo esc_html__('View Original WordPress Dashboard', 'wallet-up-login-customizer');
         echo '</a>';
         echo '</p>';
         echo '</div>';
@@ -433,7 +436,7 @@ public function modify_dashboard_menu() {
     if (is_array($menu)) {
         foreach ($menu as $key => $item) {
             if (isset($item[2]) && $item[2] === 'index.php') {
-                $menu[$key][0] = __('Wallet Up', 'wallet-up-login');
+                $menu[$key][0] = __('Wallet Up', 'wallet-up-login-customizer');
                 $menu[$key][2] = 'admin.php?page=wallet-up';
                 break;
             }
@@ -492,7 +495,7 @@ public function maybe_redirect_dashboard() {
  */
 private function init_admin() {
     // Add settings link to plugin page
-    add_filter('plugin_action_links_' . WALLET_UP_LOGIN_PLUGIN_BASENAME, array($this, 'add_settings_link'));
+    add_filter('plugin_action_links_' . WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_BASENAME, array($this, 'add_settings_link'));
     
     // Register settings page
     add_action('admin_menu', array($this, 'register_settings_page'));
@@ -520,56 +523,56 @@ private function init_admin() {
  */
 private function includes() {
     // Include the login customizer class if it exists
-    $customizer_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-login-customizer.php';
+    $customizer_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-login-customizer.php';
     
     if (file_exists($customizer_file)) {
         require_once $customizer_file;
     }
     
     // Include the enterprise security class
-    $security_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-enterprise-security.php';
+    $security_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-enterprise-security.php';
     
     if (file_exists($security_file)) {
         require_once $security_file;
     }
     
     // Include the security sanitizer class
-    $sanitizer_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-security-sanitizer.php';
+    $sanitizer_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-security-sanitizer.php';
     
     if (file_exists($sanitizer_file)) {
         require_once $sanitizer_file;
     }
     
     // Include the logo management class
-    $logo_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-login-logo.php';
+    $logo_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-login-customizer-logo.php';
     
     if (file_exists($logo_file)) {
         require_once $logo_file;
     }
     
     // Include the admin sync class
-    $admin_sync_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-admin-sync.php';
+    $admin_sync_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-admin-sync.php';
     
     if (file_exists($admin_sync_file)) {
         require_once $admin_sync_file;
     }
     
     // Include the conflict detector class
-    $conflict_detector_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-conflict-detector.php';
+    $conflict_detector_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-conflict-detector.php';
     
     if (file_exists($conflict_detector_file)) {
         require_once $conflict_detector_file;
     }
     
     // Include the safe activation class
-    $safe_activation_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-safe-activation.php';
+    $safe_activation_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-safe-activation.php';
     
     if (file_exists($safe_activation_file)) {
         require_once $safe_activation_file;
     }
     
     // Include the hard redirect class
-    $redirect_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-hard-redirect.php';
+    $redirect_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-hard-redirect.php';
     
     if (file_exists($redirect_file)) {
         require_once $redirect_file;
@@ -597,7 +600,7 @@ public function login_redirect($redirect_to, $request, $user) {
     // Only redirect if user logged in successfully and is an object
     if (!is_wp_error($user) && $user instanceof WP_User) {
         // Get plugin options
-        $options = get_option('wallet_up_login_options');
+        $options = get_option('wallet_up_login_customizer_options');
         
         // Check if we should redirect to Wallet Up
         $redirect_to_wallet_up = !empty($options['redirect_to_wallet_up']);
@@ -641,7 +644,7 @@ public function register_login_redirect() {
  */
 public function admin_enqueue_scripts($hook) {
     // Only load on our settings page
-    if ($hook != 'settings_page_wallet-up-login') {
+    if ($hook != 'settings_page_wallet-up-login-customizer') {
         return;
     }
     
@@ -653,7 +656,7 @@ public function admin_enqueue_scripts($hook) {
     wp_enqueue_script('wp-color-picker');
     
     // Admin script file path
-    $admin_js_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'js/wallet-up-login-admin.js';
+    $admin_js_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'js/wallet-up-login-customizer-admin.js';
     
     // Safely check for admin script without reinstalling
     if (!file_exists($admin_js_file)) {
@@ -662,49 +665,51 @@ public function admin_enqueue_scripts($hook) {
         
         // Use a safe fallback with media dependencies
         wp_enqueue_script(
-            'wallet-up-login-admin-fallback',
-            WALLET_UP_LOGIN_PLUGIN_URL . 'js/wallet-up-login-admin-fallback.js',
+            'wallet-up-login-customizer-admin-fallback',
+            WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_URL . 'js/wallet-up-login-customizer-admin-fallback.js',
             array('jquery', 'wp-color-picker', 'media-upload', 'media-views'),
-            WALLET_UP_LOGIN_VERSION,
+            WALLET_UP_LOGIN_CUSTOMIZER_VERSION,
             true
         );
     } else {
         // Add our admin script normally with media dependencies
         wp_enqueue_script(
-            'wallet-up-login-admin',
-            WALLET_UP_LOGIN_PLUGIN_URL . 'js/wallet-up-login-admin.js',
+            'wallet-up-login-customizer-admin',
+            WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_URL . 'js/wallet-up-login-customizer-admin.js',
             array('jquery', 'wp-color-picker', 'media-upload', 'media-views'),
-            WALLET_UP_LOGIN_VERSION . '.' . filemtime($admin_js_file), // Cache busting
+            WALLET_UP_LOGIN_CUSTOMIZER_VERSION . '.' . filemtime($admin_js_file), // Cache busting
             true
         );
         
         // Localize admin script with translation strings
-        wp_localize_script('wallet-up-login-admin', 'walletUpLogin', array(
+        wp_localize_script('wallet-up-login-customizer-admin', 'walletUpLogin', array(
             'strings' => array(
-                'verifyingCredentials' => __('Verifying your credentials...', 'wallet-up-login'),
-                'preparingDashboard' => __('Preparing your dashboard...', 'wallet-up-login'),
-                'almostThere' => __('Almost there...', 'wallet-up-login'),
-                'colorSchemeApplied' => __('Color scheme applied!', 'wallet-up-login'),
-                'settingsExported' => __('Settings exported successfully!', 'wallet-up-login'),
-                'settingsImported' => __('Settings imported successfully', 'wallet-up-login'),
-                'settingsReset' => __('Settings reset to defaults!', 'wallet-up-login'),
-                'selectValidFile' => __('Please select a valid JSON file', 'wallet-up-login'),
-                'errorImporting' => __('Error importing settings', 'wallet-up-login'),
-                'errorReadingFile' => __('Error reading file', 'wallet-up-login'),
-                'confirmReset' => __('Are you sure you want to reset all settings to default values?', 'wallet-up-login')
+                'verifyingCredentials' => __('Verifying your credentials...', 'wallet-up-login-customizer'),
+                'preparingDashboard' => __('Preparing your dashboard...', 'wallet-up-login-customizer'),
+                'almostThere' => __('Almost there...', 'wallet-up-login-customizer'),
+                'colorSchemeApplied' => __('Color scheme applied!', 'wallet-up-login-customizer'),
+                'settingsExported' => __('Settings exported successfully!', 'wallet-up-login-customizer'),
+                'settingsImported' => __('Settings imported successfully', 'wallet-up-login-customizer'),
+                'settingsReset' => __('Settings reset to defaults!', 'wallet-up-login-customizer'),
+                'selectValidFile' => __('Please select a valid JSON file', 'wallet-up-login-customizer'),
+                'errorImporting' => __('Error importing settings', 'wallet-up-login-customizer'),
+                'errorReadingFile' => __('Error reading file', 'wallet-up-login-customizer'),
+                'confirmReset' => __('Are you sure you want to reset all settings to default values?', 'wallet-up-login-customizer'),
+                'considerEnabling' => __('Consider enabling "Exempt Administrator Roles" for easier management.', 'wallet-up-login-customizer'),
+                'recommendedKeeps' => __('✅ Recommended: Keeps admin access for troubleshooting and configuration.', 'wallet-up-login-customizer')
             )
         ));
     }
     
     // Admin CSS file path
-    $admin_css_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'css/wallet-up-login-admin.css';
+    $admin_css_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'css/wallet-up-login-customizer-admin.css';
     
     // Add admin styles
     wp_enqueue_style(
-        'wallet-up-login-admin',
-        WALLET_UP_LOGIN_PLUGIN_URL . 'css/wallet-up-login-admin.css',
+        'wallet-up-login-customizer-admin',
+        WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_URL . 'css/wallet-up-login-customizer-admin.css',
         array(),
-        WALLET_UP_LOGIN_VERSION . '.' . time() // Force cache refresh
+        WALLET_UP_LOGIN_CUSTOMIZER_VERSION . '.' . time() // Force cache refresh
     );
 }   
    
@@ -718,11 +723,11 @@ public function security_status_notice() {
     }
     
     // Check if Wallet Up is missing but redirect is enabled
-    $options = get_option('wallet_up_login_options', []);
+    $options = get_option('wallet_up_login_customizer_options', []);
     if (!empty($options['redirect_to_wallet_up']) && !$this->is_wallet_up_available()) {
         echo '<div class="notice notice-error">';
-        echo '<p><strong>' . __('Wallet Up Login Customizer:', 'wallet-up-login') . '</strong> ';
-        echo __('Dashboard redirect is enabled but Wallet Up plugin is not active. Please install Wallet Up or disable the redirect feature.', 'wallet-up-login');
+        echo '<p><strong>' . __('Wallet Up Login Customizer:', 'wallet-up-login-customizer') . '</strong> ';
+        echo __('Dashboard redirect is enabled but Wallet Up plugin is not active. Please install Wallet Up or disable the redirect feature.', 'wallet-up-login-customizer');
         echo '</p>';
         echo '</div>';
     }
@@ -735,7 +740,7 @@ public function security_status_notice() {
  */
 public function activate($network_wide = false) {
     // SAFETY FIRST: Use safe activation system
-    require_once WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-safe-activation.php';
+    require_once WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-safe-activation.php';
     
     // Handle multisite network activation
     if (is_multisite() && $network_wide) {
@@ -752,7 +757,7 @@ public function activate($network_wide = false) {
     }
     
     // Make sure the includes directory exists
-    $includes_dir = WALLET_UP_LOGIN_PLUGIN_DIR . 'includes';
+    $includes_dir = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes';
     
     if (!file_exists($includes_dir)) {
         if (!wp_mkdir_p($includes_dir)) {
@@ -764,7 +769,7 @@ public function activate($network_wide = false) {
     $assets_dirs = array('css', 'js', 'img');
     
     foreach ($assets_dirs as $dir) {
-        $asset_dir = WALLET_UP_LOGIN_PLUGIN_DIR . $dir;
+        $asset_dir = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . $dir;
         
         if (!file_exists($asset_dir)) {
             if (!wp_mkdir_p($asset_dir)) {
@@ -797,7 +802,7 @@ private function set_safe_default_options() {
     $default_options = array(
         'redirect_to_wallet_up' => false,  // Disabled by default for safety
         'force_dashboard_replacement' => false,  // Disabled by default
-        'custom_login_message' => __('Welcome to Wallet Up', 'wallet-up-login'),
+        'custom_login_message' => __('Welcome to Wallet Up', 'wallet-up-login-customizer'),
         'enable_ajax_login' => true,
         'primary_color' => '#6200fC',
         'gradient_start' => '#6200fC',
@@ -806,8 +811,8 @@ private function set_safe_default_options() {
     );
     
     // Only add if not exists
-    if (!get_option('wallet_up_login_options')) {
-        add_option('wallet_up_login_options', $default_options);
+    if (!get_option('wallet_up_login_customizer_options')) {
+        add_option('wallet_up_login_customizer_options', $default_options);
     }
     
     // Mark files as installed
@@ -828,7 +833,7 @@ public function new_site_activation($new_site, $args) {
     
     // Switch to new site and activate
     switch_to_blog($new_site->blog_id);
-    require_once WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-safe-activation.php';
+    require_once WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-safe-activation.php';
     WalletUpSafeActivation::activate();
     restore_current_blog();
 }
@@ -875,28 +880,28 @@ public function install_files($force = false) {
     // File mappings for intelligent sync
     $file_mappings = array(
         array(
-            'source' => WALLET_UP_LOGIN_PLUGIN_DIR . 'assets/wallet-up-login.css',
-            'dest' => WALLET_UP_LOGIN_PLUGIN_DIR . 'css/wallet-up-login.css',
+            'source' => WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'assets/wallet-up-login-customizer.css',
+            'dest' => WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'css/wallet-up-login-customizer.css',
             'critical' => true
         ),
         array(
-            'source' => WALLET_UP_LOGIN_PLUGIN_DIR . 'assets/wallet-up-login.js',
-            'dest' => WALLET_UP_LOGIN_PLUGIN_DIR . 'js/wallet-up-login.js',
+            'source' => WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'assets/wallet-up-login-customizer.js',
+            'dest' => WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'js/wallet-up-login-customizer.js',
             'critical' => true
         ),
         array(
-            'source' => WALLET_UP_LOGIN_PLUGIN_DIR . 'assets/wallet-up-login-admin.css',
-            'dest' => WALLET_UP_LOGIN_PLUGIN_DIR . 'css/wallet-up-login-admin.css',
+            'source' => WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'assets/wallet-up-login-customizer-admin.css',
+            'dest' => WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'css/wallet-up-login-customizer-admin.css',
             'critical' => true
         ),
         array(
-            'source' => WALLET_UP_LOGIN_PLUGIN_DIR . 'assets/wallet-up-login-admin.js',
-            'dest' => WALLET_UP_LOGIN_PLUGIN_DIR . 'js/wallet-up-login-admin.js',
+            'source' => WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'assets/wallet-up-login-customizer-admin.js',
+            'dest' => WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'js/wallet-up-login-customizer-admin.js',
             'critical' => true
         ),
         array(
-            'source' => WALLET_UP_LOGIN_PLUGIN_DIR . 'assets/class-wallet-up-login-customizer.php',
-            'dest' => WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-login-customizer.php',
+            'source' => WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'assets/class-wallet-up-login-customizer.php',
+            'dest' => WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-login-customizer.php',
             'critical' => false // Not critical for basic operation
         )
     );
@@ -1019,7 +1024,7 @@ private function safe_file_copy($source, $destination) {
     }
     
     // Security: Ensure we're within plugin directory
-    $plugin_dir = realpath(WALLET_UP_LOGIN_PLUGIN_DIR);
+    $plugin_dir = realpath(WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR);
     $real_source = realpath($source);
     $dest_dir = dirname($destination);
     
@@ -1056,13 +1061,13 @@ private function create_default_file($filepath) {
     $filename = basename($filepath);
     
     switch($filename) {
-        case 'wallet-up-login.css':
+        case 'wallet-up-login-customizer.css':
             return $this->create_default_css();
-        case 'wallet-up-login.js':
+        case 'wallet-up-login-customizer.js':
             return $this->create_default_js();
-        case 'wallet-up-login-admin.css':
+        case 'wallet-up-login-customizer-admin.css':
             return $this->create_admin_css();
-        case 'wallet-up-login-admin.js':
+        case 'wallet-up-login-customizer-admin.js':
             return $this->create_admin_js();
         case 'class-wallet-up-login-customizer.php':
             return $this->create_default_class();
@@ -1078,7 +1083,7 @@ private function create_default_file($filepath) {
      * @return bool True on success, false on failure
      */
     private function create_default_css() {
-        $css_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'css/wallet-up-login.css';
+        $css_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'css/wallet-up-login-customizer.css';
         $css_content = "/* Wallet Up Premium Login CSS */\n\n";
         
         // Add basic CSS styles
@@ -1105,7 +1110,7 @@ private function create_default_file($filepath) {
      * @return bool True on success, false on failure
      */
     private function create_default_js() {
-        $js_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'js/wallet-up-login.js';
+        $js_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'js/wallet-up-login-customizer.js';
         $js_content = "/**\n * Wallet Up Premium Login JavaScript\n */\n\n";
         
         // Add basic JavaScript
@@ -1120,7 +1125,7 @@ private function create_default_file($filepath) {
      * @return bool True on success, false on failure
      */
     private function create_admin_js() {
-        $js_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'js/wallet-up-login-admin.js';
+        $js_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'js/wallet-up-login-customizer-admin.js';
         $js_content = "/**\n * Wallet Up Login Admin JavaScript\n */\n\n";
         
         // Add basic JavaScript for admin
@@ -1135,7 +1140,7 @@ private function create_default_file($filepath) {
      * @return bool True on success, false on failure
      */
     private function create_admin_css() {
-        $css_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'css/wallet-up-login-admin.css';
+        $css_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'css/wallet-up-login-customizer-admin.css';
         $css_content = "/**\n * Wallet Up Login Admin CSS\n */\n\n";
         
         // Add basic CSS for admin
@@ -1157,7 +1162,7 @@ private function create_default_file($filepath) {
      * @return bool True on success, false on failure
      */
     private function create_default_class() {
-        $class_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'includes/class-wallet-up-login-customizer.php';
+        $class_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'includes/class-wallet-up-login-customizer.php';
         $class_content = "<?php\n/**\n * WalletUpLoginCustomizer Class\n */\n\n";
         
         // Add basic class
@@ -1170,8 +1175,8 @@ private function create_default_file($filepath) {
         $class_content .= "\t/**\n\t * Get class instance\n\t * @return WalletUpLoginCustomizer\n\t */\n\tpublic static function get_instance() {\n";
         $class_content .= "\t\tif (null === self::\$instance) {\n\t\t\tself::\$instance = new self();\n\t\t}\n\t\treturn self::\$instance;\n\t}\n\n";
         $class_content .= "\t/**\n\t * Enqueue scripts\n\t */\n\tpublic function enqueue_scripts() {\n";
-        $class_content .= "\t\t// Enqueue CSS and JS\n\t\twp_enqueue_style('wallet-up-login', plugin_dir_url(dirname(__FILE__)) . 'css/wallet-up-login.css');\n";
-        $class_content .= "\t\twp_enqueue_script('wallet-up-login', plugin_dir_url(dirname(__FILE__)) . 'js/wallet-up-login.js', array('jquery'), '1.0', true);\n";
+        $class_content .= "\t\t// Enqueue CSS and JS\n\t\twp_enqueue_style('wallet-up-login-customizer', plugin_dir_url(dirname(__FILE__)) . 'css/wallet-up-login-customizer.css');\n";
+        $class_content .= "\t\twp_enqueue_script('wallet-up-login-customizer', plugin_dir_url(dirname(__FILE__)) . 'js/wallet-up-login-customizer.js', array('jquery'), '1.0', true);\n";
         $class_content .= "\t}\n";
         $class_content .= "}\n";
         
@@ -1184,7 +1189,7 @@ private function create_default_file($filepath) {
  */
 private function set_default_options() {
     // Check if options already exist - don't overwrite
-    $existing_options = get_option('wallet_up_login_options', false);
+    $existing_options = get_option('wallet_up_login_customizer_options', false);
     
     if ($existing_options !== false) {
         // Options already exist, don't override user settings
@@ -1211,7 +1216,7 @@ private function set_default_options() {
         'exempt_admin_roles' => true, // SAFER: Exempt admins by default for troubleshooting
     );
     
-    update_option('wallet_up_login_options', $defaults);
+    update_option('wallet_up_login_customizer_options', $defaults);
 }
 
 /**
@@ -1219,7 +1224,7 @@ private function set_default_options() {
  * This creates a small placeholder file when main admin JS is missing
  */
 private function create_admin_js_fallback() {
-    $js_file = WALLET_UP_LOGIN_PLUGIN_DIR . 'js/wallet-up-login-admin-fallback.js';
+    $js_file = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'js/wallet-up-login-customizer-admin-fallback.js';
     $js_content = "/**\n * Wallet Up Login Admin JavaScript - Fallback Version\n */\n\n";
     
     // Add minimal essential functionality
@@ -1260,10 +1265,10 @@ private function create_admin_js_fallback() {
  */
 private function get_asset_url($path) {
     // Check if file exists first
-    $file_path = WALLET_UP_LOGIN_PLUGIN_DIR . $path;
+    $file_path = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . $path;
     
     if (file_exists($file_path)) {
-        return WALLET_UP_LOGIN_PLUGIN_URL . $path;
+        return WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_URL . $path;
     } else {
         // Log the issue
         error_log('Asset file not found: ' . $file_path);
@@ -1287,7 +1292,7 @@ private function get_asset_url($path) {
      * @return array Modified links
      */
     public function add_settings_link($links) {
-        $settings_link = '<a href="' . admin_url('options-general.php?page=wallet-up-login') . '">' . __('Settings', 'wallet-up-login') . '</a>';
+        $settings_link = '<a href="' . admin_url('options-general.php?page=wallet-up-login-customizer') . '">' . __('Settings', 'wallet-up-login-customizer') . '</a>';
         array_unshift($links, $settings_link);
         return $links;
     }
@@ -1297,8 +1302,8 @@ private function get_asset_url($path) {
      */
     public function register_network_settings_page() {
         add_menu_page(
-            __('Wallet Up Network Settings', 'wallet-up-login'),
-            __('Wallet Up Login', 'wallet-up-login'),
+            __('Wallet Up Network Settings', 'wallet-up-login-customizer'),
+            __('Wallet Up Login', 'wallet-up-login-customizer'),
             'manage_network_options',
             'wallet-up-network-settings',
             array($this, 'render_network_settings_page'),
@@ -1312,10 +1317,10 @@ private function get_asset_url($path) {
      */
     public function register_settings_page() {
         add_options_page(
-            __('Wallet Up Login', 'wallet-up-login'),
-            __('Wallet Up Login', 'wallet-up-login'),
+            __('Wallet Up Login', 'wallet-up-login-customizer'),
+            __('Wallet Up Login', 'wallet-up-login-customizer'),
             'manage_options',
-            'wallet-up-login',
+            'wallet-up-login-customizer',
             array($this, 'render_settings_page')
         );
     }
@@ -1324,18 +1329,18 @@ private function get_asset_url($path) {
      * Register settings
      */
     public function register_settings() {
-        register_setting('wallet_up_login_options', 'wallet_up_login_options', array($this, 'sanitize_options'));
+        register_setting('wallet_up_login_customizer_options', 'wallet_up_login_customizer_options', array($this, 'sanitize_options'));
         
         // Register security options  
-        register_setting('wallet_up_login_options', 'wallet_up_security_options', array($this, 'sanitize_security_options'));
+        register_setting('wallet_up_login_customizer_options', 'wallet_up_security_options', array($this, 'sanitize_security_options'));
         
           // Add custom success message and auto-dismiss animation
     add_action('admin_notices', function() {
         // Check if settings were just saved (settings-updated parameter)
-        if (isset($_GET['settings-updated']) && $_GET['settings-updated'] === 'true' && isset($_GET['page']) && $_GET['page'] === 'wallet-up-login') {
+        if (isset($_GET['settings-updated']) && $_GET['settings-updated'] === 'true' && isset($_GET['page']) && $_GET['page'] === 'wallet-up-login-customizer') {
             // Show our custom success message
             echo '<div class="notice notice-success is-dismissible wallet-up-auto-dismiss-notice">';
-            echo '<p><strong>' . esc_html__('Settings successfully saved!', 'wallet-up-login') . '</strong></p>';
+            echo '<p><strong>' . esc_html__('Settings successfully saved!', 'wallet-up-login-customizer') . '</strong></p>';
             echo '</div>';
             
             // Add auto-dismiss script and hide the default WordPress notice
@@ -1373,8 +1378,8 @@ private function get_asset_url($path) {
             }, $auto_updates);
             
             echo '<div class="notice notice-info is-dismissible">';
-            echo '<p><strong>' . esc_html__('Wallet Up Login:', 'wallet-up-login') . '</strong> ';
-            echo esc_html__('The following template files were automatically updated from assets:', 'wallet-up-login');
+            echo '<p><strong>' . esc_html__('Wallet Up Login:', 'wallet-up-login-customizer') . '</strong> ';
+            echo esc_html__('The following template files were automatically updated from assets:', 'wallet-up-login-customizer');
             echo ' <code>' . esc_html(implode(', ', $file_list)) . '</code></p>';
             echo '</div>';
             
@@ -1385,106 +1390,106 @@ private function get_asset_url($path) {
 
 
         add_settings_section(
-            'wallet_up_login_section',
-            __('Login Page Settings', 'wallet-up-login'),
+            'wallet_up_login_customizer_section',
+            __('Login Page Settings', 'wallet-up-login-customizer'),
             array($this, 'render_settings_section'),
-            'wallet-up-login'
+            'wallet-up-login-customizer'
         );
         
         // Add settings fields
         add_settings_field(
             'enable_ajax_login',
-            __('Enable AJAX Login', 'wallet-up-login'),
+            __('Enable AJAX Login', 'wallet-up-login-customizer'),
             array($this, 'render_checkbox_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'enable_ajax_login',
-                'description' => __('Enable AJAX login functionality for a smoother experience', 'wallet-up-login')
+                'description' => __('Enable AJAX login functionality for a smoother experience', 'wallet-up-login-customizer')
             )
         );
         
         add_settings_field(
             'custom_logo_url',
-            __('Custom Logo URL', 'wallet-up-login'),
+            __('Custom Logo URL', 'wallet-up-login-customizer'),
             array($this, 'render_text_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'custom_logo_url',
-                'description' => __('Enter a URL to use a custom logo (leave empty for default)', 'wallet-up-login')
+                'description' => __('Enter a URL to use a custom logo (leave empty for default)', 'wallet-up-login-customizer')
             )
         );
         
         add_settings_field(
             'primary_color',
-            __('Primary Color', 'wallet-up-login'),
+            __('Primary Color', 'wallet-up-login-customizer'),
             array($this, 'render_color_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'primary_color',
-                'description' => __('Select the primary color for the login page', 'wallet-up-login')
+                'description' => __('Select the primary color for the login page', 'wallet-up-login-customizer')
             )
         );
         
         add_settings_field(
             'gradient_start',
-            __('Gradient Start Color', 'wallet-up-login'),
+            __('Gradient Start Color', 'wallet-up-login-customizer'),
             array($this, 'render_color_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'gradient_start',
-                'description' => __('Start color for gradient effects', 'wallet-up-login')
+                'description' => __('Start color for gradient effects', 'wallet-up-login-customizer')
             )
         );
         
         add_settings_field(
             'gradient_end',
-            __('Gradient End Color', 'wallet-up-login'),
+            __('Gradient End Color', 'wallet-up-login-customizer'),
             array($this, 'render_color_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'gradient_end',
-                'description' => __('End color for gradient effects', 'wallet-up-login')
+                'description' => __('End color for gradient effects', 'wallet-up-login-customizer')
             )
         );
         
         add_settings_field(
             'enable_sounds',
-            __('Enable Sound Effects', 'wallet-up-login'),
+            __('Enable Sound Effects', 'wallet-up-login-customizer'),
             array($this, 'render_checkbox_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'enable_sounds',
-                'description' => __('Enable subtle audio feedback on login success/failure', 'wallet-up-login')
+                'description' => __('Enable subtle audio feedback on login success/failure', 'wallet-up-login-customizer')
             )
         );
         
         add_settings_field(
             'loading_messages',
-            __('Loading Messages', 'wallet-up-login'),
+            __('Loading Messages', 'wallet-up-login-customizer'),
             array($this, 'render_messages_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'loading_messages',
-                'description' => __('Customize messages displayed during login', 'wallet-up-login')
+                'description' => __('Customize messages displayed during login', 'wallet-up-login-customizer')
             )
         );
         
         add_settings_field(
             'redirect_delay',
-            __('Redirect Delay (ms)', 'wallet-up-login'),
+            __('Redirect Delay (ms)', 'wallet-up-login-customizer'),
             array($this, 'render_number_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'redirect_delay',
-                'description' => __('Delay before redirecting after successful login (in milliseconds)', 'wallet-up-login'),
+                'description' => __('Delay before redirecting after successful login (in milliseconds)', 'wallet-up-login-customizer'),
                 'min' => 0,
                 'max' => 5000,
                 'step' => 100
@@ -1493,49 +1498,49 @@ private function get_asset_url($path) {
         
         add_settings_field(
             'dashboard_redirect',
-            __('Role-Based Redirects', 'wallet-up-login'),
+            __('Role-Based Redirects', 'wallet-up-login-customizer'),
             array($this, 'render_checkbox_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'dashboard_redirect',
-                'description' => __('Enable intelligent role-based redirects after login', 'wallet-up-login')
+                'description' => __('Enable intelligent role-based redirects after login', 'wallet-up-login-customizer')
             )
         );
 
         add_settings_field(
             'redirect_to_wallet_up',
-            __('Land to Wallet Up', 'wallet-up-login'),
+            __('Land to Wallet Up', 'wallet-up-login-customizer'),
             array($this, 'render_checkbox_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'redirect_to_wallet_up',
-                'description' => __('Redirect users to the Wallet Up admin page after login', 'wallet-up-login')
+                'description' => __('Redirect users to the Wallet Up admin page after login', 'wallet-up-login-customizer')
             )
         );
 
         add_settings_field(
             'force_dashboard_replacement',
-            __('Force Dashboard Replacement', 'wallet-up-login'),
+            __('Force Dashboard Replacement', 'wallet-up-login-customizer'),
             array($this, 'render_checkbox_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'force_dashboard_replacement',
-                'description' => __('Replace WordPress dashboard with Wallet Up admin page for all users', 'wallet-up-login')
+                'description' => __('Replace WordPress dashboard with Wallet Up admin page for all users', 'wallet-up-login-customizer')
             )
         );
                 
         add_settings_field(
             'exempt_admin_roles',
-            __('Exempt Administrators', 'wallet-up-login'),
+            __('Exempt Administrators', 'wallet-up-login-customizer'),
             array($this, 'render_checkbox_field'),
-            'wallet-up-login',
-            'wallet_up_login_section',
+            'wallet-up-login-customizer',
+            'wallet_up_login_customizer_section',
             array(
                 'name' => 'exempt_admin_roles',
-                'description' => __('Allow administrators to access the original WordPress dashboard', 'wallet-up-login')
+                'description' => __('Allow administrators to access the original WordPress dashboard', 'wallet-up-login-customizer')
             )
         );
     }
@@ -1581,9 +1586,9 @@ private function get_asset_url($path) {
         if (isset($input['loading_messages']) && is_array($input['loading_messages'])) {
             // Map translated messages back to English for storage
             $reverse_map = array(
-                __('Verifying your credentials...', 'wallet-up-login') => 'Verifying your credentials...',
-                __('Preparing your dashboard...', 'wallet-up-login') => 'Preparing your dashboard...',
-                __('Almost there...', 'wallet-up-login') => 'Almost there...'
+                __('Verifying your credentials...', 'wallet-up-login-customizer') => 'Verifying your credentials...',
+                __('Preparing your dashboard...', 'wallet-up-login-customizer') => 'Preparing your dashboard...',
+                __('Almost there...', 'wallet-up-login-customizer') => 'Almost there...'
             );
             
             foreach ($input['loading_messages'] as $message) {
@@ -1655,7 +1660,7 @@ private function get_asset_url($path) {
      * Render settings section
      */
     public function render_settings_section() {
-        echo '<p>' . __('Customize the Wallet Up login experience with these settings.', 'wallet-up-login') . '</p>';
+        echo '<p>' . __('Customize the Wallet Up login experience with these settings.', 'wallet-up-login-customizer') . '</p>';
     }
     
     /**
@@ -1664,7 +1669,7 @@ private function get_asset_url($path) {
      * @param array $args Field arguments
      */
     public function render_checkbox_field($args) {
-        $options = get_option('wallet_up_login_options');
+        $options = get_option('wallet_up_login_customizer_options');
         $name = $args['name'];
         $checked = isset($options[$name]) ? $options[$name] : false;
         
@@ -1682,17 +1687,17 @@ private function get_asset_url($path) {
             
             if (!$wallet_up_available) {
                 // Disable the checkbox and show a notice
-                echo '<input type="checkbox" id="' . esc_attr($name) . '" name="wallet_up_login_options[' . esc_attr($name) . ']" value="1" disabled />';
+                echo '<input type="checkbox" id="' . esc_attr($name) . '" name="wallet_up_login_customizer_options[' . esc_attr($name) . ']" value="1" disabled />';
                 $message = ($name === 'redirect_to_wallet_up') 
-                    ? __('Wallet Up Pro plugin is not active. Please install and activate it to redirect users to Wallet Up after login.', 'wallet-up-login')
-                    : __('Wallet Up Pro plugin is not active. Please install and activate it to replace the WordPress dashboard.', 'wallet-up-login');
+                    ? __('Wallet Up Pro plugin is not active. Please install and activate it to redirect users to Wallet Up after login.', 'wallet-up-login-customizer')
+                    : __('Wallet Up Pro plugin is not active. Please install and activate it to replace the WordPress dashboard.', 'wallet-up-login-customizer');
                 echo '<span class="description" style="color: #d63638;">' . $message . '</span>';
                 return;
             }
         }
         
         // Standard checkbox rendering
-        echo '<input type="checkbox" id="' . esc_attr($name) . '" name="wallet_up_login_options[' . esc_attr($name) . ']" ' . checked($checked, true, false) . ' value="1" />';
+        echo '<input type="checkbox" id="' . esc_attr($name) . '" name="wallet_up_login_customizer_options[' . esc_attr($name) . ']" ' . checked($checked, true, false) . ' value="1" />';
         
         if (isset($args['description'])) {
             echo '<p class="description">' . esc_html($args['description']) . '</p>';
@@ -1705,11 +1710,11 @@ private function get_asset_url($path) {
      * @param array $args Field arguments
      */
     public function render_text_field($args) {
-        $options = get_option('wallet_up_login_options');
+        $options = get_option('wallet_up_login_customizer_options');
         $name = $args['name'];
         $value = isset($options[$name]) ? $options[$name] : '';
         
-        echo '<input type="text" class="regular-text" id="' . esc_attr($name) . '" name="wallet_up_login_options[' . esc_attr($name) . ']" value="' . esc_attr($value) . '" />';
+        echo '<input type="text" class="regular-text" id="' . esc_attr($name) . '" name="wallet_up_login_customizer_options[' . esc_attr($name) . ']" value="' . esc_attr($value) . '" />';
         
         if (isset($args['description'])) {
             echo '<p class="description">' . esc_html($args['description']) . '</p>';
@@ -1722,14 +1727,14 @@ private function get_asset_url($path) {
      * @param array $args Field arguments
      */
     public function render_number_field($args) {
-        $options = get_option('wallet_up_login_options');
+        $options = get_option('wallet_up_login_customizer_options');
         $name = $args['name'];
         $value = isset($options[$name]) ? $options[$name] : '';
         $min = isset($args['min']) ? 'min="' . esc_attr($args['min']) . '"' : '';
         $max = isset($args['max']) ? 'max="' . esc_attr($args['max']) . '"' : '';
         $step = isset($args['step']) ? 'step="' . esc_attr($args['step']) . '"' : '';
         
-        echo '<input type="number" class="regular-text" id="' . esc_attr($name) . '" name="wallet_up_login_options[' . esc_attr($name) . ']" value="' . esc_attr($value) . '" ' . $min . ' ' . $max . ' ' . $step . ' />';
+        echo '<input type="number" class="regular-text" id="' . esc_attr($name) . '" name="wallet_up_login_customizer_options[' . esc_attr($name) . ']" value="' . esc_attr($value) . '" ' . $min . ' ' . $max . ' ' . $step . ' />';
         
         if (isset($args['description'])) {
             echo '<p class="description">' . esc_html($args['description']) . '</p>';
@@ -1742,11 +1747,11 @@ private function get_asset_url($path) {
      * @param array $args Field arguments
      */
     public function render_color_field($args) {
-        $options = get_option('wallet_up_login_options');
+        $options = get_option('wallet_up_login_customizer_options');
         $name = $args['name'];
         $value = isset($options[$name]) ? $options[$name] : '#674FBF';
         
-        echo '<input type="text" class="wallet-up-color-picker" id="' . esc_attr($name) . '" name="wallet_up_login_options[' . esc_attr($name) . ']" value="' . esc_attr($value) . '" data-default-color="#674FBF" />';
+        echo '<input type="text" class="wallet-up-color-picker" id="' . esc_attr($name) . '" name="wallet_up_login_customizer_options[' . esc_attr($name) . ']" value="' . esc_attr($value) . '" data-default-color="#674FBF" />';
         
         if (isset($args['description'])) {
             echo '<p class="description">' . esc_html($args['description']) . '</p>';
@@ -1759,16 +1764,16 @@ private function get_asset_url($path) {
      * @param array $args Field arguments
      */
     public function render_messages_field($args) {
-        $options = get_option('wallet_up_login_options');
+        $options = get_option('wallet_up_login_customizer_options');
         $name = $args['name'];
-        $messages = isset($options[$name]) ? $options[$name] : array(__('Verifying your credentials...', 'wallet-up-login'));
+        $messages = isset($options[$name]) ? $options[$name] : array(__('Verifying your credentials...', 'wallet-up-login-customizer'));
         
         echo '<div id="loading-messages-container">';
         
         if (!empty($messages)) {
             foreach ($messages as $index => $message) {
                 echo '<div class="loading-message">';
-                echo '<input type="text" class="regular-text" name="wallet_up_login_options[' . esc_attr($name) . '][]" value="' . esc_attr($message) . '" />';
+                echo '<input type="text" class="regular-text" name="wallet_up_login_customizer_options[' . esc_attr($name) . '][]" value="' . esc_attr($message) . '" />';
                 echo '<a href="#" class="remove-loading-message">×</a>';
                 echo '</div>';
             }
@@ -1776,12 +1781,12 @@ private function get_asset_url($path) {
         
         echo '</div>';
         
-        echo '<button id="add-loading-message" class="button button-secondary">' . __('Add Message', 'wallet-up-login') . '</button>';
+        echo '<button id="add-loading-message" class="button button-secondary">' . __('Add Message', 'wallet-up-login-customizer') . '</button>';
         
         // Add a template for new messages
         echo '<script type="text/html" id="loading-message-template">
             <div class="loading-message">
-                <input type="text" class="regular-text" name="wallet_up_login_options[' . esc_attr($name) . '][]" value="" />
+                <input type="text" class="regular-text" name="wallet_up_login_customizer_options[' . esc_attr($name) . '][]" value="" />
                 <a href="#" class="remove-loading-message">×</a>
             </div>
         </script>';
@@ -1826,64 +1831,64 @@ private function get_asset_url($path) {
         
         ?>
         <div class="wrap">
-            <h1><?php echo esc_html__('Wallet Up Login Network Settings', 'wallet-up-login'); ?></h1>
+            <h1><?php echo esc_html__('Wallet Up Login Network Settings', 'wallet-up-login-customizer'); ?></h1>
             
             <form method="post" action="">
                 <?php wp_nonce_field('wallet-up-network-settings'); ?>
                 
                 <table class="form-table">
                     <tr>
-                        <th scope="row"><?php esc_html_e('Force on All Sites', 'wallet-up-login'); ?></th>
+                        <th scope="row"><?php esc_html_e('Force on All Sites', 'wallet-up-login-customizer'); ?></th>
                         <td>
                             <input type="checkbox" name="force_on_all_sites" value="1" <?php checked($network_options['force_on_all_sites']); ?>>
-                            <p class="description"><?php esc_html_e('Force Wallet Up Login customization on all network sites.', 'wallet-up-login'); ?></p>
+                            <p class="description"><?php esc_html_e('Force Wallet Up Login customization on all network sites.', 'wallet-up-login-customizer'); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php esc_html_e('Allow Site Override', 'wallet-up-login'); ?></th>
+                        <th scope="row"><?php esc_html_e('Allow Site Override', 'wallet-up-login-customizer'); ?></th>
                         <td>
                             <input type="checkbox" name="allow_site_override" value="1" <?php checked($network_options['allow_site_override']); ?>>
-                            <p class="description"><?php esc_html_e('Allow individual sites to override network settings.', 'wallet-up-login'); ?></p>
+                            <p class="description"><?php esc_html_e('Allow individual sites to override network settings.', 'wallet-up-login-customizer'); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php esc_html_e('Network Logo URL', 'wallet-up-login'); ?></th>
+                        <th scope="row"><?php esc_html_e('Network Logo URL', 'wallet-up-login-customizer'); ?></th>
                         <td>
                             <input type="url" name="network_wide_logo" value="<?php echo esc_attr($network_options['network_wide_logo']); ?>" class="regular-text">
-                            <p class="description"><?php esc_html_e('Logo URL to use across all network sites.', 'wallet-up-login'); ?></p>
+                            <p class="description"><?php esc_html_e('Logo URL to use across all network sites.', 'wallet-up-login-customizer'); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><?php esc_html_e('Primary Color', 'wallet-up-login'); ?></th>
+                        <th scope="row"><?php esc_html_e('Primary Color', 'wallet-up-login-customizer'); ?></th>
                         <td>
                             <input type="text" name="network_primary_color" value="<?php echo esc_attr($network_options['network_primary_color']); ?>" class="color-field">
                         </td>
                     </tr>
                 </table>
                 
-                <?php submit_button(__('Save Network Settings', 'wallet-up-login')); ?>
+                <?php submit_button(__('Save Network Settings', 'wallet-up-login-customizer')); ?>
             </form>
             
             <hr>
             
-            <h2><?php esc_html_e('Import/Export Network Settings', 'wallet-up-login'); ?></h2>
+            <h2><?php esc_html_e('Import/Export Network Settings', 'wallet-up-login-customizer'); ?></h2>
             
             <div class="wallet-up-import-export">
-                <h3><?php esc_html_e('Export Network Settings', 'wallet-up-login'); ?></h3>
-                <p><?php esc_html_e('Export all network-wide settings for backup or migration.', 'wallet-up-login'); ?></p>
+                <h3><?php esc_html_e('Export Network Settings', 'wallet-up-login-customizer'); ?></h3>
+                <p><?php esc_html_e('Export all network-wide settings for backup or migration.', 'wallet-up-login-customizer'); ?></p>
                 <form method="post" action="">
                     <?php wp_nonce_field('wallet-up-export-network'); ?>
                     <input type="hidden" name="action" value="export_network_settings">
-                    <?php submit_button(__('Export Network Settings', 'wallet-up-login'), 'secondary', 'export_network'); ?>
+                    <?php submit_button(__('Export Network Settings', 'wallet-up-login-customizer'), 'secondary', 'export_network'); ?>
                 </form>
                 
-                <h3><?php esc_html_e('Import Network Settings', 'wallet-up-login'); ?></h3>
-                <p><?php esc_html_e('Import network settings from a backup file.', 'wallet-up-login'); ?></p>
+                <h3><?php esc_html_e('Import Network Settings', 'wallet-up-login-customizer'); ?></h3>
+                <p><?php esc_html_e('Import network settings from a backup file.', 'wallet-up-login-customizer'); ?></p>
                 <form method="post" enctype="multipart/form-data" action="">
                     <?php wp_nonce_field('wallet-up-import-network'); ?>
                     <input type="hidden" name="action" value="import_network_settings">
                     <input type="file" name="import_file" accept=".json">
-                    <?php submit_button(__('Import Network Settings', 'wallet-up-login'), 'secondary', 'import_network'); ?>
+                    <?php submit_button(__('Import Network Settings', 'wallet-up-login-customizer'), 'secondary', 'import_network'); ?>
                 </form>
             </div>
         </div>
@@ -1905,7 +1910,7 @@ private function get_asset_url($path) {
         
         update_site_option('wallet_up_network_settings', $network_options);
         
-        echo '<div class="notice notice-success"><p>' . esc_html__('Network settings saved successfully.', 'wallet-up-login') . '</p></div>';
+        echo '<div class="notice notice-success"><p>' . esc_html__('Network settings saved successfully.', 'wallet-up-login-customizer') . '</p></div>';
     }
     
     /**
@@ -1918,7 +1923,7 @@ private function get_asset_url($path) {
         
         // Get all network settings
         $export_data = array(
-            'version' => WALLET_UP_LOGIN_VERSION,
+            'version' => WALLET_UP_LOGIN_CUSTOMIZER_VERSION,
             'type' => 'network_settings',
             'multisite' => true,
             'timestamp' => current_time('mysql'),
@@ -1937,7 +1942,7 @@ private function get_asset_url($path) {
                 $export_data['sites'][$site->blog_id] = array(
                     'domain' => $site->domain,
                     'path' => $site->path,
-                    'login_options' => get_option('wallet_up_login_options', array()),
+                    'login_options' => get_option('wallet_up_login_customizer_options', array()),
                     'security_options' => get_option('wallet_up_security_options', array()),
                     'logo_settings' => get_option('wallet_up_logo_settings', array())
                 );
@@ -1967,7 +1972,7 @@ private function get_asset_url($path) {
         }
         
         if (!isset($_FILES['import_file']) || $_FILES['import_file']['error'] !== UPLOAD_ERR_OK) {
-            echo '<div class="notice notice-error"><p>' . esc_html__('Please select a valid file to import.', 'wallet-up-login') . '</p></div>';
+            echo '<div class="notice notice-error"><p>' . esc_html__('Please select a valid file to import.', 'wallet-up-login-customizer') . '</p></div>';
             return;
         }
         
@@ -1975,13 +1980,13 @@ private function get_asset_url($path) {
         $import_data = json_decode($file_content, true);
         
         if (json_last_error() !== JSON_ERROR_NONE) {
-            echo '<div class="notice notice-error"><p>' . esc_html__('Invalid JSON file.', 'wallet-up-login') . '</p></div>';
+            echo '<div class="notice notice-error"><p>' . esc_html__('Invalid JSON file.', 'wallet-up-login-customizer') . '</p></div>';
             return;
         }
         
         // Verify it's a network settings export
         if (!isset($import_data['type']) || $import_data['type'] !== 'network_settings') {
-            echo '<div class="notice notice-error"><p>' . esc_html__('This is not a valid network settings export file.', 'wallet-up-login') . '</p></div>';
+            echo '<div class="notice notice-error"><p>' . esc_html__('This is not a valid network settings export file.', 'wallet-up-login-customizer') . '</p></div>';
             return;
         }
         
@@ -2001,7 +2006,7 @@ private function get_asset_url($path) {
                     switch_to_blog($blog_id);
                     
                     if (isset($site_settings['login_options'])) {
-                        update_option('wallet_up_login_options', $site_settings['login_options']);
+                        update_option('wallet_up_login_customizer_options', $site_settings['login_options']);
                     }
                     if (isset($site_settings['security_options'])) {
                         update_option('wallet_up_security_options', $site_settings['security_options']);
@@ -2015,7 +2020,7 @@ private function get_asset_url($path) {
             }
         }
         
-        echo '<div class="notice notice-success"><p>' . esc_html__('Network settings imported successfully.', 'wallet-up-login') . '</p></div>';
+        echo '<div class="notice notice-success"><p>' . esc_html__('Network settings imported successfully.', 'wallet-up-login-customizer') . '</p></div>';
     }
     
     public function render_settings_page() {
@@ -2032,9 +2037,9 @@ private function get_asset_url($path) {
             $result = $this->install_files(true);
             
             if ($result) {
-                echo '<div class="notice notice-success is-dismissible"><p>' . __('Enhanced login files have been installed successfully!', 'wallet-up-login') . '</p></div>';
+                echo '<div class="notice notice-success is-dismissible"><p>' . __('Enhanced login files have been installed successfully!', 'wallet-up-login-customizer') . '</p></div>';
             } else {
-                echo '<div class="notice notice-error is-dismissible"><p>' . __('Failed to install enhanced login files. Please check file permissions.', 'wallet-up-login') . '</p></div>';
+                echo '<div class="notice notice-error is-dismissible"><p>' . __('Failed to install enhanced login files. Please check file permissions.', 'wallet-up-login-customizer') . '</p></div>';
             }
         }
 
@@ -2044,12 +2049,12 @@ private function get_asset_url($path) {
              */
 
             // Get the custom logo URL from options
-            $options = get_option('wallet_up_login_options');
+            $options = get_option('wallet_up_login_customizer_options');
             $custom_logo_url = isset($options['custom_logo_url']) ? $options['custom_logo_url'] : '';
 
             // If custom logo URL is empty, use the default plugin logo
             if (empty($custom_logo_url)) {
-                $custom_logo_url = WALLET_UP_LOGIN_PLUGIN_URL . 'img/walletup-icon.png';
+                $custom_logo_url = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_URL . 'img/walletup-icon.png';
             }
 
 
@@ -2073,11 +2078,11 @@ private function get_asset_url($path) {
                 <path d="M9.73 2.5L12.5 8.5L19 9.27L14.5 13.14L15.5 19.5L9.73 16.77L4 19.5L5 13.14L0.5 9.27L7 8.5L9.73 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M19 9L20 6L23 7L20 8L19 11L18 8L15 7L18 6L19 9Z" fill="currentColor" opacity="0.8"/>
             </svg>
-            <span class="wallet-up-title-main"><?php echo esc_html__('Premium Login Customizer', 'wallet-up-login'); ?></span>
-            <span class="wallet-up-title-by"><?php echo esc_html__('by Wallet Up', 'wallet-up-login'); ?></span>
+            <span class="wallet-up-title-main"><?php echo esc_html__('Premium Login Customizer', 'wallet-up-login-customizer'); ?></span>
+            <span class="wallet-up-title-by"><?php echo esc_html__('by Wallet Up', 'wallet-up-login-customizer'); ?></span>
         </h1>
         <div class="wallet-up-header-badge">
-            <span>v<?php echo WALLET_UP_LOGIN_VERSION; ?></span>
+            <span>v<?php echo WALLET_UP_LOGIN_CUSTOMIZER_VERSION; ?></span>
             <svg class="wallet-up-lock-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -2092,85 +2097,85 @@ private function get_asset_url($path) {
                 <div class="wallet-up-tab-nav">
                     <a href="#general-settings" class="settings-tab active">
                         <span class="dashicons dashicons-admin-generic"></span>
-                        <?php echo esc_html__('General', 'wallet-up-login'); ?>
+                        <?php echo esc_html__('General', 'wallet-up-login-customizer'); ?>
                     </a>
                     <a href="#appearance-settings" class="settings-tab">
                         <span class="dashicons dashicons-admin-appearance"></span>
-                        <?php echo esc_html__('Appearance', 'wallet-up-login'); ?>
+                        <?php echo esc_html__('Appearance', 'wallet-up-login-customizer'); ?>
                     </a>
                     <a href="#messages-settings" class="settings-tab">
                         <span class="dashicons dashicons-admin-comments"></span>
-                        <?php echo esc_html__('Messages', 'wallet-up-login'); ?>
+                        <?php echo esc_html__('Messages', 'wallet-up-login-customizer'); ?>
                     </a>
                     <a href="#advanced-settings" class="settings-tab">
                         <span class="dashicons dashicons-admin-tools"></span>
-                        <?php echo esc_html__('Advanced', 'wallet-up-login'); ?>
+                        <?php echo esc_html__('Advanced', 'wallet-up-login-customizer'); ?>
                     </a>
                 </div>
                 
                 <div class="settings-panels">
                     <form method="post" action="options.php">
-                        <?php settings_fields('wallet_up_login_options'); ?>
+                        <?php settings_fields('wallet_up_login_customizer_options'); ?>
                         
                         <!-- General Settings Panel -->
                         <div id="general-settings" class="settings-panel active">
-                            <h2><?php echo esc_html__('General Settings', 'wallet-up-login'); ?></h2>
-                            <p><?php echo esc_html__('Configure basic login functionality and behavior.', 'wallet-up-login'); ?></p>
+                            <h2><?php echo esc_html__('General Settings', 'wallet-up-login-customizer'); ?></h2>
+                            <p><?php echo esc_html__('Configure basic login functionality and behavior.', 'wallet-up-login-customizer'); ?></p>
                             
                             <table class="form-table">
                                 <tr>
                                     <th scope="row">
-                                        <label for="enable_ajax_login"><?php echo esc_html__('AJAX Login', 'wallet-up-login'); ?></label>
+                                        <label for="enable_ajax_login"><?php echo esc_html__('AJAX Login', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
-                                        $options = get_option('wallet_up_login_options');
+                                        $options = get_option('wallet_up_login_customizer_options');
                                         $enable_ajax_login = isset($options['enable_ajax_login']) ? $options['enable_ajax_login'] : true;
                                         ?>
-                                        <input type="checkbox" id="enable_ajax_login" name="wallet_up_login_options[enable_ajax_login]" <?php checked($enable_ajax_login, true); ?> value="1" />
-                                        <label for="enable_ajax_login"><?php echo esc_html__('Enable AJAX login functionality', 'wallet-up-login'); ?></label>
-                                        <p class="description"><?php echo esc_html__('Provides a smoother login experience with visual feedback and no page reload.', 'wallet-up-login'); ?></p>
+                                        <input type="checkbox" id="enable_ajax_login" name="wallet_up_login_customizer_options[enable_ajax_login]" <?php checked($enable_ajax_login, true); ?> value="1" />
+                                        <label for="enable_ajax_login"><?php echo esc_html__('Enable AJAX login functionality', 'wallet-up-login-customizer'); ?></label>
+                                        <p class="description"><?php echo esc_html__('Provides a smoother login experience with visual feedback and no page reload.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="enable_sounds"><?php echo esc_html__('Sound Effects', 'wallet-up-login'); ?></label>
+                                        <label for="enable_sounds"><?php echo esc_html__('Sound Effects', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $enable_sounds = isset($options['enable_sounds']) ? $options['enable_sounds'] : true;
                                         ?>
-                                        <input type="checkbox" id="enable_sounds" name="wallet_up_login_options[enable_sounds]" <?php checked($enable_sounds, true); ?> value="1" />
-                                        <label for="enable_sounds"><?php echo esc_html__('Enable subtle audio feedback', 'wallet-up-login'); ?></label>
-                                        <p class="description"><?php echo esc_html__('Play subtle sounds on login success/failure for better feedback.', 'wallet-up-login'); ?></p>
+                                        <input type="checkbox" id="enable_sounds" name="wallet_up_login_customizer_options[enable_sounds]" <?php checked($enable_sounds, true); ?> value="1" />
+                                        <label for="enable_sounds"><?php echo esc_html__('Enable subtle audio feedback', 'wallet-up-login-customizer'); ?></label>
+                                        <p class="description"><?php echo esc_html__('Play subtle sounds on login success/failure for better feedback.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="redirect_delay"><?php echo esc_html__('Redirect Delay', 'wallet-up-login'); ?></label>
+                                        <label for="redirect_delay"><?php echo esc_html__('Redirect Delay', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $redirect_delay = isset($options['redirect_delay']) ? intval($options['redirect_delay']) : 1500;
                                         ?>
-                                        <input type="number" class="regular-text" id="redirect_delay" name="wallet_up_login_options[redirect_delay]" value="<?php echo esc_attr($redirect_delay); ?>" min="0" max="5000" step="100" />
-                                        <p class="description"><?php echo esc_html__('Delay in milliseconds before redirecting after successful login (0-5000).', 'wallet-up-login'); ?></p>
+                                        <input type="number" class="regular-text" id="redirect_delay" name="wallet_up_login_customizer_options[redirect_delay]" value="<?php echo esc_attr($redirect_delay); ?>" min="0" max="5000" step="100" />
+                                        <p class="description"><?php echo esc_html__('Delay in milliseconds before redirecting after successful login (0-5000).', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="dashboard_redirect"><?php echo esc_html__('Role-Based Redirects', 'wallet-up-login'); ?></label>
+                                        <label for="dashboard_redirect"><?php echo esc_html__('Role-Based Redirects', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $dashboard_redirect = isset($options['dashboard_redirect']) ? $options['dashboard_redirect'] : true;
                                         ?>
-                                        <input type="checkbox" id="dashboard_redirect" name="wallet_up_login_options[dashboard_redirect]" <?php checked($dashboard_redirect, true); ?> value="1" />
-                                        <label for="dashboard_redirect"><?php echo esc_html__('Enable intelligent redirects', 'wallet-up-login'); ?></label>
-                                        <p class="description"><?php echo esc_html__('Direct users to relevant areas based on their role (admins to dashboard, etc).', 'wallet-up-login'); ?></p>
+                                        <input type="checkbox" id="dashboard_redirect" name="wallet_up_login_customizer_options[dashboard_redirect]" <?php checked($dashboard_redirect, true); ?> value="1" />
+                                        <label for="dashboard_redirect"><?php echo esc_html__('Enable intelligent redirects', 'wallet-up-login-customizer'); ?></label>
+                                        <p class="description"><?php echo esc_html__('Direct users to relevant areas based on their role (admins to dashboard, etc).', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
 
@@ -2178,47 +2183,47 @@ private function get_asset_url($path) {
 
                                 <tr>
                                     <th scope="row">
-                                        <label for="force_dashboard_replacement"><?php echo esc_html__('Force Dashboard Replacement', 'wallet-up-login'); ?></label>
+                                        <label for="force_dashboard_replacement"><?php echo esc_html__('Force Dashboard Replacement', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $force_dashboard_replacement = isset($options['force_dashboard_replacement']) ? $options['force_dashboard_replacement'] : false;
                                         ?>
-                                        <input type="checkbox" id="force_dashboard_replacement" name="wallet_up_login_options[force_dashboard_replacement]" <?php checked($force_dashboard_replacement, true); ?> value="1" />
-                                        <label for="force_dashboard_replacement"><?php echo esc_html__('Replace WordPress dashboard', 'wallet-up-login'); ?></label>
-                                        <p class="description"><?php echo esc_html__('When enabled, the WordPress dashboard will be completely replaced with the Wallet Up page. This affects all users.', 'wallet-up-login'); ?></p>
-                                        <p class="description" style="color: #0073aa; font-style: italic;"><?php echo esc_html__('💡 This works independently - no need to enable "Land to Wallet Up".', 'wallet-up-login'); ?></p>
+                                        <input type="checkbox" id="force_dashboard_replacement" name="wallet_up_login_customizer_options[force_dashboard_replacement]" <?php checked($force_dashboard_replacement, true); ?> value="1" />
+                                        <label for="force_dashboard_replacement"><?php echo esc_html__('Replace WordPress dashboard', 'wallet-up-login-customizer'); ?></label>
+                                        <p class="description"><?php echo esc_html__('When enabled, the WordPress dashboard will be completely replaced with the Wallet Up page. This affects all users.', 'wallet-up-login-customizer'); ?></p>
+                                        <p class="description" style="color: #0073aa; font-style: italic;"><?php echo esc_html__('💡 This works independently - no need to enable "Land to Wallet Up".', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <th scope="row">
-                                        <label for="exempt_admin_roles"><?php echo esc_html__('Exempt Administrator Roles', 'wallet-up-login'); ?></label>
+                                        <label for="exempt_admin_roles"><?php echo esc_html__('Exempt Administrator Roles', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $exempt_admin_roles = isset($options['exempt_admin_roles']) ? $options['exempt_admin_roles'] : true;
                                         ?>
-                                        <input type="checkbox" id="exempt_admin_roles" name="wallet_up_login_options[exempt_admin_roles]" <?php checked($exempt_admin_roles, true); ?> value="1" />
-                                        <label for="exempt_admin_roles"><?php echo esc_html__('Allow administrators to access default dashboard', 'wallet-up-login'); ?></label>
-                                        <p class="description"><?php echo esc_html__('When enabled, administrators can still access the default WordPress dashboard.', 'wallet-up-login'); ?></p>
-                                        <p class="description" style="color: #059669; font-style: italic;"><?php echo esc_html__('✅ Recommended: Keeps admin access for troubleshooting and configuration.', 'wallet-up-login'); ?></p>
+                                        <input type="checkbox" id="exempt_admin_roles" name="wallet_up_login_customizer_options[exempt_admin_roles]" <?php checked($exempt_admin_roles, true); ?> value="1" />
+                                        <label for="exempt_admin_roles"><?php echo esc_html__('Allow administrators to access default dashboard', 'wallet-up-login-customizer'); ?></label>
+                                        <p class="description"><?php echo esc_html__('When enabled, administrators can still access the default WordPress dashboard.', 'wallet-up-login-customizer'); ?></p>
+                                        <p class="description" style="color: #059669; font-style: italic;"><?php echo esc_html__('✅ Recommended: Keeps admin access for troubleshooting and configuration.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <!-- New Land to Wallet Up option -->
                                 <tr>
                                     <th scope="row">
-                                        <label for="redirect_to_wallet_up"><?php echo esc_html__('Land to Wallet Up', 'wallet-up-login'); ?></label>
+                                        <label for="redirect_to_wallet_up"><?php echo esc_html__('Land to Wallet Up', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $redirect_to_wallet_up = isset($options['redirect_to_wallet_up']) ? $options['redirect_to_wallet_up'] : false;
                                         ?>
-                                        <input type="checkbox" id="redirect_to_wallet_up" name="wallet_up_login_options[redirect_to_wallet_up]" <?php checked($redirect_to_wallet_up, true); ?> value="1" />
-                                        <label for="redirect_to_wallet_up"><?php echo esc_html__('Redirect to Wallet Up admin page', 'wallet-up-login'); ?></label>
-                                        <p class="description"><?php echo esc_html__('After login, redirect users directly to the Wallet Up admin page (admin.php?page=wallet-up).', 'wallet-up-login'); ?></p>
-                                        <p class="description" style="color: #d63638; font-style: italic;"><?php echo esc_html__('⚠️ This is a LOGIN redirect only. For dashboard replacement, use "Force Dashboard Replacement".', 'wallet-up-login'); ?></p>
+                                        <input type="checkbox" id="redirect_to_wallet_up" name="wallet_up_login_customizer_options[redirect_to_wallet_up]" <?php checked($redirect_to_wallet_up, true); ?> value="1" />
+                                        <label for="redirect_to_wallet_up"><?php echo esc_html__('Redirect to Wallet Up admin page', 'wallet-up-login-customizer'); ?></label>
+                                        <p class="description"><?php echo esc_html__('After login, redirect users directly to the Wallet Up admin page (admin.php?page=wallet-up).', 'wallet-up-login-customizer'); ?></p>
+                                        <p class="description" style="color: #d63638; font-style: italic;"><?php echo esc_html__('⚠️ This is a LOGIN redirect only. For dashboard replacement, use "Force Dashboard Replacement".', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                             </table>
@@ -2226,22 +2231,22 @@ private function get_asset_url($path) {
                         
                         <!-- Appearance Settings Panel -->
                         <div id="appearance-settings" class="settings-panel">
-                            <h2><?php echo esc_html__('Appearance Settings', 'wallet-up-login'); ?></h2>
-                            <p><?php echo esc_html__('Customize the look and feel of your login page.', 'wallet-up-login'); ?></p>
+                            <h2><?php echo esc_html__('Appearance Settings', 'wallet-up-login-customizer'); ?></h2>
+                            <p><?php echo esc_html__('Customize the look and feel of your login page.', 'wallet-up-login-customizer'); ?></p>
                             
                             <table class="form-table">
                                 <tr>
                                     <th scope="row">
-                                        <label for="custom_logo_url"><?php echo esc_html__('Custom Logo URL', 'wallet-up-login'); ?></label>
+                                        <label for="custom_logo_url"><?php echo esc_html__('Custom Logo URL', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $custom_logo_url = isset($options['custom_logo_url']) ? $options['custom_logo_url'] : '';
                                         ?>
-                                        <input type="text" class="regular-text" id="custom_logo_url" name="wallet_up_login_options[custom_logo_url]" 
+                                        <input type="text" class="regular-text" id="custom_logo_url" name="wallet_up_login_customizer_options[custom_logo_url]" 
                                             value="<?php echo esc_attr($custom_logo_url); ?>" placeholder="https://walletup.app/up/assets/images/walletup-icon.png" />
-                                        <button type="button" class="button button-secondary" id="upload_logo_button"><?php echo esc_html__('Select Image', 'wallet-up-login'); ?></button>
-                                        <p class="description"><?php echo esc_html__('Enter a URL to use a custom logo. Leave empty to use the default Wallet Up icon.', 'wallet-up-login'); ?></p>
+                                        <button type="button" class="button button-secondary" id="upload_logo_button"><?php echo esc_html__('Select Image', 'wallet-up-login-customizer'); ?></button>
+                                        <p class="description"><?php echo esc_html__('Enter a URL to use a custom logo. Leave empty to use the default Wallet Up icon.', 'wallet-up-login-customizer'); ?></p>
 
                                         <?php if (!empty($custom_logo_url)) : ?>
                                         <div class="logo-preview">
@@ -2253,7 +2258,7 @@ private function get_asset_url($path) {
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label><?php echo esc_html__('Color Scheme', 'wallet-up-login'); ?></label>
+                                        <label><?php echo esc_html__('Color Scheme', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <div class="color-scheme-presets">
@@ -2264,60 +2269,60 @@ private function get_asset_url($path) {
                                             <div class="color-preset" data-preset="orange" title="Orange"></div>
                                             <div class="color-preset" data-preset="dark" title="Dark"></div>
                                         </div>
-                                        <p class="description"><?php echo esc_html__('Select a preset color scheme or customize colors below.', 'wallet-up-login'); ?></p>
+                                        <p class="description"><?php echo esc_html__('Select a preset color scheme or customize colors below.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="primary_color"><?php echo esc_html__('Primary Color', 'wallet-up-login'); ?></label>
+                                        <label for="primary_color"><?php echo esc_html__('Primary Color', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $primary_color = isset($options['primary_color']) ? $options['primary_color'] : '#674FBF';
                                         ?>
-                                        <input type="text" class="wallet-up-color-picker" id="primary_color" name="wallet_up_login_options[primary_color]" value="<?php echo esc_attr($primary_color); ?>" data-default-color="#674FBF" />
-                                        <p class="description"><?php echo esc_html__('The main color used throughout the login page.', 'wallet-up-login'); ?></p>
+                                        <input type="text" class="wallet-up-color-picker" id="primary_color" name="wallet_up_login_customizer_options[primary_color]" value="<?php echo esc_attr($primary_color); ?>" data-default-color="#674FBF" />
+                                        <p class="description"><?php echo esc_html__('The main color used throughout the login page.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="gradient_start"><?php echo esc_html__('Gradient Start', 'wallet-up-login'); ?></label>
+                                        <label for="gradient_start"><?php echo esc_html__('Gradient Start', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $gradient_start = isset($options['gradient_start']) ? $options['gradient_start'] : '#674FBF';
                                         ?>
-                                        <input type="text" class="wallet-up-color-picker" id="gradient_start" name="wallet_up_login_options[gradient_start]" value="<?php echo esc_attr($gradient_start); ?>" data-default-color="#674FBF" />
-                                        <p class="description"><?php echo esc_html__('Start color for gradient effects.', 'wallet-up-login'); ?></p>
+                                        <input type="text" class="wallet-up-color-picker" id="gradient_start" name="wallet_up_login_customizer_options[gradient_start]" value="<?php echo esc_attr($gradient_start); ?>" data-default-color="#674FBF" />
+                                        <p class="description"><?php echo esc_html__('Start color for gradient effects.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="gradient_end"><?php echo esc_html__('Gradient End', 'wallet-up-login'); ?></label>
+                                        <label for="gradient_end"><?php echo esc_html__('Gradient End', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $gradient_end = isset($options['gradient_end']) ? $options['gradient_end'] : '#7B68D4';
                                         ?>
-                                        <input type="text" class="wallet-up-color-picker" id="gradient_end" name="wallet_up_login_options[gradient_end]" value="<?php echo esc_attr($gradient_end); ?>" data-default-color="#7B68D4" />
-                                        <p class="description"><?php echo esc_html__('End color for gradient effects.', 'wallet-up-login'); ?></p>
+                                        <input type="text" class="wallet-up-color-picker" id="gradient_end" name="wallet_up_login_customizer_options[gradient_end]" value="<?php echo esc_attr($gradient_end); ?>" data-default-color="#7B68D4" />
+                                        <p class="description"><?php echo esc_html__('End color for gradient effects.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label><?php echo esc_html__('Color Preview', 'wallet-up-login'); ?></label>
+                                        <label><?php echo esc_html__('Color Preview', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <div class="color-preview-container">
-                                            <div class="color-preview color-preview-primary" data-label="<?php echo esc_attr__('Primary', 'wallet-up-login'); ?>"></div>
-                                            <div class="color-preview color-preview-gradient" data-label="<?php echo esc_attr__('Gradient', 'wallet-up-login'); ?>"></div>
+                                            <div class="color-preview color-preview-primary" data-label="<?php echo esc_attr__('Primary', 'wallet-up-login-customizer'); ?>"></div>
+                                            <div class="color-preview color-preview-gradient" data-label="<?php echo esc_attr__('Gradient', 'wallet-up-login-customizer'); ?>"></div>
                                         </div>
                                         
-                                        <div class="button-preview"><?php echo esc_html__('Sign In Securely', 'wallet-up-login'); ?></div>
+                                        <div class="button-preview"><?php echo esc_html__('Sign In Securely', 'wallet-up-login-customizer'); ?></div>
                                     </td>
                                 </tr>
                             </table>
@@ -2325,13 +2330,13 @@ private function get_asset_url($path) {
                         
                         <!-- Messages Settings Panel -->
                         <div id="messages-settings" class="settings-panel">
-                            <h2><?php echo esc_html__('Messages Settings', 'wallet-up-login'); ?></h2>
-                            <p><?php echo esc_html__('Customize the messages displayed during login.', 'wallet-up-login'); ?></p>
+                            <h2><?php echo esc_html__('Messages Settings', 'wallet-up-login-customizer'); ?></h2>
+                            <p><?php echo esc_html__('Customize the messages displayed during login.', 'wallet-up-login-customizer'); ?></p>
                             
                             <table class="form-table">
                                 <tr>
                                     <th scope="row">
-                                        <label><?php echo esc_html__('Loading Messages', 'wallet-up-login'); ?></label>
+                                        <label><?php echo esc_html__('Loading Messages', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <div id="loading-messages-container">
@@ -2347,15 +2352,15 @@ private function get_asset_url($path) {
                                                     // Translate default messages for display
                                                     $display_message = $message;
                                                     if ($message === 'Verifying your credentials...') {
-                                                        $display_message = __('Verifying your credentials...', 'wallet-up-login');
+                                                        $display_message = __('Verifying your credentials...', 'wallet-up-login-customizer');
                                                     } elseif ($message === 'Preparing your dashboard...') {
-                                                        $display_message = __('Preparing your dashboard...', 'wallet-up-login');
+                                                        $display_message = __('Preparing your dashboard...', 'wallet-up-login-customizer');
                                                     } elseif ($message === 'Almost there...') {
-                                                        $display_message = __('Almost there...', 'wallet-up-login');
+                                                        $display_message = __('Almost there...', 'wallet-up-login-customizer');
                                                     }
                                                     
                                                     echo '<div class="loading-message">';
-                                                    echo '<input type="text" class="regular-text" name="wallet_up_login_options[loading_messages][]" value="' . esc_attr($display_message) . '" />';
+                                                    echo '<input type="text" class="regular-text" name="wallet_up_login_customizer_options[loading_messages][]" value="' . esc_attr($display_message) . '" />';
                                                     echo '<a href="#" class="remove-loading-message">×</a>';
                                                     echo '</div>';
                                                 }
@@ -2363,16 +2368,16 @@ private function get_asset_url($path) {
                                             ?>
                                         </div>
                                         
-                                        <button id="add-loading-message" class="button button-secondary"><?php echo esc_html__('Add Message', 'wallet-up-login'); ?></button>
+                                        <button id="add-loading-message" class="button button-secondary"><?php echo esc_html__('Add Message', 'wallet-up-login-customizer'); ?></button>
                                         
                                         <script type="text/html" id="loading-message-template">
                                             <div class="loading-message">
-                                                <input type="text" class="regular-text" name="wallet_up_login_options[loading_messages][]" value="" />
+                                                <input type="text" class="regular-text" name="wallet_up_login_customizer_options[loading_messages][]" value="" />
                                                 <a href="#" class="remove-loading-message">×</a>
                                             </div>
                                         </script>
                                         
-                                        <p class="description"><?php echo esc_html__('Messages displayed during login. One will be randomly selected each time.', 'wallet-up-login'); ?></p>
+                                        <p class="description"><?php echo esc_html__('Messages displayed during login. One will be randomly selected each time.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                             </table>
@@ -2380,21 +2385,21 @@ private function get_asset_url($path) {
                         
                         <!-- Advanced Settings Panel -->
                         <div id="advanced-settings" class="settings-panel">
-                            <h2><?php echo esc_html__('Advanced Settings', 'wallet-up-login'); ?></h2>
-                            <p><?php echo esc_html__('Configure advanced options for the login experience.', 'wallet-up-login'); ?></p>
+                            <h2><?php echo esc_html__('Advanced Settings', 'wallet-up-login-customizer'); ?></h2>
+                            <p><?php echo esc_html__('Configure advanced options for the login experience.', 'wallet-up-login-customizer'); ?></p>
                             
                             <table class="form-table">
                                 <tr>
                                     <th scope="row">
-                                        <label for="show_remember_me"><?php echo esc_html__('Remember Me', 'wallet-up-login'); ?></label>
+                                        <label for="show_remember_me"><?php echo esc_html__('Remember Me', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <?php
                                         $show_remember_me = isset($options['show_remember_me']) ? $options['show_remember_me'] : true;
                                         ?>
-                                        <input type="checkbox" id="show_remember_me" name="wallet_up_login_options[show_remember_me]" <?php checked($show_remember_me, true); ?> value="1" />
-                                        <label for="show_remember_me"><?php echo esc_html__('Show remember me checkbox', 'wallet-up-login'); ?></label>
-                                        <p class="description"><?php echo esc_html__('Display the "Remember Me" option on the login form.', 'wallet-up-login'); ?></p>
+                                        <input type="checkbox" id="show_remember_me" name="wallet_up_login_customizer_options[show_remember_me]" <?php checked($show_remember_me, true); ?> value="1" />
+                                        <label for="show_remember_me"><?php echo esc_html__('Show remember me checkbox', 'wallet-up-login-customizer'); ?></label>
+                                        <p class="description"><?php echo esc_html__('Display the "Remember Me" option on the login form.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
@@ -2411,43 +2416,43 @@ private function get_asset_url($path) {
                                 
                                 <tr>
                                     <th colspan="2">
-                                        <h3><?php echo esc_html__('🛡️ Enterprise Security', 'wallet-up-login'); ?></h3>
-                                        <p><?php echo esc_html__('Advanced security features for protecting your login system.', 'wallet-up-login'); ?></p>
+                                        <h3><?php echo esc_html__('🛡️ Enterprise Security', 'wallet-up-login-customizer'); ?></h3>
+                                        <p><?php echo esc_html__('Advanced security features for protecting your login system.', 'wallet-up-login-customizer'); ?></p>
                                     </th>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="force_login_enabled"><?php echo esc_html__('Force Login', 'wallet-up-login'); ?></label>
+                                        <label for="force_login_enabled"><?php echo esc_html__('Force Login', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <input type="checkbox" id="force_login_enabled" name="wallet_up_security_options[force_login_enabled]" value="1" <?php checked($security_options['force_login_enabled']); ?> />
-                                        <label for="force_login_enabled"><?php echo esc_html__('Require users to login before accessing the website', 'wallet-up-login'); ?></label>
-                                        <p class="description"><?php echo esc_html__('Visitors must authenticate before viewing any content. Registration and password reset still work normally.', 'wallet-up-login'); ?></p>
+                                        <label for="force_login_enabled"><?php echo esc_html__('Require users to login before accessing the website', 'wallet-up-login-customizer'); ?></label>
+                                        <p class="description"><?php echo esc_html__('Visitors must authenticate before viewing any content. Registration and password reset still work normally.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="hide_wp_login"><?php echo esc_html__('Hide wp-login.php', 'wallet-up-login'); ?></label>
+                                        <label for="hide_wp_login"><?php echo esc_html__('Hide wp-login.php', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <input type="checkbox" id="hide_wp_login" name="wallet_up_security_options[hide_wp_login]" value="1" <?php checked($security_options['hide_wp_login']); ?> />
-                                        <label for="hide_wp_login"><?php echo esc_html__('Hide the default WordPress login page', 'wallet-up-login'); ?></label>
-                                        <p class="description"><?php echo esc_html__('Direct access to wp-login.php will be redirected to your custom login URL.', 'wallet-up-login'); ?></p>
+                                        <label for="hide_wp_login"><?php echo esc_html__('Hide the default WordPress login page', 'wallet-up-login-customizer'); ?></label>
+                                        <p class="description"><?php echo esc_html__('Direct access to wp-login.php will be redirected to your custom login URL.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="custom_login_slug"><?php echo esc_html__('Custom Login URL', 'wallet-up-login'); ?></label>
+                                        <label for="custom_login_slug"><?php echo esc_html__('Custom Login URL', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <input type="text" id="custom_login_slug" name="wallet_up_security_options[custom_login_slug]" value="<?php echo esc_attr($security_options['custom_login_slug']); ?>" class="regular-text" />
                                         <p class="description">
                                             <?php 
                                             $custom_url = home_url('/?' . $security_options['custom_login_slug'] . '=1');
-                                            echo esc_html__('Your custom login URL:', 'wallet-up-login') . ' ';
+                                            echo esc_html__('Your custom login URL:', 'wallet-up-login-customizer') . ' ';
                                             printf('<a href="%s" target="_blank">%s</a>', esc_url($custom_url), esc_html($custom_url)); 
                                             ?>
                                         </p>
@@ -2456,26 +2461,26 @@ private function get_asset_url($path) {
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="max_login_attempts"><?php echo esc_html__('Max Login Attempts', 'wallet-up-login'); ?></label>
+                                        <label for="max_login_attempts"><?php echo esc_html__('Max Login Attempts', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <input type="number" id="max_login_attempts" name="wallet_up_security_options[max_login_attempts]" value="<?php echo esc_attr($security_options['max_login_attempts']); ?>" min="1" max="20" />
-                                        <p class="description"><?php echo esc_html__('Maximum failed login attempts before temporary lockout.', 'wallet-up-login'); ?></p>
+                                        <p class="description"><?php echo esc_html__('Maximum failed login attempts before temporary lockout.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                                 
                                 <tr>
                                     <th scope="row">
-                                        <label for="lockout_duration"><?php echo esc_html__('Lockout Duration', 'wallet-up-login'); ?></label>
+                                        <label for="lockout_duration"><?php echo esc_html__('Lockout Duration', 'wallet-up-login-customizer'); ?></label>
                                     </th>
                                     <td>
                                         <select id="lockout_duration" name="wallet_up_security_options[lockout_duration]">
-                                            <option value="300" <?php selected($security_options['lockout_duration'], 300); ?>>5 <?php echo esc_html__('minutes', 'wallet-up-login'); ?></option>
-                                            <option value="900" <?php selected($security_options['lockout_duration'], 900); ?>>15 <?php echo esc_html__('minutes', 'wallet-up-login'); ?></option>
-                                            <option value="1800" <?php selected($security_options['lockout_duration'], 1800); ?>>30 <?php echo esc_html__('minutes', 'wallet-up-login'); ?></option>
-                                            <option value="3600" <?php selected($security_options['lockout_duration'], 3600); ?>>1 <?php echo esc_html__('hour', 'wallet-up-login'); ?></option>
+                                            <option value="300" <?php selected($security_options['lockout_duration'], 300); ?>>5 <?php echo esc_html__('minutes', 'wallet-up-login-customizer'); ?></option>
+                                            <option value="900" <?php selected($security_options['lockout_duration'], 900); ?>>15 <?php echo esc_html__('minutes', 'wallet-up-login-customizer'); ?></option>
+                                            <option value="1800" <?php selected($security_options['lockout_duration'], 1800); ?>>30 <?php echo esc_html__('minutes', 'wallet-up-login-customizer'); ?></option>
+                                            <option value="3600" <?php selected($security_options['lockout_duration'], 3600); ?>>1 <?php echo esc_html__('hour', 'wallet-up-login-customizer'); ?></option>
                                         </select>
-                                        <p class="description"><?php echo esc_html__('How long to lock out users after too many failed attempts.', 'wallet-up-login'); ?></p>
+                                        <p class="description"><?php echo esc_html__('How long to lock out users after too many failed attempts.', 'wallet-up-login-customizer'); ?></p>
                                     </td>
                                 </tr>
                             </table>
@@ -2483,23 +2488,23 @@ private function get_asset_url($path) {
                             <div class="settings-actions">
                                 <a href="#" id="export-settings" class="button button-secondary">
                                     <span class="dashicons dashicons-download"></span>
-                                    <?php echo esc_html__('Export Settings', 'wallet-up-login'); ?>
+                                    <?php echo esc_html__('Export Settings', 'wallet-up-login-customizer'); ?>
                                 </a>
                                 
                                 <a href="#" id="import-settings" class="button button-secondary">
                                     <span class="dashicons dashicons-upload"></span>
-                                    <?php echo esc_html__('Import Settings', 'wallet-up-login'); ?>
+                                    <?php echo esc_html__('Import Settings', 'wallet-up-login-customizer'); ?>
                                 </a>
                                 <input type="file" id="import-file" accept=".json">
                                 
                                 <a href="#" id="reset-settings" class="button button-secondary button-reset">
                                     <span class="dashicons dashicons-image-rotate"></span>
-                                    <?php echo esc_html__('Reset to Defaults', 'wallet-up-login'); ?>
+                                    <?php echo esc_html__('Reset to Defaults', 'wallet-up-login-customizer'); ?>
                                 </a>
                             </div>
                         </div>
                         
-                        <?php submit_button(__('Save Settings', 'wallet-up-login')); ?>
+                        <?php submit_button(__('Save Settings', 'wallet-up-login-customizer')); ?>
                     </form>
                 </div>
             </div>
@@ -2507,66 +2512,66 @@ private function get_asset_url($path) {
         
         <div class="wallet-up-admin-sidebar">
             <div class="wallet-up-admin-box has-brand-bar">
-                <h3><?php echo esc_html__('Preview Login Page', 'wallet-up-login'); ?></h3>
-                <p><?php echo esc_html__('See how your login page looks with current settings.', 'wallet-up-login'); ?></p>
+                <h3><?php echo esc_html__('Preview Login Page', 'wallet-up-login-customizer'); ?></h3>
+                <p><?php echo esc_html__('See how your login page looks with current settings.', 'wallet-up-login-customizer'); ?></p>
                 <a href="<?php echo wp_login_url(); ?>?preview=true" class="preview-button" target="_blank">
-                    <?php echo esc_html__('Open Preview', 'wallet-up-login'); ?>
+                    <?php echo esc_html__('Open Preview', 'wallet-up-login-customizer'); ?>
                     <span class="preview-icon dashicons dashicons-arrow-right-alt"></span>
                 </a>
             </div>
             
             <div class="wallet-up-admin-box">
-                <h3><?php echo esc_html__('Reinstall Files', 'wallet-up-login'); ?></h3>
-                <p><?php echo esc_html__('If you need to reset the customizations, you can reinstall the enhanced login files.', 'wallet-up-login'); ?></p>
+                <h3><?php echo esc_html__('Reinstall Files', 'wallet-up-login-customizer'); ?></h3>
+                <p><?php echo esc_html__('If you need to reset the customizations, you can reinstall the enhanced login files.', 'wallet-up-login-customizer'); ?></p>
                 
                 <div class="wallet-up-files-info">
                     <div class="wallet-up-files-header">
                         <svg class="wallet-up-files-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.33334 2.5H4.16667C3.24619 2.5 2.5 3.24619 2.5 4.16667V15.8333C2.5 16.7538 3.24619 17.5 4.16667 17.5H15.8333C16.7538 17.5 17.5 16.7538 17.5 15.8333V7.5M8.33334 2.5L17.5 7.5M8.33334 2.5V7.5H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span class="wallet-up-files-title"><?php echo esc_html__('Required Files & Paths:', 'wallet-up-login'); ?></span>
+                        <span class="wallet-up-files-title"><?php echo esc_html__('Required Files & Paths:', 'wallet-up-login-customizer'); ?></span>
                     </div>
                     <div class="wallet-up-files-list">
                         <div class="wallet-up-file-item">
-                            <span class="wallet-up-file-path"><code title="/css/wallet-up-login.css">/css/wallet-up-login.css</code></span>
-                            <span class="wallet-up-file-desc"><?php echo esc_html__('Login page styles', 'wallet-up-login'); ?></span>
+                            <span class="wallet-up-file-path"><code title="/css/wallet-up-login-customizer.css">/css/wallet-up-login-customizer.css</code></span>
+                            <span class="wallet-up-file-desc"><?php echo esc_html__('Login page styles', 'wallet-up-login-customizer'); ?></span>
                         </div>
                         <div class="wallet-up-file-item">
-                            <span class="wallet-up-file-path"><code title="/css/wallet-up-login-admin.css">/css/wallet-up-login-admin.css</code></span>
-                            <span class="wallet-up-file-desc"><?php echo esc_html__('Admin interface styles', 'wallet-up-login'); ?></span>
+                            <span class="wallet-up-file-path"><code title="/css/wallet-up-login-customizer-admin.css">/css/wallet-up-login-customizer-admin.css</code></span>
+                            <span class="wallet-up-file-desc"><?php echo esc_html__('Admin interface styles', 'wallet-up-login-customizer'); ?></span>
                         </div>
                         <div class="wallet-up-file-item">
-                            <span class="wallet-up-file-path"><code title="/js/wallet-up-login.js">/js/wallet-up-login.js</code></span>
-                            <span class="wallet-up-file-desc"><?php echo esc_html__('Login page functionality', 'wallet-up-login'); ?></span>
+                            <span class="wallet-up-file-path"><code title="/js/wallet-up-login-customizer.js">/js/wallet-up-login-customizer.js</code></span>
+                            <span class="wallet-up-file-desc"><?php echo esc_html__('Login page functionality', 'wallet-up-login-customizer'); ?></span>
                         </div>
                         <div class="wallet-up-file-item">
-                            <span class="wallet-up-file-path"><code title="/js/wallet-up-login-admin.js">/js/wallet-up-login-admin.js</code></span>
-                            <span class="wallet-up-file-desc"><?php echo esc_html__('Admin interface scripts', 'wallet-up-login'); ?></span>
+                            <span class="wallet-up-file-path"><code title="/js/wallet-up-login-customizer-admin.js">/js/wallet-up-login-customizer-admin.js</code></span>
+                            <span class="wallet-up-file-desc"><?php echo esc_html__('Admin interface scripts', 'wallet-up-login-customizer'); ?></span>
                         </div>
                         <div class="wallet-up-file-item">
                             <span class="wallet-up-file-path"><code title="/includes/class-wallet-up-login-customizer.php">/includes/class-wallet-up-login-customizer.php</code></span>
-                            <span class="wallet-up-file-desc"><?php echo esc_html__('Core functionality', 'wallet-up-login'); ?></span>
+                            <span class="wallet-up-file-desc"><?php echo esc_html__('Core functionality', 'wallet-up-login-customizer'); ?></span>
                         </div>
                     </div>
                     <div class="wallet-up-files-note">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 4V8M8 12H8.01M14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <em><?php echo esc_html__('Source files are in /assets/ directory', 'wallet-up-login'); ?></em>
+                        <em><?php echo esc_html__('Source files are in /assets/ directory', 'wallet-up-login-customizer'); ?></em>
                     </div>
                 </div>
                 
                 <form method="post" action="">
                     <?php wp_nonce_field('wallet_up_reinstall_nonce'); ?>
-                    <input type="submit" name="wallet_up_reinstall" class="button button-primary" value="<?php echo esc_attr__('Reinstall Files', 'wallet-up-login'); ?>">
-                    <p class="description" style="color: #d63638; font-style: italic;"><?php echo esc_html__('⚠️ This will overwrite existing customizations. Use only if files are missing or corrupted.', 'wallet-up-login'); ?></p>
+                    <input type="submit" name="wallet_up_reinstall" class="button button-primary" value="<?php echo esc_attr__('Reinstall Files', 'wallet-up-login-customizer'); ?>">
+                    <p class="description" style="color: #d63638; font-style: italic;"><?php echo esc_html__('⚠️ This will overwrite existing customizations. Use only if files are missing or corrupted.', 'wallet-up-login-customizer'); ?></p>
                 </form>
             </div>
             
             <div class="wallet-up-admin-box">
-                <h3><?php echo esc_html__('About', 'wallet-up-login'); ?></h3>
-                <p><?php echo esc_html__('Creates a beautiful interactive login experience for Wallet Up and WordPress users.', 'wallet-up-login'); ?></p>
-                <p><strong><?php echo esc_html__('Version', 'wallet-up-login'); ?>:</strong> <?php echo WALLET_UP_LOGIN_VERSION; ?></p>
+                <h3><?php echo esc_html__('About', 'wallet-up-login-customizer'); ?></h3>
+                <p><?php echo esc_html__('Create a beautiful interactive login experience for Wallet Up and WordPress users.', 'wallet-up-login-customizer'); ?></p>
+                <p><strong><?php echo esc_html__('Version', 'wallet-up-login-customizer'); ?>:</strong> <?php echo WALLET_UP_LOGIN_CUSTOMIZER_VERSION; ?></p>
             </div>
         </div>
     </div>
@@ -2587,7 +2592,7 @@ private function is_user_exempt_from_dashboard_replacement() {
     }
     
     // Get plugin options
-    $options = get_option('wallet_up_login_options', []);
+    $options = get_option('wallet_up_login_customizer_options', []);
     
     // CRITICAL FIX: Proper handling of exempt_admin_roles option
     // Default to true (recommended setting) if not explicitly set to false
@@ -2639,7 +2644,7 @@ public function add_dashboard_access_link($wp_admin_bar) {
     
     $wp_admin_bar->add_node(array(
         'id'    => 'view-wp-dashboard',
-        'title' => __('WordPress Dashboard', 'wallet-up-login'),
+        'title' => __('WordPress Dashboard', 'wallet-up-login-customizer'),
         'href'  => add_query_arg('show_wp_dashboard', '1', admin_url()),
         'meta'  => array(
             'class' => 'wp-dashboard-access-link',
@@ -2682,7 +2687,7 @@ public function dismiss_language_notice() {
 public function language_availability_notice() {
     // Only show on our plugin settings page or dashboard
     $screen = get_current_screen();
-    if (!$screen || ($screen->id !== 'settings_page_wallet-up-login' && $screen->id !== 'dashboard')) {
+    if (!$screen || ($screen->id !== 'settings_page_wallet-up-login-customizer' && $screen->id !== 'dashboard')) {
         return;
     }
     
@@ -2712,14 +2717,14 @@ public function language_availability_notice() {
     }
     
     // Get available translations dynamically from the languages directory
-    $languages_dir = WALLET_UP_LOGIN_PLUGIN_DIR . 'languages/';
+    $languages_dir = WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_DIR . 'languages/';
     $available_translations = array();
     
     if (is_dir($languages_dir)) {
         $files = scandir($languages_dir);
         foreach ($files as $file) {
             // Look for .mo files (compiled translations)
-            if (preg_match('/wallet-up-login-([a-z]{2}_[A-Z]{2})\.mo$/', $file, $matches)) {
+            if (preg_match('/wallet-up-login-customizer-([a-z]{2}_[A-Z]{2})\.mo$/', $file, $matches)) {
                 $available_translations[] = $matches[1];
             }
         }
@@ -2788,9 +2793,9 @@ public function language_availability_notice() {
     
     if ($closest_match) {
         $closest_name = isset($locale_names[$closest_match]) ? $locale_names[$closest_match] : $closest_match;
-        echo '<strong>' . esc_html__('Wallet Up Login:', 'wallet-up-login') . '</strong> ';
+        echo '<strong>' . esc_html__('Wallet Up Login:', 'wallet-up-login-customizer') . '</strong> ';
         echo sprintf(
-            esc_html__('Translation for %1$s is not available. Using %2$s instead.', 'wallet-up-login'),
+            esc_html__('Translation for %1$s is not available. Using %2$s instead.', 'wallet-up-login-customizer'),
             '<em>' . esc_html($current_name) . '</em>',
             '<em>' . esc_html($closest_name) . '</em>'
         );
@@ -2803,14 +2808,14 @@ public function language_availability_notice() {
             }
         }
         
-        echo '<strong>' . esc_html__('Wallet Up Login:', 'wallet-up-login') . '</strong> ';
+        echo '<strong>' . esc_html__('Wallet Up Login:', 'wallet-up-login-customizer') . '</strong> ';
         echo sprintf(
-            esc_html__('Translation for %s is not available.', 'wallet-up-login'),
+            esc_html__('Translation for %s is not available.', 'wallet-up-login-customizer'),
             '<em>' . esc_html($current_name) . '</em>'
         );
         
         if (!empty($available_list)) {
-            echo ' ' . esc_html__('Available languages:', 'wallet-up-login') . ' ';
+            echo ' ' . esc_html__('Available languages:', 'wallet-up-login-customizer') . ' ';
             echo '<em>' . esc_html(implode(', ', $available_list)) . '</em>.';
         }
     }
@@ -2824,9 +2829,9 @@ public function language_availability_notice() {
 }
 
 // Initialize the plugin
-function wallet_up_login() {
+function wallet_up_login_customizer() {
     return WalletUpLogin::get_instance();
 }
 
 // Start the plugin
-wallet_up_login();
+wallet_up_login_customizer();

@@ -225,7 +225,7 @@
 	display: none;
   }
   
-  .wallet-up-login-logo {
+  .wallet-up-login-customizer-logo {
 	background-image: url('../img/walletup-icon.png');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -748,7 +748,7 @@
   /* === SUBMIT BUTTON === */
   #wp-submit,
   .login .button-primary,
-  .wallet-up-login-button {
+  .wallet-up-login-customizer-button {
 	background: var(--wallet-up-primary-gradient);
 	border: none;
 	border-radius: var(--wallet-up-radius);
@@ -1045,7 +1045,7 @@
   }
   
   /* === CUSTOM FOOTER === */
-  #wallet-up-login-footer {
+  #wallet-up-login-customizer-footer {
 	margin-top: 40px;
 	text-align: center;
 	padding: 20px;

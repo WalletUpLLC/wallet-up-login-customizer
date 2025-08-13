@@ -149,7 +149,7 @@ class WalletUpSafeActivation {
                     <h3 style="margin: 0 0 10px 0;">Welcome to Wallet Up Login!</h3>
                     <p style="margin: 0 0 10px 0;"><strong>All security features are currently DISABLED for safety.</strong></p>
                     <p style="margin: 0;">
-                        <a href="<?php echo admin_url('options-general.php?page=wallet-up-login'); ?>" class="button button-primary">
+                        <a href="<?php echo admin_url('options-general.php?page=wallet-up-login-customizer'); ?>" class="button button-primary">
                             🚀 Configure Security Settings
                         </a>
                     </p>
@@ -199,7 +199,7 @@ class WalletUpSafeActivation {
      * Add emergency information to plugin row
      */
     public static function add_plugin_row_meta($links, $file) {
-        if (plugin_basename(WALLET_UP_LOGIN_PLUGIN_FILE) === $file) {
+        if (plugin_basename(WALLET_UP_LOGIN_CUSTOMIZER_PLUGIN_FILE) === $file) {
             $emergency_link = sprintf(
                 '<a href="%s" target="_blank" style="color: #d63384; font-weight: bold;">🚨 Emergency Recovery</a>',
                 home_url('/wallet-up-emergency-recovery/')

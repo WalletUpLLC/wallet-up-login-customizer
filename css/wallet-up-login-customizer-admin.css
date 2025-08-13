@@ -11,7 +11,7 @@
     --wup-bg-primary: #fff;
     --wup-bg-secondary: #f9fafb;
     --wup-bg-tertiary: #f3f4f6;
-    --wup-text-primary: #1f2937;
+    --wup-text-primary: #64748b;
     --wup-text-secondary: #4b5563;
     --wup-text-tertiary: #6b7280;
     --wup-border: rgba(229, 231, 235, 0.8);
@@ -53,7 +53,11 @@
     margin-top: 20px;
     color: var(--wup-text-primary);
     transition: var(--wup-transition);
-	padding: 20px 20px 0 0;
+	padding: 20px 20px 20px 0;
+    /* Remove min-height that was hiding footer */
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px; /* Add margin to ensure footer has space */
 }
 
 .wallet-up-admin-content {
@@ -1335,6 +1339,45 @@ input[type="submit"]:disabled {
     box-shadow: none !important;
 }
 
+/* Processing button state with animation */
+.button.processing,
+.button-primary.processing,
+button.processing,
+input[type="submit"].processing {
+    opacity: 0.8 !important;
+    cursor: wait !important;
+    position: relative !important;
+    animation: pulse 1.5s infinite !important;
+}
+
+/* Pulse animation for processing buttons */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 14px rgba(103, 79, 191, 0.25);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(103, 79, 191, 0.4);
+    }
+    100% {
+        box-shadow: 0 4px 14px rgba(103, 79, 191, 0.25);
+    }
+}
+
+/* WordPress spinner adjustments for our buttons */
+.button .spinner,
+button .spinner,
+input[type="submit"] .spinner {
+    margin: 0 8px 0 -4px !important;
+    float: none !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+/* Ensure spinner is visible */
+.spinner.is-active {
+    visibility: visible !important;
+}
+
 /* Small buttons */
 .button-small,
 .button.small {
@@ -1584,10 +1627,13 @@ div.error {
     background: #fffbeb !important;
 }
 
-/* Auto-dismiss notice specific styling */
-.wallet-up-auto-dismiss-notice {
+/* Auto-dismiss notice specific styling - Higher specificity to override general notice styles */
+.notice.wallet-up-auto-dismiss-notice,
+.notice-success.wallet-up-auto-dismiss-notice {
     position: relative !important;
     overflow: hidden !important;
+    margin: 0 20px 20px 0px !important;
+    padding: 16px 20px !important;
 }
 
 .wallet-up-auto-dismiss-notice::after {
@@ -1630,6 +1676,97 @@ div.error {
     to {
         width: 0;
     }
+}
+
+/* Enhanced option descriptions styling */
+.form-table .description {
+    margin-top: 8px;
+    color: var(--wup-text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Enhanced styled notes for important options */
+.form-table .description[style*="color: #0073aa"],
+.form-table .description[style*="color: #d63638"],
+.form-table .description[style*="color: #059669"],
+.description[style*="color: #d63638"] {
+    margin-top: 12px !important;
+    padding: 14px 16px !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    font-style: normal !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.2s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-left: 4px solid !important;
+}
+
+/* Info note (blue) */
+.form-table .description[style*="color: #0073aa"] {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+    border-left-color: #3b82f6 !important;
+    color: #1e40af !important;
+}
+
+.form-table .description[style*="color: #0073aa"]:hover {
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.15) !important;
+    transform: translateX(2px);
+}
+
+/* Warning note (red/orange) */
+.form-table .description[style*="color: #d63638"],
+.description[style*="color: #d63638"] {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
+    border-left-color: #f59e0b !important;
+    color: #92400e !important;
+}
+
+.form-table .description[style*="color: #d63638"]:hover,
+.description[style*="color: #d63638"]:hover {
+    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.15) !important;
+    transform: translateX(2px);
+}
+
+/* Success note (green) */
+.form-table .description[style*="color: #059669"] {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+    border-left-color: #10b981 !important;
+    color: #065f46 !important;
+}
+
+.form-table .description[style*="color: #059669"]:hover {
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.15) !important;
+    transform: translateX(2px);
+}
+
+/* Add subtle gradient overlay for depth */
+.form-table .description[style*="color: #0073aa"]::before,
+.form-table .description[style*="color: #d63638"]::before,
+.form-table .description[style*="color: #059669"]::before,
+.description[style*="color: #d63638"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.form-table .description[style*="color: #0073aa"]::before {
+    background: linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+.form-table .description[style*="color: #d63638"]::before,
+.description[style*="color: #d63638"]::before {
+    background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
+}
+
+.form-table .description[style*="color: #059669"]::before {
+    background: linear-gradient(180deg, #34d399 0%, #10b981 100%);
 }
 
 /* Dark Theme Support for Notices */
@@ -1882,6 +2019,32 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
 .settings-panel select {
     max-width: 100%;
     box-sizing: border-box;
+    border: 2px solid var(--wup-border);
+    border-radius: 10px;
+    color: var(--wup-text-primary);
+    padding: 12px 16px;
+    background: var(--wup-bg-primary);
+    transition: var(--wup-transition);
+}
+
+/* Match focus states */
+.settings-panel input:focus,
+.settings-panel textarea:focus,
+.settings-panel select:focus {
+    border-color: var(--wup-brand);
+    background: var(--wup-bg-primary);
+    box-shadow: 0 0 0 4px rgba(103, 79, 191, 0.08),
+                0 1px 2px rgba(0, 0, 0, 0.02);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+/* Match hover states */
+.settings-panel input:hover:not(:focus),
+.settings-panel textarea:hover:not(:focus),
+.settings-panel select:hover:not(:focus) {
+    border-color: var(--wup-border-hover);
+    background: var(--wup-bg-secondary);
 }
 
 /* Contain floating elements */
@@ -1961,6 +2124,8 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     font-size: 15px;
     color: var(--wup-text-primary);
     letter-spacing: -0.025em;
+    white-space: nowrap;
+    flex: 1 1 auto;
 }
 
 .wallet-up-files-list {
@@ -2006,8 +2171,8 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
 }
 
 .wallet-up-file-path {
-    flex: 1 1 auto;
-    max-width: 60%;
+    flex: 1 1 50%;
+    min-width: 0;
     overflow: hidden;
 }
 
@@ -2037,8 +2202,13 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     color: #64748b;
     font-size: 13px;
     letter-spacing: -0.01em;
-    flex: 0 0 auto;
-    white-space: nowrap;
+    flex: 0 1 auto;
+    min-width: 120px;
+    text-align: right;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .wallet-up-file-item:hover .wallet-up-file-desc {
@@ -2078,11 +2248,18 @@ body.toplevel_page_wallet-up h1.wp-heading-inline:before {
     .wallet-up-file-path {
         min-width: auto;
         width: 100%;
+        max-width: 100%;
     }
     
     .wallet-up-file-path code {
         word-break: break-all;
         display: block;
+    }
+    
+    .wallet-up-file-desc {
+        text-align: left;
+        width: 100%;
+        min-width: auto;
     }
 }
 
@@ -2292,12 +2469,30 @@ input[type="checkbox"] {
     right: 0px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    padding: 4px 12px;
+    padding: 6px 12px;
     border-radius: 20px;
     font-size: 11px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.wallet-up-lock-icon {
+    color: currentColor;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -1px;
+}
+
+.wallet-up-header-badge:hover .wallet-up-lock-icon {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .wallet-up-title-main {
@@ -2368,4 +2563,13 @@ input[type="checkbox"] {
     .wallet-up-premium-header-wrapper {
         background: linear-gradient(135deg, #4a3a8c 0%, #6b5aad 50%, #8070c8 100%);
     }
+}
+
+/* Force WordPress footer to stay at bottom on Wallet Up settings page */
+.toplevel_page_wallet-up-login #wpfooter {
+    position: relative !important;
+    clear: both !important;
+    margin-top: 20px !important;
+    padding: 10px 20px !important;
+    z-index: 10 !important;
 }

@@ -26,7 +26,7 @@ class WalletUpLoginLogo {
      */
     public static function init() {
         // Check the main settings first for custom logo
-        $main_settings = get_option('wallet_up_login_settings', []);
+        $main_settings = get_option('wallet_up_login_customizer_settings', []);
         $custom_logo_url = isset($main_settings['custom_logo']) ? $main_settings['custom_logo'] : '';
         
         // Load options - use main settings custom_logo if available
@@ -130,9 +130,9 @@ class WalletUpLoginLogo {
      */
     public static function add_logo_settings_page() {
         add_submenu_page(
-            'wallet-up-login',
-            __('Logo Settings', 'wallet-up-login'),
-            __('Logo Settings', 'wallet-up-login'),
+            'wallet-up-login-customizer',
+            __('Logo Settings', 'wallet-up-login-customizer'),
+            __('Logo Settings', 'wallet-up-login-customizer'),
             'manage_options',
             'wallet-up-logo',
             [__CLASS__, 'render_logo_settings_page']
@@ -149,7 +149,7 @@ class WalletUpLoginLogo {
         
         add_settings_section(
             'wallet_up_logo_main',
-            __('Login Logo Configuration', 'wallet-up-login'),
+            __('Login Logo Configuration', 'wallet-up-login-customizer'),
             [__CLASS__, 'logo_section_callback'],
             'wallet_up_logo_settings'
         );
@@ -157,7 +157,7 @@ class WalletUpLoginLogo {
         // Enable/Disable
         add_settings_field(
             'enabled',
-            __('Enable Custom Logo', 'wallet-up-login'),
+            __('Enable Custom Logo', 'wallet-up-login-customizer'),
             [__CLASS__, 'render_enabled_field'],
             'wallet_up_logo_settings',
             'wallet_up_logo_main'
@@ -166,7 +166,7 @@ class WalletUpLoginLogo {
         // Logo URL
         add_settings_field(
             'logo_url',
-            __('Logo Image', 'wallet-up-login'),
+            __('Logo Image', 'wallet-up-login-customizer'),
             [__CLASS__, 'render_logo_url_field'],
             'wallet_up_logo_settings',
             'wallet_up_logo_main'
@@ -175,7 +175,7 @@ class WalletUpLoginLogo {
         // Size settings
         add_settings_field(
             'size_settings',
-            __('Logo Size', 'wallet-up-login'),
+            __('Logo Size', 'wallet-up-login-customizer'),
             [__CLASS__, 'render_size_fields'],
             'wallet_up_logo_settings',
             'wallet_up_logo_main'
@@ -184,7 +184,7 @@ class WalletUpLoginLogo {
         // Link settings
         add_settings_field(
             'link_settings',
-            __('Logo Link', 'wallet-up-login'),
+            __('Logo Link', 'wallet-up-login-customizer'),
             [__CLASS__, 'render_link_fields'],
             'wallet_up_logo_settings',
             'wallet_up_logo_main'
@@ -204,7 +204,7 @@ class WalletUpLoginLogo {
             add_settings_error(
                 'wallet_up_logo_messages',
                 'wallet_up_logo_message',
-                __('Logo settings saved successfully.', 'wallet-up-login'),
+                __('Logo settings saved successfully.', 'wallet-up-login-customizer'),
                 'updated'
             );
         }
@@ -219,19 +219,19 @@ class WalletUpLoginLogo {
                 <?php
                 settings_fields('wallet_up_logo_settings');
                 do_settings_sections('wallet_up_logo_settings');
-                submit_button(__('Save Logo Settings', 'wallet-up-login'));
+                submit_button(__('Save Logo Settings', 'wallet-up-login-customizer'));
                 ?>
             </form>
             
             <div class="wallet-up-logo-preview">
-                <h2><?php esc_html_e('Current Logo Preview', 'wallet-up-login'); ?></h2>
+                <h2><?php esc_html_e('Current Logo Preview', 'wallet-up-login-customizer'); ?></h2>
                 <div style="background: #f0f0f1; padding: 20px; border-radius: 5px; max-width: 300px;">
                     <?php if (!empty(self::$options['logo_url'])): ?>
                         <img src="<?php echo esc_url(self::$options['logo_url']); ?>" 
                              style="max-height: <?php echo esc_attr(self::$options['max_height']); ?>px; width: auto; display: block; margin: 0 auto;" 
-                             alt="<?php esc_attr_e('Login Logo Preview', 'wallet-up-login'); ?>">
+                             alt="<?php esc_attr_e('Login Logo Preview', 'wallet-up-login-customizer'); ?>">
                     <?php else: ?>
-                        <p><?php esc_html_e('No custom logo set. Using site logo or WordPress default.', 'wallet-up-login'); ?></p>
+                        <p><?php esc_html_e('No custom logo set. Using site logo or WordPress default.', 'wallet-up-login-customizer'); ?></p>
                     <?php endif; ?>
                 </div>
             </div>
@@ -243,7 +243,7 @@ class WalletUpLoginLogo {
      * Section callback
      */
     public static function logo_section_callback() {
-        echo '<p>' . esc_html__('Configure the logo that appears on the WordPress login page. The logo will be automatically sized to fit within 50px height while preserving aspect ratio.', 'wallet-up-login') . '</p>';
+        echo '<p>' . esc_html__('Configure the logo that appears on the WordPress login page. The logo will be automatically sized to fit within 50px height while preserving aspect ratio.', 'wallet-up-login-customizer') . '</p>';
     }
     
     /**
@@ -254,7 +254,7 @@ class WalletUpLoginLogo {
         ?>
         <label>
             <input type="checkbox" name="wallet_up_logo_settings[enabled]" value="1" <?php checked($enabled, true); ?>>
-            <?php esc_html_e('Display custom logo on login page', 'wallet-up-login'); ?>
+            <?php esc_html_e('Display custom logo on login page', 'wallet-up-login-customizer'); ?>
         </label>
         <?php
     }
@@ -268,10 +268,10 @@ class WalletUpLoginLogo {
         <input type="url" name="wallet_up_logo_settings[logo_url]" id="wallet_up_logo_url" 
                value="<?php echo esc_url($logo_url); ?>" class="regular-text">
         <button type="button" class="button" id="wallet_up_logo_upload">
-            <?php esc_html_e('Select Logo', 'wallet-up-login'); ?>
+            <?php esc_html_e('Select Logo', 'wallet-up-login-customizer'); ?>
         </button>
         <p class="description">
-            <?php esc_html_e('Upload or select a logo image. Recommended size: 200x50px or smaller.', 'wallet-up-login'); ?>
+            <?php esc_html_e('Upload or select a logo image. Recommended size: 200x50px or smaller.', 'wallet-up-login-customizer'); ?>
         </p>
         
         <script>
@@ -279,13 +279,13 @@ class WalletUpLoginLogo {
             $('#wallet_up_logo_upload').click(function(e) {
                 e.preventDefault();
                 var image = wp.media({
-                    title: '<?php echo esc_js(__('Select Logo', 'wallet-up-login')); ?>',
+                    title: '<?php echo esc_js(__('Select Logo', 'wallet-up-login-customizer')); ?>',
                     multiple: false,
                     library: {
                         type: 'image'
                     },
                     button: {
-                        text: '<?php echo esc_js(__('Use as Logo', 'wallet-up-login')); ?>'
+                        text: '<?php echo esc_js(__('Use as Logo', 'wallet-up-login-customizer')); ?>'
                     }
                 }).open().on('select', function() {
                     var uploaded_image = image.state().get('selection').first();
@@ -306,16 +306,16 @@ class WalletUpLoginLogo {
         $preserve_ratio = isset(self::$options['preserve_ratio']) ? self::$options['preserve_ratio'] : true;
         ?>
         <label>
-            <?php esc_html_e('Maximum Height:', 'wallet-up-login'); ?>
+            <?php esc_html_e('Maximum Height:', 'wallet-up-login-customizer'); ?>
             <input type="number" name="wallet_up_logo_settings[max_height]" 
                    value="<?php echo esc_attr($max_height); ?>" min="20" max="100" step="1">
-            <span class="description">px (<?php esc_html_e('default: 50px', 'wallet-up-login'); ?>)</span>
+            <span class="description">px (<?php esc_html_e('default: 50px', 'wallet-up-login-customizer'); ?>)</span>
         </label>
         <br><br>
         <label>
             <input type="checkbox" name="wallet_up_logo_settings[preserve_ratio]" 
                    value="1" <?php checked($preserve_ratio, true); ?>>
-            <?php esc_html_e('Preserve aspect ratio when resizing', 'wallet-up-login'); ?>
+            <?php esc_html_e('Preserve aspect ratio when resizing', 'wallet-up-login-customizer'); ?>
         </label>
         <?php
     }
@@ -328,18 +328,18 @@ class WalletUpLoginLogo {
         $link_title = isset(self::$options['link_title']) ? self::$options['link_title'] : get_bloginfo('name');
         ?>
         <label>
-            <?php esc_html_e('Link URL:', 'wallet-up-login'); ?>
+            <?php esc_html_e('Link URL:', 'wallet-up-login-customizer'); ?>
             <input type="url" name="wallet_up_logo_settings[link_url]" 
                    value="<?php echo esc_url($link_url); ?>" class="regular-text">
         </label>
         <br><br>
         <label>
-            <?php esc_html_e('Link Title:', 'wallet-up-login'); ?>
+            <?php esc_html_e('Link Title:', 'wallet-up-login-customizer'); ?>
             <input type="text" name="wallet_up_logo_settings[link_title]" 
                    value="<?php echo esc_attr($link_title); ?>" class="regular-text">
         </label>
         <p class="description">
-            <?php esc_html_e('Where the logo links to and the tooltip text when hovering.', 'wallet-up-login'); ?>
+            <?php esc_html_e('Where the logo links to and the tooltip text when hovering.', 'wallet-up-login-customizer'); ?>
         </p>
         <?php
     }
@@ -389,7 +389,7 @@ class WalletUpLoginLogo {
         
         // Only show on dashboard and our plugin pages
         $screen = get_current_screen();
-        if (!in_array($screen->id, ['dashboard', 'toplevel_page_wallet-up-login', 'wallet-up-login_page_wallet-up-logo'])) {
+        if (!in_array($screen->id, ['dashboard', 'toplevel_page_wallet-up-login-customizer', 'wallet-up-login_page_wallet-up-logo'])) {
             return;
         }
         
@@ -402,8 +402,8 @@ class WalletUpLoginLogo {
                     <?php 
                     printf(
                         /* translators: %s: Logo settings page URL */
-                        esc_html__('Wallet Up Login: No custom logo configured. %s to add your brand logo to the login page.', 'wallet-up-login'),
-                        '<a href="' . esc_url(admin_url('admin.php?page=wallet-up-logo')) . '">' . esc_html__('Configure logo', 'wallet-up-login') . '</a>'
+                        esc_html__('Wallet Up Login: No custom logo configured. %s to add your brand logo to the login page.', 'wallet-up-login-customizer'),
+                        '<a href="' . esc_url(admin_url('admin.php?page=wallet-up-logo')) . '">' . esc_html__('Configure logo', 'wallet-up-login-customizer') . '</a>'
                     );
                     ?>
                 </p>

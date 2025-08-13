@@ -92,7 +92,7 @@ class WalletUpHardRedirect {
         }
         
         // Load options
-        self::$options = get_option('wallet_up_login_options', []);
+        self::$options = get_option('wallet_up_login_customizer_options', []);
         
         // IMPORTANT: Only check if LOGIN redirect is enabled (Land to Wallet Up)
         // This feature works INDEPENDENTLY from Force Dashboard Replacement
@@ -219,13 +219,13 @@ class WalletUpHardRedirect {
         // Disable the setting
         if (isset(self::$options['redirect_to_wallet_up'])) {
             self::$options['redirect_to_wallet_up'] = false;
-            update_option('wallet_up_login_options', self::$options);
+            update_option('wallet_up_login_customizer_options', self::$options);
             
             // Add admin notice if in admin area
             if (is_admin()) {
                 add_action('admin_notices', function() {
                     echo '<div class="notice notice-warning is-dismissible">';
-                    echo '<p>' . __('Wallet Up dashboard replacement has been disabled because the Wallet Up page was not found. Please make sure the Wallet Up plugin is active.', 'wallet-up-login') . '</p>';
+                    echo '<p>' . __('Wallet Up dashboard replacement has been disabled because the Wallet Up page was not found. Please make sure the Wallet Up plugin is active.', 'wallet-up-login-customizer') . '</p>';
                     echo '</div>';
                 });
             }
@@ -360,9 +360,9 @@ class WalletUpHardRedirect {
         // CLEAN APPROACH: Transform dashboard into Wallet Up, remove duplicates
         if ($dashboard_index !== null) {
             // Transform the dashboard menu item into Wallet Up
-            $menu[$dashboard_index][0] = __('Wallet Up', 'wallet-up-login'); // Menu title  
+            $menu[$dashboard_index][0] = __('Wallet Up', 'wallet-up-login-customizer'); // Menu title  
             $menu[$dashboard_index][2] = 'admin.php?page=wallet-up'; // URL
-            $menu[$dashboard_index][3] = __('Wallet Up', 'wallet-up-login'); // Page title
+            $menu[$dashboard_index][3] = __('Wallet Up', 'wallet-up-login-customizer'); // Page title
             $menu[$dashboard_index][4] = 'menu-top menu-icon-dashboard'; // Keep dashboard styling
             $menu[$dashboard_index][5] = 'wallet-up-dashboard'; // Unique ID
             $menu[$dashboard_index][6] = 'dashicons-bank'; // Keep dashboard icon
@@ -379,8 +379,8 @@ class WalletUpHardRedirect {
         elseif (!empty($wallet_up_indices)) {
             // Keep only the first Wallet Up menu, remove others
             $keep_index = $wallet_up_indices[0];
-            $menu[$keep_index][0] = __('Wallet Up', 'wallet-up-login');
-            $menu[$keep_index][3] = __('Wallet Up', 'wallet-up-login');
+            $menu[$keep_index][0] = __('Wallet Up', 'wallet-up-login-customizer');
+            $menu[$keep_index][3] = __('Wallet Up', 'wallet-up-login-customizer');
             
             // Remove duplicate Wallet Up menus
             for ($i = 1; $i < count($wallet_up_indices); $i++) {
@@ -441,7 +441,7 @@ class WalletUpHardRedirect {
             // Add dashboard node if it doesn't exist
             $wp_admin_bar->add_node([
                 'id' => 'wallet-up-dashboard',
-                'title' => __('Dashboard', 'wallet-up-login'),
+                'title' => __('Dashboard', 'wallet-up-login-customizer'),
                 'href' => $wallet_up_url,
             ]);
         }
@@ -457,7 +457,7 @@ class WalletUpHardRedirect {
         if (self::should_exempt_current_user()) {
             $wp_admin_bar->add_node([
                 'id' => 'view-wp-dashboard',
-                'title' => __('WordPress Dashboard', 'wallet-up-login'),
+                'title' => __('WordPress Dashboard', 'wallet-up-login-customizer'),
                 'href' => add_query_arg('show_wp_dashboard', '1', admin_url()),
                 'parent' => 'site-name',
             ]);
@@ -478,7 +478,7 @@ class WalletUpHardRedirect {
         // Add our redirect widget
         wp_add_dashboard_widget(
             'wallet_up_dashboard_widget',
-            __('Wallet Up Dashboard', 'wallet-up-login'),
+            __('Wallet Up Dashboard', 'wallet-up-login-customizer'),
             [__CLASS__, 'dashboard_redirect_widget']
         );
     }
@@ -489,9 +489,9 @@ class WalletUpHardRedirect {
     public static function dashboard_redirect_widget() {
         $wallet_up_url = self::get_wallet_up_url();
         
-        echo '<p>' . __('The WordPress dashboard has been replaced with the Wallet Up Dashboard.', 'wallet-up-login') . '</p>';
+        echo '<p>' . __('The WordPress dashboard has been replaced with the Wallet Up Dashboard.', 'wallet-up-login-customizer') . '</p>';
         echo '<p><a href="' . esc_url($wallet_up_url) . '" class="button button-primary">' . 
-             __('Go to Wallet Up Dashboard', 'wallet-up-login') . '</a></p>';
+             __('Go to Wallet Up Dashboard', 'wallet-up-login-customizer') . '</a></p>';
         
         // Auto-redirect script with fade effect
         ?>
@@ -518,10 +518,10 @@ class WalletUpHardRedirect {
         
         ?>
         <div class="welcome-panel-content">
-            <h2><?php _e('Welcome to Wallet Up!', 'wallet-up-login'); ?></h2>
-            <p class="about-description"><?php _e('The WordPress dashboard has been replaced with the Wallet Up Dashboard.', 'wallet-up-login'); ?></p>
+            <h2><?php _e('Welcome to Wallet Up!', 'wallet-up-login-customizer'); ?></h2>
+            <p class="about-description"><?php _e('The WordPress dashboard has been replaced with the Wallet Up Dashboard.', 'wallet-up-login-customizer'); ?></p>
             <p><a href="<?php echo esc_url($wallet_up_url); ?>" class="button button-primary button-hero">
-                <?php _e('Go to Wallet Up Dashboard', 'wallet-up-login'); ?>
+                <?php _e('Go to Wallet Up Dashboard', 'wallet-up-login-customizer'); ?>
             </a></p>
         </div>
         
@@ -550,7 +550,7 @@ class WalletUpHardRedirect {
     public static function modify_admin_title($admin_title, $title) {
         // Change dashboard title
         if ($title === __('Dashboard')) {
-            return __('Wallet Up Dashboard', 'wallet-up-login') . ' ' . $admin_title;
+            return __('Wallet Up Dashboard', 'wallet-up-login-customizer') . ' ' . $admin_title;
         }
         
         return $admin_title;

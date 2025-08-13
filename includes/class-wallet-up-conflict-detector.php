@@ -108,7 +108,7 @@ class WalletUpConflictDetector {
                     'name' => $function,
                     'location' => 'Theme functions.php',
                     'severity' => 'high',
-                    'description' => sprintf(__('Function %s conflicts with Wallet Up force login', 'wallet-up-login'), $function)
+                    'description' => sprintf(__('Function %s conflicts with Wallet Up force login', 'wallet-up-login-customizer'), $function)
                 ];
             }
         }
@@ -132,7 +132,7 @@ class WalletUpConflictDetector {
                                 'hook' => $hook,
                                 'priority' => $priority,
                                 'severity' => 'medium',
-                                'description' => sprintf(__('Hook %s on %s may conflict with Wallet Up', 'wallet-up-login'), $function_name, $hook)
+                                'description' => sprintf(__('Hook %s on %s may conflict with Wallet Up', 'wallet-up-login-customizer'), $function_name, $hook)
                             ];
                         }
                     }
@@ -208,7 +208,7 @@ class WalletUpConflictDetector {
                 'type' => 'settings',
                 'name' => 'Missing Custom Login Slug',
                 'severity' => 'critical',
-                'description' => __('Hiding wp-login.php without a custom login slug will lock out all users', 'wallet-up-login'),
+                'description' => __('Hiding wp-login.php without a custom login slug will lock out all users', 'wallet-up-login-customizer'),
                 'fix' => 'set_custom_slug'
             ];
         }
@@ -239,7 +239,7 @@ class WalletUpConflictDetector {
                 $class = 'notice notice-' . self::get_notice_class($conflict['severity']);
                 ?>
                 <div class="<?php echo esc_attr($class); ?> is-dismissible">
-                    <h4><?php _e('Wallet Up Conflict Detected', 'wallet-up-login'); ?></h4>
+                    <h4><?php _e('Wallet Up Conflict Detected', 'wallet-up-login-customizer'); ?></h4>
                     <p>
                         <strong><?php echo esc_html($conflict['name']); ?></strong><br>
                         <?php echo esc_html($conflict['description']); ?>
@@ -250,20 +250,20 @@ class WalletUpConflictDetector {
                             <button type="button" class="button button-primary wallet-up-fix-conflict" 
                                     data-fix="<?php echo esc_attr($conflict['fix']); ?>"
                                     data-nonce="<?php echo wp_create_nonce('wallet_up_fix_conflict'); ?>">
-                                <?php _e('Auto-Fix This Issue', 'wallet-up-login'); ?>
+                                <?php _e('Auto-Fix This Issue', 'wallet-up-login-customizer'); ?>
                             </button>
                         </p>
                     <?php endif; ?>
                     
                     <?php if ($conflict['type'] === 'function'): ?>
                         <p>
-                            <strong><?php _e('Manual Fix:', 'wallet-up-login'); ?></strong>
-                            <?php _e('Remove the conflicting function from your theme\'s functions.php file.', 'wallet-up-login'); ?>
+                            <strong><?php _e('Manual Fix:', 'wallet-up-login-customizer'); ?></strong>
+                            <?php _e('Remove the conflicting function from your theme\'s functions.php file.', 'wallet-up-login-customizer'); ?>
                         </p>
                     <?php elseif ($conflict['type'] === 'plugin'): ?>
                         <p>
-                            <strong><?php _e('Manual Fix:', 'wallet-up-login'); ?></strong>
-                            <?php printf(__('Deactivate the %s plugin or disable its login features.', 'wallet-up-login'), esc_html($conflict['name'])); ?>
+                            <strong><?php _e('Manual Fix:', 'wallet-up-login-customizer'); ?></strong>
+                            <?php printf(__('Deactivate the %s plugin or disable its login features.', 'wallet-up-login-customizer'), esc_html($conflict['name'])); ?>
                         </p>
                     <?php endif; ?>
                 </div>
@@ -333,7 +333,7 @@ class WalletUpConflictDetector {
         // Verify nonce and permissions
         if (!wp_verify_nonce($_POST['nonce'] ?? '', 'wallet_up_fix_conflict') || 
             !current_user_can('manage_options')) {
-            wp_send_json_error(['message' => __('Security check failed', 'wallet-up-login')]);
+            wp_send_json_error(['message' => __('Security check failed', 'wallet-up-login-customizer')]);
         }
         
         $fix = sanitize_text_field($_POST['fix'] ?? '');
@@ -347,7 +347,7 @@ class WalletUpConflictDetector {
                     update_option('wallet_up_security_options', $options);
                     
                     wp_send_json_success([
-                        'message' => __('Custom login slug created. Please test it before enabling wp-login.php hiding.', 'wallet-up-login')
+                        'message' => __('Custom login slug created. Please test it before enabling wp-login.php hiding.', 'wallet-up-login-customizer')
                     ]);
                     break;
                     
@@ -360,12 +360,12 @@ class WalletUpConflictDetector {
                     }
                     
                     wp_send_json_success([
-                        'message' => sprintf(__('Your IP (%s) added to whitelist.', 'wallet-up-login'), $current_ip)
+                        'message' => sprintf(__('Your IP (%s) added to whitelist.', 'wallet-up-login-customizer'), $current_ip)
                     ]);
                     break;
                     
                 default:
-                    wp_send_json_error(['message' => __('Unknown fix type', 'wallet-up-login')]);
+                    wp_send_json_error(['message' => __('Unknown fix type', 'wallet-up-login-customizer')]);
             }
             
         } catch (Exception $e) {
@@ -411,7 +411,7 @@ class WalletUpConflictDetector {
         if (empty($conflicts)) {
             return [
                 'status' => 'clean',
-                'message' => __('No conflicts detected', 'wallet-up-login'),
+                'message' => __('No conflicts detected', 'wallet-up-login-customizer'),
                 'count' => 0
             ];
         }
@@ -430,7 +430,7 @@ class WalletUpConflictDetector {
         
         return [
             'status' => $critical > 0 ? 'critical' : 'warning',
-            'message' => sprintf(_n('%d conflict detected', '%d conflicts detected', $total, 'wallet-up-login'), $total),
+            'message' => sprintf(_n('%d conflict detected', '%d conflicts detected', $total, 'wallet-up-login-customizer'), $total),
             'count' => $total,
             'critical' => $critical
         ];

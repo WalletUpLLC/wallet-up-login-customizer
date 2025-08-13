@@ -229,7 +229,7 @@
                 var value;
                 
                 // Determine which settings object to use
-                var targetSettings = optionGroup === 'wallet_up_login_options' 
+                var targetSettings = optionGroup === 'wallet_up_login_customizer_options' 
                     ? exportData.settings.login_options 
                     : exportData.settings.security_options;
                 
@@ -324,7 +324,7 @@
                         
                         // Import login options
                         if (importData.settings.login_options) {
-                            importSettings('wallet_up_login_options', importData.settings.login_options);
+                            importSettings('wallet_up_login_customizer_options', importData.settings.login_options);
                         }
                         
                         // Import security options
@@ -342,7 +342,7 @@
                     } else {
                         // Legacy format - treat entire object as login_options
                         console.log('Importing legacy format settings');
-                        importSettings('wallet_up_login_options', importData);
+                        importSettings('wallet_up_login_customizer_options', importData);
                         showNotification('Settings imported successfully (legacy format)', 'success');
                     }
                     
@@ -825,7 +825,7 @@
             $forceReplacement.on('change', function() {
                 if ($(this).is(':checked')) {
                     if (!$exemptAdmins.is(':checked')) {
-                        showOptionTip($exemptAdmins, 'Consider enabling "Exempt Administrator Roles" for easier management.', 'info');
+                        showOptionTip($exemptAdmins, walletUpLogin.strings.considerEnabling || 'Consider enabling "Exempt Administrator Roles" for easier management.', 'info');
                     }
                 }
             });

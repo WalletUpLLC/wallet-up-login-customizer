@@ -590,7 +590,7 @@ class WalletUpEnterpriseSecurity {
      * Add security fields to login form
      */
     public static function add_security_fields() {
-        wp_nonce_field('wallet_up_login_security', 'wallet_up_security_nonce');
+        wp_nonce_field('wallet_up_login_customizer_security', 'wallet_up_security_nonce');
         echo '<input type="text" name="wallet_up_honeypot" style="display:none !important;" tabindex="-1" autocomplete="off">';
         echo '<input type="hidden" name="wallet_up_timestamp" value="' . time() . '">';
         echo '<input type="hidden" name="wallet_up_fingerprint" value="' . self::generate_client_fingerprint() . '">';
@@ -656,7 +656,7 @@ class WalletUpEnterpriseSecurity {
         $error = $error ?? (isset($errors) && is_wp_error($errors) && $errors->has_errors());
         $errors = $errors ?? new WP_Error();
 
-        $nonce = wp_create_nonce('wallet_up_login_security');
+        $nonce = wp_create_nonce('wallet_up_login_customizer_security');
         echo '<meta name="wallet-up-nonce" content="' . esc_attr($nonce) . '">';
         echo '<meta name="wallet-up-timestamp" content="' . time() . '">';
         echo '<meta name="wallet-up-fingerprint" content="' . self::generate_client_fingerprint() . '">';
@@ -685,11 +685,11 @@ class WalletUpEnterpriseSecurity {
 
         $nonce_valid = false;
         if (!wp_doing_ajax()) {
-            if (isset($_POST['wallet_up_security_nonce']) && wp_verify_nonce($_POST['wallet_up_security_nonce'], 'wallet_up_login_security')) {
+            if (isset($_POST['wallet_up_security_nonce']) && wp_verify_nonce($_POST['wallet_up_security_nonce'], 'wallet_up_login_customizer_security')) {
                 $nonce_valid = true;
             }
         } else {
-            if (isset($_POST['security']) && wp_verify_nonce($_POST['security'], 'wallet-up-login-nonce')) {
+            if (isset($_POST['security']) && wp_verify_nonce($_POST['security'], 'wallet-up-login-customizer-nonce')) {
                 $nonce_valid = true;
             }
         }
@@ -699,7 +699,7 @@ class WalletUpEnterpriseSecurity {
             if (!empty($_POST['wallet_up_security_nonce'])) {
                 self::log_security_event('invalid_nonce', ['username' => $username]);
             }
-            return new WP_Error('invalid_security_token', __('Security validation failed. Please refresh the page and try again.', 'wallet-up-login'));
+            return new WP_Error('invalid_security_token', __('Security validation failed. Please refresh the page and try again.', 'wallet-up-login-customizer'));
         }
 
         if (!empty($_POST['wallet_up_honeypot'])) {
@@ -713,7 +713,7 @@ class WalletUpEnterpriseSecurity {
                         'username' => $username,
                         'time_taken' => time() - intval($_POST['wallet_up_timestamp']),
                     ]);
-                    return new WP_Error('bot_detected', __('Automated login attempts are not allowed.', 'wallet-up-login'));
+                    return new WP_Error('bot_detected', __('Automated login attempts are not allowed.', 'wallet-up-login-customizer'));
                 }
 
                 self::log_security_event('honeypot_filled_allowed', [
@@ -725,11 +725,11 @@ class WalletUpEnterpriseSecurity {
         }
 
         if (self::is_rate_limited()) {
-            return new WP_Error('rate_limited', __('Too many login attempts. Please try again later.', 'wallet-up-login'));
+            return new WP_Error('rate_limited', __('Too many login attempts. Please try again later.', 'wallet-up-login-customizer'));
         }
 
         if (self::is_brute_force_attempt($username)) {
-            return new WP_Error('account_locked', __('Account temporarily locked due to multiple failed attempts.', 'wallet-up-login'));
+            return new WP_Error('account_locked', __('Account temporarily locked due to multiple failed attempts.', 'wallet-up-login-customizer'));
         }
 
         return $user;
@@ -1152,7 +1152,7 @@ class WalletUpEnterpriseSecurity {
      */
     public static function restrict_rest_api($result) {
         if (!is_user_logged_in()) {
-            return new WP_Error('rest_not_logged_in', __('You must be logged in to access the REST API.', 'wallet-up-login'), ['status' => 401]);
+            return new WP_Error('rest_not_logged_in', __('You must be logged in to access the REST API.', 'wallet-up-login-customizer'), ['status' => 401]);
         }
 
         return $result;
@@ -1234,61 +1234,61 @@ class WalletUpEnterpriseSecurity {
         $options = self::$options;
         ?>
         <div class="wrap">
-            <h1><?php _e('Wallet Up Enterprise Security', 'wallet-up-login'); ?></h1>
+            <h1><?php _e('Wallet Up Enterprise Security', 'wallet-up-login-customizer'); ?></h1>
             <form method="post" action="options.php">
                 <?php settings_fields('wallet_up_security_options'); ?>
                 <table class="form-table">
                     <tr>
-                        <th scope="row"><label for="force_login_enabled"><?php _e('Force Login', 'wallet-up-login'); ?></label></th>
+                        <th scope="row"><label for="force_login_enabled"><?php _e('Force Login', 'wallet-up-login-customizer'); ?></label></th>
                         <td>
                             <input type="checkbox" id="force_login_enabled" name="wallet_up_security_options[force_login_enabled]" value="1" <?php checked($options['force_login_enabled']); ?>>
-                            <label for="force_login_enabled"><?php _e('Require authentication for all site access', 'wallet-up-login'); ?></label>
+                            <label for="force_login_enabled"><?php _e('Require authentication for all site access', 'wallet-up-login-customizer'); ?></label>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="hide_wp_login"><?php _e('Hide wp-login.php', 'wallet-up-login'); ?></label></th>
+                        <th scope="row"><label for="hide_wp_login"><?php _e('Hide wp-login.php', 'wallet-up-login-customizer'); ?></label></th>
                         <td>
                             <input type="checkbox" id="hide_wp_login" name="wallet_up_security_options[hide_wp_login]" value="1" <?php checked($options['hide_wp_login']); ?>>
-                            <label for="hide_wp_login"><?php _e('Hide and protect wp-login.php', 'wallet-up-login'); ?></label>
+                            <label for="hide_wp_login"><?php _e('Hide and protect wp-login.php', 'wallet-up-login-customizer'); ?></label>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="custom_login_slug"><?php _e('Custom Login Slug', 'wallet-up-login'); ?></label></th>
+                        <th scope="row"><label for="custom_login_slug"><?php _e('Custom Login Slug', 'wallet-up-login-customizer'); ?></label></th>
                         <td>
                             <input type="text" id="custom_login_slug" name="wallet_up_security_options[custom_login_slug]" value="<?php echo esc_attr($options['custom_login_slug']); ?>" class="regular-text">
-                            <p class="description"><?php _e('Custom URL slug for the login page', 'wallet-up-login'); ?></p>
+                            <p class="description"><?php _e('Custom URL slug for the login page', 'wallet-up-login-customizer'); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="max_login_attempts"><?php _e('Max Login Attempts', 'wallet-up-login'); ?></label></th>
+                        <th scope="row"><label for="max_login_attempts"><?php _e('Max Login Attempts', 'wallet-up-login-customizer'); ?></label></th>
                         <td>
                             <input type="number" id="max_login_attempts" name="wallet_up_security_options[max_login_attempts]" value="<?php echo esc_attr($options['max_login_attempts']); ?>" min="3" max="10">
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="lockout_duration"><?php _e('Lockout Duration (seconds)', 'wallet-up-login'); ?></label></th>
+                        <th scope="row"><label for="lockout_duration"><?php _e('Lockout Duration (seconds)', 'wallet-up-login-customizer'); ?></label></th>
                         <td>
                             <input type="number" id="lockout_duration" name="wallet_up_security_options[lockout_duration]" value="<?php echo esc_attr($options['lockout_duration']); ?>" min="300" max="3600">
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="session_timeout"><?php _e('Session Timeout (seconds)', 'wallet-up-login'); ?></label></th>
+                        <th scope="row"><label for="session_timeout"><?php _e('Session Timeout (seconds)', 'wallet-up-login-customizer'); ?></label></th>
                         <td>
                             <input type="number" id="session_timeout" name="wallet_up_security_options[session_timeout]" value="<?php echo esc_attr($options['session_timeout']); ?>" min="900" max="7200">
-                            <p class="description"><?php _e('Time before user sessions expire', 'wallet-up-login'); ?></p>
+                            <p class="description"><?php _e('Time before user sessions expire', 'wallet-up-login-customizer'); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row"><label for="security_headers"><?php _e('Security Headers', 'wallet-up-login'); ?></label></th>
+                        <th scope="row"><label for="security_headers"><?php _e('Security Headers', 'wallet-up-login-customizer'); ?></label></th>
                         <td>
                             <input type="checkbox" id="security_headers" name="wallet_up_security_options[security_headers]" value="1" <?php checked($options['security_headers']); ?>>
-                            <label for="security_headers"><?php _e('Enable security headers', 'wallet-up-login'); ?></label>
+                            <label for="security_headers"><?php _e('Enable security headers', 'wallet-up-login-customizer'); ?></label>
                         </td>
                     </tr>
                 </table>
                 <?php submit_button(); ?>
             </form>
-            <h2><?php _e('Security Logs', 'wallet-up-login'); ?></h2>
+            <h2><?php _e('Security Logs', 'wallet-up-login-customizer'); ?></h2>
             <?php
             $logs = get_option('wallet_up_security_logs', []);
             if (!empty($logs)) {
@@ -1307,7 +1307,7 @@ class WalletUpEnterpriseSecurity {
 
                 echo '</tbody></table></div>';
             } else {
-                echo '<p>' . __('No security events logged yet.', 'wallet-up-login') . '</p>';
+                echo '<p>' . __('No security events logged yet.', 'wallet-up-login-customizer') . '</p>';
             }
             ?>
         </div>

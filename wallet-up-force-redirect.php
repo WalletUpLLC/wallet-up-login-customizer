@@ -28,7 +28,7 @@ class WalletUpForceRedirect {
      * Option name for storing settings
      * @var string
      */
-    private $option_name = 'wallet_up_login_options';
+    private $option_name = 'wallet_up_login_customizer_options';
     
     /**
      * Whether Wallet Up is available
@@ -438,9 +438,9 @@ class WalletUpForceRedirect {
         $wallet_up_url = admin_url('admin.php?page=wallet-up');
         
         echo '<div class="welcome-panel-content">';
-        echo '<h2>' . esc_html__('Welcome to Wallet Up Dashboard!', 'wallet-up-login') . '</h2>';
-        echo '<p class="about-description">' . esc_html__('The WordPress dashboard has been replaced with the Wallet Up Dashboard.', 'wallet-up-login') . '</p>';
-        echo '<p><a href="' . esc_url($wallet_up_url) . '" class="button button-primary button-hero">' . esc_html__('Go to Wallet Up Dashboard', 'wallet-up-login') . '</a></p>';
+        echo '<h2>' . esc_html__('Welcome to Wallet Up Dashboard!', 'wallet-up-login-customizer') . '</h2>';
+        echo '<p class="about-description">' . esc_html__('The WordPress dashboard has been replaced with the Wallet Up Dashboard.', 'wallet-up-login-customizer') . '</p>';
+        echo '<p><a href="' . esc_url($wallet_up_url) . '" class="button button-primary button-hero">' . esc_html__('Go to Wallet Up Dashboard', 'wallet-up-login-customizer') . '</a></p>';
         echo '</div>';
         
         // Add JavaScript to redirect
@@ -457,8 +457,8 @@ class WalletUpForceRedirect {
     public function wallet_up_widget_content() {
         $wallet_up_url = admin_url('admin.php?page=wallet-up');
         
-        echo '<p>' . esc_html__('The WordPress dashboard has been replaced with the Wallet Up Dashboard.', 'wallet-up-login') . '</p>';
-        echo '<p><a href="' . esc_url($wallet_up_url) . '" class="button button-primary">' . esc_html__('Go to Wallet Up Dashboard', 'wallet-up-login') . '</a></p>';
+        echo '<p>' . esc_html__('The WordPress dashboard has been replaced with the Wallet Up Dashboard.', 'wallet-up-login-customizer') . '</p>';
+        echo '<p><a href="' . esc_url($wallet_up_url) . '" class="button button-primary">' . esc_html__('Go to Wallet Up Dashboard', 'wallet-up-login-customizer') . '</a></p>';
         
         // Add JavaScript to redirect
         echo '<script>
@@ -490,7 +490,7 @@ class WalletUpForceRedirect {
      */
     public function wallet_up_not_available_notice() {
         echo '<div class="notice notice-warning is-dismissible">';
-        echo '<p><strong>' . esc_html__('Wallet Up Login:', 'wallet-up-login') . '</strong> ' . esc_html__('The "Land to Wallet Up" option has been disabled because the Wallet Up admin page could not be found. Please make sure Wallet Up is installed and activated before enabling this feature.', 'wallet-up-login') . '</p>';
+        echo '<p><strong>' . esc_html__('Wallet Up Login:', 'wallet-up-login-customizer') . '</strong> ' . esc_html__('The "Land to Wallet Up" option has been disabled because the Wallet Up admin page could not be found. Please make sure Wallet Up is installed and activated before enabling this feature.', 'wallet-up-login-customizer') . '</p>';
         echo '</div>';
     }
     
@@ -513,7 +513,7 @@ class WalletUpForceRedirect {
                 $new_value['redirect_to_wallet_up'] = false;
                 
                 // Add a transient to show a notice
-                set_transient('wallet_up_login_wallet_up_not_available', true, 60);
+                set_transient('wallet_up_login_customizer_wallet_up_not_available', true, 60);
             }
         }
         

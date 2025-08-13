@@ -78,7 +78,7 @@ class WalletUpSecuritySanitizer {
         }
         
         $sanitized_errors = new WP_Error();
-        $generic_message = __('Invalid login credentials. Please try again.', 'wallet-up-login');
+        $generic_message = __('Invalid login credentials. Please try again.', 'wallet-up-login-customizer');
         
         // Get all error codes
         $error_codes = $errors->get_error_codes();
@@ -124,7 +124,7 @@ class WalletUpSecuritySanitizer {
         if (is_wp_error($user)) {
             $error_codes = $user->get_error_codes();
             $sanitized_user = new WP_Error();
-            $generic_message = __('Invalid login credentials. Please try again.', 'wallet-up-login');
+            $generic_message = __('Invalid login credentials. Please try again.', 'wallet-up-login-customizer');
             
             foreach ($error_codes as $code) {
                 switch ($code) {
@@ -348,23 +348,23 @@ class WalletUpSecuritySanitizer {
      */
     public static function handle_ajax_login() {
         // Verify nonce
-        if (!wp_verify_nonce($_POST['security'] ?? '', 'wallet_up_login_security')) {
+        if (!wp_verify_nonce($_POST['security'] ?? '', 'wallet_up_login_customizer_security')) {
             wp_send_json_error([
-                'message' => __('Security verification failed.', 'wallet-up-login')
+                'message' => __('Security verification failed.', 'wallet-up-login-customizer')
             ]);
         }
         
         // Rate limiting check
         if (self::is_rate_limited()) {
             wp_send_json_error([
-                'message' => __('Too many attempts. Please try again later.', 'wallet-up-login')
+                'message' => __('Too many attempts. Please try again later.', 'wallet-up-login-customizer')
             ]);
         }
         
         // Honeypot check
         if (!empty($_POST['wallet_up_honeypot'])) {
             wp_send_json_error([
-                'message' => __('Invalid request.', 'wallet-up-login')
+                'message' => __('Invalid request.', 'wallet-up-login-customizer')
             ]);
         }
         
@@ -374,7 +374,7 @@ class WalletUpSecuritySanitizer {
         
         if (empty($username) || empty($password)) {
             wp_send_json_error([
-                'message' => __('Please enter both username and password.', 'wallet-up-login')
+                'message' => __('Please enter both username and password.', 'wallet-up-login-customizer')
             ]);
         }
         
@@ -387,7 +387,7 @@ class WalletUpSecuritySanitizer {
             
             // Return sanitized error
             wp_send_json_error([
-                'message' => __('Invalid login credentials. Please try again.', 'wallet-up-login')
+                'message' => __('Invalid login credentials. Please try again.', 'wallet-up-login-customizer')
             ]);
         }
         
@@ -401,7 +401,7 @@ class WalletUpSecuritySanitizer {
             admin_url();
         
         wp_send_json_success([
-            'message' => sprintf(__('Welcome back, %s!', 'wallet-up-login'), esc_html($user->display_name)),
+            'message' => sprintf(__('Welcome back, %s!', 'wallet-up-login-customizer'), esc_html($user->display_name)),
             'redirect' => $redirect_to
         ]);
     }

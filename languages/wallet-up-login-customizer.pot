@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2025-08-13T02:07:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
-"X-Domain: wallet-up-login\n"
+"X-Domain: wallet-up-login-customizer\n"
 
 #. Plugin Name of the plugin
 #: wallet-up-login-customizer.php
@@ -21,7 +21,7 @@ msgstr ""
 
 #. Description of the plugin
 #: wallet-up-login-customizer.php
-msgid "Creates a beautiful interactive login experience for Wallet Up and Wordpress users"
+msgid "Create a beautiful interactive login experience for Wallet Up and Wordpress users"
 msgstr ""
 
 #. Author of the plugin
@@ -583,102 +583,102 @@ msgstr ""
 msgid "Welcome to Wallet Up!"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:134
-#: includes/class-wallet-up-login-logo.php:135
+#: includes/class-wallet-up-login-customizer-logo.php:134
+#: includes/class-wallet-up-login-customizer-logo.php:135
 msgid "Logo Settings"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:152
+#: includes/class-wallet-up-login-customizer-logo.php:152
 msgid "Login Logo Configuration"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:160
+#: includes/class-wallet-up-login-customizer-logo.php:160
 msgid "Enable Custom Logo"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:169
+#: includes/class-wallet-up-login-customizer-logo.php:169
 msgid "Logo Image"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:178
+#: includes/class-wallet-up-login-customizer-logo.php:178
 msgid "Logo Size"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:187
+#: includes/class-wallet-up-login-customizer-logo.php:187
 msgid "Logo Link"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:207
+#: includes/class-wallet-up-login-customizer-logo.php:207
 msgid "Logo settings saved successfully."
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:222
+#: includes/class-wallet-up-login-customizer-logo.php:222
 msgid "Save Logo Settings"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:227
+#: includes/class-wallet-up-login-customizer-logo.php:227
 msgid "Current Logo Preview"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:232
+#: includes/class-wallet-up-login-customizer-logo.php:232
 msgid "Login Logo Preview"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:234
+#: includes/class-wallet-up-login-customizer-logo.php:234
 msgid "No custom logo set. Using site logo or WordPress default."
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:246
+#: includes/class-wallet-up-login-customizer-logo.php:246
 msgid "Configure the logo that appears on the WordPress login page. The logo will be automatically sized to fit within 50px height while preserving aspect ratio."
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:257
+#: includes/class-wallet-up-login-customizer-logo.php:257
 msgid "Display custom logo on login page"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:271
-#: includes/class-wallet-up-login-logo.php:282
+#: includes/class-wallet-up-login-customizer-logo.php:271
+#: includes/class-wallet-up-login-customizer-logo.php:282
 msgid "Select Logo"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:274
+#: includes/class-wallet-up-login-customizer-logo.php:274
 msgid "Upload or select a logo image. Recommended size: 200x50px or smaller."
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:288
+#: includes/class-wallet-up-login-customizer-logo.php:288
 msgid "Use as Logo"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:309
+#: includes/class-wallet-up-login-customizer-logo.php:309
 msgid "Maximum Height:"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:312
+#: includes/class-wallet-up-login-customizer-logo.php:312
 msgid "default: 50px"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:318
+#: includes/class-wallet-up-login-customizer-logo.php:318
 msgid "Preserve aspect ratio when resizing"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:331
+#: includes/class-wallet-up-login-customizer-logo.php:331
 msgid "Link URL:"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:337
+#: includes/class-wallet-up-login-customizer-logo.php:337
 msgid "Link Title:"
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:342
+#: includes/class-wallet-up-login-customizer-logo.php:342
 msgid "Where the logo links to and the tooltip text when hovering."
 msgstr ""
 
 #. translators: %s: Logo settings page URL
-#: includes/class-wallet-up-login-logo.php:405
+#: includes/class-wallet-up-login-customizer-logo.php:405
 msgid "Wallet Up Login: No custom logo configured. %s to add your brand logo to the login page."
 msgstr ""
 
-#: includes/class-wallet-up-login-logo.php:406
+#: includes/class-wallet-up-login-customizer-logo.php:406
 msgid "Configure logo"
 msgstr ""
 
@@ -1283,7 +1283,7 @@ msgid "About"
 msgstr ""
 
 #: wallet-up-login-customizer.php:2568
-msgid "Creates a beautiful interactive login experience for Wallet Up and WordPress users."
+msgid "Create a beautiful interactive login experience for Wallet Up and WordPress users."
 msgstr ""
 
 #: wallet-up-login-customizer.php:2569

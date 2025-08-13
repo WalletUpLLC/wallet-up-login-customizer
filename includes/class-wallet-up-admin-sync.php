@@ -40,11 +40,11 @@ class WalletUpAdminSync {
         add_action('wp_ajax_wallet_up_sync_settings', [__CLASS__, 'handle_ajax_sync']);
         
         // Hook into settings updates
-        add_action('update_option_wallet_up_login_options', [__CLASS__, 'handle_options_update'], 10, 3);
+        add_action('update_option_wallet_up_login_customizer_options', [__CLASS__, 'handle_options_update'], 10, 3);
         add_action('update_option_wallet_up_security_options', [__CLASS__, 'handle_security_options_update'], 10, 3);
         
         // Clear caches when settings change
-        add_action('update_option_wallet_up_login_options', [__CLASS__, 'clear_related_caches']);
+        add_action('update_option_wallet_up_login_customizer_options', [__CLASS__, 'clear_related_caches']);
         add_action('update_option_wallet_up_security_options', [__CLASS__, 'clear_related_caches']);
         
         // Add version check for updates
@@ -194,7 +194,7 @@ class WalletUpAdminSync {
         $old_value = $data['old_value'];
         
         // Clear related transients
-        delete_transient('wallet_up_login_config');
+        delete_transient('wallet_up_login_customizer_config');
         delete_transient('wallet_up_custom_css');
         delete_transient('wallet_up_custom_js');
         
@@ -226,7 +226,7 @@ class WalletUpAdminSync {
         }
         
         // Trigger action for other components
-        do_action('wallet_up_login_options_synced', $new_value, $old_value);
+        do_action('wallet_up_login_customizer_options_synced', $new_value, $old_value);
     }
     
     /**
@@ -294,7 +294,7 @@ class WalletUpAdminSync {
         
         // Clear specific transients
         $transients = [
-            'wallet_up_login_config',
+            'wallet_up_login_customizer_config',
             'wallet_up_security_config',
             'wallet_up_custom_css',
             'wallet_up_custom_js',
@@ -336,13 +336,13 @@ class WalletUpAdminSync {
      */
     public static function check_version_sync() {
         $current_version = get_option('wallet_up_version', '0.0.0');
-        $plugin_version = defined('WALLET_UP_LOGIN_VERSION') ? WALLET_UP_LOGIN_VERSION : '2.3.0';
+        $plugin_version = defined('WALLET_UP_LOGIN_CUSTOMIZER_VERSION') ? WALLET_UP_LOGIN_CUSTOMIZER_VERSION : '2.3.0';
         
         if (version_compare($current_version, $plugin_version, '<')) {
             // Version mismatch - need sync
             echo '<div class="notice notice-info is-dismissible">';
             echo '<p>' . sprintf(
-                __('Wallet Up Login has been updated to version %s. Settings synchronization in progress...', 'wallet-up-login'),
+                __('Wallet Up Login has been updated to version %s. Settings synchronization in progress...', 'wallet-up-login-customizer'),
                 esc_html($plugin_version)
             ) . '</p>';
             echo '</div>';
@@ -408,12 +408,12 @@ class WalletUpAdminSync {
     public static function handle_ajax_sync() {
         // Verify nonce
         if (!wp_verify_nonce($_POST['nonce'] ?? '', 'wallet_up_admin_sync')) {
-            wp_die(__('Security check failed.', 'wallet-up-login'));
+            wp_die(__('Security check failed.', 'wallet-up-login-customizer'));
         }
         
         // Check permissions
         if (!current_user_can('manage_options')) {
-            wp_die(__('Insufficient permissions.', 'wallet-up-login'));
+            wp_die(__('Insufficient permissions.', 'wallet-up-login-customizer'));
         }
         
         $sync_type = sanitize_text_field($_POST['sync_type'] ?? 'all');
@@ -440,12 +440,12 @@ class WalletUpAdminSync {
             }
             
             wp_send_json_success([
-                'message' => __('Synchronization completed successfully.', 'wallet-up-login')
+                'message' => __('Synchronization completed successfully.', 'wallet-up-login-customizer')
             ]);
             
         } catch (Exception $e) {
             wp_send_json_error([
-                'message' => sprintf(__('Sync failed: %s', 'wallet-up-login'), $e->getMessage())
+                'message' => sprintf(__('Sync failed: %s', 'wallet-up-login-customizer'), $e->getMessage())
             ]);
         }
     }
@@ -509,12 +509,12 @@ class WalletUpAdminSync {
             echo '<strong>Wallet Up Sync:</strong> ';
             
             if ($status['pending_count'] > 0) {
-                echo sprintf(_n('%d pending', '%d pending', $status['pending_count'], 'wallet-up-login'), $status['pending_count']);
+                echo sprintf(_n('%d pending', '%d pending', $status['pending_count'], 'wallet-up-login-customizer'), $status['pending_count']);
             }
             
             if ($status['failed_count'] > 0) {
                 if ($status['pending_count'] > 0) echo ', ';
-                echo sprintf(_n('%d failed', '%d failed', $status['failed_count'], 'wallet-up-login'), $status['failed_count']);
+                echo sprintf(_n('%d failed', '%d failed', $status['failed_count'], 'wallet-up-login-customizer'), $status['failed_count']);
             }
             
             echo '</div>';

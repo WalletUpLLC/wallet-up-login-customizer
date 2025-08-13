@@ -121,7 +121,7 @@
 	  
 	  // Show welcome back message if returning from a previous session
 	  if (urlParams.has('welcome_back') && urlParams.get('welcome_back') === 'true') {
-		showAlert('info', 'Welcome back! Please sign in to continue.');
+		showAlert('info', walletUpLogin.strings.welcomeBack || 'Welcome back! Please sign in to continue.');
 	  }
 	}
 	
@@ -451,7 +451,7 @@
 		}
 		
 		$('#loginform, #lostpasswordform, #registerform').prepend(
-		  '<div class="wallet-up-login-logo"></div>' +
+		  '<div class="wallet-up-login-customizer-logo"></div>' +
 		  '<h2 class="wallet-up-form-title">' + formTitle + '</h2>'
 		);
 	  }
@@ -494,12 +494,12 @@
 	  }
 	  
 	  // Add hidden AJAX nonce field to form if it doesn't exist
-	  if ($('#wallet-up-login-nonce').length === 0) {
+	  if ($('#wallet-up-login-customizer-nonce').length === 0) {
 		var nonce = '';
 		if (typeof walletUpLogin !== 'undefined' && walletUpLogin.nonce) {
 		  nonce = walletUpLogin.nonce;
 		}
-		$('#loginform').append('<input type="hidden" name="security" id="wallet-up-login-nonce" value="' + nonce + '">');
+		$('#loginform').append('<input type="hidden" name="security" id="wallet-up-login-customizer-nonce" value="' + nonce + '">');
 	  }
 	  
 	  // Add additional hidden fields for redirect handling
@@ -904,7 +904,7 @@
 	  // Handle form submission
 	  $('#loginform').on('submit', function(e) {
 		// Check if nonce exists for AJAX login
-		if ($('#wallet-up-login-nonce').length || (typeof walletUpLogin !== 'undefined' && walletUpLogin.nonce)) {
+		if ($('#wallet-up-login-customizer-nonce').length || (typeof walletUpLogin !== 'undefined' && walletUpLogin.nonce)) {
 		  // Prevent default form submission for AJAX
 		  e.preventDefault();
 		  
@@ -956,7 +956,7 @@
 		  var username = $('#user_login').val();
 		  var password = $('#user_pass').val();
 		  var remember = $('#rememberme').is(':checked');
-		  var security = $('#wallet-up-login-nonce').val() || (walletUpLogin ? walletUpLogin.nonce : '');
+		  var security = $('#wallet-up-login-customizer-nonce').val() || (walletUpLogin ? walletUpLogin.nonce : '');
 		  var redirectTo = $('#wallet-up-redirect-to').val() || '';
 		  
 		  // Update progress
@@ -1018,7 +1018,7 @@
 				  animateButtonSuccess($('#wp-submit'));
 				  
 				  // Get personalized welcome message
-				  var successMessage = response.data.message || 'Welcome back! You have successfully signed in.';
+				  var successMessage = response.data.message || walletUpLogin.strings.welcomeBackSuccess || 'Welcome back! You have successfully signed in.';
 				  
 				  // Show success message
 				  showActionScreen('success', successMessage, 100);

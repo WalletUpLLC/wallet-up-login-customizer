@@ -1,8 +1,8 @@
 === Wallet Up Premium Login Customizer ===
 Contributors: walletup
-Tags: login, security, authentication, customization, enterprise, ajax-login, brute-force, wp-login, dashboard
+Tags: QR login, security, authentication, customization, enterprise wp login
 Requires at least: 5.6
-Tested up to: 6.5
+Tested up to: 6.8
 Requires PHP: 7.4
 Stable tag: 2.3.5
 License: GPLv2 or later
@@ -277,7 +277,7 @@ This plugin:
 == Support ==
 
 * **Documentation**: https://walletup.app/docs/login-plugin
-* **Support Forum**: WordPress.org Support | https://wordpress.org/support/plugin/wallet-up-login/
+* **Support Forum**: WordPress.org Support | https://wordpress.org/support/plugin/wallet-up-login-customizer/
 * **GitHub**: https://github.com/walletup/login-plugin
 * **Email**: support@walletup.app
 

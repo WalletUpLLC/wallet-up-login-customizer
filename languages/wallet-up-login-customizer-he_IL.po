@@ -109,10 +109,10 @@ msgstr "המשך"
 msgid "Continue to Dashboard"
 msgstr "המשך ללוח הבקרה"
 
-msgid "Creates a beautiful interactive login experience for Wallet Up and WordPress users."
+msgid "Create a beautiful interactive login experience for Wallet Up and WordPress users."
 msgstr "יוצר חוויית התחברות אינטראקטיבית ויפה למשתמשי Wallet Up ו-WordPress."
 
-msgid "Creates a beautiful interactive login experience for Wallet Up and Wordpress users"
+msgid "Create a beautiful interactive login experience for Wallet Up and Wordpress users"
 msgstr "יוצר חוויית התחברות אינטראקטיבית ויפה למשתמשי Wallet Up ו-WordPress"
 
 msgid "Current Logo Preview"
@@ -880,4 +880,12 @@ msgid "Admin interface scripts"
 msgstr "סקריפטים של ממשק ניהול"
 msgid "Core functionality"
 msgstr "פונקציונליות ליבה"
+#: wallet-up-login-customizer.php:2205
+msgid "Recommended: Keeps admin access for troubleshooting and configuration."
+msgstr "מומלץ: שומר על גישת מנהל לפתרון בעיות והגדרות."
+#: wallet-up-login-customizer.php:2206
+msgid "Consider enabling \"Exempt Administrator Roles\" for easier management."
+msgstr "שקול להפעיל \"פטור תפקידי מנהל\" לניהול קל יותר."
+
+
 

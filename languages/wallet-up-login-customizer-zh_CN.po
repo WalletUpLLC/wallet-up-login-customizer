@@ -109,10 +109,10 @@ msgstr "继续"
 msgid "Continue to Dashboard"
 msgstr "继续到仪表板"
 
-msgid "Creates a beautiful interactive login experience for Wallet Up and WordPress users."
+msgid "Create a beautiful interactive login experience for Wallet Up and WordPress users."
 msgstr "为 Wallet Up 和 WordPress 用户创建美观的交互式登录体验。"
 
-msgid "Creates a beautiful interactive login experience for Wallet Up and Wordpress users"
+msgid "Create a beautiful interactive login experience for Wallet Up and Wordpress users"
 msgstr "为 Wallet Up 和 WordPress 用户创建美观的交互式登录体验"
 
 msgid "Current Logo Preview"
@@ -880,4 +880,12 @@ msgid "Admin interface scripts"
 msgstr "管理界面脚本"
 msgid "Core functionality"
 msgstr "核心功能"
+#: wallet-up-login-customizer.php:2205
+msgid "Recommended: Keeps admin access for troubleshooting and configuration."
+msgstr "推荐：保留管理员访问权限以进行故障排除和配置。"
+#: wallet-up-login-customizer.php:2206
+msgid "Consider enabling \"Exempt Administrator Roles\" for easier management."
+msgstr "考虑启用\"豁免管理员角色\"以便于管理。"
+
+
 

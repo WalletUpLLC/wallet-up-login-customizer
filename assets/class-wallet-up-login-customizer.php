@@ -59,7 +59,7 @@ class WalletUpLoginCustomizer {
      * Load settings from options
      */
     private function load_settings() {
-        $options = get_option('wallet_up_login_options', array());
+        $options = get_option('wallet_up_login_customizer_options', array());
         
         // Set default settings (store English strings, translate later)
         $defaults = array(
@@ -191,11 +191,11 @@ class WalletUpLoginCustomizer {
         wp_deregister_style('login');
         
         // Enqueue our custom styles with aggressive cache busting
-        $css_url = $this->get_asset_url('css/wallet-up-login.css');
-        $css_version = $this->get_file_version('css/wallet-up-login.css') . '-' . time();
+        $css_url = $this->get_asset_url('css/wallet-up-login-customizer.css');
+        $css_version = $this->get_file_version('css/wallet-up-login-customizer.css') . '-' . time();
         
         wp_enqueue_style(
-            'wallet-up-login-style', 
+            'wallet-up-login-customizer-style', 
             $css_url, 
             array(), 
             $css_version
@@ -224,11 +224,11 @@ class WalletUpLoginCustomizer {
         wp_enqueue_script('jquery');
         
         // Add our custom script with aggressive cache busting
-        $js_url = $this->get_asset_url('js/wallet-up-login.js');
-        $js_version = $this->get_file_version('js/wallet-up-login.js') . '-' . time();
+        $js_url = $this->get_asset_url('js/wallet-up-login-customizer.js');
+        $js_version = $this->get_file_version('js/wallet-up-login-customizer.js') . '-' . time();
         
         wp_enqueue_script(
-            'wallet-up-login-script', 
+            'wallet-up-login-customizer-script', 
             $js_url, 
             array('jquery', 'gsap'), 
             $js_version, 
@@ -236,7 +236,7 @@ class WalletUpLoginCustomizer {
         );
         
         // Pass data to our script
-        wp_localize_script('wallet-up-login-script', 'walletUpLogin', $this->get_script_data());
+        wp_localize_script('wallet-up-login-customizer-script', 'walletUpLogin', $this->get_script_data());
         
         // Pass configuration settings to the script
         // Translate loading messages for frontend display
@@ -244,18 +244,18 @@ class WalletUpLoginCustomizer {
         foreach ($this->settings['loading_messages'] as $message) {
             // Translate known default messages
             if ($message === 'Verifying your credentials...') {
-                $translated_messages[] = __('Verifying your credentials...', 'wallet-up-login');
+                $translated_messages[] = __('Verifying your credentials...', 'wallet-up-login-customizer');
             } elseif ($message === 'Preparing your dashboard...') {
-                $translated_messages[] = __('Preparing your dashboard...', 'wallet-up-login');
+                $translated_messages[] = __('Preparing your dashboard...', 'wallet-up-login-customizer');
             } elseif ($message === 'Almost there...') {
-                $translated_messages[] = __('Almost there...', 'wallet-up-login');
+                $translated_messages[] = __('Almost there...', 'wallet-up-login-customizer');
             } else {
                 // Custom message, use as-is
                 $translated_messages[] = $message;
             }
         }
         
-        wp_localize_script('wallet-up-login-script', 'walletUpLoginConfig', array(
+        wp_localize_script('wallet-up-login-customizer-script', 'walletUpLoginConfig', array(
             'enableAjaxLogin' => (bool) $this->settings['enable_ajax_login'],
             'animationSpeed' => 0.4,
             'validateOnType' => true,
@@ -280,58 +280,57 @@ class WalletUpLoginCustomizer {
                 'adminUrl' => admin_url(),
                 'logoUrl' => $this->get_logo_url(),
                 'siteName' => get_bloginfo('name'),
-                'nonce' => wp_create_nonce('wallet-up-login-nonce'),
+                'nonce' => wp_create_nonce('wallet-up-login-customizer-nonce'),
                 'version' => $this->version,
                 // Translated strings for JavaScript
                 'strings' => array(
-                    'verifyingCredentials' => __('Verifying your credentials...', 'wallet-up-login'),
-                    'preparingDashboard' => __('Preparing your dashboard...', 'wallet-up-login'),
-                    'almostThere' => __('Almost there...', 'wallet-up-login'),
-                    'loginFailed' => __('Login failed. Please check your credentials and try again.', 'wallet-up-login'),
-                    'loggedOut' => __('You have been logged out.', 'wallet-up-login'),
-                    'passwordReset' => __('Your password has been reset successfully.', 'wallet-up-login'),
-                    'welcomeBack' => __('Welcome back! Please sign in to continue.', 'wallet-up-login'),
-                    'confirmReset' => __('Are you sure you want to reset all settings to default values?', 'wallet-up-login'),
-                    'processing' => __('Processing...', 'wallet-up-login'),
-                    'loading' => __('Loading...', 'wallet-up-login'),
-                    'signInSecurely' => __('Sign In Securely', 'wallet-up-login'),
-                    'signingIn' => __('Signing In', 'wallet-up-login'),
-                    'continueToDashboard' => __('Continue to Dashboard', 'wallet-up-login'),
-                    'tryAgain' => __('Try Again', 'wallet-up-login'),
-                    'considerStrongerPassword' => __('Consider using a stronger password', 'wallet-up-login'),
-                    // Additional strings for complete JS coverage
-                    'welcomeTitle' => __('Welcome to the Next \'Up', 'wallet-up-login'),
-                    'username' => __('Username', 'wallet-up-login'),
-                    'password' => __('Password', 'wallet-up-login'),
-                    'showPassword' => __('Show password', 'wallet-up-login'),
-                    'hidePassword' => __('Hide password', 'wallet-up-login'),
-                    'invalidCredentials' => __('Invalid username or password. Please try again.', 'wallet-up-login'),
-                    'serverError' => __('Server error. Please try again later.', 'wallet-up-login'),
-                    'usernameRequired' => __('Username is required', 'wallet-up-login'),
-                    'passwordRequired' => __('Password is required', 'wallet-up-login'),
-                    'usernameTooShort' => __('Username must be at least 3 characters', 'wallet-up-login'),
-                    'correctErrors' => __('Please correct the errors before signing in.', 'wallet-up-login'),
-                    'welcomeBackSuccess' => __('Welcome back! You have successfully signed in.', 'wallet-up-login'),
-                    'success' => __('Success!', 'wallet-up-login'),
-                    'oops' => __('Oops!', 'wallet-up-login'),
+                    'verifyingCredentials' => __('Verifying your credentials...', 'wallet-up-login-customizer'),
+                    'preparingDashboard' => __('Preparing your dashboard...', 'wallet-up-login-customizer'),
+                    'almostThere' => __('Almost there...', 'wallet-up-login-customizer'),
+                    'loginFailed' => __('Login failed. Please check your credentials and try again.', 'wallet-up-login-customizer'),
+                    'loggedOut' => __('You have been logged out.', 'wallet-up-login-customizer'),
+                    'passwordReset' => __('Your password has been reset successfully.', 'wallet-up-login-customizer'),
+                    'welcomeBack' => __('Welcome back! Please sign in to continue.', 'wallet-up-login-customizer'),
+                    'welcomeBackSuccess' => __('Welcome back! You have successfully signed in.', 'wallet-up-login-customizer'),
+                    'confirmReset' => __('Are you sure you want to reset all settings to default values?', 'wallet-up-login-customizer'),
+                    'processing' => __('Processing...', 'wallet-up-login-customizer'),
+                    'loading' => __('Loading...', 'wallet-up-login-customizer'),
+                    'signInSecurely' => __('Sign In Securely', 'wallet-up-login-customizer'),
+                    'signingIn' => __('Signing In', 'wallet-up-login-customizer'),
+                    'continueToDashboard' => __('Continue to Dashboard', 'wallet-up-login-customizer'),
+                    'tryAgain' => __('Try Again', 'wallet-up-login-customizer'),
+                    'considerStrongerPassword' => __('Consider using a stronger password', 'wallet-up-login-customizer'),
+					'welcomeTitle' => __('Welcome to the Next \'Up', 'wallet-up-login-customizer'),
+                    'username' => __('Username', 'wallet-up-login-customizer'),
+                    'password' => __('Password', 'wallet-up-login-customizer'),
+                    'showPassword' => __('Show password', 'wallet-up-login-customizer'),
+                    'hidePassword' => __('Hide password', 'wallet-up-login-customizer'),
+                    'invalidCredentials' => __('Invalid username or password. Please try again.', 'wallet-up-login-customizer'),
+                    'serverError' => __('Server error. Please try again later.', 'wallet-up-login-customizer'),
+                    'usernameRequired' => __('Username is required', 'wallet-up-login-customizer'),
+                    'passwordRequired' => __('Password is required', 'wallet-up-login-customizer'),
+                    'usernameTooShort' => __('Username must be at least 3 characters', 'wallet-up-login-customizer'),
+                    'correctErrors' => __('Please correct the errors before signing in.', 'wallet-up-login-customizer'),
+                    'welcomeBackSuccess' => __('Welcome back! You have successfully signed in.', 'wallet-up-login-customizer'),
+                    'success' => __('Success!', 'wallet-up-login-customizer'),
+                    'oops' => __('Oops!', 'wallet-up-login-customizer'),
                     // Admin panel strings
-                    'colorSchemeApplied' => __('Color scheme applied!', 'wallet-up-login'),
-                    'settingsExported' => __('Settings exported successfully!', 'wallet-up-login'),
-                    'settingsImported' => __('Settings imported successfully', 'wallet-up-login'),
-                    'settingsReset' => __('Settings reset to defaults!', 'wallet-up-login'),
-                    'selectValidFile' => __('Please select a valid JSON file', 'wallet-up-login'),
-                    'errorImporting' => __('Error importing settings', 'wallet-up-login'),
-                    'errorReadingFile' => __('Error reading file', 'wallet-up-login'),
-                    'errorImageUrl' => __('Error: Could not get image URL', 'wallet-up-login'),
-                    'errorInvalidUrl' => __('Error: Invalid image URL format', 'wallet-up-login'),
-                    // Additional missing strings
-                    'resetPassword' => __('Reset Password', 'wallet-up-login'),
-                    'backToLogin' => __('Back to Login', 'wallet-up-login'),
-                    'forgotPassword' => __('Forgot Password?', 'wallet-up-login'),
-                    'registerNewAccount' => __('Register New Account', 'wallet-up-login'),
-                    'backToSite' => sprintf(__('Back to %s', 'wallet-up-login'), get_bloginfo('name')),
-                    'welcomeTo' => __('Welcome to', 'wallet-up-login'),
-                    'rememberMe' => __('Remember Me', 'wallet-up-login')
+                    'colorSchemeApplied' => __('Color scheme applied!', 'wallet-up-login-customizer'),
+                    'settingsExported' => __('Settings exported successfully!', 'wallet-up-login-customizer'),
+                    'settingsImported' => __('Settings imported successfully', 'wallet-up-login-customizer'),
+                    'settingsReset' => __('Settings reset to defaults!', 'wallet-up-login-customizer'),
+                    'selectValidFile' => __('Please select a valid JSON file', 'wallet-up-login-customizer'),
+                    'errorImporting' => __('Error importing settings', 'wallet-up-login-customizer'),
+                    'errorReadingFile' => __('Error reading file', 'wallet-up-login-customizer'),
+                    'errorImageUrl' => __('Error: Could not get image URL', 'wallet-up-login-customizer'),
+                    'errorInvalidUrl' => __('Error: Invalid image URL format', 'wallet-up-login-customizer'),
+					'resetPassword' => __('Reset Password', 'wallet-up-login-customizer'),
+                    'backToLogin' => __('Back to Login', 'wallet-up-login-customizer'),
+                    'forgotPassword' => __('Forgot Password?', 'wallet-up-login-customizer'),
+                    'registerNewAccount' => __('Register New Account', 'wallet-up-login-customizer'),
+                    'backToSite' => sprintf(__('Back to %s', 'wallet-up-login-customizer'), get_bloginfo('name')),
+                    'welcomeTo' => __('Welcome to', 'wallet-up-login-customizer'),
+                    'rememberMe' => __('Remember Me', 'wallet-up-login-customizer')
                 )
             );
         }
@@ -361,7 +360,7 @@ class WalletUpLoginCustomizer {
             }
             
             /* Dynamic logo from Custom Logo URL - ' . esc_url($custom_logo_url) . ' */
-            .wallet-up-login-logo {
+            .wallet-up-login-customizer-logo {
                 background-image: url("' . esc_url($custom_logo_url) . '") !important;
                 background-repeat: no-repeat !important;
                 background-position: center !important;
@@ -375,7 +374,7 @@ class WalletUpLoginCustomizer {
         $css .= '
             #wp-submit,
             .login .button-primary,
-            .wallet-up-login-button {
+            .wallet-up-login-customizer-button {
                 background: var(--wallet-up-primary-gradient);
                 box-shadow: 0 8px 16px rgba(' . $this->hex2rgb($primary_color) . ', 0.2);
             }
@@ -594,7 +593,7 @@ class WalletUpLoginCustomizer {
      * @return string Logo title
      */
     public function login_logo_title() {
-        return __('Wallet Up - Advanced URL & QR Tools', 'wallet-up-login');
+        return __('Wallet Up - Advanced URL & QR Tools', 'wallet-up-login-customizer');
     }
     
     /**
@@ -627,14 +626,14 @@ class WalletUpLoginCustomizer {
         $current_year = date('Y');
         $logo_url = $this->get_logo_url();
         
-        echo '<div id="wallet-up-login-footer">
+        echo '<div id="wallet-up-login-customizer-footer">
                 <div class="footer-content">
                   <div class="footer-logo">
                     <img src="' . esc_url($logo_url) . '" alt="Wallet Up" width="18" height="18" />
                   </div>
                   <div class="footer-text">
-                    <p>' . esc_html__('Wallet Up — Advanced URL & QR Tools', 'wallet-up-login') . '</p>
-                    <p class="copyright">© ' . esc_html($current_year) . ' ' . esc_html__('All Rights Reserved', 'wallet-up-login') . '</p>
+                    <p>' . esc_html__('Wallet Up — Advanced URL & QR Tools', 'wallet-up-login-customizer') . '</p>
+                    <p class="copyright">© ' . esc_html($current_year) . ' ' . esc_html__('All Rights Reserved', 'wallet-up-login-customizer') . '</p>
                   </div>
                 </div>
               </div>';
@@ -657,8 +656,8 @@ class WalletUpLoginCustomizer {
      * @return string Modified button HTML
      */
     public function enhance_login_button($button, $args) {
-        $button = str_replace('button ', 'button wallet-up-login-button ', $button);
-        $button = str_replace(__('Log In'), esc_html__('Sign In Securely', 'wallet-up-login'), $button);
+        $button = str_replace('button ', 'button wallet-up-login-customizer-button ', $button);
+        $button = str_replace(__('Log In'), esc_html__('Sign In Securely', 'wallet-up-login-customizer'), $button);
         return $button;
     }
     
@@ -671,7 +670,7 @@ class WalletUpLoginCustomizer {
             @header('Content-Type: application/json; charset=utf-8');
             
             // Check the nonce - use false to prevent die() on failure
-            $nonce_check = check_ajax_referer('wallet-up-login-nonce', 'security', false);
+            $nonce_check = check_ajax_referer('wallet-up-login-customizer-nonce', 'security', false);
             
             if (!$nonce_check) {
                 wp_send_json_error(array(
@@ -694,7 +693,7 @@ class WalletUpLoginCustomizer {
                 
                 // Additional security nonce validation if enterprise security is active
                 if (isset($_POST['wallet_up_security_nonce'])) {
-                    if (!wp_verify_nonce($_POST['wallet_up_security_nonce'], 'wallet_up_login_security')) {
+                    if (!wp_verify_nonce($_POST['wallet_up_security_nonce'], 'wallet_up_login_customizer_security')) {
                         wp_send_json_error(array(
                             'message' => 'Security validation failed.',
                             'code' => 'security_validation_failed'
@@ -717,7 +716,7 @@ class WalletUpLoginCustomizer {
             // Validate required fields
             if (empty($credentials['user_login']) || empty($credentials['user_password'])) {
                 wp_send_json_error(array(
-                    'message' => __('Username and password are required', 'wallet-up-login'),
+                    'message' => __('Username and password are required', 'wallet-up-login-customizer'),
                     'code' => 'empty_fields'
                 ));
                 return;
@@ -760,7 +759,7 @@ class WalletUpLoginCustomizer {
                 // Login successful, return success with redirect URL and personalized message
                 wp_send_json_success(array(
                     'redirect' => $final_redirect,
-                    'message' => sprintf('Welcome back, %s!', esc_html($display_name))
+                    'message' => sprintf(__('Welcome back, %s!', 'wallet-up-login-customizer'), esc_html($display_name))
                 ));
             }
         } catch (Throwable $t) {
@@ -917,7 +916,7 @@ class WalletUpLoginCustomizer {
         // SECURITY: Removed session handling - WordPress uses cookies
         
         // Check for nonce
-        check_ajax_referer('wallet-up-login-nonce', 'security');
+        check_ajax_referer('wallet-up-login-customizer-nonce', 'security');
         
         // Get username from request
         $username = isset($_POST['username']) ? sanitize_user($_POST['username']) : '';
@@ -925,7 +924,7 @@ class WalletUpLoginCustomizer {
         if (empty($username)) {
             wp_send_json_error(array(
                 'exists' => false,
-                'message' => __('Username is required', 'wallet-up-login')
+                'message' => __('Username is required', 'wallet-up-login-customizer')
             ));
             return;
         }
@@ -940,13 +939,13 @@ class WalletUpLoginCustomizer {
             
             wp_send_json_success(array(
                 'exists' => true,
-                'message' => __('Username exists', 'wallet-up-login'),
+                'message' => __('Username exists', 'wallet-up-login-customizer'),
                 'display_name' => $display_name
             ));
         } else {
             wp_send_json_error(array(
                 'exists' => false,
-                'message' => __('Username does not exist', 'wallet-up-login')
+                'message' => __('Username does not exist', 'wallet-up-login-customizer')
             ));
         }
     }
@@ -966,7 +965,7 @@ class WalletUpLoginCustomizer {
             if (isset($_GET['action'])) {
                 $classes[] = 'wallet-up-' . sanitize_html_class($_GET['action']);
             } else {
-                $classes[] = 'wallet-up-login-form';
+                $classes[] = 'wallet-up-login-customizer-form';
             }
         }
         
@@ -987,15 +986,15 @@ class WalletUpLoginCustomizer {
         
         // Make error messages more user-friendly and specific
         if (strpos($error, 'incorrect password') !== false) {
-            return __('Oops! The password you entered is incorrect. Please try again or use the password reset link below.', 'wallet-up-login');
+            return __('Oops! The password you entered is incorrect. Please try again or use the password reset link below.', 'wallet-up-login-customizer');
         } elseif (strpos($error, 'Invalid username') !== false) {
-            return __('The username you entered doesn\'t appear to exist. Double-check it or create a new account.', 'wallet-up-login');
+            return __('The username you entered doesn\'t appear to exist. Double-check it or create a new account.', 'wallet-up-login-customizer');
         } elseif (strpos($error, 'empty password') !== false) {
-            return __('Please enter your password to log in.', 'wallet-up-login');
+            return __('Please enter your password to log in.', 'wallet-up-login-customizer');
         } elseif (strpos($error, 'empty username') !== false) {
-            return __('Please enter your username to log in.', 'wallet-up-login');
+            return __('Please enter your username to log in.', 'wallet-up-login-customizer');
         } elseif (strpos($error, 'account has been marked as a spammer') !== false) {
-            return __('This account has been suspended. Please contact support for assistance.', 'wallet-up-login');
+            return __('This account has been suspended. Please contact support for assistance.', 'wallet-up-login-customizer');
         }
         
         return $error;
@@ -1010,13 +1009,13 @@ class WalletUpLoginCustomizer {
     public function welcome_back_message($message) {
         // LOGOUT SUCCESS: Show positive logout message instead of error
         if (isset($_GET['loggedout']) && $_GET['loggedout'] === 'true') {
-            $message .= '<div class="message wallet-up-logout-success" style="border-left: 4px solid #46b450; background: #f7fcf7; color: #2d4f3e; margin: 16px 0; padding: 12px; border-radius: 3px; font-weight: 500;">' . __('✓ You have been successfully logged out. Please sign in again to continue.', 'wallet-up-login') . '</div>';
+            $message .= '<div class="message wallet-up-logout-success" style="border-left: 4px solid #46b450; background: #f7fcf7; color: #2d4f3e; margin: 16px 0; padding: 12px; border-radius: 3px; font-weight: 500;">' . __('✓ You have been successfully logged out. Please sign in again to continue.', 'wallet-up-login-customizer') . '</div>';
             return $message;
         }
         
         // Check for a specific parameter or cookie
         if (isset($_GET['welcome_back']) && $_GET['welcome_back'] === 'true') {
-            $message .= '<div class="message">' . __('Welcome back! Please sign in to continue.', 'wallet-up-login') . '</div>';
+            $message .= '<div class="message">' . __('Welcome back! Please sign in to continue.', 'wallet-up-login-customizer') . '</div>';
         }
         
         return $message;
@@ -1033,7 +1032,7 @@ class WalletUpLoginCustomizer {
         $accessibility_attrs = ' aria-labelledby="login-form-title" aria-describedby="login-instructions"';
         
         // Add hidden instructions for screen readers
-        $screen_reader_text = '<div id="login-instructions" class="screen-reader-text">' . esc_html__('Please enter your username and password to access the dashboard.', 'wallet-up-login') . '</div>';
+        $screen_reader_text = '<div id="login-instructions" class="screen-reader-text">' . esc_html__('Please enter your username and password to access the dashboard.', 'wallet-up-login-customizer') . '</div>';
         
         return $content . $screen_reader_text;
     }
@@ -1048,12 +1047,12 @@ class WalletUpLoginCustomizer {
                     <div class="action-screen-icon">
                         <div class="action-loading-spinner"></div>
                     </div>
-                    <h2 id="action-screen-title" class="action-screen-title">' . esc_html__('Signing In', 'wallet-up-login') . '</h2>
-                    <p id="action-screen-message" class="action-screen-message">' . esc_html__('Verifying your credentials...', 'wallet-up-login') . '</p>
+                    <h2 id="action-screen-title" class="action-screen-title">' . esc_html__('Signing In', 'wallet-up-login-customizer') . '</h2>
+                    <p id="action-screen-message" class="action-screen-message">' . esc_html__('Verifying your credentials...', 'wallet-up-login-customizer') . '</p>
                     <div class="action-progress">
                         <div class="action-progress-bar"></div>
                     </div>
-                    <button type="button" class="action-screen-button">' . esc_html__('Continue', 'wallet-up-login') . '</button>
+                    <button type="button" class="action-screen-button">' . esc_html__('Continue', 'wallet-up-login-customizer') . '</button>
                 </div>
             </div>';
     }
