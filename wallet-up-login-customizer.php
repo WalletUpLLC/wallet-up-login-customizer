@@ -1,7 +1,8 @@
 <?php
 /**
  * Plugin Name: Wallet Up Premium Login Customizer
- * Description: Create a beautiful interactive login experience for Wallet Up and Wordpress users
+ * Plugin URI: https://walletup.app
+ * Description: Create a beautiful interactive login experience for Wallet Up and WordPress users
  * Version: 2.3.5
  * Author: Wallet Up
  * Author URI: https://walletup.app
@@ -9,6 +10,9 @@
  * Domain Path: /languages
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Requires at least: 5.6
+ * Requires PHP: 7.4
+ * Tested up to: 6.8
  */
 
 if (!defined('ABSPATH')) {
