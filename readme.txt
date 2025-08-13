@@ -279,7 +279,7 @@ This plugin:
 * **Documentation**: https://walletup.app/docs/login-plugin
 * **Support Forum**: WordPress.org Support | https://wordpress.org/support/plugin/wallet-up-login-customizer/
 * **GitHub**: https://github.com/WalletUpLLC/wallet-up-login-customizer
-* **Email**: support@walletup.app
+* **Email**: help@walletup.app
 
 == Credits ==
 
