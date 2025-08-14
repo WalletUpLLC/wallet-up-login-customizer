@@ -1,6 +1,6 @@
-=== Wallet Up Premium Login Customizer ===
+=== Wallet Up Login Customizer ===
 Contributors: walletup
-Tags: QR login, security, authentication, customization, enterprise wp login
+Tags: login, security, authentication, customization, enterprise, ajax-login, brute-force, wp-login, dashboard
 Requires at least: 5.6
 Tested up to: 6.8
 Requires PHP: 7.4
@@ -12,7 +12,7 @@ Enterprise-grade login security and customization for WordPress with beautiful U
 
 == Description ==
 
-**Wallet Up Premium Login Customizer** transforms your WordPress login page into a modern, secure, and beautiful authentication portal. Built with enterprise security standards and featuring a stunning interactive design, this plugin provides comprehensive protection while delivering an exceptional user experience.
+**Wallet Up Login Customizer** transforms your WordPress login page into a modern, secure, and beautiful authentication portal. Built with enterprise security standards and featuring a stunning interactive design, this plugin provides comprehensive protection while delivering an exceptional user experience.
 
 = 🎨 Beautiful Login Interface =
 * Modern gradient design with customizable colors
@@ -62,7 +62,7 @@ Enterprise-grade login security and customization for WordPress with beautiful U
 
 = Automatic Installation =
 1. Navigate to **Plugins > Add New** in your WordPress admin
-2. Search for "Wallet Up Premium Login"
+2. Search for "Wallet Up Login"
 3. Click **Install Now** and then **Activate**
 4. Configure settings at **Settings > Wallet Up Login**
 
