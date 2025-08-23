@@ -1,0 +1,1287 @@
+/**
+ * Wallet Up Login Customizer CSS
+ * Styles for the frontend login page
+ * Version: 2.3.5
+ * Features: Responsive, Dark Theme Support, Modern Enterprise UI
+ */
+
+:root {
+	--wallet-up-primary: #674FBF;
+	--wallet-up-primary-dark: #5030A5;
+	--wallet-up-primary-light: #F5F5FF;
+	--wallet-up-primary-gradient: linear-gradient(135deg, #674FBF 0%, #7B68D4 100%);
+	--wallet-up-secondary: #10B981;
+	--wallet-up-accent: #7B68D4;
+	--wallet-up-success: #10B981;
+	--wallet-up-error: #EF4444;
+	--wallet-up-warning: #F59E0B;
+	--wallet-up-info: #3B82F6;
+	--wallet-up-text-dark: #1F2937;
+	--wallet-up-text-medium: #4B5563;
+	--wallet-up-text-light: #6B7280;
+	--wallet-up-border: #E5E7EB;
+	--wallet-up-border-light: #F3F4F6;
+	--wallet-up-bg-light: #F9FAFB;
+	--wallet-up-bg-lighter: #FCFCFF;
+	--wallet-up-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+	--wallet-up-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	--wallet-up-shadow-md: 0 6px 16px rgba(0, 0, 0, 0.1);
+	--wallet-up-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+	--wallet-up-shadow-primary: 0 8px 16px rgba(103, 79, 191, 0.2);
+	--wallet-up-transition-fast: 0.15s ease;
+	--wallet-up-transition: 0.25s ease;
+	--wallet-up-transition-slow: 0.4s ease;
+	--wallet-up-radius-sm: 6px;
+	--wallet-up-radius: 12px;
+	--wallet-up-radius-lg: 16px;
+	--wallet-up-spacing: 24px;
+  }
+  html {
+	height: 100%;
+	font-size: 16px;
+  }
+  body.login {
+	background: linear-gradient(135deg, #FCFCFF 0%, #F5F5FF 100%);
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	margin: 0;
+	padding-top: 100px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: var(--wallet-up-text-dark);
+	overflow-x: hidden;
+	position: relative;
+	animation: fadeIn 0.6s ease-in-out;
+  }
+  #wallet-up-interactive-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+	overflow: hidden;
+  }
+  .animated-shape {
+	position: absolute;
+	border-radius: 50%;
+	opacity: 0.4;
+	filter: blur(60px);
+  }
+  .shape-1 {
+	background: rgba(103, 79, 191, 0.3);
+	width: 500px;
+	height: 500px;
+	top: -10%;
+	left: -10%;
+	animation: floatAnimation 15s ease-in-out infinite alternate;
+  }
+  .shape-2 {
+	background: rgba(123, 104, 212, 0.2);
+	width: 600px;
+	height: 600px;
+	bottom: -20%;
+	right: -10%;
+	animation: floatAnimation 20s ease-in-out infinite alternate-reverse;
+  }
+  .shape-3 {
+	background: rgba(16, 185, 129, 0.15);
+	width: 300px;
+	height: 300px;
+	bottom: 10%;
+	left: 10%;
+	animation: floatAnimation 12s ease-in-out infinite alternate;
+  }
+  @keyframes floatAnimation {
+	0% {
+	  transform: translate(0, 0) scale(1);
+	}
+	100% {
+	  transform: translate(40px, 40px) scale(1.05);
+	}
+  }
+  #wallet-up-floating-shapes {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	overflow: hidden;
+	pointer-events: none;
+  }
+  .floating-shape {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-radius: var(--wallet-up-radius);
+	background: rgba(255, 255, 255, 0.6);
+	backdrop-filter: blur(4px);
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	box-shadow: var(--wallet-up-shadow-sm);
+	animation: floatingShapes 20s linear infinite;
+  }
+  .floating-shape:nth-child(1) {
+	top: 15%;
+	left: 10%;
+	width: 30px;
+	height: 30px;
+	animation-duration: 15s;
+	animation-delay: 0s;
+	opacity: 0.7;
+  }
+  .floating-shape:nth-child(2) {
+	top: 70%;
+	left: 15%;
+	width: 45px;
+	height: 45px;
+	animation-duration: 25s;
+	animation-delay: 2s;
+	opacity: 0.5;
+  }
+  .floating-shape:nth-child(3) {
+	top: 30%;
+	right: 10%;
+	width: 25px;
+	height: 25px;
+	animation-duration: 18s;
+	animation-delay: 1s;
+	opacity: 0.6;
+  }
+  .floating-shape:nth-child(4) {
+	top: 60%;
+	right: 15%;
+	width: 35px;
+	height: 35px;
+	animation-duration: 22s;
+	animation-delay: 3s;
+	opacity: 0.8;
+  }
+  .floating-shape:nth-child(5) {
+	top: 40%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	animation-duration: 20s;
+	animation-delay: 4s;
+	opacity: 0.4;
+  }
+  @keyframes floatingShapes {
+	0% {
+	  transform: translateY(0) rotate(0deg);
+	}
+	50% {
+	  transform: translateY(-40px) rotate(180deg);
+	}
+	100% {
+	  transform: translateY(0) rotate(360deg);
+	}
+  }
+  #login {
+	width: 420px;
+	max-width: 90%;
+	margin: 0 auto;
+	padding: 40px 0;
+	position: relative;
+	z-index: 1;
+  }
+  .login h1 {
+	display: none;
+  }
+  .wallet-up-login-customizer-logo {
+	background-image: url('../img/walletup-icon.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 50px;
+	margin-bottom: 30px;
+  }
+  .login h1::after {
+	content: "Wallet Up";
+	display: block;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 700;
+	margin: 25px 0 0; 
+	padding-top: 5px;
+	position: relative;
+	z-index: 5;
+	background: var(--wallet-up-primary-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+  } 
+  .login h1 span, .login h1 div {
+	display: none;
+  }
+  @keyframes fadeInUp {
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  #loginform, 
+  #lostpasswordform, 
+  #registerform {
+	background: white;
+	border: none;
+	border-radius: var(--wallet-up-radius-lg);
+	box-shadow: 
+	  var(--wallet-up-shadow-md),
+	  0 0 0 1px rgba(255, 255, 255, 0.8),
+	  0 0 0 1px rgba(103, 79, 191, 0.05);
+	padding: 40px 30px;
+	position: relative;
+	margin-top: 20px;
+	backdrop-filter: blur(10px);
+	animation: formAppear 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+	transform: translateY(20px);
+	opacity: 0;
+	overflow: visible;
+	min-width: 320px;
+	max-width: 100%;
+	box-sizing: border-box;
+  }
+  @keyframes formAppear {
+	to {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  .wallet-up-form-title {
+	margin: 0 0 25px;
+	padding: 0;
+	font-size: 22px;
+	font-weight: 600;
+	color: var(--wallet-up-text-dark);
+	text-align: center;
+	position: relative;
+  }
+  .wallet-up-form-title::after {
+	content: "";
+	display: block;
+	width: 40px;
+	height: 3px;
+	background: var(--wallet-up-primary-gradient);
+	margin: 12px auto 0;
+	border-radius: 10px;
+  }
+  #loginform, 
+  #lostpasswordform, 
+  #registerform {
+	background: white;
+	border: none;
+	border-radius: 16px;
+	box-shadow: 
+	  0 6px 16px rgba(0, 0, 0, 0.1),
+	  0 0 0 1px rgba(255, 255, 255, 0.8),
+	  0 0 0 1px rgba(103, 79, 191, 0.05);
+	padding: 40px 30px;
+	position: relative;
+	margin-top: 20px;
+	backdrop-filter: blur(10px);
+	animation: formAppear 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+	transform: translateY(20px);
+	opacity: 0;
+	overflow: visible;
+	min-width: 320px;
+	max-width: 100%;
+	box-sizing: border-box;
+  }
+  @keyframes formAppear {
+	to {
+	  transform: translateY(0);
+	  opacity: 1;
+	}
+  }
+  .user-login-wrap,
+  .user-pass-wrap {
+	position: relative;
+	margin-bottom: 48px;
+	box-sizing: border-box;
+	width: 100%;
+  }
+  .login input[type=text],
+  .login input[type=password] {
+	width: 100%;
+	height: 45px;
+    padding: 12px 16px 12px 44px;
+    box-sizing: border-box;
+	font-size: 15px;
+	border: 1px solid #E5E7EB;
+	border-radius: 12px;
+	background-color: #F9FAFB;
+	color: #1F2937;
+	transition: 
+	  border-color 0.15s ease,
+	  box-shadow 0.15s ease,
+	  background-color 0.15s ease;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	margin: 0;
+	position: relative;
+	z-index: 1;
+  }
+  .login input[type=text]:focus,
+  .login input[type=password]:focus {
+	border-color: #674FBF;
+	box-shadow: 0 0 0 3px rgba(103, 79, 191, 0.15);
+	outline: none;
+	background-color: white;
+  }
+  .user-login-wrap::before {
+	content: "";
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 18px;
+	height: 18px;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path><circle cx='12' cy='7' r='4'></circle></svg>");
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 2;
+	pointer-events: none;
+  }
+  .user-pass-wrap::before {
+	content: "";
+	position: absolute;
+	left: 16px;
+	top: 62%;
+	transform: translateY(-50%);
+	width: 18px;
+	height: 18px;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='11' width='18' height='11' rx='2' ry='2'></rect><path d='M7 11V7a5 5 0 0 1 10 0v4'></path></svg>");
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 2;
+	pointer-events: none;
+  }
+  .wallet-up-animated-label {
+	position: absolute;
+	left: 44px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 15px;
+	color: #6B7280;
+	pointer-events: none;
+	transition: all 0.15s ease;
+	z-index: 2;
+	background: #F9FAFB; 
+	padding: 0 4px;
+  }
+  .user-login-wrap.is-focused .wallet-up-animated-label,
+  .user-login-wrap.has-value .wallet-up-animated-label {
+	top: 8px;
+	font-size: 12px;
+	color: #674FBF;
+	transform: translateY(0);
+  }
+  .user-pass-wrap .wallet-up-animated-label {
+	position: absolute;
+	left: 44px;
+	top: 62%;
+	transform: translateY(-50%);
+	font-size: 15px;
+	color: #6B7280;
+	pointer-events: none;
+	transition: all 0.15s ease;
+	z-index: 2;
+	background: transparent;
+	padding: 0 4px;
+  }
+  .user-pass-wrap.is-focused .wallet-up-animated-label,
+  .user-pass-wrap.has-value .wallet-up-animated-label {
+	top: 26px !important;
+	font-size: 12px;
+	color: #674FBF;
+	transform: translateY(0);
+  }
+  .login input[type=text],
+  .login input[type=password] {
+	width: 100%;
+	height: 45px;
+    padding: 12px 16px 12px 44px;
+    box-sizing: border-box;
+	font-size: 15px;
+	border: 1px solid #E5E7EB;
+	border-radius: 12px;
+	background-color: #F9FAFB;
+	color: #1F2937;
+	transition: 
+	  border-color 0.15s ease,
+	  box-shadow 0.15s ease,
+	  background-color 0.15s ease;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	margin: 0;
+	position: relative;
+	z-index: 1;
+  }
+  .login input[type=text]:focus,
+  .login input[type=password]:focus {
+	border-color: #674FBF;
+	box-shadow: 0 0 0 3px rgba(103, 79, 191, 0.15);
+	outline: none;
+	background-color: white;
+  }
+  .has-animated-label input {
+	padding-top: 24px !important; 
+	padding-bottom: 8px !important;
+  }
+  @media screen and (max-width: 480px) {
+	#login {
+	  width: 100%;
+	  padding: 20px;
+	}
+	#loginform,
+	#lostpasswordform,
+	#registerform {
+	  padding: 30px 20px;
+	}
+	.login h1 a {
+	  height: 80px;
+	}
+	.login h1::after {
+	  font-size: 22px;
+	}
+	.footer-content {
+	  padding: 6px 15px;
+	}
+	.wallet-up-animated-label {
+	  left: 40px;
+	  font-size: 14px;
+	}
+	.login input[type=text],
+	.login input[type=password] {
+	  height: 56px;
+	  padding: 18px 44px 18px 40px;
+	}
+	.has-animated-label input {
+	  padding-top: 22px !important;
+	  padding-bottom: 6px !important;
+	}
+	.user-login-wrap::before,
+	.user-pass-wrap::before {
+	  left: 12px;
+	  width: 16px;
+	  height: 16px;
+	}
+	.button.wp-hide-pw {
+	  right: 12px;
+	  width: 28px;
+	  height: 28px;
+	  min-width: 28px;
+	}
+	.input-field-state {
+	  right: 12px;
+	  width: 18px;
+	  height: 18px;
+	}
+	.user-pass-wrap .input-field-state {
+	  right: 42px;
+	}
+  }
+  .button.wp-hide-pw {
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	transform: translateY(-50%);
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	color: var(--wallet-up-text-light);
+	padding: 0;
+	width: 30px;
+	height: 30px;
+	min-width: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 3;
+	cursor: pointer;
+  }
+  .button.wp-hide-pw:hover,
+  .button.wp-hide-pw:focus {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+	color: var(--wallet-up-primary);
+  }
+  .button.wp-hide-pw .dashicons {
+	width: 24px;
+	height: 24px;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  .wp-pwd {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+  }
+  .wallet-up-input-message {
+	font-size: 12px;
+	margin: 6px 0 0 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity 0.3s ease, max-height 0.3s ease;
+  }
+    /** CUSTOM */
+  .privacy-policy-page-link, .privacy-policy-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+	transition: all var(--wallet-up-transition-fast);
+}
+  .wallet-up-input-message.error {
+	color: var(--wallet-up-error);
+  }
+  .wallet-up-input-message.success {
+	color: var(--wallet-up-success);
+  }
+  .wallet-up-input-message.info {
+	color: var(--wallet-up-info);
+  }
+  .wallet-up-input-message svg {
+	margin-right: 6px;
+	flex-shrink: 0;
+  }
+  @keyframes messageAppear {
+	to {
+	  max-height: 40px;
+	}
+  }
+  .forgetmenot {
+	margin-bottom: 24px; 
+	margin-left: 0; 
+	display: flex;
+	align-items: center;
+  }
+  .forgetmenot label {
+	display: flex;
+	align-items: center;
+	color: var(--wallet-up-text-medium);
+	font-size: 14px;
+	font-weight: 500;
+	cursor: pointer;
+	line-height: 1.5;
+  }
+  .forgetmenot input[type="checkbox"] {
+	margin-right: 8px;
+	width: 18px; 
+	height: 18px;
+	border: 2px solid var(--wallet-up-border);
+	border-radius: 4px;
+	background-color: #F9FAFB; 
+	appearance: none; 
+	cursor: pointer;
+	position: relative;
+	transition: border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .forgetmenot input[type="checkbox"]:checked {
+	background-color: var(--wallet-up-primary);
+	border-color: var(--wallet-up-primary);
+  }
+  .forgetmenot input[type="checkbox"]:checked::after {
+	content: "✓";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 12px;
+	font-weight: 600;
+  }
+  .forgetmenot input[type="checkbox"]:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(103, 79, 191, 0.25);
+  }
+  #wp-submit,
+  .login .button-primary,
+  .wallet-up-login-customizer-button {
+	background: var(--wallet-up-primary-gradient);
+	border: none;
+	border-radius: var(--wallet-up-radius);
+	color: white;
+	text-shadow: none;
+	box-shadow: var(--wallet-up-shadow-primary);
+	padding: 14px 16px;
+	height: auto;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.5;
+	transition: all var(--wallet-up-transition);
+	width: 100%;
+	margin-top: 10px;
+	text-transform: none;
+	position: relative;
+	overflow: hidden;
+	display: block;
+	cursor: pointer;
+	animation: button-pulse 2s infinite;
+  }
+  #wp-submit:disabled,
+  .login .button-primary:disabled {
+	background: #D1D5DB; 
+	box-shadow: none;
+	cursor: not-allowed;
+	color: #6B7280; 
+	animation: none; 
+  }
+  .login .button-primary.is-loading {
+	pointer-events: none;
+	position: relative;
+	color: transparent;
+  }
+  .login .button-primary.is-loading::after {
+	content: "";
+	position: absolute;
+	top: calc(50% - 10px);
+	left: calc(50% - 10px);
+	width: 20px;
+	height: 20px;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-top-color: white;
+	border-radius: 50%;
+	animation: buttonLoader 0.8s linear infinite;
+  }
+  .login .button-primary.is-success {
+	background: #10B981;
+	pointer-events: none;
+	position: relative;
+	color: transparent;
+  }
+  .login .button-primary.is-success::after {
+	content: "✓";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 20px;
+  }
+  #wp-submit:disabled.is-loading,
+  .login .button-primary:disabled.is-loading {
+	background: #D1D5DB; 
+	color: transparent; 
+  }
+  #wp-submit:disabled.is-success,
+  .login .button-primary:disabled.is-success {
+	background: #10B981; 
+	color: transparent; 
+  }
+  .login .button-primary:hover {
+	transform: translateY(-2px);
+	box-shadow: 
+	  0 8px 20px rgba(103, 79, 191, 0.3),
+	  0 2px 8px rgba(103, 79, 191, 0.2);
+  }
+  .login .button-primary:active {
+	transform: translateY(0);
+	box-shadow: 0 4px 12px rgba(103, 79, 191, 0.2);
+  }
+  @keyframes button-pulse {
+	0% {
+	  box-shadow: 0 0 15px rgba(103, 79, 191, 0.3);
+	}
+	50% {
+	  box-shadow: 0 0 20px rgba(103, 79, 191, 0.5);
+	}
+	100% {
+	  box-shadow: 0 0 15px rgba(103, 79, 191, 0.3);
+	}
+  }
+  .login .button-primary.is-loading {
+	pointer-events: none;
+	position: relative;
+	color: transparent;
+  }
+  .login .button-primary.is-loading::after {
+	content: "";
+	position: absolute;
+	top: calc(50% - 10px);
+	left: calc(50% - 10px);
+	width: 20px;
+	height: 20px;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-top-color: white;
+	border-radius: 50%;
+	animation: buttonLoader 0.8s linear infinite;
+  }
+  @keyframes buttonLoader {
+	to {
+	  transform: rotate(360deg);
+	}
+  }
+  .login .button-primary.is-success {
+	background: #10B981;
+	pointer-events: none;
+	position: relative;
+	color: transparent;
+  }
+  .login .button-primary.is-success::after {
+	content: "✓";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 20px;
+  }
+  #login_error, 
+  .message, 
+  .success,
+  .wallet-up-alert {
+	background-color: white;
+	border-left: none;
+	border-radius: var(--wallet-up-radius);
+	box-shadow: var(--wallet-up-shadow), 0 0 0 1px rgba(0, 0, 0, 0.05);
+	padding: 16px;
+	margin-bottom: 24px;
+	font-size: 14px;
+	color: var(--wallet-up-text-medium);
+	animation: alertAppear 0.4s ease-out forwards;
+	display: flex;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+  }
+  .wallet-up-alert.error,
+  #login_error {
+	background-color: rgba(254, 242, 242, 0.8);
+	border: 1px solid rgba(239, 68, 68, 0.2);
+	color: #991B1B;
+  }
+  .wallet-up-alert.success,
+  .message.updated {
+	background-color: rgba(236, 253, 245, 0.8);
+	border: 1px solid rgba(16, 185, 129, 0.2);
+	color: #065F46;
+  }
+  .wallet-up-alert.info,
+  .message:not(.updated):not(.error) {
+	background-color: rgba(239, 246, 255, 0.8);
+	border: 1px solid rgba(59, 130, 246, 0.2);
+	color: #1E40AF;
+  }
+  .wallet-up-alert.warning {
+	background-color: rgba(255, 251, 235, 0.8);
+	border: 1px solid rgba(245, 158, 11, 0.2);
+	color: #92400E;
+  }
+  .wallet-up-alert-icon {
+	flex-shrink: 0;
+	margin-right: 12px;
+  }
+  .wallet-up-alert-close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	color: var(--wallet-up-text-light);
+	transition: color var(--wallet-up-transition-fast);
+  }
+  .wallet-up-alert-close:hover {
+	color: var(--wallet-up-text-dark);
+  }
+  @keyframes alertAppear {
+	from {
+	  opacity: 0;
+	  transform: translateY(-10px);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  .login #nav,
+  .login #backtoblog {
+	margin: 24px 0 0;
+	padding: 0;
+	text-align: center;
+	font-size: 14px;
+  }
+  .login #nav a,
+  .login #backtoblog a {
+	color: var(--wallet-up-text-medium);
+	transition: all var(--wallet-up-transition-fast);
+	text-decoration: none;
+	border-radius: var(--wallet-up-radius-sm);
+	padding: 6px 12px;
+	display: inline-block;
+	margin: 4px;
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(4px);
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	box-shadow: var(--wallet-up-shadow-sm);
+  }
+  .login #nav a:hover,
+  .login #backtoblog a:hover {
+	color: var(--wallet-up-primary);
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: var(--wallet-up-shadow);
+	transform: translateY(-1px);
+  }
+  .login #nav a:active,
+  .login #backtoblog a:active {
+	transform: translateY(0);
+  }
+  .login #backtoblog a svg {
+	vertical-align: middle;
+	margin-right: 6px; 
+	flex-shrink: 0;
+  }
+  .login #backtoblog a {
+	display: inline-flex; 
+	align-items: center;
+	padding: 6px 12px;
+	color: var(--wallet-up-text-medium);
+	transition: all var(--wallet-up-transition-fast);
+	text-decoration: none;
+	border-radius: var(--wallet-up-radius-sm);
+	margin: 4px;
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(4px);
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	box-shadow: var(--wallet-up-shadow-sm);
+  }
+  .login #backtoblog a:hover {
+	color: var(--wallet-up-primary);
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: var(--wallet-up-shadow);
+	transform: translateY(-1px);
+  }
+  .login #backtoblog a:active {
+	transform: translateY(0);
+  }
+  #wallet-up-login-customizer-footer {
+	margin-top: 40px;
+	text-align: center;
+	padding: 20px;
+  }
+  .footer-content {
+	display: inline-flex;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(4px);
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	box-shadow: var(--wallet-up-shadow-sm);
+	border-radius: 50px;
+	padding: 8px 20px;
+  }
+  .footer-logo {
+	color: var(--wallet-up-primary);
+	margin-right: 12px;
+  }
+  .footer-logo img {
+	display: block;
+	width: 18px;
+	height: 18px;
+  }
+  .footer-text {
+	font-size: 12px;
+	color: var(--wallet-up-text-medium);
+	text-align: left;
+  }
+  .footer-text p {
+	margin: 0;
+	line-height: 1.4;
+  }
+  .footer-text .copyright {
+	font-size: 11px;
+	color: var(--wallet-up-text-light);
+  }
+  .wallet-up-action-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(8px);
+	z-index: 9999;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .wallet-up-action-screen.active {
+	opacity: 1;
+	visibility: visible;
+  }
+  .action-screen-content {
+	text-align: center;
+	max-width: 320px;
+	padding: 40px;
+	background: white;
+	border-radius: var(--wallet-up-radius-lg);
+	box-shadow: var(--wallet-up-shadow-lg);
+	transform: translateY(20px);
+	opacity: 0;
+	transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+	position: relative;
+	z-index: 10000;
+  }
+  .wallet-up-action-screen.active .action-screen-content {
+	transform: translateY(0);
+	opacity: 1;
+  }
+  .action-screen-icon {
+	width: 80px;
+	height: 80px;
+	margin: 0 auto 20px;
+	position: relative;
+  }
+  .action-screen-title {
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--wallet-up-text-dark);
+	margin-bottom: 12px;
+  }
+  .action-screen-message {
+	font-size: 15px;
+	color: var(--wallet-up-text-medium);
+	margin-bottom: 25px;
+	line-height: 1.5;
+  }
+  .action-loading-spinner {
+	width: 60px;
+	height: 60px;
+	margin: 0 auto;
+	border: 3px solid rgba(103, 79, 191, 0.1);
+	border-top-color: var(--wallet-up-primary);
+	border-radius: 50%;
+	animation: action-spinner 1s linear infinite;
+  }
+  @keyframes action-spinner {
+	to {
+	  transform: rotate(360deg);
+	}
+  }
+  .action-progress {
+	width: 100%;
+	height: 6px;
+	background: var(--wallet-up-border-light);
+	border-radius: 10px;
+	overflow: hidden;
+	margin: 20px 0;
+  }
+  .action-progress-bar {
+	height: 100%;
+	background: var(--wallet-up-primary-gradient);
+	width: 0%;
+	transition: width 0.4s ease;
+	border-radius: 10px;
+  }
+  .action-success-icon {
+	stroke-dasharray: 80;
+	stroke-dashoffset: 80;
+	animation: draw-check 0.8s ease forwards;
+  }
+  @keyframes draw-check {
+	to {
+	  stroke-dashoffset: 0;
+	}
+  }
+  .action-error-icon {
+	width: 60px;
+	height: 60px;
+	margin: 0 auto;
+	position: relative;
+  }
+  .action-error-icon::before,
+  .action-error-icon::after {
+	content: '';
+	position: absolute;
+	width: 4px;
+	height: 30px;
+	background-color: var(--wallet-up-error);
+	border-radius: 2px;
+	top: 15px;
+	left: 28px;
+  }
+  .action-error-icon::before {
+	transform: rotate(45deg);
+	animation: draw-line 0.4s ease forwards;
+  }
+  .action-error-icon::after {
+	transform: rotate(-45deg);
+	animation: draw-line 0.4s ease 0.2s forwards;
+  }
+  @keyframes draw-line {
+	from {
+	  height: 0;
+	  top: 30px;
+	}
+	to {
+	  height: 30px;
+	  top: 15px;
+	}
+  }
+  .action-screen-button {
+	display: inline-block;
+	padding: 12px 24px;
+	background: var(--wallet-up-primary-gradient);
+	color: white;
+	border: none;
+	border-radius: var(--wallet-up-radius);
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: var(--wallet-up-shadow-primary);
+	transition: all var(--wallet-up-transition);
+	margin-top: 15px;
+  }
+  .action-screen-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(103, 79, 191, 0.3);
+  }
+  .action-screen-button:active {
+	transform: translateY(0);
+	box-shadow: 0 4px 12px rgba(103, 79, 191, 0.2);
+  }
+  .input-field-state {
+	position: absolute;
+	top: 49%;
+	right: 0px !important;
+	transform: translateY(-50%) !important;
+	width: 20px;
+	height: 20px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	z-index: 3;
+	color: var(--wallet-up-text-light);
+  }
+  .user-pass-wrap .input-field-state {
+	position: absolute;
+	top: 63% !important;
+	right: 0px !important;
+	transform: translateY(-50%) !important;
+	width: 20px;
+	height: 20px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	z-index: 3;
+	color: var(--wallet-up-text-light);
+  }
+  .has-success .input-field-state.success {
+	display: flex;
+	color: var(--wallet-up-success);
+  }
+  .has-error .input-field-state.error {
+	display: flex;
+	color: var(--wallet-up-error);
+  }
+  .is-validating .input-field-state.loading {
+	display: flex;
+	animation: rotate 1s linear infinite;
+  }
+  @keyframes rotate {
+	to {
+	  transform: translateY(-50%) rotate(360deg);
+	}
+  }
+  .user-login-wrap::after,
+  .user-pass-wrap::after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	width: 0;
+	height: 2px;
+	background: var(--wallet-up-primary-gradient);
+	transition: width 0.3s ease, left 0.3s ease;
+	z-index: 5;
+  }
+  .user-login-wrap.is-focused::after,
+  .user-pass-wrap.is-focused::after {
+	width: 100%;
+	left: 0;
+	z-index: 5;
+  }
+  .wallet-up-animated-label {
+	position: absolute;
+	left: 44px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 15px;
+	color: #6B7280;
+	pointer-events: none;
+	transition: all 0.15s ease;
+	z-index: 2;
+	background: transparent;
+	padding: 0 4px;
+  }
+  .user-login-wrap.is-focused .wallet-up-animated-label,
+  .user-login-wrap.has-value .wallet-up-animated-label,
+  .user-pass-wrap.is-focused .wallet-up-animated-label,
+  .user-pass-wrap.has-value .wallet-up-animated-label {
+	top: 8px;
+	font-size: 12px;
+	color: #674FBF;
+	transform: translateY(0);
+  }
+  .has-animated-label input {
+	padding-top: 24px !important;
+	padding-bottom: 4px !important;
+  }
+  .has-animated-label input {
+	padding-top: 24px !important; 
+	padding-bottom: 8px !important;
+  }
+  input:focus,
+  button:focus,
+  a:focus,
+  .button:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(103, 79, 191, 0.25);
+  }
+  .screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+  }
+  .login-error-feedback,
+  .enhanced-error-feedback {
+	animation: shake 0.6s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+  }
+  @keyframes shake {
+	10%, 90% {
+	  transform: translate3d(-1px, 0, 0);
+	}
+	20%, 80% {
+	  transform: translate3d(2px, 0, 0);
+	}
+	30%, 50%, 70% {
+	  transform: translate3d(-4px, 0, 0);
+	}
+	40%, 60% {
+	  transform: translate3d(4px, 0, 0);
+	}
+  }
+  input:focus,
+  button:focus,
+  a:focus,
+  .button:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(103, 79, 191, 0.25);
+  }
+  .screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+  }
+  @media screen and (max-width: 480px) {
+	#login {
+	  width: 100%;
+	  padding: 20px;
+	}
+	#loginform,
+	#lostpasswordform,
+	#registerform {
+	  padding: 30px 20px;
+	}
+	.login h1 a {
+	  height: 80px;
+	}
+	.login h1::after {
+	  font-size: 22px;
+	}
+	.footer-content {
+	  padding: 6px 15px;
+	}
+	.wallet-up-animated-label {
+	  font-size: 14px;
+	}
+  }
+  @media screen and (max-width: 480px) {
+	#loginform,
+	#lostpasswordform,
+	#registerform {
+	  padding: 30px 20px;
+	}
+	.login input[type=text],
+	.login input[type=password] {
+	  height: 44px;
+	  padding: 20px 14px 8px 40px;
+	}
+	.wallet-up-animated-label {
+	  left: 40px;
+	  font-size: 14px;
+	}
+	.user-login-wrap::before,
+	.user-pass-wrap::before {
+	  left: 12px;
+	  width: 16px;
+	  height: 16px;
+	}
+	.input-field-state {
+	  right: 12px;
+	  width: 18px;
+	  height: 18px;
+	}
+  }
+  @media screen and (max-width: 480px) {
+	.login input[type=text],
+	.login input[type=password] {
+	  height: 56px;
+	  padding: 18px 44px 18px 40px; 
+	}
+	.has-animated-label input {
+	  padding-top: 22px !important;
+	  padding-bottom: 6px !important;
+	}
+	.wallet-up-animated-label {
+	  left: 40px;
+	  font-size: 14px;
+	}
+	.user-login-wrap::before,
+	.user-pass-wrap::before {
+	  left: 12px;
+	  width: 16px;
+	  height: 16px;
+	}
+	.button.wp-hide-pw {
+	  right: 12px;
+	  width: 28px;
+	  height: 28px;
+	  min-width: 28px;
+	}
+  }

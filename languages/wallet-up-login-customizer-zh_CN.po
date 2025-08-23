@@ -1,0 +1,1852 @@
+# Translation file for Wallet Up Login Customizer
+# Copyright (C) 2025 Wallet Up
+# This file is distributed under the same license as the Wallet Up Login Customizer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Wallet Up Login Customizer 2.3.5\n"
+"Report-Msgid-Bugs-To: help@walletup.app\n"
+"POT-Creation-Date: 2025-08-21 07:18-0400\n"
+"PO-Revision-Date: 2025-01-09 00:00:00+00:00\n"
+"Last-Translator: Wallet Up Team\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Wallet Up Translation Tool 1.0\n"
+
+#: wallet-up-login-customizer.php:249 assets/wallet-up-login-customizer.php:218
+msgid ""
+"Wallet Up dashboard redirect has been disabled because the Wallet Up plugin "
+"is not active."
+msgstr "Wallet Up 仪表板重定向已被禁用，因为 Wallet Up 插件未激活。"
+
+#: wallet-up-login-customizer.php:383 wallet-up-login-customizer.php:400
+#: assets/wallet-up-login-customizer.php:352
+#: assets/wallet-up-login-customizer.php:369
+#: includes/class-wallet-up-hard-redirect.php:363
+#: includes/class-wallet-up-hard-redirect.php:421
+msgid "Wallet Up Dashboard"
+msgstr "Wallet Up 仪表板"
+
+#: wallet-up-login-customizer.php:406 assets/wallet-up-login-customizer.php:375
+#: includes/class-wallet-up-hard-redirect.php:396
+msgid "Welcome to Wallet Up!"
+msgstr "欢迎来到 Wallet Up！"
+
+#: wallet-up-login-customizer.php:407 assets/wallet-up-login-customizer.php:376
+msgid ""
+"Your WordPress dashboard has been enhanced with Wallet Up. Click below to "
+"access your Wallet Up dashboard."
+msgstr ""
+"您的 WordPress 仪表板已通过 Wallet Up 增强。点击下方访问您的 Wallet Up 仪表"
+"板。"
+
+#: wallet-up-login-customizer.php:410 assets/wallet-up-login-customizer.php:379
+msgid "Open Wallet Up Dashboard"
+msgstr "打开 Wallet Up 仪表板"
+
+#: wallet-up-login-customizer.php:420 assets/wallet-up-login-customizer.php:389
+msgid "View Original WordPress Dashboard"
+msgstr "查看原始 WordPress 仪表板"
+
+#: wallet-up-login-customizer.php:470 assets/wallet-up-login-customizer.php:439
+#: includes/class-wallet-up-hard-redirect.php:266
+#: includes/class-wallet-up-hard-redirect.php:268
+#: includes/class-wallet-up-hard-redirect.php:283
+#: includes/class-wallet-up-hard-redirect.php:284
+msgid "Wallet Up"
+msgstr "Wallet Up"
+
+#: wallet-up-login-customizer.php:738 wallet-up-login-customizer.php:1680
+#: wallet-up-login-customizer.php:1954 wallet-up-login-customizer.php:2628
+#: assets/wallet-up-login-customizer.php:694
+#: assets/wallet-up-login-customizer.php:1594
+#: assets/wallet-up-login-customizer.php:1774
+#: assets/wallet-up-login-customizer.php:2373
+#: includes/class-wallet-up-login-customizer.php:187
+#: includes/class-wallet-up-login-customizer.php:222
+#: includes/class-wallet-up-login-customizer.php:855
+msgid "Verifying your credentials..."
+msgstr "正在验证您的凭据..."
+
+#: wallet-up-login-customizer.php:739 wallet-up-login-customizer.php:1681
+#: wallet-up-login-customizer.php:2630
+#: assets/wallet-up-login-customizer.php:695
+#: assets/wallet-up-login-customizer.php:1595
+#: assets/wallet-up-login-customizer.php:2375
+#: includes/class-wallet-up-login-customizer.php:189
+#: includes/class-wallet-up-login-customizer.php:223
+msgid "Preparing your dashboard..."
+msgstr "正在准备您的仪表板..."
+
+#: wallet-up-login-customizer.php:740 wallet-up-login-customizer.php:1682
+#: wallet-up-login-customizer.php:2632
+#: assets/wallet-up-login-customizer.php:696
+#: assets/wallet-up-login-customizer.php:1596
+#: assets/wallet-up-login-customizer.php:2377
+#: includes/class-wallet-up-login-customizer.php:191
+#: includes/class-wallet-up-login-customizer.php:224
+msgid "Almost there..."
+msgstr "就快完成了..."
+
+#: wallet-up-login-customizer.php:741 assets/wallet-up-login-customizer.php:697
+#: includes/class-wallet-up-login-customizer.php:253
+msgid "Color scheme applied!"
+msgstr "配色方案已应用！"
+
+#: wallet-up-login-customizer.php:742 assets/wallet-up-login-customizer.php:698
+#: includes/class-wallet-up-login-customizer.php:254
+msgid "Settings exported successfully!"
+msgstr "设置已成功导出！"
+
+#: wallet-up-login-customizer.php:743 assets/wallet-up-login-customizer.php:699
+#: includes/class-wallet-up-login-customizer.php:255
+msgid "Settings imported successfully"
+msgstr "设置已成功导入"
+
+#: wallet-up-login-customizer.php:744 assets/wallet-up-login-customizer.php:700
+#: includes/class-wallet-up-login-customizer.php:256
+msgid "Settings reset to defaults!"
+msgstr "设置已重置为默认值！"
+
+#: wallet-up-login-customizer.php:745 assets/wallet-up-login-customizer.php:701
+#: includes/class-wallet-up-login-customizer.php:257
+msgid "Please select a valid JSON file"
+msgstr "请选择一个有效的 JSON 文件"
+
+#: wallet-up-login-customizer.php:746 assets/wallet-up-login-customizer.php:702
+#: includes/class-wallet-up-login-customizer.php:258
+msgid "Error importing settings"
+msgstr "导入设置时出错"
+
+#: wallet-up-login-customizer.php:747 assets/wallet-up-login-customizer.php:703
+#: includes/class-wallet-up-login-customizer.php:259
+msgid "Error reading file"
+msgstr "读取文件时出错"
+
+#: wallet-up-login-customizer.php:748 assets/wallet-up-login-customizer.php:704
+#: includes/class-wallet-up-login-customizer.php:230
+msgid "Are you sure you want to reset all settings to default values?"
+msgstr "您确定要将所有设置重置为默认值吗？"
+
+#: wallet-up-login-customizer.php:778 assets/wallet-up-login-customizer.php:734
+msgid "Wallet Up Login Customizer:"
+msgstr "Wallet Up 登录定制器："
+
+#: wallet-up-login-customizer.php:779 assets/wallet-up-login-customizer.php:735
+msgid ""
+"Dashboard redirect is enabled but Wallet Up plugin is not active. Please "
+"install Wallet Up or disable the redirect feature."
+msgstr ""
+"仪表板重定向已启用，但 Wallet Up 插件未激活。请安装 Wallet Up 或禁用重定向功"
+"能。"
+
+#: wallet-up-login-customizer.php:858 assets/wallet-up-login-customizer.php:810
+msgid "Welcome to Wallet Up"
+msgstr "欢迎来到 Wallet Up"
+
+#: wallet-up-login-customizer.php:1033
+#, php-format
+msgid "Failed to copy %s"
+msgstr "复制 %s 失败"
+
+#: wallet-up-login-customizer.php:1356
+#: assets/wallet-up-login-customizer.php:1300
+msgid "Settings"
+msgstr "设置"
+
+#: wallet-up-login-customizer.php:1366
+#: assets/wallet-up-login-customizer.php:1310
+msgid "Wallet Up Network Settings"
+msgstr "Wallet Up 网络设置"
+
+#: wallet-up-login-customizer.php:1367 wallet-up-login-customizer.php:1381
+#: wallet-up-login-customizer.php:1382
+#: assets/wallet-up-login-customizer.php:1311
+#: assets/wallet-up-login-customizer.php:1325
+#: assets/wallet-up-login-customizer.php:1326
+msgid "Wallet Up Login"
+msgstr "Wallet Up 登录"
+
+#: wallet-up-login-customizer.php:1434
+#: assets/wallet-up-login-customizer.php:1348
+msgid "Settings successfully saved!"
+msgstr "设置已成功保存！"
+
+#: wallet-up-login-customizer.php:1472 wallet-up-login-customizer.php:3300
+#: wallet-up-login-customizer.php:3315
+#: assets/wallet-up-login-customizer.php:1386
+#: assets/wallet-up-login-customizer.php:2814
+#: assets/wallet-up-login-customizer.php:2829 wallet-up-force-redirect.php:363
+msgid "Wallet Up Login:"
+msgstr "Wallet Up 登录："
+
+#: wallet-up-login-customizer.php:1473
+#: assets/wallet-up-login-customizer.php:1387
+msgid "The following template files were automatically updated from assets:"
+msgstr "以下模板文件已从资源自动更新："
+
+#: wallet-up-login-customizer.php:1485
+#: assets/wallet-up-login-customizer.php:1399
+msgid "Login Page Settings"
+msgstr "登录页面设置"
+
+#: wallet-up-login-customizer.php:1493
+#: assets/wallet-up-login-customizer.php:1407
+msgid "Enable AJAX Login"
+msgstr "启用 AJAX 登录"
+
+#: wallet-up-login-customizer.php:1499
+#: assets/wallet-up-login-customizer.php:1413
+msgid "Enable AJAX login functionality for a smoother experience"
+msgstr "启用 AJAX 登录功能以获得更流畅的体验"
+
+#: wallet-up-login-customizer.php:1505 wallet-up-login-customizer.php:2513
+#: assets/wallet-up-login-customizer.php:1419
+#: assets/wallet-up-login-customizer.php:2258
+msgid "Custom Logo URL"
+msgstr "自定义徽标URL"
+
+#: wallet-up-login-customizer.php:1511
+#: assets/wallet-up-login-customizer.php:1425
+msgid "Enter a URL to use a custom logo (leave empty for default)"
+msgstr "输入 URL 以使用自定义徽标（留空使用默认值）"
+
+#: wallet-up-login-customizer.php:1517 wallet-up-login-customizer.php:2047
+#: wallet-up-login-customizer.php:2551
+#: assets/wallet-up-login-customizer.php:1431
+#: assets/wallet-up-login-customizer.php:1867
+#: assets/wallet-up-login-customizer.php:2296
+msgid "Primary Color"
+msgstr "主色"
+
+#: wallet-up-login-customizer.php:1523
+#: assets/wallet-up-login-customizer.php:1437
+msgid "Select the primary color for the login page"
+msgstr "选择登录页面的主色"
+
+#: wallet-up-login-customizer.php:1529
+#: assets/wallet-up-login-customizer.php:1443
+msgid "Gradient Start Color"
+msgstr "渐变开始颜色"
+
+#: wallet-up-login-customizer.php:1535
+#: assets/wallet-up-login-customizer.php:1449
+msgid "Start color for gradient effects"
+msgstr "渐变效果的开始颜色"
+
+#: wallet-up-login-customizer.php:1541
+#: assets/wallet-up-login-customizer.php:1455
+msgid "Gradient End Color"
+msgstr "渐变结束颜色"
+
+#: wallet-up-login-customizer.php:1547
+#: assets/wallet-up-login-customizer.php:1461
+msgid "End color for gradient effects"
+msgstr "渐变效果的结束颜色"
+
+#: wallet-up-login-customizer.php:1553
+#: assets/wallet-up-login-customizer.php:1467
+msgid "Enable Sound Effects"
+msgstr "启用音效"
+
+#: wallet-up-login-customizer.php:1559
+#: assets/wallet-up-login-customizer.php:1473
+msgid "Enable subtle audio feedback on login success/failure"
+msgstr "在登录成功/失败时启用细微的音频反馈"
+
+#: wallet-up-login-customizer.php:1565 wallet-up-login-customizer.php:2612
+#: assets/wallet-up-login-customizer.php:1479
+#: assets/wallet-up-login-customizer.php:2357
+msgid "Loading Messages"
+msgstr "加载消息"
+
+#: wallet-up-login-customizer.php:1571
+#: assets/wallet-up-login-customizer.php:1485
+msgid "Customize messages displayed during login"
+msgstr "自定义登录期间显示的消息"
+
+#: wallet-up-login-customizer.php:1577
+#: assets/wallet-up-login-customizer.php:1491
+msgid "Redirect Delay (ms)"
+msgstr "重定向延迟（毫秒）"
+
+#: wallet-up-login-customizer.php:1583
+#: assets/wallet-up-login-customizer.php:1497
+msgid "Delay before redirecting after successful login (in milliseconds)"
+msgstr "成功登录后重定向前的延迟（毫秒）"
+
+#: wallet-up-login-customizer.php:1592 wallet-up-login-customizer.php:2443
+#: assets/wallet-up-login-customizer.php:1506
+#: assets/wallet-up-login-customizer.php:2188
+msgid "Role-Based Redirects"
+msgstr "基于角色的重定向"
+
+#: wallet-up-login-customizer.php:1598
+#: assets/wallet-up-login-customizer.php:1512
+msgid "Enable intelligent role-based redirects after login"
+msgstr "登录后启用基于角色的智能重定向"
+
+#: wallet-up-login-customizer.php:1604 wallet-up-login-customizer.php:2490
+#: assets/wallet-up-login-customizer.php:1518
+#: assets/wallet-up-login-customizer.php:2235
+msgid "Land to Wallet Up"
+msgstr "着陆到 Wallet Up"
+
+#: wallet-up-login-customizer.php:1610
+#: assets/wallet-up-login-customizer.php:1524
+msgid "Redirect users to the Wallet Up admin page after login"
+msgstr "登录后将用户重定向到 Wallet Up 管理页面"
+
+#: wallet-up-login-customizer.php:1616 wallet-up-login-customizer.php:2459
+#: assets/wallet-up-login-customizer.php:1530
+#: assets/wallet-up-login-customizer.php:2204
+msgid "Force Dashboard Replacement"
+msgstr "强制仪表板替换"
+
+#: wallet-up-login-customizer.php:1622
+#: assets/wallet-up-login-customizer.php:1536
+msgid "Replace WordPress dashboard with Wallet Up admin page for all users"
+msgstr "为所有用户用 Wallet Up 管理页面替换 WordPress 仪表板"
+
+#: wallet-up-login-customizer.php:1628
+#: assets/wallet-up-login-customizer.php:1542
+msgid "Exempt Administrators"
+msgstr "豁免管理员"
+
+#: wallet-up-login-customizer.php:1634
+#: assets/wallet-up-login-customizer.php:1548
+msgid "Allow administrators to access the original WordPress dashboard"
+msgstr "允许管理员访问原始 WordPress 仪表板"
+
+#: wallet-up-login-customizer.php:1848
+#: assets/wallet-up-login-customizer.php:1668
+msgid "Customize the Wallet Up login experience with these settings."
+msgstr "使用这些设置自定义 Wallet Up 登录体验。"
+
+#: wallet-up-login-customizer.php:1877
+#: assets/wallet-up-login-customizer.php:1697
+msgid ""
+"Wallet Up Pro plugin is not active. Please install and activate it to "
+"redirect users to Wallet Up after login."
+msgstr ""
+"Wallet Up Pro 插件未激活。请安装并激活它以在登录后将用户重定向到 Wallet Up。"
+
+#: wallet-up-login-customizer.php:1878
+#: assets/wallet-up-login-customizer.php:1698
+msgid ""
+"Wallet Up Pro plugin is not active. Please install and activate it to "
+"replace the WordPress dashboard."
+msgstr "Wallet Up Pro 插件未激活。请安装并激活它以替换 WordPress 仪表板。"
+
+#: wallet-up-login-customizer.php:1969 wallet-up-login-customizer.php:2644
+#: assets/wallet-up-login-customizer.php:1789
+#: assets/wallet-up-login-customizer.php:2389
+msgid "Add Message"
+msgstr "添加消息"
+
+#: wallet-up-login-customizer.php:2019
+#: assets/wallet-up-login-customizer.php:1839
+msgid "Wallet Up Login Network Settings"
+msgstr "Wallet Up 登录网络设置"
+
+#: wallet-up-login-customizer.php:2026
+#: assets/wallet-up-login-customizer.php:1846
+msgid "Force on All Sites"
+msgstr "在所有站点上强制"
+
+#: wallet-up-login-customizer.php:2029
+#: assets/wallet-up-login-customizer.php:1849
+msgid "Force Wallet Up Login customization on all network sites."
+msgstr "在所有网络站点上强制 Wallet Up 登录自定义。"
+
+#: wallet-up-login-customizer.php:2033
+#: assets/wallet-up-login-customizer.php:1853
+msgid "Allow Site Override"
+msgstr "允许站点覆盖"
+
+#: wallet-up-login-customizer.php:2036
+#: assets/wallet-up-login-customizer.php:1856
+msgid "Allow individual sites to override network settings."
+msgstr "允许各个站点覆盖网络设置。"
+
+#: wallet-up-login-customizer.php:2040
+#: assets/wallet-up-login-customizer.php:1860
+msgid "Network Logo URL"
+msgstr "网络徽标 URL"
+
+#: wallet-up-login-customizer.php:2043
+#: assets/wallet-up-login-customizer.php:1863
+msgid "Logo URL to use across all network sites."
+msgstr "在所有网络站点上使用的徽标 URL。"
+
+#: wallet-up-login-customizer.php:2054
+#: assets/wallet-up-login-customizer.php:1874
+msgid "Save Network Settings"
+msgstr "保存网络设置"
+
+#: wallet-up-login-customizer.php:2059
+#: assets/wallet-up-login-customizer.php:1879
+msgid "Import/Export Network Settings"
+msgstr "导入/导出网络设置"
+
+#: wallet-up-login-customizer.php:2062 wallet-up-login-customizer.php:2067
+#: assets/wallet-up-login-customizer.php:1882
+#: assets/wallet-up-login-customizer.php:1887
+msgid "Export Network Settings"
+msgstr "导出网络设置"
+
+#: wallet-up-login-customizer.php:2063
+#: assets/wallet-up-login-customizer.php:1883
+msgid "Export all network-wide settings for backup or migration."
+msgstr "导出所有网络范围的设置以进行备份或迁移。"
+
+#: wallet-up-login-customizer.php:2070 wallet-up-login-customizer.php:2076
+#: assets/wallet-up-login-customizer.php:1890
+#: assets/wallet-up-login-customizer.php:1896
+msgid "Import Network Settings"
+msgstr "导入网络设置"
+
+#: wallet-up-login-customizer.php:2071
+#: assets/wallet-up-login-customizer.php:1891
+msgid "Import network settings from a backup file."
+msgstr "从备份文件导入网络设置。"
+
+#: wallet-up-login-customizer.php:2098
+#: assets/wallet-up-login-customizer.php:1918
+msgid "Network settings saved successfully."
+msgstr "网络设置已成功保存。"
+
+#: wallet-up-login-customizer.php:2160
+#: assets/wallet-up-login-customizer.php:1980
+msgid "Please select a valid file to import."
+msgstr "请选择一个有效的文件进行导入。"
+
+#: wallet-up-login-customizer.php:2166
+#: assets/wallet-up-login-customizer.php:1986
+msgid "File size exceeds 1MB limit."
+msgstr "文件大小超过1MB限制。"
+
+#: wallet-up-login-customizer.php:2173
+#: assets/wallet-up-login-customizer.php:1993
+msgid "Only JSON files are allowed."
+msgstr "仅允许JSON文件。"
+
+#: wallet-up-login-customizer.php:2181
+#: assets/wallet-up-login-customizer.php:2001
+msgid "Invalid JSON file."
+msgstr "无效的 JSON 文件。"
+
+#: wallet-up-login-customizer.php:2187
+#: assets/wallet-up-login-customizer.php:2007
+msgid "This is not a valid network settings export file."
+msgstr "这不是有效的网络设置导出文件。"
+
+#: wallet-up-login-customizer.php:2221
+#: assets/wallet-up-login-customizer.php:2041
+msgid "Network settings imported successfully."
+msgstr "网络设置已成功导入。"
+
+#: wallet-up-login-customizer.php:2227
+#: assets/wallet-up-login-customizer.php:2047
+msgid "You do not have sufficient permissions to access this page."
+msgstr "您没有足够的权限访问此页面。"
+
+#: wallet-up-login-customizer.php:2238
+#: assets/wallet-up-login-customizer.php:2058
+msgid "Enhanced login files have been installed successfully!"
+msgstr "增强登录文件已成功安装！"
+
+#: wallet-up-login-customizer.php:2240
+#: assets/wallet-up-login-customizer.php:2060
+msgid "Failed to install enhanced login files. Please check file permissions."
+msgstr "安装增强登录文件失败。请检查文件权限。"
+
+#: wallet-up-login-customizer.php:2350
+#: assets/wallet-up-login-customizer.php:2099
+msgid "Premium Login Customizer"
+msgstr "高级登录定制器"
+
+#: wallet-up-login-customizer.php:2351
+#: assets/wallet-up-login-customizer.php:2100
+msgid "by Wallet Up"
+msgstr "由 Wallet Up 提供"
+
+#: wallet-up-login-customizer.php:2369
+#: assets/wallet-up-login-customizer.php:2118
+msgid "General"
+msgstr "常规"
+
+#: wallet-up-login-customizer.php:2373
+#: assets/wallet-up-login-customizer.php:2122
+msgid "Appearance"
+msgstr "外观"
+
+#: wallet-up-login-customizer.php:2377
+#: assets/wallet-up-login-customizer.php:2126
+msgid "Messages"
+msgstr "消息"
+
+#: wallet-up-login-customizer.php:2381
+#: assets/wallet-up-login-customizer.php:2130
+msgid "Advanced"
+msgstr "高级"
+
+#: wallet-up-login-customizer.php:2385
+#: includes/class-wallet-up-security-manager.php:333
+msgid "Security"
+msgstr "安全"
+
+#: wallet-up-login-customizer.php:2395
+#: assets/wallet-up-login-customizer.php:2140
+msgid "General Settings"
+msgstr "常规设置"
+
+#: wallet-up-login-customizer.php:2396
+#: assets/wallet-up-login-customizer.php:2141
+msgid "Configure basic login functionality and behavior."
+msgstr "配置基本登录功能和行为。"
+
+#: wallet-up-login-customizer.php:2401
+#: assets/wallet-up-login-customizer.php:2146
+msgid "AJAX Login"
+msgstr "AJAX 登录"
+
+#: wallet-up-login-customizer.php:2409
+#: assets/wallet-up-login-customizer.php:2154
+msgid "Enable AJAX login functionality"
+msgstr "启用 AJAX 登录功能"
+
+#: wallet-up-login-customizer.php:2410
+#: assets/wallet-up-login-customizer.php:2155
+msgid ""
+"Provides a smoother login experience with visual feedback and no page reload."
+msgstr "提供更流畅的登录体验，带有视觉反馈且无需页面重新加载。"
+
+#: wallet-up-login-customizer.php:2416
+#: assets/wallet-up-login-customizer.php:2161
+msgid "Sound Effects"
+msgstr "音效"
+
+#: wallet-up-login-customizer.php:2423
+#: assets/wallet-up-login-customizer.php:2168
+msgid "Enable subtle audio feedback"
+msgstr "启用细微的音频反馈"
+
+#: wallet-up-login-customizer.php:2424
+#: assets/wallet-up-login-customizer.php:2169
+msgid "Play subtle sounds on login success/failure for better feedback."
+msgstr "在登录成功/失败时播放细微的声音以获得更好的反馈。"
+
+#: wallet-up-login-customizer.php:2430
+#: assets/wallet-up-login-customizer.php:2175
+msgid "Redirect Delay"
+msgstr "重定向延迟"
+
+#: wallet-up-login-customizer.php:2437
+#: assets/wallet-up-login-customizer.php:2182
+msgid ""
+"Delay in milliseconds before redirecting after successful login (0-5000)."
+msgstr "成功登录后重定向前的延迟，以毫秒为单位（0-5000）。"
+
+#: wallet-up-login-customizer.php:2450
+#: assets/wallet-up-login-customizer.php:2195
+msgid "Enable intelligent redirects"
+msgstr "启用智能重定向"
+
+#: wallet-up-login-customizer.php:2451
+#: assets/wallet-up-login-customizer.php:2196
+msgid ""
+"Direct users to relevant areas based on their role (admins to dashboard, "
+"etc)."
+msgstr "根据用户角色将用户引导到相关区域（管理员到仪表板等）。"
+
+#: wallet-up-login-customizer.php:2466
+#: assets/wallet-up-login-customizer.php:2211
+msgid "Replace WordPress dashboard"
+msgstr "替换 WordPress 仪表板"
+
+#: wallet-up-login-customizer.php:2467
+#: assets/wallet-up-login-customizer.php:2212
+msgid ""
+"When enabled, the WordPress dashboard will be completely replaced with the "
+"Wallet Up page. This affects all users."
+msgstr ""
+"启用后，WordPress 仪表板将完全被 Wallet Up 页面替换。这会影响所有用户。"
+
+#: wallet-up-login-customizer.php:2468
+#: assets/wallet-up-login-customizer.php:2213
+msgid "💡 This works independently - no need to enable \"Land to Wallet Up\"."
+msgstr "💡 这独立工作 - 无需启用\"着陆到 Wallet Up\"。"
+
+#: wallet-up-login-customizer.php:2474
+#: assets/wallet-up-login-customizer.php:2219
+msgid "Exempt Administrator Roles"
+msgstr "豁免管理员角色"
+
+#: wallet-up-login-customizer.php:2481
+#: assets/wallet-up-login-customizer.php:2226
+msgid "Allow administrators to access default dashboard"
+msgstr "允许管理员访问默认仪表板"
+
+#: wallet-up-login-customizer.php:2482
+#: assets/wallet-up-login-customizer.php:2227
+msgid ""
+"When enabled, administrators can still access the default WordPress "
+"dashboard."
+msgstr "启用后，管理员仍可访问默认的 WordPress 仪表板。"
+
+#: wallet-up-login-customizer.php:2483
+#: assets/wallet-up-login-customizer.php:2228
+msgid ""
+"✅ Recommended: Keeps admin access for troubleshooting and configuration."
+msgstr "✅ 推荐：保留管理员访问权限以进行故障排除和配置。"
+
+#: wallet-up-login-customizer.php:2497
+#: assets/wallet-up-login-customizer.php:2242
+msgid "Redirect to Wallet Up admin page"
+msgstr "重定向到 Wallet Up 管理页面"
+
+#: wallet-up-login-customizer.php:2498
+#: assets/wallet-up-login-customizer.php:2243
+msgid ""
+"After login, redirect users directly to the Wallet Up admin page (admin.php?"
+"page=wallet-up)."
+msgstr "登录后，直接将用户重定向到 Wallet Up 管理页面。"
+
+#: wallet-up-login-customizer.php:2499
+#: assets/wallet-up-login-customizer.php:2244
+msgid ""
+"⚠️ This is a LOGIN redirect only. For dashboard replacement, use \"Force "
+"Dashboard Replacement\"."
+msgstr "⚠️ 这仅是登录重定向。要替换仪表板，请使用\"强制仪表板替换\"。"
+
+#: wallet-up-login-customizer.php:2507
+#: assets/wallet-up-login-customizer.php:2252
+msgid "Appearance Settings"
+msgstr "外观设置"
+
+#: wallet-up-login-customizer.php:2508
+#: assets/wallet-up-login-customizer.php:2253
+msgid "Customize the look and feel of your login page."
+msgstr "自定义登录页面的外观和感觉。"
+
+#: wallet-up-login-customizer.php:2521
+#: assets/wallet-up-login-customizer.php:2266
+msgid "Select Image"
+msgstr "选择图片"
+
+#: wallet-up-login-customizer.php:2522
+#: assets/wallet-up-login-customizer.php:2267
+msgid ""
+"Enter a URL to use a custom logo. Leave empty to use the default Wallet Up "
+"icon."
+msgstr "输入 URL 以使用自定义徽标。留空以使用默认的 Wallet Up 图标。"
+
+#: wallet-up-login-customizer.php:2534
+#: assets/wallet-up-login-customizer.php:2279
+msgid "Color Scheme"
+msgstr "配色方案"
+
+#: wallet-up-login-customizer.php:2545
+#: assets/wallet-up-login-customizer.php:2290
+msgid "Select a preset color scheme or customize colors below."
+msgstr "选择预设配色方案或在下面自定义颜色。"
+
+#: wallet-up-login-customizer.php:2558
+#: assets/wallet-up-login-customizer.php:2303
+msgid "The main color used throughout the login page."
+msgstr "整个登录页面使用的主色。"
+
+#: wallet-up-login-customizer.php:2564
+#: assets/wallet-up-login-customizer.php:2309
+msgid "Gradient Start"
+msgstr "渐变开始"
+
+#: wallet-up-login-customizer.php:2571
+#: assets/wallet-up-login-customizer.php:2316
+msgid "Start color for gradient effects."
+msgstr "渐变效果的开始颜色。"
+
+#: wallet-up-login-customizer.php:2577
+#: assets/wallet-up-login-customizer.php:2322
+msgid "Gradient End"
+msgstr "渐变结束"
+
+#: wallet-up-login-customizer.php:2584
+#: assets/wallet-up-login-customizer.php:2329
+msgid "End color for gradient effects."
+msgstr "渐变效果的结束颜色。"
+
+#: wallet-up-login-customizer.php:2590
+#: assets/wallet-up-login-customizer.php:2335
+msgid "Color Preview"
+msgstr "颜色预览"
+
+#: wallet-up-login-customizer.php:2594
+#: assets/wallet-up-login-customizer.php:2339
+msgid "Primary"
+msgstr "主要"
+
+#: wallet-up-login-customizer.php:2595
+#: assets/wallet-up-login-customizer.php:2340
+msgid "Gradient"
+msgstr "渐变"
+
+#: wallet-up-login-customizer.php:2598
+#: assets/wallet-up-login-customizer.php:2343
+#: includes/class-wallet-up-login-customizer.php:233
+#: includes/class-wallet-up-login-customizer.php:517
+msgid "Sign In Securely"
+msgstr "安全登录"
+
+#: wallet-up-login-customizer.php:2606
+#: assets/wallet-up-login-customizer.php:2351
+msgid "Messages Settings"
+msgstr "消息设置"
+
+#: wallet-up-login-customizer.php:2607
+#: assets/wallet-up-login-customizer.php:2352
+msgid "Customize the messages displayed during login."
+msgstr "自定义登录期间显示的消息。"
+
+#: wallet-up-login-customizer.php:2653
+#: assets/wallet-up-login-customizer.php:2398
+msgid ""
+"Messages displayed during login. One will be randomly selected each time."
+msgstr "登录期间显示的消息。每次将随机选择一个。"
+
+#: wallet-up-login-customizer.php:2661
+#: assets/wallet-up-login-customizer.php:2406
+msgid "Advanced Settings"
+msgstr "高级设置"
+
+#: wallet-up-login-customizer.php:2662
+#, fuzzy
+msgid "Configure advanced options and manage your settings."
+msgstr "配置登录体验的高级选项。"
+
+#: wallet-up-login-customizer.php:2667
+#: assets/wallet-up-login-customizer.php:2412
+#: includes/class-wallet-up-login-customizer.php:268
+msgid "Remember Me"
+msgstr "记住我"
+
+#: wallet-up-login-customizer.php:2674
+#: assets/wallet-up-login-customizer.php:2419
+msgid "Show remember me checkbox"
+msgstr "显示记住我复选框"
+
+#: wallet-up-login-customizer.php:2675
+#: assets/wallet-up-login-customizer.php:2420
+msgid "Display the \"Remember Me\" option on the login form."
+msgstr "在登录表单上显示\"记住我\"选项。"
+
+#: wallet-up-login-customizer.php:2680
+msgid "Settings Management"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2681
+msgid ""
+"Export your current settings, import from a backup, or reset to defaults."
+msgstr "导出当前设置，从备份导入，或重置为默认值。"
+
+#: wallet-up-login-customizer.php:2687
+#: assets/wallet-up-login-customizer.php:2509
+msgid "Export Settings"
+msgstr "导出设置"
+
+#: wallet-up-login-customizer.php:2689
+msgid "Download your current settings as a JSON file."
+msgstr ""
+
+#: wallet-up-login-customizer.php:2695
+#: assets/wallet-up-login-customizer.php:2514
+msgid "Import Settings"
+msgstr "导入设置"
+
+#: wallet-up-login-customizer.php:2698
+msgid "Upload a previously exported settings file."
+msgstr ""
+
+#: wallet-up-login-customizer.php:2704
+#: assets/wallet-up-login-customizer.php:2520
+msgid "Reset to Defaults"
+msgstr "重置为默认值"
+
+#: wallet-up-login-customizer.php:2706
+#, fuzzy
+msgid "Warning: This will reset all settings to their default values."
+msgstr "您确定要将所有设置重置为默认值吗？"
+
+#: wallet-up-login-customizer.php:2730
+#, fuzzy
+msgid ""
+"Are you sure you want to import these settings? This will overwrite your "
+"current settings."
+msgstr "您确定要将所有设置重置为默认值吗？"
+
+#: wallet-up-login-customizer.php:2759
+#, fuzzy
+msgid ""
+"Are you sure you want to reset all settings to defaults? This cannot be "
+"undone."
+msgstr "您确定要将所有设置重置为默认值吗？"
+
+#: wallet-up-login-customizer.php:2779
+#, fuzzy
+msgid "Enterprise Security"
+msgstr "🛡️ 企业安全"
+
+#: wallet-up-login-customizer.php:2780
+#: assets/wallet-up-login-customizer.php:2438
+msgid "Advanced security features for protecting your login system."
+msgstr "保护您的登录系统的高级安全功能。"
+
+#: wallet-up-login-customizer.php:2802
+#: assets/wallet-up-login-customizer.php:2444
+#: includes/class-wallet-up-enterprise-security.php:1957
+msgid "Force Login"
+msgstr "强制登录"
+
+#: wallet-up-login-customizer.php:2805
+#: assets/wallet-up-login-customizer.php:2448
+msgid "Require users to login before accessing the website"
+msgstr "要求用户在访问网站之前登录"
+
+#: wallet-up-login-customizer.php:2806
+#: assets/wallet-up-login-customizer.php:2449
+msgid ""
+"Visitors must authenticate before viewing any content. Registration and "
+"password reset still work normally."
+msgstr "访客必须在查看任何内容之前进行身份验证。注册和密码重置仍正常工作。"
+
+#: wallet-up-login-customizer.php:2807
+msgid ""
+"⚠️ Important: Force Login may not work properly with aggressive page caching "
+"(LiteSpeed, Cloudflare, etc.). For best results, clear your cache when this "
+"feature is enabled. The plugin attempts to bypass caching, but server-level "
+"caching may still serve cached pages to non-logged-in users."
+msgstr ""
+
+
+#: wallet-up-login-customizer.php:2929
+msgid ""
+"⚠️ Important: Security Headers (especially Content-Security-Policy) may conflict "
+"with other plugins or themes that use inline scripts/styles. If you experience "
+"broken functionality after enabling this, check your browser console for CSP "
+"violations and consider disabling this feature or adjusting your CSP policy."
+msgstr ""
+"⚠️ 重要：安全头（特别是Content-Security-Policy）可能与使用内联脚本/样式的其他插件或主题"
+"产生冲突。如果启用后遇到功能故障，请检查浏览器控制台的CSP违规，并考虑禁用此功能或调整CSP策略。"
+#: wallet-up-login-customizer.php:2812
+#: assets/wallet-up-login-customizer.php:2455
+#: includes/class-wallet-up-enterprise-security.php:1964
+msgid "Hide wp-login.php"
+msgstr "隐藏 wp-login.php"
+
+#: wallet-up-login-customizer.php:2815
+#, fuzzy
+msgid "Hide and protect default WordPress login URL"
+msgstr "隐藏默认的 WordPress 登录页面"
+
+#: wallet-up-login-customizer.php:2820
+#: assets/wallet-up-login-customizer.php:2466
+msgid "Custom Login URL"
+msgstr "自定义登录URL"
+
+#: wallet-up-login-customizer.php:2823
+#, fuzzy
+msgid "Custom URL slug for the login page (e.g., secure-login)"
+msgstr "登录页面的自定义 URL 路径"
+
+#: wallet-up-login-customizer.php:2825
+#, fuzzy
+msgid "Your login URL will be:"
+msgstr "您的自定义登录 URL："
+
+#: wallet-up-login-customizer.php:2830
+msgid "Copy"
+msgstr "复制"
+
+#: wallet-up-login-customizer.php:2833
+msgid "Copied!"
+msgstr "已复制！"
+
+#: wallet-up-login-customizer.php:2840
+#: assets/wallet-up-login-customizer.php:2482
+#: includes/class-wallet-up-enterprise-security.php:1978
+msgid "Max Login Attempts"
+msgstr "最大登录尝试次数"
+
+#: wallet-up-login-customizer.php:2843
+#: assets/wallet-up-login-customizer.php:2486
+msgid "Maximum failed login attempts before temporary lockout."
+msgstr "临时锁定前的最大失败登录尝试次数。"
+
+#: wallet-up-login-customizer.php:2848
+#: assets/wallet-up-login-customizer.php:2492
+msgid "Lockout Duration"
+msgstr "锁定持续时间"
+
+#: wallet-up-login-customizer.php:2851
+#, fuzzy
+msgid "5 minutes"
+msgstr "分钟"
+
+#: wallet-up-login-customizer.php:2852
+#, fuzzy
+msgid "10 minutes"
+msgstr "分钟"
+
+#: wallet-up-login-customizer.php:2853
+#, fuzzy
+msgid "15 minutes"
+msgstr "分钟"
+
+#: wallet-up-login-customizer.php:2854
+#, fuzzy
+msgid "30 minutes"
+msgstr "分钟"
+
+#: wallet-up-login-customizer.php:2855
+#, fuzzy
+msgid "60 minutes"
+msgstr "分钟"
+
+#: wallet-up-login-customizer.php:2857
+#: assets/wallet-up-login-customizer.php:2501
+msgid "How long to lock out users after too many failed attempts."
+msgstr "在太多失败尝试后锁定用户多长时间。"
+
+#: wallet-up-login-customizer.php:2862
+#: includes/class-wallet-up-enterprise-security.php:1990
+msgid "Email Notifications"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2865
+#: includes/class-wallet-up-enterprise-security.php:1993
+msgid "Send email alerts for security events"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2870
+#: includes/class-wallet-up-enterprise-security.php:1997
+msgid "Alert Threshold"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2873
+#: includes/class-wallet-up-enterprise-security.php:2000
+#, fuzzy
+msgid "Send alert after this many failed attempts"
+msgstr "在太多失败尝试后锁定用户多长时间。"
+
+#: wallet-up-login-customizer.php:2878
+#: includes/class-wallet-up-enterprise-security.php:2004
+msgid "Notification Email"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2881
+#: includes/class-wallet-up-enterprise-security.php:2063
+#: includes/class-wallet-up-enterprise-security.php:2085
+#: includes/class-wallet-up-enterprise-security.php:2091
+msgid "Send Test Email"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2883
+#: includes/class-wallet-up-enterprise-security.php:2007
+msgid "Email address to receive security alerts"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2888
+#: includes/class-wallet-up-enterprise-security.php:2011
+msgid "Digest Mode"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2891
+#: includes/class-wallet-up-enterprise-security.php:2014
+msgid "Send daily digest instead of individual alerts"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2892
+#: includes/class-wallet-up-enterprise-security.php:2015
+msgid "Reduces email frequency by combining alerts into a single daily summary"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2897
+msgid "Whitelisted IPs"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2907
+msgid ""
+"Enter IP addresses to whitelist (one per line). These IPs will bypass rate "
+"limiting."
+msgstr ""
+
+#: wallet-up-login-customizer.php:2911
+#, php-format
+msgid "Your current IP: %s"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2913
+msgid "Your current IP: Unknown"
+msgstr ""
+
+#: wallet-up-login-customizer.php:2920
+#: includes/class-wallet-up-enterprise-security.php:2026
+msgid "Security Headers"
+msgstr "安全标头"
+
+#: wallet-up-login-customizer.php:2923
+#, fuzzy
+msgid "Enable security headers (X-Frame-Options, CSP, etc.)"
+msgstr "启用安全标头"
+
+#: wallet-up-login-customizer.php:2929
+#: assets/wallet-up-login-customizer.php:2525
+msgid "Save Settings"
+msgstr "保存设置"
+
+#: wallet-up-login-customizer.php:3019
+#: assets/wallet-up-login-customizer.php:2533
+msgid "Preview Login Page"
+msgstr "预览登录页面"
+
+#: wallet-up-login-customizer.php:3020
+#: assets/wallet-up-login-customizer.php:2534
+msgid "See how your login page looks with current settings."
+msgstr "查看您的登录页面在当前设置下的外观。"
+
+#: wallet-up-login-customizer.php:3022
+#: assets/wallet-up-login-customizer.php:2536
+msgid "Open Preview"
+msgstr "打开预览"
+
+#: wallet-up-login-customizer.php:3028 wallet-up-login-customizer.php:3070
+#: assets/wallet-up-login-customizer.php:2542
+#: assets/wallet-up-login-customizer.php:2584
+msgid "Reinstall Files"
+msgstr "重新安装文件"
+
+#: wallet-up-login-customizer.php:3029
+#: assets/wallet-up-login-customizer.php:2543
+msgid ""
+"If you need to reset the customizations, you can reinstall the enhanced "
+"login files."
+msgstr "如果您需要重置自定义设置，可以重新安装增强登录文件。"
+
+#: wallet-up-login-customizer.php:3036
+#: assets/wallet-up-login-customizer.php:2550
+msgid "Required Files & Paths:"
+msgstr "所需文件和路径："
+
+#: wallet-up-login-customizer.php:3041
+#: assets/wallet-up-login-customizer.php:2555
+msgid "Login page styles"
+msgstr "登录页面样式"
+
+#: wallet-up-login-customizer.php:3045
+#: assets/wallet-up-login-customizer.php:2559
+msgid "Admin interface styles"
+msgstr "管理界面样式"
+
+#: wallet-up-login-customizer.php:3049
+#: assets/wallet-up-login-customizer.php:2563
+msgid "Login page functionality"
+msgstr "登录页面功能"
+
+#: wallet-up-login-customizer.php:3053
+#: assets/wallet-up-login-customizer.php:2567
+msgid "Admin interface scripts"
+msgstr "管理界面脚本"
+
+#: wallet-up-login-customizer.php:3057
+#: assets/wallet-up-login-customizer.php:2571
+msgid "Core functionality"
+msgstr "核心功能"
+
+#: wallet-up-login-customizer.php:3064
+#: assets/wallet-up-login-customizer.php:2578
+msgid "Source files are in /assets/ directory"
+msgstr "源文件位于 /assets/ 目录中"
+
+#: wallet-up-login-customizer.php:3071
+#: assets/wallet-up-login-customizer.php:2585
+msgid ""
+"⚠️ This will overwrite existing customizations. Use only if files are missing "
+"or corrupted."
+msgstr "⚠️ 这将覆盖现有的自定义设置。仅在文件丢失或损坏时使用。"
+
+#: wallet-up-login-customizer.php:3076
+#: assets/wallet-up-login-customizer.php:2590
+msgid "About"
+msgstr "关于"
+
+#: wallet-up-login-customizer.php:3077
+#: assets/wallet-up-login-customizer.php:2591
+#, fuzzy
+msgid ""
+"Creates a beautiful interactive login experience for Wallet Up and WordPress "
+"users."
+msgstr "为 Wallet Up 和 WordPress 用户创建美观的交互式登录体验。"
+
+#: wallet-up-login-customizer.php:3078
+#: assets/wallet-up-login-customizer.php:2592
+msgid "Version"
+msgstr "版本"
+
+#: wallet-up-login-customizer.php:3151
+#: assets/wallet-up-login-customizer.php:2665
+#: includes/class-wallet-up-hard-redirect.php:347
+msgid "WordPress Dashboard"
+msgstr "WordPress 仪表板"
+
+#: wallet-up-login-customizer.php:3302
+#: assets/wallet-up-login-customizer.php:2816
+#, php-format
+msgid "Translation for %1$s is not available. Using %2$s instead."
+msgstr "%1$s 的翻译不可用。改用 %2$s。"
+
+#: wallet-up-login-customizer.php:3317
+#: assets/wallet-up-login-customizer.php:2831
+#, php-format
+msgid "Translation for %s is not available."
+msgstr "%s 的翻译不可用。"
+
+#: wallet-up-login-customizer.php:3322
+#: assets/wallet-up-login-customizer.php:2836
+msgid "Available languages:"
+msgstr "可用语言："
+
+#: wallet-up-login-customizer.php:3373 wallet-up-login-customizer.php:3429
+#: wallet-up-login-customizer.php:3468
+msgid "Unauthorized"
+msgstr "未授权"
+
+#: wallet-up-login-customizer.php:3381
+#, fuzzy
+msgid "Invalid JSON data"
+msgstr "无效的 JSON 文件。"
+
+#: wallet-up-login-customizer.php:3386
+#, fuzzy
+msgid "Invalid settings file"
+msgstr "无效的 JSON 文件。"
+
+#: wallet-up-login-customizer.php:3420
+#, fuzzy
+msgid "Settings imported successfully!"
+msgstr "设置已成功导入"
+
+#: wallet-up-login-customizer.php:3459
+#, fuzzy
+msgid "Settings reset to defaults successfully!"
+msgstr "设置已重置为默认值！"
+
+#: wallet-up-login-customizer.php:3475
+#: includes/class-wallet-up-enterprise-security.php:2141
+msgid "Invalid email address"
+msgstr "无效的电子邮件地址"
+
+#: wallet-up-login-customizer.php:3499
+#: includes/class-wallet-up-enterprise-security.php:2169
+#, fuzzy
+msgid "Failed to send test email. Please check your email configuration."
+msgstr "安装增强登录文件失败。请检查文件权限。"
+
+#: assets/wallet-up-login-customizer.php:2407
+msgid "Configure advanced options for the login experience."
+msgstr "配置登录体验的高级选项。"
+
+#: assets/wallet-up-login-customizer.php:2437
+msgid "🛡️ Enterprise Security"
+msgstr "🛡️ 企业安全"
+
+#: assets/wallet-up-login-customizer.php:2459
+msgid "Hide the default WordPress login page"
+msgstr "隐藏默认的 WordPress 登录页面"
+
+#: assets/wallet-up-login-customizer.php:2460
+msgid ""
+"Direct access to wp-login.php will be redirected to your custom login URL."
+msgstr "直接访问 wp-login.php 将被重定向到您的自定义登录 URL。"
+
+#: assets/wallet-up-login-customizer.php:2473
+msgid "Your custom login URL:"
+msgstr "您的自定义登录 URL："
+
+#: assets/wallet-up-login-customizer.php:2496
+#: assets/wallet-up-login-customizer.php:2497
+#: assets/wallet-up-login-customizer.php:2498
+msgid "minutes"
+msgstr "分钟"
+
+#: assets/wallet-up-login-customizer.php:2499
+msgid "hour"
+msgstr "小时"
+
+#: includes/class-wallet-up-login-customizer.php:225
+msgid "Login failed. Please check your credentials and try again."
+msgstr "登录失败。请检查您的凭据并重试。"
+
+#: includes/class-wallet-up-login-customizer.php:226
+msgid "You have been logged out."
+msgstr "您已退出登录。"
+
+#: includes/class-wallet-up-login-customizer.php:227
+msgid "Your password has been reset successfully."
+msgstr "您的密码已成功重置。"
+
+#: includes/class-wallet-up-login-customizer.php:228
+#: includes/class-wallet-up-login-customizer.php:832
+msgid "Welcome back! Please sign in to continue."
+msgstr "欢迎回来！请登录以继续。"
+
+#: includes/class-wallet-up-login-customizer.php:229
+#: includes/class-wallet-up-login-customizer.php:249
+msgid "Welcome back! You have successfully signed in."
+msgstr "欢迎回来！您已成功登录。"
+
+#: includes/class-wallet-up-login-customizer.php:231
+msgid "Processing..."
+msgstr "处理中..."
+
+#: includes/class-wallet-up-login-customizer.php:232
+msgid "Loading..."
+msgstr "加载中..."
+
+#: includes/class-wallet-up-login-customizer.php:234
+#: includes/class-wallet-up-login-customizer.php:854
+msgid "Signing In"
+msgstr "正在登录"
+
+#: includes/class-wallet-up-login-customizer.php:235
+msgid "Continue to Dashboard"
+msgstr "继续到仪表板"
+
+#: includes/class-wallet-up-login-customizer.php:236
+msgid "Try Again"
+msgstr "重试"
+
+#: includes/class-wallet-up-login-customizer.php:237
+msgid "Consider using a stronger password"
+msgstr "考虑使用更强的密码"
+
+#: includes/class-wallet-up-login-customizer.php:238
+msgid "Welcome to the Next 'Up"
+msgstr "欢迎来到下一个阶段"
+
+#: includes/class-wallet-up-login-customizer.php:239
+msgid "Username"
+msgstr "用户名"
+
+#: includes/class-wallet-up-login-customizer.php:240
+msgid "Password"
+msgstr "密码"
+
+#: includes/class-wallet-up-login-customizer.php:241
+msgid "Show password"
+msgstr "显示密码"
+
+#: includes/class-wallet-up-login-customizer.php:242
+msgid "Hide password"
+msgstr "隐藏密码"
+
+#: includes/class-wallet-up-login-customizer.php:243
+msgid "Invalid username or password. Please try again."
+msgstr "无效的用户名或密码。请重试。"
+
+#: includes/class-wallet-up-login-customizer.php:244
+#: includes/class-wallet-up-login-customizer.php:633
+msgid "Server error. Please try again later."
+msgstr "服务器错误。请稍后重试。"
+
+#: includes/class-wallet-up-login-customizer.php:245
+#: includes/class-wallet-up-login-customizer.php:767
+msgid "Username is required"
+msgstr "用户名是必需的"
+
+#: includes/class-wallet-up-login-customizer.php:246
+msgid "Password is required"
+msgstr "密码是必需的"
+
+#: includes/class-wallet-up-login-customizer.php:247
+msgid "Username must be at least 3 characters"
+msgstr "用户名必须至少为 3 个字符"
+
+#: includes/class-wallet-up-login-customizer.php:248
+msgid "Please correct the errors before signing in."
+msgstr "请在登录前更正错误。"
+
+#: includes/class-wallet-up-login-customizer.php:250
+msgid "Success!"
+msgstr "成功！"
+
+#: includes/class-wallet-up-login-customizer.php:251
+msgid "Oops!"
+msgstr "哎呀！"
+
+#: includes/class-wallet-up-login-customizer.php:260
+msgid "Error: Could not get image URL"
+msgstr "错误：无法获取图片 URL"
+
+#: includes/class-wallet-up-login-customizer.php:261
+msgid "Error: Invalid image URL format"
+msgstr "错误：无效的图片 URL 格式"
+
+#: includes/class-wallet-up-login-customizer.php:262
+msgid "Reset Password"
+msgstr "重置密码"
+
+#: includes/class-wallet-up-login-customizer.php:263
+msgid "Back to Login"
+msgstr "返回登录"
+
+#: includes/class-wallet-up-login-customizer.php:264
+msgid "Forgot Password?"
+msgstr "忘记密码？"
+
+#: includes/class-wallet-up-login-customizer.php:265
+msgid "Register New Account"
+msgstr "注册新账户"
+
+#: includes/class-wallet-up-login-customizer.php:266
+#, php-format
+msgid "Back to %s"
+msgstr "返回 %s"
+
+#: includes/class-wallet-up-login-customizer.php:267
+msgid "Welcome to"
+msgstr "欢迎来到"
+
+#: includes/class-wallet-up-login-customizer.php:468
+msgid "Wallet Up - Advanced URL & QR Tools"
+msgstr "Wallet Up - 高级 URL 和 QR 工具"
+
+#: includes/class-wallet-up-login-customizer.php:500
+msgid "Wallet Up — Advanced URL & QR Tools"
+msgstr "Wallet Up — 高级 URL 和 QR 工具"
+
+#: includes/class-wallet-up-login-customizer.php:501
+msgid "All Rights Reserved"
+msgstr "版权所有"
+
+#: includes/class-wallet-up-login-customizer.php:517
+msgid "Log In"
+msgstr ""
+
+#: includes/class-wallet-up-login-customizer.php:530
+msgid "Security verification failed. Please refresh the page and try again."
+msgstr "安全验证失败。请刷新页面并重试。"
+
+#: includes/class-wallet-up-login-customizer.php:539
+#, fuzzy
+msgid "Too many login attempts. Please try again in a few minutes."
+msgstr "登录尝试次数过多。请稍后重试。"
+
+#: includes/class-wallet-up-login-customizer.php:549
+#: includes/class-wallet-up-enterprise-security.php:974
+msgid "Automated login attempts are not allowed."
+msgstr "不允许自动登录尝试。"
+
+#: includes/class-wallet-up-login-customizer.php:558
+msgid "Security validation failed."
+msgstr "安全验证失败。"
+
+#: includes/class-wallet-up-login-customizer.php:584
+msgid "Username and password are required"
+msgstr "用户名和密码是必需的"
+
+#: includes/class-wallet-up-login-customizer.php:623
+#: includes/class-wallet-up-security-sanitizer.php:330
+#, php-format
+msgid "Welcome back, %s!"
+msgstr "欢迎回来，%s！"
+
+#: includes/class-wallet-up-login-customizer.php:757
+#, fuzzy
+msgid "Too many requests. Please slow down."
+msgstr "尝试次数过多。请稍后重试。"
+
+#: includes/class-wallet-up-login-customizer.php:783
+msgid "Username validation complete"
+msgstr ""
+
+#: includes/class-wallet-up-login-customizer.php:810
+msgid ""
+"Oops! The password you entered is incorrect. Please try again or use the "
+"password reset link below."
+msgstr "哎呀！您输入的密码不正确。请重试或使用下面的密码重置链接。"
+
+#: includes/class-wallet-up-login-customizer.php:812
+msgid ""
+"The username you entered doesn't appear to exist. Double-check it or create "
+"a new account."
+msgstr "您输入的用户名似乎不存在。请仔细检查或创建新账户。"
+
+#: includes/class-wallet-up-login-customizer.php:814
+msgid "Please enter your password to log in."
+msgstr "请输入您的密码以登录。"
+
+#: includes/class-wallet-up-login-customizer.php:816
+msgid "Please enter your username to log in."
+msgstr "请输入您的用户名以登录。"
+
+#: includes/class-wallet-up-login-customizer.php:818
+msgid "This account has been suspended. Please contact support for assistance."
+msgstr "此账户已被暂停。请联系支持以获得帮助。"
+
+#: includes/class-wallet-up-login-customizer.php:827
+msgid ""
+"✓ You have been successfully logged out. Please sign in again to continue."
+msgstr "✓ 您已成功登出。请重新登录以继续。"
+
+#: includes/class-wallet-up-login-customizer.php:842
+msgid "Please enter your username and password to access the dashboard."
+msgstr "请输入您的用户名和密码以访问仪表板。"
+
+#: includes/class-wallet-up-login-customizer.php:859
+msgid "Continue"
+msgstr "继续"
+
+#: includes/class-wallet-up-hard-redirect.php:166
+msgid ""
+"Wallet Up dashboard replacement has been disabled because the Wallet Up page "
+"was not found. Please make sure the Wallet Up plugin is active."
+msgstr ""
+"Wallet Up 仪表板替换已被禁用，因为找不到 Wallet Up 页面。请确保 Wallet Up 插"
+"件已激活。"
+
+#: includes/class-wallet-up-hard-redirect.php:333
+#: includes/class-wallet-up-hard-redirect.php:420
+#: wallet-up-force-redirect.php:295
+msgid "Dashboard"
+msgstr "仪表板"
+
+#: includes/class-wallet-up-hard-redirect.php:371
+#: includes/class-wallet-up-hard-redirect.php:397
+#: wallet-up-force-redirect.php:325 wallet-up-force-redirect.php:339
+msgid "The WordPress dashboard has been replaced with the Wallet Up Dashboard."
+msgstr "WordPress 仪表板已被 Wallet Up 仪表板替换。"
+
+#: includes/class-wallet-up-hard-redirect.php:373
+#: includes/class-wallet-up-hard-redirect.php:399
+#: wallet-up-force-redirect.php:326 wallet-up-force-redirect.php:340
+msgid "Go to Wallet Up Dashboard"
+msgstr "前往 Wallet Up 仪表板"
+
+#: includes/class-wallet-up-login-customizer-logo.php:108
+#: includes/class-wallet-up-login-customizer-logo.php:109
+msgid "Logo Settings"
+msgstr "徽标设置"
+
+#: includes/class-wallet-up-login-customizer-logo.php:123
+msgid "Login Logo Configuration"
+msgstr "登录徽标配置"
+
+#: includes/class-wallet-up-login-customizer-logo.php:130
+msgid "Enable Custom Logo"
+msgstr "启用自定义徽标"
+
+#: includes/class-wallet-up-login-customizer-logo.php:138
+msgid "Logo Image"
+msgstr "徽标图片"
+
+#: includes/class-wallet-up-login-customizer-logo.php:146
+msgid "Logo Size"
+msgstr "徽标大小"
+
+#: includes/class-wallet-up-login-customizer-logo.php:154
+msgid "Logo Link"
+msgstr "徽标链接"
+
+#: includes/class-wallet-up-login-customizer-logo.php:170
+msgid "Logo settings saved successfully."
+msgstr "徽标设置已成功保存。"
+
+#: includes/class-wallet-up-login-customizer-logo.php:185
+msgid "Save Logo Settings"
+msgstr "保存徽标设置"
+
+#: includes/class-wallet-up-login-customizer-logo.php:190
+msgid "Current Logo Preview"
+msgstr "当前徽标预览"
+
+#: includes/class-wallet-up-login-customizer-logo.php:195
+msgid "Login Logo Preview"
+msgstr "登录徽标预览"
+
+#: includes/class-wallet-up-login-customizer-logo.php:197
+msgid "No custom logo set. Using site logo or WordPress default."
+msgstr "未设置自定义徽标。使用站点徽标或 WordPress 默认值。"
+
+#: includes/class-wallet-up-login-customizer-logo.php:206
+msgid ""
+"Configure the logo that appears on the WordPress login page. The logo will "
+"be automatically sized to fit within 50px height while preserving aspect "
+"ratio."
+msgstr ""
+"配置出现在 WordPress 登录页面上的徽标。徽标将自动调整大小以适应 50px 高度，同"
+"时保持纵横比。"
+
+#: includes/class-wallet-up-login-customizer-logo.php:214
+msgid "Display custom logo on login page"
+msgstr "在登录页面显示自定义徽标"
+
+#: includes/class-wallet-up-login-customizer-logo.php:225
+#: includes/class-wallet-up-login-customizer-logo.php:236
+msgid "Select Logo"
+msgstr "选择徽标"
+
+#: includes/class-wallet-up-login-customizer-logo.php:228
+msgid "Upload or select a logo image. Recommended size: 200x50px or smaller."
+msgstr "上传或选择徽标图片。建议大小：200x50px 或更小。"
+
+#: includes/class-wallet-up-login-customizer-logo.php:242
+msgid "Use as Logo"
+msgstr "用作徽标"
+
+#: includes/class-wallet-up-login-customizer-logo.php:260
+msgid "Maximum Height:"
+msgstr "最大高度："
+
+#: includes/class-wallet-up-login-customizer-logo.php:263
+msgid "default: 50px"
+msgstr "默认：50px"
+
+#: includes/class-wallet-up-login-customizer-logo.php:269
+msgid "Preserve aspect ratio when resizing"
+msgstr "调整大小时保持纵横比"
+
+#: includes/class-wallet-up-login-customizer-logo.php:279
+msgid "Link URL:"
+msgstr "链接 URL："
+
+#: includes/class-wallet-up-login-customizer-logo.php:285
+msgid "Link Title:"
+msgstr "链接标题："
+
+#: includes/class-wallet-up-login-customizer-logo.php:290
+msgid "Where the logo links to and the tooltip text when hovering."
+msgstr "徽标链接到的位置以及悬停时的工具提示文本。"
+
+#: includes/class-wallet-up-login-customizer-logo.php:343
+#, php-format
+msgid ""
+"Wallet Up Login: No custom logo configured. %s to add your brand logo to the "
+"login page."
+msgstr "Wallet Up 登录：未配置自定义徽标。%s 将您的品牌徽标添加到登录页面。"
+
+#: includes/class-wallet-up-login-customizer-logo.php:344
+msgid "Configure logo"
+msgstr "配置徽标"
+
+#: includes/class-wallet-up-conflict-detector.php:86
+#, php-format
+msgid "Function %s conflicts with Wallet Up force login"
+msgstr "函数 %s 与 Wallet Up 强制登录冲突"
+
+#: includes/class-wallet-up-conflict-detector.php:109
+#, php-format
+msgid "Hook %s on %s may conflict with Wallet Up"
+msgstr "钩子 %s 在 %s 上可能与 Wallet Up 冲突"
+
+#: includes/class-wallet-up-conflict-detector.php:177
+msgid "Hiding wp-login.php without a custom login slug will lock out all users"
+msgstr "在没有自定义登录 URL 的情况下隐藏 wp-login.php 将锁定所有用户"
+
+#: includes/class-wallet-up-conflict-detector.php:202
+msgid "Wallet Up Conflict Detected"
+msgstr "检测到 Wallet Up 冲突"
+
+#: includes/class-wallet-up-conflict-detector.php:213
+msgid "Auto-Fix This Issue"
+msgstr "自动修复此问题"
+
+#: includes/class-wallet-up-conflict-detector.php:220
+#: includes/class-wallet-up-conflict-detector.php:225
+msgid "Manual Fix:"
+msgstr "手动修复："
+
+#: includes/class-wallet-up-conflict-detector.php:221
+msgid "Remove the conflicting function from your theme's functions.php file."
+msgstr "从主题的 functions.php 文件中删除冲突的函数。"
+
+#: includes/class-wallet-up-conflict-detector.php:226
+#, php-format
+msgid "Deactivate the %s plugin or disable its login features."
+msgstr "停用 %s 插件或禁用其登录功能。"
+
+#: includes/class-wallet-up-conflict-detector.php:290
+#: includes/class-wallet-up-enterprise-security.php:2131
+msgid "Security check failed"
+msgstr "安全检查失败"
+
+#: includes/class-wallet-up-conflict-detector.php:304
+msgid ""
+"Custom login slug created. Please test it before enabling wp-login.php "
+"hiding."
+msgstr "自定义登录 URL 已创建。请在启用隐藏 wp-login.php 之前进行测试。"
+
+#: includes/class-wallet-up-conflict-detector.php:317
+#, php-format
+msgid "Your IP (%s) added to whitelist."
+msgstr "您的 IP（%s）已添加到白名单。"
+
+#: includes/class-wallet-up-conflict-detector.php:322
+msgid "Unknown fix type"
+msgstr "未知的修复类型"
+
+#: includes/class-wallet-up-conflict-detector.php:362
+msgid "No conflicts detected"
+msgstr "未检测到冲突"
+
+#: includes/class-wallet-up-conflict-detector.php:381
+#, fuzzy, php-format
+msgid "%d conflict detected"
+msgid_plural "%d conflicts detected"
+msgstr[0] "检测到 %d 个冲突"
+
+#: includes/class-wallet-up-security-manager.php:54
+msgid "This feature has been disabled for security reasons"
+msgstr ""
+
+#: includes/class-wallet-up-security-manager.php:84
+#, fuzzy
+msgid "You must be logged in to access user data."
+msgstr "您必须登录才能访问 REST API。"
+
+#: includes/class-wallet-up-security-manager.php:332
+#, fuzzy
+msgid "Security Settings"
+msgstr "保存设置"
+
+#: includes/class-wallet-up-security-manager.php:347
+#, fuzzy
+msgid "Wallet Up Security Settings"
+msgstr "Wallet Up 网络设置"
+
+#: includes/class-wallet-up-security-manager.php:352
+#, fuzzy
+msgid "Email Alert Settings"
+msgstr "导出设置"
+
+#: includes/class-wallet-up-security-manager.php:357
+msgid "Enable Daily Digest"
+msgstr ""
+
+#: includes/class-wallet-up-security-manager.php:365
+msgid ""
+"Receive one daily email with all security events instead of individual alerts"
+msgstr ""
+
+#: includes/class-wallet-up-security-manager.php:371
+msgid "Blocked IPs"
+msgstr ""
+
+#: includes/class-wallet-up-security-manager.php:390
+msgid "No IPs are currently blocked."
+msgstr ""
+
+#: includes/class-wallet-up-security-sanitizer.php:60
+#: includes/class-wallet-up-security-sanitizer.php:102
+#: includes/class-wallet-up-security-sanitizer.php:318
+msgid "Invalid login credentials. Please try again."
+msgstr "无效的登录凭据。请重试。"
+
+#: includes/class-wallet-up-security-sanitizer.php:183
+#: includes/class-wallet-up-security-sanitizer.php:184
+#: includes/class-wallet-up-security-sanitizer.php:185
+#: includes/class-wallet-up-security-sanitizer.php:186
+#: includes/class-wallet-up-security-sanitizer.php:187
+msgid "Invalid login credentials"
+msgstr "无效的登录凭据"
+
+#: includes/class-wallet-up-security-sanitizer.php:284
+msgid "Security verification failed."
+msgstr "安全验证失败。"
+
+#: includes/class-wallet-up-security-sanitizer.php:290
+msgid "Too many attempts. Please try again later."
+msgstr "尝试次数过多。请稍后重试。"
+
+#: includes/class-wallet-up-security-sanitizer.php:296
+msgid "Invalid request."
+msgstr "无效的请求。"
+
+#: includes/class-wallet-up-security-sanitizer.php:307
+msgid "Please enter both username and password."
+msgstr "请输入用户名和密码。"
+
+#: includes/class-wallet-up-enterprise-security.php:960
+msgid "Security validation failed. Please refresh the page and try again."
+msgstr "安全验证失败。请刷新页面并重试。"
+
+#: includes/class-wallet-up-enterprise-security.php:986
+msgid "Too many login attempts. Please try again later."
+msgstr "登录尝试次数过多。请稍后重试。"
+
+#: includes/class-wallet-up-enterprise-security.php:990
+msgid "Account temporarily locked due to multiple failed attempts."
+msgstr "由于多次失败尝试，账户暂时被锁定。"
+
+#: includes/class-wallet-up-enterprise-security.php:1845
+msgid "You must be logged in to access the REST API."
+msgstr "您必须登录才能访问 REST API。"
+
+#: includes/class-wallet-up-enterprise-security.php:1952
+msgid "Wallet Up Enterprise Security"
+msgstr "Wallet Up 企业安全"
+
+#: includes/class-wallet-up-enterprise-security.php:1960
+msgid "Require authentication for all site access"
+msgstr "所有站点访问都需要身份验证"
+
+#: includes/class-wallet-up-enterprise-security.php:1967
+msgid "Hide and protect wp-login.php"
+msgstr "隐藏并保护 wp-login.php"
+
+#: includes/class-wallet-up-enterprise-security.php:1971
+msgid "Custom Login Slug"
+msgstr "自定义登录 URL"
+
+#: includes/class-wallet-up-enterprise-security.php:1974
+msgid "Custom URL slug for the login page"
+msgstr "登录页面的自定义 URL 路径"
+
+#: includes/class-wallet-up-enterprise-security.php:1984
+msgid "Lockout Duration (seconds)"
+msgstr "锁定持续时间（秒）"
+
+#: includes/class-wallet-up-enterprise-security.php:2019
+msgid "Session Timeout (seconds)"
+msgstr "会话超时（秒）"
+
+#: includes/class-wallet-up-enterprise-security.php:2022
+msgid "Time before user sessions expire"
+msgstr "用户会话过期前的时间"
+
+#: includes/class-wallet-up-enterprise-security.php:2029
+msgid "Enable security headers"
+msgstr "启用安全标头"
+
+#: includes/class-wallet-up-enterprise-security.php:2054
+#, fuzzy
+msgid "Please enter a valid email address"
+msgstr "请选择一个有效的 JSON 文件"
+
+#: includes/class-wallet-up-enterprise-security.php:2071
+#, fuzzy
+msgid "Please enter an email address"
+msgstr "请输入用户名和密码。"
+
+#: includes/class-wallet-up-enterprise-security.php:2075
+#, fuzzy
+msgid "Sending..."
+msgstr "加载中..."
+
+#: includes/class-wallet-up-enterprise-security.php:2083
+msgid "Sent!"
+msgstr ""
+
+#: includes/class-wallet-up-enterprise-security.php:2088
+#, fuzzy
+msgid "Failed"
+msgstr "%d 失败"
+
+#: includes/class-wallet-up-enterprise-security.php:2089
+msgid "Failed to send test email"
+msgstr ""
+
+#: includes/class-wallet-up-enterprise-security.php:2099
+msgid "Security Logs"
+msgstr "安全日志"
+
+#: includes/class-wallet-up-enterprise-security.php:2118
+msgid "No security events logged yet."
+msgstr "尚未记录任何安全事件。"
+
+#: includes/class-wallet-up-enterprise-security.php:2136
+#, fuzzy
+msgid "Insufficient permissions"
+msgstr "权限不足。"
+
+#: includes/class-wallet-up-enterprise-security.php:2167
+#, fuzzy
+msgid "Test email sent successfully"
+msgstr "网络设置已成功保存。"
+
+#: includes/class-wallet-up-admin-sync.php:281
+#, php-format
+msgid ""
+"Wallet Up Login has been updated to version %s. Settings synchronization in "
+"progress..."
+msgstr "Wallet Up 登录已更新到版本 %s。设置同步正在进行中..."
+
+#: includes/class-wallet-up-admin-sync.php:335
+msgid "Security check failed."
+msgstr "安全检查失败。"
+
+#: includes/class-wallet-up-admin-sync.php:339
+msgid "Insufficient permissions."
+msgstr "权限不足。"
+
+#: includes/class-wallet-up-admin-sync.php:366
+msgid "Synchronization completed successfully."
+msgstr "同步成功完成。"
+
+#: includes/class-wallet-up-admin-sync.php:371
+#, php-format
+msgid "Sync failed: %s"
+msgstr "同步失败：%s"
+
+#: includes/class-wallet-up-admin-sync.php:425
+#, fuzzy, php-format
+msgid "%d pending"
+msgid_plural "%d pending"
+msgstr[0] "%d 待处理"
+
+#: includes/class-wallet-up-admin-sync.php:430
+#, fuzzy, php-format
+msgid "%d failed"
+msgid_plural "%d failed"
+msgstr[0] "%d 失败"
+
+#: wallet-up-force-redirect.php:324
+msgid "Welcome to Wallet Up Dashboard!"
+msgstr "欢迎来到 Wallet Up 仪表板！"
+
+#: wallet-up-force-redirect.php:363
+msgid ""
+"The \"Land to Wallet Up\" option has been disabled because the Wallet Up "
+"admin page could not be found. Please make sure Wallet Up is installed and "
+"activated before enabling this feature."
+msgstr ""
+"\"着陆到 Wallet Up\"选项已被禁用，因为找不到 Wallet Up 管理页面。请确保在启用"
+"此功能之前已安装并激活 Wallet Up。"
+
+#~ msgid ""
+#~ "Create a beautiful interactive login experience for Wallet Up and "
+#~ "Wordpress users"
+#~ msgstr "为 Wallet Up 和 WordPress 用户创建美观的交互式登录体验"
+
+#~ msgid "Username does not exist"
+#~ msgstr "用户名不存在"
+
+#~ msgid "Username exists"
+#~ msgstr "用户名已存在"
+
+#~ msgid "https://walletup.app"
+#~ msgstr "https://walletup.app"
+
+#~ msgid "Wallet Up Premium Login Customizer"
+#~ msgstr "Wallet Up 高级登录定制器"
+
+#~ msgid ""
+#~ "Recommended: Keeps admin access for troubleshooting and configuration."
+#~ msgstr "推荐：保留管理员访问权限以进行故障排除和配置。"
+
+#~ msgid ""
+#~ "Consider enabling \"Exempt Administrator Roles\" for easier management."
+#~ msgstr "考虑启用\"豁免管理员角色\"以便于管理。"
